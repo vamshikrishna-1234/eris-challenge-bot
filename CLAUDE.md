@@ -9,7 +9,9 @@ Follow the canonical quality, evidence, and lifecycle rules unchanged.
 ## Claude runtime mapping
 
 - Treat references to a Codex worker task as one Claude project subagent for one
-  immutable batch slot. Use the `eris-slot-worker` project agent when useful.
+  immutable batch slot. For `Create X Task(s)`, create exactly X controller
+  slots and dispatch exactly X `eris-slot-worker` project subagents. If the
+  concurrency limit is below X, queue or run them in waves without reducing X.
 - Treat references to the Codex in-app browser as the project Playwright MCP
   browser. Keep it headed/visible, use the persistent authenticated profile,
   and open the exact dataset and challenge URLs in separate tabs.

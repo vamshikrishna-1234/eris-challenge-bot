@@ -10,8 +10,10 @@ Supervise the requested Eris batch through its configured completion stage.
 Start by validating the portable bundle and reading controller status. Keep task
 count, pair ordering, and slot ownership immutable.
 
-Delegate one slot to each `eris-slot-worker` when useful. Reconcile every worker
-report against controller and live Shipd state. Rejected ideas are candidate
+Create exactly one `eris-slot-worker` assignment per immutable slot. Dispatch
+all that current concurrency safely permits and queue or run the remainder in
+waves; never reduce the requested slot count. Reconcile every worker report
+against controller and live Shipd state. Rejected ideas are candidate
 attempts, while rate limits, reconnects, unavailable browser tooling, and
 expired login are retryable runtime conditions. Re-dispatch pending work after
 checkpointing; do not summarize an incomplete batch as finished.

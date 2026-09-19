@@ -26,12 +26,80 @@ That is all you need to provide. The workspace instructions route the command th
 2. Run `./run-claude.ps1`.
 3. Approve the trusted project and Playwright MCP server once, then sign in to
    Shipd in the visible browser if needed.
-4. Send the same commands listed above, or invoke
-   `/eris-challenge-automation` explicitly.
+4. Send `Ready`. If it reports an unfinished batch, send `Status & Fix` to
+   resume it. If it reports ready, paste the five-task prompt below.
+
+You do not paste `CLAUDE.md` into the chat. Claude Code loads it automatically
+when it starts in this repository.
+
+### First five-task prompt to paste
+
+```text
+Create 5 Tasks and finish all five autonomously through Run Agents.
+
+Create one eris-slot-worker Claude subagent for each immutable task slot. Use
+my dataset suggestions first, but independently search official sources for
+better or replacement datasets whenever a suggestion fails a genuine gate.
+Do not count rejected candidates as completed tasks. Continue until all five
+linked Shipd drafts pass every dataset and challenge check with no yellow or
+red result, then click Run Agents exactly once for each task, verify that it
+started, record the result, and stop.
+
+Dataset suggestions (optional):
+1. [DATASET NAME AND OFFICIAL URL]
+2. [DATASET NAME AND OFFICIAL URL]
+3. [CONTINUE THROUGH ALL SUGGESTIONS]
+
+Task 1:
+Challenge: [SHIPD CHALLENGE/PROBLEM URL]
+Dataset: [SHIPD DATASET URL]
+
+Task 2:
+Challenge: [SHIPD CHALLENGE/PROBLEM URL]
+Dataset: [SHIPD DATASET URL]
+
+Task 3:
+Challenge: [SHIPD CHALLENGE/PROBLEM URL]
+Dataset: [SHIPD DATASET URL]
+
+Task 4:
+Challenge: [SHIPD CHALLENGE/PROBLEM URL]
+Dataset: [SHIPD DATASET URL]
+
+Task 5:
+Challenge: [SHIPD CHALLENGE/PROBLEM URL]
+Dataset: [SHIPD DATASET URL]
+```
+
+Replace every bracketed value before sending. Dataset suggestions are optional,
+but five challenge/dataset URL pairs are required for the bot to finish five
+live Shipd drafts through Run Agents. If you omit suggestions, it searches for
+candidate datasets itself. If you omit the Shipd pairs, it can research and
+build local packages but cannot know which five platform drafts to edit.
+
+For a run that stops before launching agents, remove `through Run Agents` from
+the first line. You may also invoke the router explicitly with
+`/eris-challenge-automation`, but that is optional.
 
 Claude-native adapters live under `.claude/`, while `.codex/skills/` remains
 the single canonical policy copy. See `CLAUDE_SETUP.md` for the one-time setup
 and the runtime differences.
+
+### What Claude creates and what you will see
+
+- Claude creates five controller slots and five `eris-slot-worker` subagents,
+  one isolated context per task. If Claude's concurrency limit is lower than
+  five, it runs them in waves without reducing the five-task target.
+- These are Claude subagents inside the coordinating Claude Code session, not
+  five permanent top-level chats in a sidebar. Their durable progress is saved
+  by the local controller, so a later session can resume it.
+- Playwright opens a visible browser window. Each worker owns the exact dataset
+  and challenge pair and opens separate tabs for them. This is an external
+  headed browser controlled through Claude, not a Codex-style embedded browser.
+- After the one-time trust approval and Shipd login, Claude performs the normal
+  field edits, uploads, rebuilds, checks, fixes, Mark as Ready, Prepare, and the
+  requested Run Agents launches automatically. Authentication/CAPTCHA and a
+  safety-enforced destructive cloud action can still require user involvement.
 
 ## Command meanings
 

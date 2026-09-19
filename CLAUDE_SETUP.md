@@ -32,6 +32,32 @@ Copy `RESILIENT_5_TASK_PROMPT.md` when you want the complete five-task request.
 Add `through Run Agents` only when Claude should click Run Agents; otherwise it
 stops when every check is green and that button is visibly available.
 
+## Exact first run
+
+You do not need to paste `CLAUDE.md`; Claude Code discovers it automatically.
+
+1. Send `Ready`.
+2. If the controller is ready, paste the complete prompt under **First five-task
+   prompt to paste** in `README.md`, replacing all bracketed values.
+3. If `Ready` reports an unfinished batch, send `Status & Fix` instead. This
+   resumes the saved slots rather than creating duplicates.
+
+For end-to-end platform work, supply exactly five dataset/challenge URL pairs.
+Candidate dataset suggestions are optional because the workers can search
+official sources themselves. The Shipd pairs are not optional: they identify
+the editable drafts that each worker must populate.
+
+`Create 5 Tasks` creates five immutable controller slots and dispatches one
+`eris-slot-worker` subagent for each. Workers may run in waves when the Claude
+concurrency limit is below five. They are separate subagent contexts within the
+main Claude Code session, not five permanent top-level chats.
+
+The project Playwright MCP server opens a visible headed browser window and
+separate dataset/challenge tabs for the linked drafts. It is not an embedded
+Claude chat browser. After one-time MCP trust and Shipd authentication, the
+workflow proceeds automatically until the requested stopping stage, subject to
+authentication/CAPTCHA and safety-enforced confirmation boundaries.
+
 ## Important differences from Codex
 
 - Claude Code uses project subagents rather than persistent Codex sidebar tasks.

@@ -2,6 +2,8 @@
 
 Create 5 Tasks and finish all five autonomously until every check is green and the Run Agents button is visibly available. Do not click Run Agents unless I explicitly say "through Run Agents" in this invocation.
 
+Create one immutable worker assignment per task slot: one visible Codex worker task when running in Codex, or one `eris-slot-worker` project subagent when running in Claude Code. If runtime concurrency is lower than five, run workers in waves without reducing the five-task target.
+
 The number 5 is a success target, not an attempt limit. The batch is complete only after five distinct Shipd challenge drafts pass every dataset and challenge check with no yellow or red result and visibly expose Run Agents. If any proposed dataset or formulation fails a source, license, novelty, scale, truth, leakage, shortcut, metric, stability, or runtime gate, preserve the evidence as a rejected candidate attempt and immediately search for a distinct replacement in the same task slot. Do not count the failed candidate toward the five, do not discard or remap that slot's supplied Shipd pair, and do not weaken any quality gate.
 
 Evaluate my suggested datasets first, then independently search official sources for better replacements or additional candidates as necessary. Continue scouting, piloting, building, and replacing candidates until all five slots have valid `Proceed` packages and all five are check-clean with Run Agents available.

@@ -20,9 +20,12 @@ skills remain authoritative for challenge quality and lifecycle policy.
 
 ## Workers and persistence
 
-- Use one `eris-slot-worker` project subagent per immutable batch slot when
-  parallelism is useful and capacity permits. Give it exactly one slot, its
-  fixed URL pair, the batch/task IDs, and the target completion stage.
+- For `Create X Task(s)`, create exactly X immutable controller slots and one
+  `eris-slot-worker` project subagent assignment per slot. Start as many as the
+  runtime safely permits and queue or run the rest in waves. Never reduce X or
+  collapse multiple slots into one worker because concurrency is limited. Give
+  each worker exactly one slot, its fixed URL pair, the batch/task IDs, and the
+  target completion stage.
 - Claude subagents are visible in the current Claude session but are not
   persistent Codex sidebar tasks. The JSON controller ledger, registry, and
   package state are the durable checkpoint across Claude sessions.

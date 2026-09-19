@@ -24,3 +24,10 @@ truth, leakage, shortcut, stability, grader, validation, or safety gates.
 Use the controller ledger throughout. A failed candidate is an attempt inside
 its immutable slot, not a finished slot. A transient rate limit, reconnect, or
 expired session is a retryable runtime condition, not a rejection.
+
+For `Create X Task(s)`, create exactly X immutable controller slots and assign
+one `eris-slot-worker` project subagent to each slot. Dispatch them immediately
+when capacity permits; otherwise queue or run workers in waves. A concurrency
+limit changes scheduling, never the requested success count. The coordinator
+must remain active, reconcile worker checkpoints, and re-dispatch unfinished
+slots until every slot reaches the invocation's goal stage.

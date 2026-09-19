@@ -2,7 +2,7 @@
 
 This folder is the complete command center for reusable Project Eris challenge work. All persistent rules, skills, registries, evidence, controller state, working files, and challenge outputs must remain beneath this folder.
 
-- For `Ready`, `Status`, `Status & Fix`, `Create X Task(s)`, supplied Shipd challenge/dataset link pairs, or close equivalents, load and follow `.codex/skills/eris-challenge-automation/SKILL.md`.
+- For `Ready`, `Status`, `Status & Fix`, `Create X Task(s)`, supplied Shipd challenge/dataset link pairs, or close equivalents, load and follow `.codex/skills/eris-challenge-automation/SKILL.md`. In Claude Code, enter through `.claude/skills/eris-challenge-automation/SKILL.md`, which loads that canonical copy and applies only the documented runtime translation.
 - Before each workflow, run `validate-portable.ps1`. If it fails, repair the local bundle; never fall back to an older external workspace.
 - Read `Config/workspace.json` before resolving rules, registry, output, or controller paths.
 - Use `eris_automation/run.ps1` for the durable local ledger.
@@ -16,7 +16,7 @@ This folder is the complete command center for reusable Project Eris challenge w
 - Resolve every yellow and red finding genuinely. An explicit current request to finish supplied exact pairs through Run Agents authorizes the in-scope platform workflow without repetitive confirmations. Never bypass tool-enforced confirmation, authentication, CAPTCHA, or permission controls.
 - Keep the batch, registry, package, and live platform states distinct and timestamp live observations.
 - Rate limits, reconnects, and browser authentication failures are retryable runtime conditions. Checkpoint and resume; never report the affected candidate as rejected. Do not claim the batch is complete while the controller reports `remaining_to_goal > 0`.
-- Multi-task batches use one persistent user-visible Codex worker task per slot. Bind every worker thread ID in the controller. Each worker must explicitly use a visible Codex in-app browser with separate preserved dataset and challenge tabs; do not use Chrome extension profiles for Shipd.
+- Multi-task batches use one worker per immutable slot. In Codex, use a persistent user-visible worker task and bind its thread ID. In Claude Code, use the bundled project subagent and bind a stable `claude:<batch-id>:<task-id>` worker label when no durable worker ID is exposed. Follow the runtime-specific browser mapping and keep separate exact dataset/challenge tabs.
 - Never ask permission for placeholder replacement, ordinary field/script changes, uploads, rebuilds, validation, Mark as Ready, Prepare, or checks on the supplied drafts. Centralize browser-mandated always-confirm actions such as cloud deletion through one grouped supervisor question.
 - Stop a submission workflow immediately after Run Agents is confirmed.
 
@@ -25,4 +25,4 @@ This folder is the complete command center for reusable Project Eris challenge w
 - Resolve every configured path relative to this bot root.
 - Store new source downloads, pilots, packages, audit outputs, and challenge artifacts under `Workspace/output/` or `Working/`.
 - Do not depend on junctions, symlinks, or files under the former `create_challenge_synthetic` roots on `C:`, `D:`, or `E:`.
-- Internet sources, authenticated Shipd, Codex browser control, Python, and installed runtime libraries are execution services, not workspace-file dependencies. They may be used normally, but all durable results must be saved inside this folder.
+- Internet sources, authenticated Shipd, Codex or Claude Code, browser control, Python, Node.js where required, and installed runtime libraries are execution services, not workspace-file dependencies. They may be used normally, but all durable results must be saved inside this folder.

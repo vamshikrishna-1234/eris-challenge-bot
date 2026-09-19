@@ -2,7 +2,7 @@
 
 This is the reusable Project Eris challenge-creation bot. It contains the controller, skills, rules, templates, lightweight registry metadata, accepted examples, and duplicate-check references. Raw datasets, model weights, old challenge outputs, and historical working copies are intentionally not bundled; each new task downloads only the source data it needs into the ignored runtime folders.
 
-## Start a new Codex chat
+## Start in Codex
 
 1. Open this folder in Codex:
 
@@ -20,6 +20,19 @@ This is the reusable Project Eris challenge-creation bot. It contains the contro
 
 That is all you need to provide. The workspace instructions route the command through the bundled Eris skill and durable controller.
 
+## Start in Claude Code
+
+1. Open PowerShell in this folder.
+2. Run `./run-claude.ps1`.
+3. Approve the trusted project and Playwright MCP server once, then sign in to
+   Shipd in the visible browser if needed.
+4. Send the same commands listed above, or invoke
+   `/eris-challenge-automation` explicitly.
+
+Claude-native adapters live under `.claude/`, while `.codex/skills/` remains
+the single canonical policy copy. See `CLAUDE_SETUP.md` for the one-time setup
+and the runtime differences.
+
 ## Command meanings
 
 - **Ready:** safely closes a fully terminal batch and prepares the controller for new work. It never deletes packages or evidence.
@@ -32,7 +45,7 @@ You can also include the URL pairs in the original `Create X Tasks` request. The
 
 Rate limits and reconnects are automatically checkpointed and retried. An expired authenticated Shipd session may require you to sign in again, because the bot cannot bypass authentication or CAPTCHA; this keeps the slot pending and resumable rather than rejecting it. The controller never calls a batch complete until all X tasks reach their configured goal stage.
 
-For multi-task runs, the coordinator creates one visible Codex worker task per slot. Open any worker from the sidebar to see its visible in-app browser with separate dataset and challenge tabs. The workflow explicitly avoids Chrome extension profiles, which can have incompatible authentication.
+For multi-task runs, Codex creates one visible worker task per slot. Claude Code uses one project subagent per slot and a headed Playwright MCP browser. In both runtimes, the durable controller—not chat memory—is the source of truth, and the exact dataset/challenge pair remains bound to its slot.
 
 All ordinary Shipd draft work is pre-authorized by supplying the exact links. The bot will not ask about changing placeholder titles/descriptions, uploading verified files, rebuilding, validating, marking ready, preparing, or checking. The browser safety layer still requires action-time confirmation before cloud deletion; the supervisor groups those into one question. For a true zero-question run, leave the draft's Data Files empty instead of uploading disposable placeholder archives.
 
@@ -44,7 +57,7 @@ For the recommended resilient five-task request, paste the template in `RESILIEN
 - No external file or folder is required for the bot's code, policy, templates, lightweight registry, or controller. Source datasets are fetched from their verified official URLs as part of each new challenge.
 - `Working`, `Workspace/output`, and live batch/task records are runtime-only and ignored by Git, keeping the repository small while preserving local resumability.
 - Run `./validate-portable.ps1` after copying or moving the folder. It verifies the internal paths, bundled skills, living rules, registry, controller, and local ledger.
-- The machine still needs Python, Codex with browser-control capability, internet access, and an authenticated Shipd session. Those are runtime services; they are not hidden file dependencies.
+- The machine still needs Python, internet access, an authenticated Shipd session, and either Codex with browser control or Claude Code plus Node.js 20+ and the configured Playwright MCP server. Those are runtime services; they are not hidden file dependencies.
 
 ## Optional terminal access
 

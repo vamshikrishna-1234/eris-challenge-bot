@@ -39,7 +39,10 @@ $pathFields = @(
     'bundled_skill',
     'factory_skill',
     'submission_skill',
-    'solver_rules_skill'
+    'solver_rules_skill',
+    'claude_skill',
+    'claude_runtime_reference',
+    'claude_mcp_config'
 )
 
 $resolved = @{}
@@ -58,7 +61,7 @@ foreach ($field in @('shared_project_root', 'challenge_registry', 'rules', 'chal
     if (-not $ok) { $failures.Add("Missing directory for $field") }
 }
 
-foreach ($field in @('controller', 'bundled_skill', 'factory_skill', 'submission_skill', 'solver_rules_skill')) {
+foreach ($field in @('controller', 'bundled_skill', 'factory_skill', 'submission_skill', 'solver_rules_skill', 'claude_skill', 'claude_runtime_reference', 'claude_mcp_config')) {
     $ok = $resolved[$field] -and (Test-Path -LiteralPath $resolved[$field] -PathType Leaf)
     $checks[$field] = [bool]$ok
     if (-not $ok) { $failures.Add("Missing file for $field") }
@@ -66,15 +69,26 @@ foreach ($field in @('controller', 'bundled_skill', 'factory_skill', 'submission
 
 $requiredFiles = @(
     'AGENTS.md',
+    'CLAUDE.md',
+    'CLAUDE_SETUP.md',
     'README.md',
     'PORTABILITY.md',
     'BUNDLE_MANIFEST.json',
     'RESILIENT_5_TASK_PROMPT.md',
     'run.ps1',
+    'run-claude.ps1',
+    '.mcp.json',
     'eris_automation\Tools\flow.py',
     '.codex\skills\eris-challenge-automation\references\linked-drafts.md',
     '.codex\skills\eris-challenge-automation\references\resilience.md',
     '.codex\skills\eris-challenge-automation\references\visible-workers.md',
+    '.claude\skills\eris-challenge-automation\SKILL.md',
+    '.claude\skills\eris-challenge-automation\references\claude-runtime.md',
+    '.claude\skills\eris-challenge-factory\SKILL.md',
+    '.claude\skills\eris-submission-pool\SKILL.md',
+    '.claude\skills\eris-solver-rules\SKILL.md',
+    '.claude\agents\eris-slot-worker.md',
+    '.claude\agents\eris-supervisor.md',
     'Workspace\project\rules\LATEST.md',
     'Workspace\project\rules\prev_reviews.txt',
     'Workspace\project\.cursor\rules\challenge-creation.mdc',
@@ -95,18 +109,29 @@ foreach ($item in $reparsePoints) {
 
 $coreFiles = @(
     'AGENTS.md',
+    'CLAUDE.md',
+    'CLAUDE_SETUP.md',
     'README.md',
     'RESILIENT_5_TASK_PROMPT.md',
     'PORTABILITY.md',
     'Config\workspace.json',
     'run.ps1',
+    'run-claude.ps1',
+    '.mcp.json',
     'eris_automation\run.ps1',
     '.codex\skills\eris-challenge-automation\SKILL.md',
     '.codex\skills\eris-challenge-automation\references\linked-drafts.md',
     '.codex\skills\eris-challenge-automation\references\resilience.md',
     '.codex\skills\eris-challenge-automation\references\visible-workers.md',
     '.codex\skills\eris-challenge-factory\SKILL.md',
-    '.codex\skills\eris-submission-pool\SKILL.md'
+    '.codex\skills\eris-submission-pool\SKILL.md',
+    '.claude\skills\eris-challenge-automation\SKILL.md',
+    '.claude\skills\eris-challenge-automation\references\claude-runtime.md',
+    '.claude\skills\eris-challenge-factory\SKILL.md',
+    '.claude\skills\eris-submission-pool\SKILL.md',
+    '.claude\skills\eris-solver-rules\SKILL.md',
+    '.claude\agents\eris-slot-worker.md',
+    '.claude\agents\eris-supervisor.md'
 )
 $legacyRoots = @(
     'C:\Users\vamsh\Downloads\create_challenge_synthetic',
@@ -155,7 +180,11 @@ try {
         '.codex\skills\eris-challenge-automation',
         '.codex\skills\eris-challenge-factory',
         '.codex\skills\eris-submission-pool',
-        '.codex\skills\eris-solver-rules'
+        '.codex\skills\eris-solver-rules',
+        '.claude\skills\eris-challenge-automation',
+        '.claude\skills\eris-challenge-factory',
+        '.claude\skills\eris-submission-pool',
+        '.claude\skills\eris-solver-rules'
     )
     $allSkillsValid = $true
     foreach ($relative in $skillFolders) {
@@ -170,6 +199,18 @@ catch {
     $failures.Add("Bundled skill validation failed: $($_.Exception.Message)")
 }
 
+try {
+    $mcp = Get-Content -Raw -LiteralPath (Join-Path $root '.mcp.json') | ConvertFrom-Json
+    $playwright = $mcp.mcpServers.playwright
+    $mcpValid = $playwright.command -eq 'npx' -and @($playwright.args) -contains '@playwright/mcp@latest'
+    $checks['claude_playwright_mcp_config'] = [bool]$mcpValid
+    if (-not $mcpValid) { $failures.Add('Claude Playwright MCP configuration is invalid') }
+}
+catch {
+    $checks['claude_playwright_mcp_config'] = $false
+    $failures.Add("Claude MCP configuration failed: $($_.Exception.Message)")
+}
+
 $result = [ordered]@{
     schema_version = 1
     bot_root = $root
@@ -177,7 +218,7 @@ $result = [ordered]@{
     portable = ($failures.Count -eq 0)
     checks = $checks
     failures = @($failures)
-    runtime_requirements = @('Codex', 'Python', 'internet', 'browser-control capability', 'authenticated Shipd session')
+    runtime_requirements = @('Codex or Claude Code', 'Python', 'Node.js 20+ for Claude Playwright MCP', 'internet', 'browser-control capability', 'authenticated Shipd session')
 }
 $result | ConvertTo-Json -Depth 6
 

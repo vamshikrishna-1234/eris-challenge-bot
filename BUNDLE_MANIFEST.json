@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "created_at": "2026-09-19T11:00:00+05:30",
   "portable_root": ".",
   "path_mode": "relative_to_bot_root",
@@ -8,6 +8,14 @@
     {
       "path": ".codex/skills",
       "description": "Automation (including persistent-success recovery, zero-routine-permission linked-draft editing, visible workers, and the default all-green stop-before-Run-Agents endpoint), factory, submission-pool, and solver-rule skills with all references, scripts, and assets"
+    },
+    {
+      "path": ".claude",
+      "description": "Claude Code project skill adapters, runtime mapping, and per-slot/supervisor subagents; all adapters load the canonical bundled skills rather than duplicating policy"
+    },
+    {
+      "path": "CLAUDE.md, CLAUDE_SETUP.md, .mcp.json, run-claude.ps1",
+      "description": "Claude Code project instructions, setup guide, visible Playwright browser bridge, and validated auto-mode launcher"
     },
     {
       "path": "eris_automation",
@@ -49,8 +57,9 @@
   ],
   "preserved_output_packages": [],
   "runtime_requirements": [
-    "Codex",
+    "Codex or Claude Code",
     "Python available as py or python",
+    "Node.js 20+ when using Claude Code browser automation",
     "internet access",
     "installed browser-control capability",
     "authenticated Shipd session"

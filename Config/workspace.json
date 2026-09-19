@@ -12,5 +12,8 @@
   "factory_skill": ".codex\\skills\\eris-challenge-factory\\SKILL.md",
   "submission_skill": ".codex\\skills\\eris-submission-pool\\SKILL.md",
   "solver_rules_skill": ".codex\\skills\\eris-solver-rules\\SKILL.md",
+  "claude_skill": ".claude\\skills\\eris-challenge-automation\\SKILL.md",
+  "claude_runtime_reference": ".claude\\skills\\eris-challenge-automation\\references\\claude-runtime.md",
+  "claude_mcp_config": ".mcp.json",
   "external_file_dependencies": []
 }

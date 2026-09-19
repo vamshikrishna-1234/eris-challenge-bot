@@ -1,0 +1,17 @@
+{
+  "homepageCardsFound": 6,
+  "skippedAlreadyBeforeDetail": 5,
+  "detailPagesAttempted": 1,
+  "appendedTotal": 1,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "Other": 1
+    },
+    "Non-CPU": {}
+  },
+  "veryNovelAdded": [
+    "Recover Crystallographic Assembly Operators"
+  ],
+  "limitations": []
+}

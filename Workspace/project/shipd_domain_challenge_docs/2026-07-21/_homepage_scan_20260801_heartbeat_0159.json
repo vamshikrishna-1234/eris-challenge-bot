@@ -1,0 +1,42 @@
+{
+  "scrapedAt": "2026-08-01T01:59:03+05:30",
+  "source": "Shipd Eris home page heartbeat",
+  "mdFilesScanned": 54,
+  "existingIds": 326,
+  "homepageCardsFound": 0,
+  "skippedAlready": 0,
+  "newCandidateCards": 0,
+  "homepageCards": [],
+  "newCandidates": [],
+  "results": [],
+  "appended": [],
+  "novel": [],
+  "pageState": {
+    "url": "https://shipd.ai/quests/eris/",
+    "title": "Project Eris \\u2014 Home",
+    "anchorCount": 6,
+    "bodyMissing": false,
+    "textStart": [
+      "Welcome back, Emmadi",
+      "Track your ongoing challenges and datasets in one place.",
+      "Get started",
+      "3/5 complete",
+      "Show",
+      "Explore",
+      "My Work",
+      "25",
+      "Set interests",
+      "Help"
+    ]
+  },
+  "failures": [
+    {
+      "stage": "navigate_or_reload",
+      "error": "Timed out waiting for the Shipd Eris tab to navigate to https://shipd.ai/quests/eris/, but the authenticated home shell was readable afterward."
+    }
+  ],
+  "limitations": [
+    "Authenticated Shipd Eris homepage shell loaded, but no `/challenges/` or `/problems/` card links were visible in the Explore/feed during this bounded scan.",
+    "The browser reported a navigation timeout while loading/reloading the homepage; readable page state was still captured."
+  ]
+}

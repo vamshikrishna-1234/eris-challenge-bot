@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-07-22T10:07:37+05:30",
+  "homepageCount": 62,
+  "alreadyRecordedBeforeDetail": 60,
+  "newCandidates": 2,
+  "appended": 2,
+  "skippedAfterDetail": 0,
+  "failures": 0,
+  "by_bucket": {
+    "CPU": {
+      "Computer-Vision.md": 1,
+      "Other.md": 1
+    },
+    "Non-CPU": {}
+  },
+  "cpu_total": 62,
+  "non_cpu_total": 8,
+  "appended_items": [
+    {
+      "id": "jx7b4371b9knbzgvs01jvbgssh8arenq",
+      "title": "CT Tree-Core Crossdating And Ring Evidence Ledger",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx7b57cajav8q4tbtdnyycz1598asnk3",
+      "title": "Spoken Image Tour Route Reconstruction",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    }
+  ]
+}

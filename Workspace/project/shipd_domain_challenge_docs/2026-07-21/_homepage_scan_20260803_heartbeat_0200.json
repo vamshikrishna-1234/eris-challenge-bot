@@ -1,0 +1,37 @@
+{
+  "scrapedAt": "2026-08-03T02:08:08+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\.codex_tmp\\shipd_heartbeat_20260803_0200_details.json",
+  "payload": {
+    "scrapedAt": "2026-08-02T20:30:30.689Z",
+    "source": "Shipd Eris homepage heartbeat",
+    "homepage": {
+      "homepageCardsFound": 0,
+      "skippedAlready": 0,
+      "candidates": [],
+      "failures": [
+        "Homepage initially showed Unable to load Eris dashboard data.",
+        "Two reload retries failed; the page remained blank and the browser session timed out."
+      ]
+    },
+    "detailRun": {
+      "details": [],
+      "failures": []
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 0,
+    "skippedAlreadyBeforeDetail": 0,
+    "detailPagesAttempted": 0,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "CPU": {},
+      "Non-CPU": {}
+    },
+    "veryNovelAdded": [],
+    "limitations": [
+      "Detail or homepage failures captured in cache: 2."
+    ]
+  }
+}

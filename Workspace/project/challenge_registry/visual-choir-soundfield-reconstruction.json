@@ -1,0 +1,21 @@
+﻿{
+    "title":  "Visual Choir Soundfield Reconstruction",
+    "slug":  "visual-choir-soundfield-reconstruction",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fc03a-73a2-7dd1-a060-47c56b9bd9b5",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Visual Choir Soundfield Reconstruction",
+    "dataset":  "MULTIVOX v1 (Zenodo 17058101 and 17065497)",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-02T07:35:45.1533762+05:30",
+    "updated_at":  "2026-08-02T08:58:56.9825879+05:30",
+    "blocker":  "Written author permission is required before performance-media acquisition: the official MULTIVOX record discourages GenAI model training, the proposed benchmark trains an audio-visual generative reconstruction model, and Eris states that contributions become training data for future AI models.",
+    "notes":  [
+                  "No performance media was downloaded, extracted, transformed, uploaded, or prepared.",
+                  "Official README, metadata.csv, and the technical supplement were inspected and their MD5 checksums matched Zenodo.",
+                  "Source evidence: E:\\create_challenge_synthetic_output_folder\\sprint_4\\Visual Choir Soundfield Reconstruction\\SOURCE_VERIFICATION.md",
+                  "Blocked handoff: E:\\create_challenge_synthetic_output_folder\\sprint_4\\Visual Choir Soundfield Reconstruction\\BLOCKED_HANDOFF.md",
+                  "Full audit: E:\\create_challenge_synthetic_output_folder\\sprint_4\\Visual Choir Soundfield Reconstruction\\AUDIT_REPORT.md",
+                  "Secondary unresolved gate: Eris documents DataFrame/CSV submissions but not arbitrary multichannel-audio or image output archives."
+              ]
+}

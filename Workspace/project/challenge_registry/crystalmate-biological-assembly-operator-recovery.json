@@ -1,0 +1,739 @@
+{
+    "title": "Crystallographic Chain-Copy Assembly Synthesis",
+    "slug": "crystalmate-biological-assembly-operator-recovery",
+    "status": "draft",
+    "owner_machine": "VAMSHI",
+    "owner_task": "019fef39-fc62-7a80-925c-59daceb63f63",
+    "output_folder": "D:\\1_challenge\\CrystalMate Biological Assembly Operator Recovery",
+    "dataset": "Protein Data Bank PDBx/mmCIF biological assembly records",
+    "license": "CC0 1.0",
+    "created_at": "2026-08-11T10:37:32.8951186+05:30",
+    "updated_at": "2026-09-14T18:31:00+05:30",
+    "blocker": "The hardened v3 passes exact local replays of both supplied agent architectures, but the current Shipd problem is locked at 3/3 evaluation rounds consumed by v2. No v3 Shipd agents were run and nothing was submitted. The measured public-source lookup gate also remains unresolved under factory policy.",
+    "stage": "local_v3_exact_trajectory_replay_passed_platform_agents_deferred",
+    "evidence": {
+        "review_revision_2026_09_07": {
+            "reviewer": "brianaltan",
+            "live_status": "Revision Requested",
+            "feedback": "challenge setup very close to a draft ones, i think salvagable might need to change challenge setup",
+            "identified_neighbor": "Pathway Diagram Interaction Program Repair",
+            "material_change": "Removed the corrupted proposed program and minimal edit-script target. The revised task directly synthesizes selected chains, affine operators, and the induced chain-copy interface graph from anonymized geometry and noisy candidate-contact evidence.",
+            "new_submission_columns": [
+                "id",
+                "assembly_program_json",
+                "interface_graph_json",
+                "ambiguity_json",
+                "confidence"
+            ],
+            "prepared_rows": {
+                "train": 1595,
+                "test": 405,
+                "family_signatures": 1931
+            },
+            "scores": {
+                "perfect": 1.0,
+                "sample_submission": 0.28993526919681106,
+                "identity_first": 0.39515954096567185,
+                "operator_count_prior": 0.35913049645368866,
+                "all_candidates": 0.22999703803621022,
+                "best_contact_only": 0.23319693248979276,
+                "empty": 0.1406550518518519,
+                "program_oracle_graph_empty": 0.552255051851852,
+                "graph_oracle_program_empty": 0.5207433583652619,
+                "malformed_all_rows": 0.0
+            },
+            "deterministic_full_rebuild": true,
+            "live_prepare_passed": true,
+            "live_pre_submission_checks": "7/7 passed with no warning",
+            "live_agent_round": {
+                "round": "third and final evaluation round",
+                "run_1": "failed_no_score",
+                "run_2": 0.812,
+                "run_3": 0.8222,
+                "best_score": 0.8222,
+                "difficulty_result": "did_not_pass_cleanly",
+                "difficulty_message": "Agent results are high or variable. Review difficulty before submission.",
+                "evaluation_state": "Evaluation limit reached",
+                "resulting_status": "Pending Review"
+            },
+            "source_lookup_waived_by_user": true,
+            "local_audit": "D:\\1_challenge\\CrystalMate Biological Assembly Operator Recovery\\AUDIT_REPORT.md"
+        },
+        "difficulty_revision_2026_09_08": {
+            "trigger": "Final v2 Shipd agents scored 0.8120 and 0.8222; one additional run failed without a score.",
+            "root_causes": [
+                "The identity operator was a free scored target on nearly every row.",
+                "Candidate contact construction depended on hidden program membership, creating operator-degree and edge-label signatures.",
+                "The retained corpus included many empty interface graphs, allowing an empty-graph shortcut."
+            ],
+            "changes": [
+                "Made the asymmetric-unit identity copy implicit as BASE and removed it from oper_expression scoring.",
+                "Applied the same bounded rigid observation process to native-selected and alternative non-identity candidates.",
+                "Selected candidate contacts from geometry without branching on hidden program or graph membership.",
+                "Retained only rows with at least one non-identity generator and a nonempty native-derived interface graph.",
+                "Made graph/program referential consistency a strict row-validity requirement in grade.py."
+            ],
+            "prepared_rows": {
+                "train": 1079,
+                "test": 280,
+                "family_signatures": 1308
+            },
+            "scores": {
+                "perfect": 1.0,
+                "sample_submission": 0.1490652873015873,
+                "empty": 0.03394933333333335,
+                "identity_like_prior": 0.11667369523809525,
+                "operator_count_prior": 0.11667369523809525,
+                "all_candidates": 0.17326469200582137,
+                "best_contact_only": 0.17168763995835626,
+                "best_geometric_search": 0.143022,
+                "extra_trees_constrained_decoder": 0.42037809773664353,
+                "lightgbm_constrained_decoder": 0.41640852458028227,
+                "program_oracle_graph_empty": 0.44554933333333335,
+                "graph_oracle_program_empty": 0.0,
+                "malformed_all_rows": 0.0
+            },
+            "candidate_auc": {
+                "v2_chain": 0.918415,
+                "v2_operator": 0.989325,
+                "v2_edge": 0.982557,
+                "v3_chain": 0.920086,
+                "v3_operator": 0.942775,
+                "v3_edge": 0.964567
+            },
+            "deterministic_full_rebuild": true,
+            "all_baselines_below_0_65": true,
+            "live_uploaded": true,
+            "live_status": "Draft - v3 Prepare succeeded and 7/7 challenge checks passed",
+            "live_prepare_completed_at": "2026-09-08T17:24:21+05:30",
+            "live_dataset_check": "Duplicate Detection: Validation passed",
+            "live_challenge_checks": {
+                "passed": 7,
+                "total": 7,
+                "failed": 0
+            },
+            "agent_trials_started_for_v3": false
+        },
+        "trajectory_audit_2026_09_10": {
+            "attachments": [
+                "C:\\Users\\vamsh\\Downloads\\shipd-trajectory-jx7e3dskps24c6g2297yfqfn058at93x-run2.html",
+                "C:\\Users\\vamsh\\Downloads\\shipd-trajectory-jx7e3dskps24c6g2297yfqfn058at93x-run3.html"
+            ],
+            "trajectory_version": "v2 (1595 train / 405 test)",
+            "run_2_live_score": 0.812,
+            "run_3_live_score": 0.8222,
+            "run_3_oof": {
+                "edge_auc": 0.99953,
+                "row_nonempty_auc": 0.99488,
+                "operator_f1": 0.9777,
+                "graph_f1": 0.9622,
+                "mean_row_score": 0.9664
+            },
+            "grader_exploit_found": false,
+            "root_cause": "v2 public-feature/target separability, especially explicit identity detection and hidden-membership-dependent candidate contacts",
+            "covered_by_v3": true,
+            "local_grader_change": "Reject fractional numeric ids before coercion; expanded structural-invalid and row-local-malformed regression coverage.",
+            "local_smoke_passed": true,
+            "live_state": "Draft; 7/7 checks passed; Evaluation limit reached; Run agents disabled"
+        },
+        "exact_trajectory_replay_2026_09_14": {
+            "purpose": "Reproduce the supplied high-scoring v2 agent model architectures against the hardened v3 prepared data before any further platform action.",
+            "attachments": [
+                {
+                    "path": "C:\\Users\\vamsh\\Downloads\\shipd-trajectory-jx7e3dskps24c6g2297yfqfn058at93x-run2 (1).html",
+                    "sha256": "DCAFC42CE3D5EE10AB7CF15E61C15918D470E778D978A1C43B68441DE6D653CA"
+                },
+                {
+                    "path": "C:\\Users\\vamsh\\Downloads\\shipd-trajectory-jx7e3dskps24c6g2297yfqfn058at93x-run3 (1).html",
+                    "sha256": "5C9493DFF8537068AACCBA32426DBFFC285A741E2E30DAE9F36166F5781DE623"
+                }
+            ],
+            "methodology": "Preserved the trajectories' model families, rich geometric feature families, five-fold row-level CV, hyperparameters, and run-3 blend weights. Added a compatibility adapter for implicit BASE and retuned only constrained-decoder thresholds using OOF training predictions because the old >14-operators and empty-graph branches are invalid under v3.",
+            "private_answer_use": "Final hidden scoring only; no hidden label was used for fitting or threshold selection.",
+            "run_2": {
+                "architecture": "Three-head LightGBM chain/operator/edge pipeline with constrained decoding",
+                "oof_score": 0.3299971425916989,
+                "hidden_score": 0.28132003104667036,
+                "oof_fold_scores": [
+                    0.3380036587946983,
+                    0.33126525844144644,
+                    0.32869051956068623,
+                    0.32966763219006845,
+                    0.3223231160710362
+                ],
+                "oof_fold_std": 0.005028293765497775,
+                "auc": {
+                    "chain": 0.901007262101644,
+                    "operator": 0.9629373848987107,
+                    "edge": 0.9919988895587338
+                }
+            },
+            "run_3": {
+                "architecture": "LightGBM/XGBoost/CatBoost geometric edge ensemble with weights 0.50/0.30/0.20 and constrained decoding",
+                "oof_score": 0.22876954300218091,
+                "hidden_score": 0.1689846183105149,
+                "oof_fold_scores": [
+                    0.22703766548087123,
+                    0.22623776681960014,
+                    0.24412332252623917,
+                    0.2325961829692941,
+                    0.21378339690891265
+                ],
+                "oof_fold_std": 0.009842505996972593,
+                "edge_auc": 0.9928367876545264
+            },
+            "best_hidden_score": 0.28132003104667036,
+            "remaining_headroom": 0.7186799689533296,
+            "architecture_score_gap": 0.11233541273615547,
+            "strict_score_gate_below_0_65": true,
+            "meaningful_architecture_variance_at_least_0_03": true,
+            "local_smoke_passed": true,
+            "shipd_agents_run": false,
+            "submitted": false,
+            "artifacts": "D:\\1_challenge\\CrystalMate Biological Assembly Operator Recovery\\_trajectory_replay_2026_09_14"
+        },
+        "official_sources": [
+            "https://www.wwpdb.org/about/usage-policies",
+            "https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/biological-assemblies",
+            "https://mmcif.rcsb.org/dictionaries/mmcif_pdbx_v50.dic/Categories/pdbx_struct_assembly_gen.html",
+            "https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v40.dic/Categories/pdbx_struct_oper_list.html",
+            "https://files.rcsb.org/download/{PDB_ID}.cif.gz"
+        ],
+        "license_evidence": "Official wwPDB usage policy states PDB archive data files are available under CC0 1.0 Public Domain Dedication; attribution to original structure authors is encouraged where possible.",
+        "native_target_evidence": {
+            "verified": true,
+            "source": "Downloaded official mmCIF files and RCSB GraphQL assembly records.",
+            "representative_entries": [
+                "3C70",
+                "1OUT",
+                "2HHB",
+                "1HV4"
+            ],
+            "fields": [
+                "_pdbx_struct_assembly_gen.asym_id_list",
+                "_pdbx_struct_assembly_gen.oper_expression",
+                "_pdbx_struct_oper_list.matrix[1][1..3]",
+                "_pdbx_struct_oper_list.matrix[2][1..3]",
+                "_pdbx_struct_oper_list.matrix[3][1..3]",
+                "_pdbx_struct_oper_list.vector[1..3]",
+                "_atom_site.Cartn_x/y/z for compact chain geometry"
+            ]
+        },
+        "measured_scale_prior": "Official RCSB API scout query found 165,811 X-ray assembly records with multiple protein-chain instances; distributed 120-record audit found 44 records with non-identity assembly operators.",
+        "nearest_platform_neighbor": "Macromolecular Assembly Graph Gap Recovery predicts missing molecule identities and stoichiometries in a partial assembly graph. CrystalMate must instead predict executable 3D symmetry/operator programs and chain-copy contact graphs from anonymized geometry.",
+        "output_root": "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3",
+        "raw_size_rule": "Use official mmCIF files directly or a clean untouched official subset under approximately 1 GB. Do not upload prepared train/test data as raw source.",
+        "pilot_artifacts": {
+            "active_folder": "D:\\1_challenge\\_pilot",
+            "pilot_summary_json": "D:\\1_challenge\\_pilot\\pilot_summary.json",
+            "pilot_report": "D:\\1_challenge\\_pilot\\PILOT_AUDIT_REPORT.md",
+            "audit_script": "D:\\1_challenge\\_pilot\\crystalmate_pilot_audit.py",
+            "source_files_dir": "D:\\1_challenge\\_pilot\\pilot_sources"
+        },
+        "scale_gate": {
+            "candidate_query": "X-RAY DIFFRACTION assemblies with rcsb_assembly_info.polymer_entity_instance_count_protein > 1",
+            "candidate_assembly_count": 165811,
+            "candidate_assemblies_fetched": 165811,
+            "usable_native_assembly_count": 165811,
+            "usable_nontrivial_assembly_count": 45329,
+            "usable_nontrivial_entry_count": 39005,
+            "entries_with_nonidentity_operators": 39005,
+            "passed_min_2000_entries": true
+        },
+        "source_package_gate": {
+            "downloaded_pilot_total_bytes": 14766571,
+            "downloaded_pilot_files": [
+                {
+                    "pdb_id": "3C70",
+                    "url": "https://files.rcsb.org/download/3C70.cif.gz",
+                    "bytes": 204801,
+                    "sha256": "298c3fa1ac3c40c81720523f1ca57477370e35a4bea1194fe70e6d13505f46fd"
+                },
+                {
+                    "pdb_id": "1OUT",
+                    "url": "https://files.rcsb.org/download/1OUT.cif.gz",
+                    "bytes": 75725,
+                    "sha256": "bc6d3e6a772e6e8b2e163cb49b5e7d75692861d444cf678a67a18487ec1cbf65"
+                },
+                {
+                    "pdb_id": "2HHB",
+                    "url": "https://files.rcsb.org/download/2HHB.cif.gz",
+                    "bytes": 131968,
+                    "sha256": "3b43040aa5c11a21619ccbcc2ab827cecc1b191197891da476df3cb8e16eba52"
+                },
+                {
+                    "pdb_id": "1HV4",
+                    "url": "https://files.rcsb.org/download/1HV4.cif.gz",
+                    "bytes": 239685,
+                    "sha256": "f7cf00ac7e9530918fbfba295cf78b16647eeee19418bf258f02d6b2657e30a2"
+                },
+                {
+                    "pdb_id": "5XHI",
+                    "url": "https://files.rcsb.org/download/5XHI.cif.gz",
+                    "bytes": 109834,
+                    "sha256": "5b6e094b571482f2cf513947844146c5ead913c5a161c403443b99a272c9649e"
+                },
+                {
+                    "pdb_id": "7EMK",
+                    "url": "https://files.rcsb.org/download/7EMK.cif.gz",
+                    "bytes": 54992,
+                    "sha256": "0b1055288c9667fcc8d9c9c44071fb88af3d0a0770509d49e0b34a21458d48b2"
+                },
+                {
+                    "pdb_id": "2GTL",
+                    "url": "https://files.rcsb.org/download/2GTL.cif.gz",
+                    "bytes": 466425,
+                    "sha256": "f9d3543d434e532dc9000e452421ea409f945b8e59ebc926fa57d47e79ae0ec1"
+                },
+                {
+                    "pdb_id": "4LLF",
+                    "url": "https://files.rcsb.org/download/4LLF.cif.gz",
+                    "bytes": 866808,
+                    "sha256": "40f14481654011a8497759e8725b7ece56f43cdec91df80807e40b43cbc5c262"
+                },
+                {
+                    "pdb_id": "2XQF",
+                    "url": "https://files.rcsb.org/download/2XQF.cif.gz",
+                    "bytes": 249320,
+                    "sha256": "ff49ab48715ee2979e1372312de6a6acbd0295d900919d089c61e34addd6062f"
+                },
+                {
+                    "pdb_id": "2XQG",
+                    "url": "https://files.rcsb.org/download/2XQG.cif.gz",
+                    "bytes": 248797,
+                    "sha256": "f3586c83a1c9d7914b7b36b613920adc4ec7ebae2c9656aef8147631bfa37c8d"
+                },
+                {
+                    "pdb_id": "2XQI",
+                    "url": "https://files.rcsb.org/download/2XQI.cif.gz",
+                    "bytes": 244390,
+                    "sha256": "cc6c9bc3f38f7217afcc75130e72f9c3d0a6fe5cb883dc69caa286aab5303ed5"
+                },
+                {
+                    "pdb_id": "2XQK",
+                    "url": "https://files.rcsb.org/download/2XQK.cif.gz",
+                    "bytes": 246586,
+                    "sha256": "4df22e3455f6074c7b0efc56271f37b5ddd7787cedf9fe4a65e4db6df05ac3a3"
+                },
+                {
+                    "pdb_id": "6A4U",
+                    "url": "https://files.rcsb.org/download/6A4U.cif.gz",
+                    "bytes": 519644,
+                    "sha256": "4b117c10fdd759328500b00f7c67780aa46e27f2fda23c2eabf5c7e4f8ed766a"
+                },
+                {
+                    "pdb_id": "6L55",
+                    "url": "https://files.rcsb.org/download/6L55.cif.gz",
+                    "bytes": 594724,
+                    "sha256": "acd3670bdd29034fc97163d787ae8c3f731cfa6a9dcd9f77dafeb510e964ee27"
+                },
+                {
+                    "pdb_id": "7JGL",
+                    "url": "https://files.rcsb.org/download/7JGL.cif.gz",
+                    "bytes": 3049023,
+                    "sha256": "7a91d23f3a7c573b5b02b406fb5a3904e508af151980b1ba4a3f82f107469a96"
+                },
+                {
+                    "pdb_id": "7JGM",
+                    "url": "https://files.rcsb.org/download/7JGM.cif.gz",
+                    "bytes": 3065282,
+                    "sha256": "e0922d63cca65059853b107b219f1b2d6db6001fa30c5e47c81e0ad38ebd2711"
+                },
+                {
+                    "pdb_id": "7JGN",
+                    "url": "https://files.rcsb.org/download/7JGN.cif.gz",
+                    "bytes": 3139982,
+                    "sha256": "28d13c6b6d6c1d43fb2d50fed8688f5adeda2aa6bdeeffb3c410c16648016c03"
+                },
+                {
+                    "pdb_id": "8ZN8",
+                    "url": "https://files.rcsb.org/download/8ZN8.cif.gz",
+                    "bytes": 228333,
+                    "sha256": "8da36deee885bbe8863b7da9e05c265c6a6e2de90aa45f352c6d3463dbba6e66"
+                },
+                {
+                    "pdb_id": "1RWT",
+                    "url": "https://files.rcsb.org/download/1RWT.cif.gz",
+                    "bytes": 735564,
+                    "sha256": "db19d0094668b00ba2e00a57e44ae878cdd9c97ed0da0716c304f88eb847a16c"
+                },
+                {
+                    "pdb_id": "2ANU",
+                    "url": "https://files.rcsb.org/download/2ANU.cif.gz",
+                    "bytes": 294688,
+                    "sha256": "6990c171abac95dd1c7dd9c733f45e240a8d56b2fd17caf2ecd1292cf8a970ff"
+                }
+            ],
+            "mean_cif_gz_bytes_in_pilot": 738328,
+            "estimated_raw_bytes_for_2000_entries": 1476657100,
+            "estimated_raw_bytes_for_all_nontrivial_entries": 28798505092,
+            "under_1gb_clean_subset_possible": false,
+            "recommended_import_route": "clean untouched ZIP of official .cif.gz files plus license/provenance/checksum manifests"
+        },
+        "split_stability_gate": {
+            "family_key": "sorted selected-chain RCSB polymer entity cluster IDs at 30% identity, falling back to 50% cluster or entry id",
+            "family_count": 10414,
+            "train_family_count": 7810,
+            "test_family_count": 2604,
+            "train_row_count": 34442,
+            "test_row_count": 10887,
+            "passed": true
+        },
+        "semantic_duplicate_gate": {
+            "closest_local_neighbor": "Macromolecular Assembly Graph Gap Recovery",
+            "difference": "Neighbor recovers missing molecule IDs and stoichiometry from text term cards in a partial assembly graph; CrystalMate targets executable 3D symmetry/operator expression recovery and transformed chain-copy interface graph reconstruction from geometry and candidate operators.",
+            "passed": true
+        },
+        "lookup_attack_gate": {
+            "attack": "1A-quantized sorted pairwise chain-centroid distance fingerprint over selected source asym_ids, no PDB ids or filenames",
+            "tested": 13,
+            "top1_unique_matches": 13,
+            "top1_unique_rate": 1.0,
+            "collision_groups": 0,
+            "passed": false
+        },
+        "baseline_gate": {
+            "pilot_rows": 1000,
+            "scores": {
+                "copied_corrupted_program": {
+                    "mean": 0.49831904761904766,
+                    "median": 0.6666666666666666,
+                    "max": 1.0
+                },
+                "operator_count_prior": {
+                    "mean": 0.5328333333333334,
+                    "median": 1.0,
+                    "max": 1.0
+                },
+                "contact_only_chain_selection": {
+                    "mean": 0.0,
+                    "median": 0.0,
+                    "max": 0.0
+                },
+                "cpu_geometric_search_standin": {
+                    "mean": 0.4895,
+                    "median": 0.0,
+                    "max": 1.0
+                },
+                "empty_output": {
+                    "mean": 0.0,
+                    "median": 0.0,
+                    "max": 0.0
+                },
+                "one_head_only_chains": {
+                    "mean": 0.0,
+                    "median": 0.0,
+                    "max": 0.0
+                },
+                "malformed_output": {
+                    "mean": 0.0,
+                    "median": 0.0,
+                    "max": 0.0
+                },
+                "oracle": {
+                    "mean": 1.0,
+                    "median": 1.0,
+                    "max": 1.0
+                }
+            },
+            "capability_matched_passed": true
+        },
+        "null_metric_gate": {
+            "empty_output": {
+                "mean": 0.0,
+                "median": 0.0,
+                "max": 0.0
+            },
+            "one_head_only_chains": {
+                "mean": 0.0,
+                "median": 0.0,
+                "max": 0.0
+            },
+            "malformed_output": {
+                "mean": 0.0,
+                "median": 0.0,
+                "max": 0.0
+            },
+            "copied_corrupted_program": {
+                "mean": 0.49831904761904766,
+                "median": 0.6666666666666666,
+                "max": 1.0
+            },
+            "passed": false
+        },
+        "cpu_gate": {
+            "prepare_estimate": "GraphQL metadata pass fetched/counts source records; full prepare can stream official .cif.gz files and compact chain geometry on 10 CPU cores.",
+            "solver_estimate": "Tree/graph-search pilots run over 1000 assembly programs with small row-local operator sets; no GPU-specific dependency was used.",
+            "used_gpu": false,
+            "passed": true
+        },
+        "reviewer_premortem": {
+            "closest_source_benchmark": "RCSB/PDB biological assembly generation from native mmCIF metadata, not a standard ML benchmark.",
+            "closest_platform_cluster": "Macromolecular Assembly Graph Gap Recovery; different input modality, target object, output schema, and solver family.",
+            "native_artifacts": "pdbx_struct_assembly_gen.asym_id_list, pdbx_struct_assembly_gen.oper_expression, pdbx_struct_oper_list matrices/vectors, atom_site coordinates for chain geometry.",
+            "usable_rows_and_groups": "45329 nontrivial assembly rows, 39005 entries, 10414 family keys.",
+            "modality_necessity": "Unproven because the lookup attack recovers public source identity from compact geometry; modality ablations cannot make this Proceed.",
+            "null_scores": {
+                "empty_output": {
+                    "mean": 0.0,
+                    "median": 0.0,
+                    "max": 0.0
+                },
+                "one_head_only_chains": {
+                    "mean": 0.0,
+                    "median": 0.0,
+                    "max": 0.0
+                },
+                "malformed_output": {
+                    "mean": 0.0,
+                    "median": 0.0,
+                    "max": 0.0
+                },
+                "copied_corrupted_program": {
+                    "mean": 0.49831904761904766,
+                    "median": 0.6666666666666666,
+                    "max": 1.0
+                },
+                "passed": false
+            },
+            "capable_solver_risk": "Public-source geometric retrieval is the most likely solver, and the pilot centroid fingerprint already recovers exact IDs at high rate.",
+            "public_source_recovery": {
+                "tested": 13,
+                "top1_unique_matches": 13,
+                "top1_unique_rate": 1.0,
+                "collision_groups": 0,
+                "details": [
+                    {
+                        "pdb_id": "1OUT",
+                        "public_asu_chain_count": 2,
+                        "fingerprint_len": 1
+                    },
+                    {
+                        "pdb_id": "2HHB",
+                        "public_asu_chain_count": 4,
+                        "fingerprint_len": 6
+                    },
+                    {
+                        "pdb_id": "1HV4",
+                        "public_asu_chain_count": 8,
+                        "fingerprint_len": 28
+                    },
+                    {
+                        "pdb_id": "2GTL",
+                        "public_asu_chain_count": 15,
+                        "fingerprint_len": 105
+                    },
+                    {
+                        "pdb_id": "4LLF",
+                        "public_asu_chain_count": 15,
+                        "fingerprint_len": 105
+                    },
+                    {
+                        "pdb_id": "6A4U",
+                        "public_asu_chain_count": 6,
+                        "fingerprint_len": 15
+                    },
+                    {
+                        "pdb_id": "6L55",
+                        "public_asu_chain_count": 12,
+                        "fingerprint_len": 66
+                    },
+                    {
+                        "pdb_id": "7JGL",
+                        "public_asu_chain_count": 48,
+                        "fingerprint_len": 1128
+                    },
+                    {
+                        "pdb_id": "7JGM",
+                        "public_asu_chain_count": 48,
+                        "fingerprint_len": 1128
+                    },
+                    {
+                        "pdb_id": "7JGN",
+                        "public_asu_chain_count": 48,
+                        "fingerprint_len": 1128
+                    },
+                    {
+                        "pdb_id": "8ZN8",
+                        "public_asu_chain_count": 6,
+                        "fingerprint_len": 15
+                    },
+                    {
+                        "pdb_id": "1RWT",
+                        "public_asu_chain_count": 10,
+                        "fingerprint_len": 45
+                    },
+                    {
+                        "pdb_id": "2ANU",
+                        "public_asu_chain_count": 6,
+                        "fingerprint_len": 15
+                    }
+                ],
+                "passed": false,
+                "attack": "1A-quantized sorted pairwise chain-centroid distance fingerprint over selected source asym_ids, no PDB ids or filenames"
+            },
+            "raw_import": {
+                "downloaded_pilot_files": [
+                    {
+                        "pdb_id": "3C70",
+                        "url": "https://files.rcsb.org/download/3C70.cif.gz",
+                        "bytes": 204801,
+                        "sha256": "298c3fa1ac3c40c81720523f1ca57477370e35a4bea1194fe70e6d13505f46fd"
+                    },
+                    {
+                        "pdb_id": "1OUT",
+                        "url": "https://files.rcsb.org/download/1OUT.cif.gz",
+                        "bytes": 75725,
+                        "sha256": "bc6d3e6a772e6e8b2e163cb49b5e7d75692861d444cf678a67a18487ec1cbf65"
+                    },
+                    {
+                        "pdb_id": "2HHB",
+                        "url": "https://files.rcsb.org/download/2HHB.cif.gz",
+                        "bytes": 131968,
+                        "sha256": "3b43040aa5c11a21619ccbcc2ab827cecc1b191197891da476df3cb8e16eba52"
+                    },
+                    {
+                        "pdb_id": "1HV4",
+                        "url": "https://files.rcsb.org/download/1HV4.cif.gz",
+                        "bytes": 239685,
+                        "sha256": "f7cf00ac7e9530918fbfba295cf78b16647eeee19418bf258f02d6b2657e30a2"
+                    },
+                    {
+                        "pdb_id": "5XHI",
+                        "url": "https://files.rcsb.org/download/5XHI.cif.gz",
+                        "bytes": 109834,
+                        "sha256": "5b6e094b571482f2cf513947844146c5ead913c5a161c403443b99a272c9649e"
+                    },
+                    {
+                        "pdb_id": "7EMK",
+                        "url": "https://files.rcsb.org/download/7EMK.cif.gz",
+                        "bytes": 54992,
+                        "sha256": "0b1055288c9667fcc8d9c9c44071fb88af3d0a0770509d49e0b34a21458d48b2"
+                    },
+                    {
+                        "pdb_id": "2GTL",
+                        "url": "https://files.rcsb.org/download/2GTL.cif.gz",
+                        "bytes": 466425,
+                        "sha256": "f9d3543d434e532dc9000e452421ea409f945b8e59ebc926fa57d47e79ae0ec1"
+                    },
+                    {
+                        "pdb_id": "4LLF",
+                        "url": "https://files.rcsb.org/download/4LLF.cif.gz",
+                        "bytes": 866808,
+                        "sha256": "40f14481654011a8497759e8725b7ece56f43cdec91df80807e40b43cbc5c262"
+                    },
+                    {
+                        "pdb_id": "2XQF",
+                        "url": "https://files.rcsb.org/download/2XQF.cif.gz",
+                        "bytes": 249320,
+                        "sha256": "ff49ab48715ee2979e1372312de6a6acbd0295d900919d089c61e34addd6062f"
+                    },
+                    {
+                        "pdb_id": "2XQG",
+                        "url": "https://files.rcsb.org/download/2XQG.cif.gz",
+                        "bytes": 248797,
+                        "sha256": "f3586c83a1c9d7914b7b36b613920adc4ec7ebae2c9656aef8147631bfa37c8d"
+                    },
+                    {
+                        "pdb_id": "2XQI",
+                        "url": "https://files.rcsb.org/download/2XQI.cif.gz",
+                        "bytes": 244390,
+                        "sha256": "cc6c9bc3f38f7217afcc75130e72f9c3d0a6fe5cb883dc69caa286aab5303ed5"
+                    },
+                    {
+                        "pdb_id": "2XQK",
+                        "url": "https://files.rcsb.org/download/2XQK.cif.gz",
+                        "bytes": 246586,
+                        "sha256": "4df22e3455f6074c7b0efc56271f37b5ddd7787cedf9fe4a65e4db6df05ac3a3"
+                    },
+                    {
+                        "pdb_id": "6A4U",
+                        "url": "https://files.rcsb.org/download/6A4U.cif.gz",
+                        "bytes": 519644,
+                        "sha256": "4b117c10fdd759328500b00f7c67780aa46e27f2fda23c2eabf5c7e4f8ed766a"
+                    },
+                    {
+                        "pdb_id": "6L55",
+                        "url": "https://files.rcsb.org/download/6L55.cif.gz",
+                        "bytes": 594724,
+                        "sha256": "acd3670bdd29034fc97163d787ae8c3f731cfa6a9dcd9f77dafeb510e964ee27"
+                    },
+                    {
+                        "pdb_id": "7JGL",
+                        "url": "https://files.rcsb.org/download/7JGL.cif.gz",
+                        "bytes": 3049023,
+                        "sha256": "7a91d23f3a7c573b5b02b406fb5a3904e508af151980b1ba4a3f82f107469a96"
+                    },
+                    {
+                        "pdb_id": "7JGM",
+                        "url": "https://files.rcsb.org/download/7JGM.cif.gz",
+                        "bytes": 3065282,
+                        "sha256": "e0922d63cca65059853b107b219f1b2d6db6001fa30c5e47c81e0ad38ebd2711"
+                    },
+                    {
+                        "pdb_id": "7JGN",
+                        "url": "https://files.rcsb.org/download/7JGN.cif.gz",
+                        "bytes": 3139982,
+                        "sha256": "28d13c6b6d6c1d43fb2d50fed8688f5adeda2aa6bdeeffb3c410c16648016c03"
+                    },
+                    {
+                        "pdb_id": "8ZN8",
+                        "url": "https://files.rcsb.org/download/8ZN8.cif.gz",
+                        "bytes": 228333,
+                        "sha256": "8da36deee885bbe8863b7da9e05c265c6a6e2de90aa45f352c6d3463dbba6e66"
+                    },
+                    {
+                        "pdb_id": "1RWT",
+                        "url": "https://files.rcsb.org/download/1RWT.cif.gz",
+                        "bytes": 735564,
+                        "sha256": "db19d0094668b00ba2e00a57e44ae878cdd9c97ed0da0716c304f88eb847a16c"
+                    },
+                    {
+                        "pdb_id": "2ANU",
+                        "url": "https://files.rcsb.org/download/2ANU.cif.gz",
+                        "bytes": 294688,
+                        "sha256": "6990c171abac95dd1c7dd9c733f45e240a8d56b2fd17caf2ecd1292cf8a970ff"
+                    }
+                ],
+                "downloaded_pilot_total_bytes": 14766571,
+                "mean_cif_gz_bytes_in_pilot": 738328,
+                "estimated_raw_bytes_for_2000_entries": 1476657100,
+                "estimated_raw_bytes_for_all_nontrivial_entries": 28798505092,
+                "under_1gb_clean_subset_possible": false,
+                "recommended_import_route": "clean untouched ZIP of official .cif.gz files plus license/provenance/checksum manifests"
+            },
+            "single_rejection_result": "If anonymized/quantized geometry maps public rows back to exact PDB IDs, hidden assembly programs can be recovered directly from public mmCIF."
+        },
+        "verdict_reason": "Reject because measured public geometry fingerprinting recovered exact source PDB IDs for 13/13 tested pilot files, enabling hidden assembly-program lookup; copied corrupted programs also retained mean score 0.498 under the scoring skeleton."
+    },
+    "readiness": {
+        "verdict": "Hold",
+        "native_targets_verified": true,
+        "official_access_verified": true,
+        "redistribution_verified": true,
+        "source_package_verified": true,
+        "post_filter_scale_passed": true,
+        "split_stability_passed": true,
+        "semantic_duplicate_audit_passed": true,
+        "lookup_attack_passed": false,
+        "capability_matched_baseline_passed": true,
+        "null_metric_audit_passed": true,
+        "import_route_verified": true,
+        "reviewer_premortem_completed": true,
+        "unresolved_gates": [
+            "The measured public-source lookup attack remains failed, although the user explicitly waived source lookup as a blocker.",
+            "No v3 platform agent trial can be run in this challenge because its three evaluation rounds were consumed by v2; the user assigned further agent trials to the team."
+        ]
+    },
+    "notes": [
+        "Created as Pilot/researching because full Proceed handoff gates are not yet measured.",
+        "2026-08-11 pilot gate completed in D:\\1_challenge\\_pilot. Full challenge build was not created. Verdict: Reject due source lookup and copied-program/null shortcut failures despite native target, scale, split, duplicate, and CPU evidence passing.",
+        "2026-09-07 reviewer revision completed locally. The repair formulation was replaced by direct chain-copy assembly synthesis; full prepare determinism, strict grading, malformed rows, semantic duplication, and baseline headroom were revalidated.",
+        "2026-09-07 live v2 updated with exact revised prepare.py and grade.py. Shipd Prepare succeeded and all 7/7 pre-submission checks passed without warnings.",
+        "2026-09-08 final Shipd evaluation ended at the three-round limit: Run 1 failed without a score, Run 2 scored 0.8120, and Run 3 scored 0.8222. Benchmark Calibration warned that results were high or variable. The exact live status became Pending Review with Evaluation limit reached.",
+        "2026-09-08 local v3 hardening completed. Identity is implicit BASE, candidate contacts no longer branch on hidden membership, empty-graph rows are excluded, and graph/program consistency is enforced. ExtraTrees scored 0.420378 and LightGBM scored 0.416409 on 280 hidden rows; perfect remains 1.0 and sample is 0.149065.",
+        "2026-09-08 live v2 was withdrawn with explicit user approval. Exact v3 description, prepare.py, and grade.py were uploaded to the same challenge; stray 3d-medical and audio tags were removed; CPU and Hard remained selected. Prepare completed at 5:24:21 PM, the dataset duplicate check passed, and all 7/7 challenge checks passed. No v3 agent run was started.",
+        "2026-09-10 exported Run 2 and Run 3 trajectories were audited. They are v2 runs and show genuine row-local ML, not a malformed-submission or grader exploit. Local ID validation was hardened against fractional numeric truncation and the smoke suite passed; the live problem remains locked at 3/3 v2 rounds.",
+        "2026-09-14 both supplied trajectory architectures were replayed on hardened v3 with OOF-only decoder tuning. Run 2 scored 0.281320 hidden and Run 3 scored 0.168985 hidden, leaving 0.718680 headroom and a 0.112335 architecture gap. The strict <0.65 local difficulty gate passed; no Shipd agents were run and nothing was submitted."
+    ]
+}

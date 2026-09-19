@@ -1,0 +1,20 @@
+﻿{
+    "title":  "Latent Market Contagion Graph and Intervention Ledger Recovery",
+    "slug":  "latent-market-contagion-graph-and-intervention-ledger-recovery",
+    "status":  "ready_for_review",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fc5e5-805f-73e1-8b49-1be020d29b65",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Latent Market Contagion Graph and Intervention Ledger Recovery",
+    "dataset":  "Fully synthetic multi-relational market stress packets and intervention ledgers",
+    "license":  "CC0 1.0 Universal",
+    "created_at":  "2026-08-04T18:20:29.4988149+05:30",
+    "updated_at":  "2026-08-05T07:35:16.7478465+05:30",
+    "blocker":  "",
+    "notes":  [
+                  "CPU pivot complete. Sample 0.143208; ten-thread from-scratch CPU 0.594015; best tested simple ensemble 0.595945; oracle 1.0.",
+                  "Upload exactly generate.py plus raw_upload.zip (9,457,831 bytes; SHA-256 86aad43c15c9fe621bb0c6ffb0b6d31c45f0fd98dbc1622f8c5cf49ef5ace3bd).",
+                  "Live Shipd challenge jx739d1eyd8rm366n8xbjwv21x8bg913 now uses CPU. The CPU-only description is autosaved with five rendered tables; challenge checks and agent evaluations were not run.",
+                  "Runtime evidence: clean CPU training 36.37 s + 0.41 s inference at about 810 MiB peak RSS; conservative mounted-path audit 351.24 s wall, still over 15x below the 90-minute limit.",
+                  "2026-08-05 live revision: added a plain-language objective, synthetic-world context, exact consistency equation, and feature-level NPZ dictionaries; fixed Unicode; persisted seven monospaced schema tables; all 12/12 Shipd pre-submission checks pass. Agent runs remain 0/3."
+              ]
+}

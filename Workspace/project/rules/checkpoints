@@ -1,0 +1,29 @@
+check for :
+Data Leakage
+Baseline score is not too high
+Class distribution is fine
+No missing data anywhere
+What not to use section present
+Source reversibility checked: public rows cannot be mapped back to named upstream source rows/files/timestamps/annotations by source lookup, transcript search, raw metadata, filename/id/order cues, or media fingerprinting
+Novelty checked before build: nearest existing benchmark/dataset task identified; score should be >=5/10; same public dataset + same input + same target taxonomy/objective + same solution family is a blocker even with a custom metric or redacted metadata
+
+checkpoints from Caspian:
+[p] pass, [w] warn, [f] fail, [n/a] not applicable.
+1. dataset & audio/text quality
+[ ] source & licensing: source/license matches the claim and strictly allows commercial challenge use, reuse, and redistribution.
+[ ] raw assets only: uploaded files must be raw data, generator scripts, or source assets (e.g., raw audio wavs, unparsed text)—not pre-baked train/test splits.
+[ ] speech/text domain fit: for speech ai (asr/tts) or code-switching/text data, annotations and labels must be clean, meaningful, and represent real-world technical/professional usage, not arbitrary patterns.
+[ ] synthetic sanity check: if synthetic data is used, the generation script must be provided. the data must model a plausible process, not just a toy setup with basic labels pasted on.
+2. challenge design & evaluation
+[ ] novelty: nearest-neighbor benchmark/task is identified and the challenge is not a near-duplicate of the source dataset's canonical task.
+[ ] real-world ml value: the problem must test actual modeling or generalization skills, not just a contrived "challenge for challenge's sake."
+[ ] fair split & ood testing: splits must test realistic generalization. out-of-distribution (ood) test sets are only valid if the target remains learnable from the training signal or domain structure, not impossible guessing.
+[ ] metric & headroom: the chosen metric must fit the domain perfectly. the baseline score must leave at least ~30% improvement headroom to separate weak, decent, and elite submissions.
+3. robust grader & exception handling
+[ ] input validation: grader must actively reject malformed submissions (wrong columns, missing rows, duplicate ids, nan/inf, invalid ranges) instead of scoring them.
+[ ] no internal leaks: grader errors must never leak private test labels, answer keys, split logic, or internal scoring weights.
+[ ] agent-code safeguards: check the submission pipelines carefully. ensure there are no sketchy try...except fallback mechanisms (like dropping deep learning models entirely models = [] to rely on classical interpolation hacks) designed to bypass hidden test set fluctuations or error logs.
+4. leakage & shortcuts
+[ ] feature isolation: public features must not reveal targets through metadata, ids, row order, file lengths, or hidden text artifacts.
+[ ] no rule leaks: prompts and data must not expose answer logic, generator rules, or hidden scoring tricks.
+[ ] anti-regex/anti-lookup: the task cannot be solvable by simple regex, lookup tables, metadata matching, or template inversion. it must require actual machine learning.

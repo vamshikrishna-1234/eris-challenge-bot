@@ -1,0 +1,45 @@
+{
+  "title": "Coupled Pendulum Hidden Coupling-Graph Inference",
+  "slug": "coupled-pendulum-hidden-coupling-graph-inference",
+  "status": "building",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a071e4-45d9-7880-828b-ed022c5903d2",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_3\\3d_challenges\\claude_charitha\\Coupled Oscillator Hidden Coupling Graph Inference",
+  "dataset": "Synthetic Coupled-Pendulum Videos With Hidden Coupling-Graph Labels",
+  "license": "CC0-1.0 (existing author declaration)",
+  "created_at": "2026-09-05T19:40:17.3167660+05:30",
+  "updated_at": "2026-09-05T20:02:24.179Z",
+  "blocker": null,
+  "notes": [
+    "User 0.65 empirical score gate passed: strongest tested baseline 0.6080350470.",
+    "Dataset source, description and CC0 metadata updated; rebuilt and Ready with source-URL advisory.",
+    "Problem description, grade.py, prepare.py, Hard and CPU configuration updated; corrected platform preparation completed.",
+    "All seven fresh problem checks completed without blocking failures, with a constant-column advisory.",
+    "Post-fix smoke 68/68, full packaging 13/13 and resource equivalence on six clips passed.",
+    "Fresh calibration remains pending; no final submission is claimed and no checks were bypassed.",
+    "No remote synchronization: workspace is not a valid Git repository."
+  ],
+  "stage": "platform_checks_passed_calibration_running",
+  "reason_code": "local_065_gate_passed",
+  "platform_status": "Draft — Evaluating difficulty",
+  "platform_url": "https://shipd.ai/quests/eris/challenges/jx76v0mqtjrmhzyg1ct7wtreds88x2b9",
+  "evidence": {
+    "audit": "E:/create_challenge_synthetic_output_folder/sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/REVISION_AUDIT.md",
+    "review_log": "E:/create_challenge_synthetic_output_folder/sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/REVISION_REVIEW_LOG.md",
+    "baseline": "E:/create_challenge_synthetic_output_folder/sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/_revision_v3/prepared/baseline_scores.json",
+    "notebook": "E:/create_challenge_synthetic_output_folder/sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/solution.ipynb",
+    "local_gates": "E:/create_challenge_synthetic_output_folder/sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/_revision_v3/local_gate_summary.json",
+    "platform_checks": "E:/create_challenge_synthetic_output_folder/sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/_revision_v3/platform_checks_passed.txt",
+    "notebook_execution": "E:/create_challenge_synthetic_output_folder/sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/_revision_v3/notebook_execution.json",
+    "memory_fix": "E:/create_challenge_synthetic_output_folder/sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/_revision_v3/memory_fix_verification.json"
+  },
+  "target_baseline_max": 0.65,
+  "best_tested_score": 0.6080350470377598,
+  "dataset_status": "Ready",
+  "platform_checks": "7 completed; no blocking failures; constant-column advisory",
+  "platform_agent_runs": "Two running; one failed without a score or trajectory",
+  "pending": [
+    "Two platform agent runs remain in progress; one failed without a score or trajectory.",
+    "Complete cold execution of final notebook remains unverified after local host memory exhaustion; bounded-decoder/adaptive-worker fix passed six representative comparisons."
+  ]
+}

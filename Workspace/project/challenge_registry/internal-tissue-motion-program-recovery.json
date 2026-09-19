@@ -1,0 +1,16 @@
+﻿{
+    "title":  "Internal Tissue Motion Program Recovery",
+    "slug":  "internal-tissue-motion-program-recovery",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019f3b64-430c-7872-a210-f28b11cfc021",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Internal Tissue Motion Program Recovery",
+    "dataset":  "A Multimodal Biomechanics Dataset with Synchronized Kinematics and Internal Tissue Motions during Reaching",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-07-31T19:07:46.6680496+05:30",
+    "updated_at":  "2026-07-31T20:24:18.5138161+05:30",
+    "blocker":  "Implementation package completed on real subset, but mandatory final gates not fully closed: full 36-participant preparation/source-retrieval sweep not run locally, and compact GPU baseline script not locally measured because PyTorch install timed out after 15 minutes.",
+    "notes":  [
+                  "Package copied to E:\\create_challenge_synthetic_output_folder\\sprint_4\\Internal Tissue Motion Program Recovery with smoke_report.json and analysis_report.json."
+              ]
+}

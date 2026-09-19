@@ -1,0 +1,13 @@
+---
+description: Route the four reusable Project Eris bot commands through the bundled automation workflow
+alwaysApply: true
+---
+
+# Eris Bot Command Routing
+
+- Read `AGENTS.md` and `Config/workspace.json` at the start of Eris work.
+- Load `.codex/skills/eris-challenge-automation/SKILL.md` for `Ready`, `Status`, `Status & Fix`, or `Create X Task(s)`.
+- Use `eris_automation/run.ps1` as the durable controller.
+- Never claim live Shipd status from local files; `Status` requires a fresh authenticated read-only inspection.
+- Preserve exact task counts and IDs. Revisions never count as new tasks.
+- Resolve yellow and red checks substantively and preserve all factory, submission, and action-time confirmation gates.

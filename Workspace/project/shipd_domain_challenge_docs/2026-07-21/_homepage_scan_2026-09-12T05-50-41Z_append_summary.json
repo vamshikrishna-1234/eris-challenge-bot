@@ -1,0 +1,25 @@
+{
+  "homepageCardsFound": 46,
+  "skippedAlreadyBeforeDetail": 27,
+  "detailPagesAttempted": 19,
+  "appendedTotal": 19,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Sequence To Sequence": 4,
+      "Other": 4,
+      "Fine-Tuning": 2,
+      "Computer Vision": 3,
+      "From Scratch": 3,
+      "NLP": 1,
+      "Recommendation": 1
+    },
+    "CPU": {
+      "From Scratch": 1
+    }
+  },
+  "veryNovelAdded": [],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

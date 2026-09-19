@@ -1,0 +1,27 @@
+{
+  "homepageCardsFound": 37,
+  "skippedAlreadyBeforeDetail": 17,
+  "detailPagesAttempted": 17,
+  "appendedTotal": 17,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "From Scratch": 7,
+      "NLP": 1,
+      "Fine-Tuning": 1,
+      "Other": 3,
+      "RAG": 4
+    },
+    "CPU": {
+      "RAG": 1
+    }
+  },
+  "veryNovelAdded": [
+    "Haptic Sensor Log Reassembly",
+    "Inverse Evidence Program Induction for Multi-Turn Retrieval",
+    "Clinical Trial Arm-Intervention Graph Recovery"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 3."
+  ]
+}

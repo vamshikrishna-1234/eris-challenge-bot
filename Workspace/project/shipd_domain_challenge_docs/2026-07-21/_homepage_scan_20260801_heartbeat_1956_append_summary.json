@@ -1,0 +1,32 @@
+{
+  "homepageCardsFound": 33,
+  "skippedAlreadyBeforeDetail": 12,
+  "detailPagesAttempted": 21,
+  "appendedTotal": 21,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Sequence To Sequence": 4,
+      "Object Detection": 3,
+      "Other": 3,
+      "Prompt Engineering": 1,
+      "Computer Vision": 3,
+      "From Scratch": 4,
+      "RAG": 2
+    },
+    "CPU": {
+      "Computer Vision": 1
+    }
+  },
+  "veryNovelAdded": [
+    "Ornament Rehearsal Corridor Compiler",
+    "Open-Population Caller Turnover Program",
+    "Localizing Overlapping Sounds from Sparse Labels",
+    "Rotor-Safe Ultrasonic Notch Set Planning",
+    "Twin-Trace Motor Controller Program Recovery",
+    "Neuromuscular Wiring Recovery from Sensor Sheets",
+    "Visual Graph Lineages: Glyph Rules and Counterfactual Edits",
+    "Fastener Take-Off from Degraded Shop Drawings"
+  ],
+  "limitations": []
+}

@@ -1,0 +1,27 @@
+{
+  "homepageCardsFound": 12,
+  "skippedAlreadyBeforeDetail": 0,
+  "detailPagesAttempted": 12,
+  "appendedTotal": 12,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "Fine-Tuning": 2
+    },
+    "Non-CPU": {
+      "Computer Vision": 5,
+      "Sequence To Sequence": 2,
+      "From Scratch": 1,
+      "Fine-Tuning": 2
+    }
+  },
+  "veryNovelAdded": [
+    "Multi-Apartment Room and Door Graph Recovery",
+    "Reconstructing Typed Succession Lineage of Serial Publications",
+    "Drawing Stroke Assembly and Precedence Prediction",
+    "Sentence-to-Turn Semantic Compiler Induction"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

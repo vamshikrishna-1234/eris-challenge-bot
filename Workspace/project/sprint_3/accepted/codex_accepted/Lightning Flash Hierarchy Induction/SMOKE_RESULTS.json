@@ -1,0 +1,19 @@
+{
+  "degenerate_partition_scores_capped": true,
+  "deterministic": true,
+  "grade_mean_seconds": 0.022111559999757446,
+  "label_invariant": true,
+  "malformed_row_local": true,
+  "perfect_score": 1.0,
+  "prepare_seconds": [
+    1.6441593000054127,
+    1.3799629999994067
+  ],
+  "process_peak_mib": 227.6875,
+  "raw_untouched": true,
+  "sample_score": 0.17546042080012897,
+  "status": "PASS",
+  "strict_submission_checks": true,
+  "test_cases": 140,
+  "train_cases": 210
+}

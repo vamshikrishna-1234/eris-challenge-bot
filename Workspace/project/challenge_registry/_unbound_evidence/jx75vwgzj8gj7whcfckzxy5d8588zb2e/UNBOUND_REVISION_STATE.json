@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "requested_challenge": {
+    "id": "jx75vwgzj8gj7whcfckzxy5d8588zb2e",
+    "url": "https://shipd.ai/quests/eris/challenges/jx75vwgzj8gj7whcfckzxy5d8588zb2e",
+    "title_supplied_by_user": "Bimanual Contact-Change Field From RGB Motion Pairs"
+  },
+  "observed_at": "2026-09-13T05:06:00+05:30",
+  "stage": "blocked_admission_gate",
+  "live_status": {
+    "authenticated_inspection_completed": true,
+    "actual_title": "Stir Schedule Retrodiction From Dye Mixing Pattern",
+    "visible_state": "Revision Requested",
+    "reviewer": "aikyatan",
+    "reviewed_at": "2026-07-02",
+    "review_text": "Add a guard clause at the start of _schedule_score for n == 0; provide a safe FALLBACK when counts.drop(...) is empty; and address the previous tightly clustered agent-score feedback so the score spread is healthy.",
+    "agent_results": [],
+    "challenge_checks": [],
+    "dataset_id": "jd7crb484r7897dczf8xf4cp2188y6yx",
+    "dataset_url": "https://shipd.ai/quests/eris/datasets/jd7crb484r7897dczf8xf4cp2188y6yx"
+  },
+  "user_opened_dataset": {
+    "id": "jd7812d2p1yakfh0ckkgwc0t6d8e8j9g",
+    "url": "https://shipd.ai/quests/eris/datasets/jd7812d2p1yakfh0ckkgwc0t6d8e8j9g",
+    "visible_state": "Draft",
+    "title": "fill it hereeee",
+    "description": "default placeholder only",
+    "source_file_count": 0,
+    "license": null,
+    "source_url": null,
+    "linked_to_requested_challenge": false
+  },
+  "controller": {
+    "active_batch_id": null,
+    "attached_to_batch": false,
+    "controller_mutated": false
+  },
+  "binding": {
+    "matched_local_package": false,
+    "matched_registry_entry": false,
+    "candidate_package": "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Egocentric RGB To Tactile Pressure Grid Prediction",
+    "candidate_match_basis": "The candidate's current form title equals the title supplied by the user, but the authenticated challenge page proves that supplied title does not belong to the requested challenge ID.",
+    "candidate_conflict": {
+      "recorded_challenge_id": "jx7emzz0f2qsyqf7576hvzfra98dsfpk",
+      "recorded_challenge_url": "https://shipd.ai/quests/eris/challenges/jx7emzz0f2qsyqf7576hvzfra98dsfpk",
+      "recorded_dataset_id": "jd71rkm6bn43n5gnk0p8z5pmqd8dszwk",
+      "recorded_dataset_url": "https://shipd.ai/quests/eris/datasets/jd71rkm6bn43n5gnk0p8z5pmqd8dszwk",
+      "registry_entry_present": false
+    },
+    "exact_requested_id_matches_in_searched_roots": 0,
+    "searched_roots": [
+      "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic",
+      "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3",
+      "E:\\create_challenge_synthetic_output_folder"
+    ]
+  },
+  "candidate_only_preliminary_evidence": {
+    "train_rows": 942,
+    "test_rows": 907,
+    "source_recordings_total": 10,
+    "source_recordings_train": 5,
+    "source_recordings_test": 5,
+    "task_families_train": 5,
+    "task_families_test": 5,
+    "calibration_user_values": ["rohit"],
+    "calibration_timestamp_values": ["2026-03-13T17:19:36"],
+    "sample_score": 0.4574949051321606,
+    "perfect_score": 1.0,
+    "warning": "These measurements belong only to the conflicting jx7em candidate and are not attributed to the requested jx75 challenge."
+  },
+  "website_writes_performed": false,
+  "local_candidate_files_modified": false,
+  "shared_previous_reviews_modified": false,
+  "blockers": [
+    "The authenticated requested challenge is Stir Schedule Retrodiction From Dye Mixing Pattern, not the user-supplied Bimanual title.",
+    "The requested challenge is linked to Ready dataset jd7crb484r7897dczf8xf4cp2188y6yx, not the blank dataset jd7812d2p1yakfh0ckkgwc0t6d8e8j9g opened by the user.",
+    "Neither the actual Stir challenge/dataset IDs nor the opened blank dataset ID has an exact local package or registry match in the configured and legacy roots.",
+    "The only Bimanual title-matching package records different challenge and dataset IDs, so substituting it would violate the exact-binding admission gate.",
+    "Ownership and Proceed readiness cannot be established without an exact registry binding."
+  ],
+  "stop_reason": "opened_dataset_is_not_linked_to_requested_challenge_and_exact_local_package_is_unavailable"
+}

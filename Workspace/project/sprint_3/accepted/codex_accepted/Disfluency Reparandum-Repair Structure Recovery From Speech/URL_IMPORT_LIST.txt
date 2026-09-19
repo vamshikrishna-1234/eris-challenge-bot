@@ -1,0 +1,18 @@
+Do not upload raw_upload.zip for this real-source dataset. Import these official AMI source URLs directly; processing/clipping is performed by prepare.py.
+
+https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_manual_1.6.2.zip
+https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_auto_1.5.1.zip
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2012c/audio/ES2012c.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2002b/audio/ES2002b.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2006c/audio/ES2006c.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/IS1002b/audio/IS1002b.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/IS1004b/audio/IS1004b.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/TS3006b/audio/TS3006b.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/TS3009b/audio/TS3009b.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/TS3008c/audio/TS3008c.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/TS3009d/audio/TS3009d.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/IS1004c/audio/IS1004c.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2012b/audio/ES2012b.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2002c/audio/ES2002c.Mix-Headset.wav
+
+Total official source import size for these 14 files is 975,447,043 bytes (about 930.3 MiB / 975.4 MB).

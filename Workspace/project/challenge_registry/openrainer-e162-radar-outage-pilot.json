@@ -1,0 +1,61 @@
+﻿{
+    "title":  "OpenRainER E162 Radar-Outage Pilot",
+    "slug":  "openrainer-e162-radar-outage-pilot",
+    "status":  "rejected",
+    "stage":  "pilot_rejected",
+    "verdict":  "Reject",
+    "reason_code":  "lookup_novelty_scale_and_incremental_signal_gate_failure",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "batch-20260914-151711-task-001",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_5\\OpenRainER E162 Radar-Outage Pilot",
+    "dataset":  "OpenRainER v1.0.0 January 2021 monthly files, Zenodo 10610886",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-09-14T21:00:52.4778513+05:30",
+    "updated_at":  "2026-09-14T21:20:37.9824723+05:30",
+    "blocker":  "",
+    "evidence":  {
+                     "pilot_card":  "E:\\create_challenge_synthetic_output_folder\\sprint_5\\OpenRainER E162 Radar-Outage Pilot\\PILOT_READINESS_CARD.md",
+                     "pilot_results":  "E:\\create_challenge_synthetic_output_folder\\sprint_5\\OpenRainER E162 Radar-Outage Pilot\\pilot_results.json",
+                     "downloaded_bytes":  87478773,
+                     "checksums_verified":  true,
+                     "native_time_join_rate":  1.0,
+                     "rainy_gap_rows":  1489,
+                     "independent_storm_events":  9,
+                     "train_events":  6,
+                     "test_events":  3,
+                     "linear_interpolation_rmse":  0.09961629658937454,
+                     "radar_context_ridge_rmse":  0.10887936502695084,
+                     "radar_plus_cml_ridge_rmse":  0.11430370062589645,
+                     "exact_context_lookup_top1":  1.0,
+                     "noisy_context_lookup_top1":  1.0,
+                     "estimated_novelty":  4,
+                     "required_novelty":  6
+                 },
+    "readiness":  {
+                       "verdict":  "Reject",
+                       "native_targets_verified":  true,
+                       "official_access_verified":  true,
+                       "redistribution_verified":  true,
+                       "source_package_verified":  true,
+                       "post_filter_scale_passed":  false,
+                       "split_stability_passed":  false,
+                       "semantic_duplicate_audit_passed":  false,
+                       "lookup_attack_passed":  false,
+                       "lookup_gate_waived":  false,
+                       "capability_matched_baseline_passed":  false,
+                       "null_metric_audit_passed":  false,
+                       "import_route_verified":  true,
+                       "reviewer_premortem_completed":  true,
+                       "unresolved_gates":  [
+                                                 "only nine independent January storm events",
+                                                 "CML worsened held-out-event RMSE",
+                                                 "source retrieval recovered 40 of 40 noisy context pairs",
+                                                 "external novelty is below 6 of 10"
+                                             ]
+                   },
+    "notes":  [
+                  "The source and 100% native time join are valid; targets are recorded radar reflectivity, not invented maps.",
+                  "The rejection applies to the current radar-gap reconstruction formulation, not to all possible OpenRainER tasks.",
+                  "No full build task, challenge package, platform dataset, or Shipd problem was created."
+              ]
+}

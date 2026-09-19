@@ -1,0 +1,16 @@
+﻿{
+    "title":  "Distributed LoRa Packet Event And Consensus Recovery",
+    "slug":  "distributed-lora-packet-event-and-consensus-recovery",
+    "status":  "building",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019f7f68-6757-7170-a703-dd026f323998",
+    "output_folder":  "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Distributed LoRa Packet Event And Consensus Recovery",
+    "dataset":  "LoRaIQ v2 (Zenodo 20341802)",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-07-21T13:40:37.0454330+05:30",
+    "updated_at":  "2026-07-21T13:40:37.0454330+05:30",
+    "blocker":  "",
+    "notes":  [
+
+              ]
+}

@@ -1,0 +1,18 @@
+﻿{
+    "title":  "Personalized Spatial-Audio Filter Completion",
+    "slug":  "personalized-spatial-audio-filter-completion",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fc605-92a7-72d1-aa75-b9cd5bbc6f71",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Personalized Spatial-Audio Filter Completion",
+    "dataset":  "Viking HRTF dataset v2, Zenodo record 4160401",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-04T11:33:55.0695905+05:30",
+    "updated_at":  "2026-08-04T11:38:15.3372754+05:30",
+    "blocker":  "Mandatory novelty and anti-lookup gates failed: this duplicates LAP24 HRTF upsampling, and one calibration HRIR identifies all 21 public SOFA subjects so exact hidden waveform retrieval scores 1.000. The task is also waveform sequence reconstruction/regression, excluded by the request.",
+    "notes":  [
+
+                "Official Zenodo source and CC BY 4.0 license verified.",
+                "Shipd challenge and dataset drafts intentionally left unchanged; no files uploaded."
+              ]
+}

@@ -1,0 +1,15 @@
+{
+  "homepageCardsFound": 0,
+  "skippedAlreadyBeforeDetail": 0,
+  "detailPagesAttempted": 0,
+  "appendedTotal": 0,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {},
+    "Non-CPU": {}
+  },
+  "veryNovelAdded": [],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 2."
+  ]
+}

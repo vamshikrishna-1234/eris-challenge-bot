@@ -1,0 +1,12 @@
+{
+  "title": "Excavation Stratigraphy Evidence Graph Recovery",
+  "slug": "excavation-stratigraphy-evidence-graph-recovery",
+  "status": "rejected_scale",
+  "owner_machine": "VAMSHI",
+  "owner_task": "019fe4ea-bd38-77e1-a09b-152b79ef318f",
+  "output_folder": "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Excavation Stratigraphy Evidence Graph Recovery",
+  "dataset": "HS2 Phase One Historic Environment Digital Archive, Archaeology Data Service",
+  "license": "Open Government Licence, subject to per-child verification",
+  "source_url": "https://archaeologydataservice.ac.uk/archives/collections/view/1004061/collection_list.cfm",
+  "status_note": "REJECTED for insufficient independent source scale and archived on 2026-08-09. The official parent snapshot has 364 child DOIs, but only 26 children clearly contain both Harris-matrix answers and related input evidence, below the required roughly 60 independent usable sites. Do not reopen or create a build task unless a new permissively licensed source contributes enough additional independently verified sites to pass the stability gate."
+}

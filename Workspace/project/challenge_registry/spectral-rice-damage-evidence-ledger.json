@@ -1,0 +1,133 @@
+{
+  "title": "Spectral Rice Damage Evidence Ledger",
+  "slug": "spectral-rice-damage-evidence-ledger",
+  "status": "rejected",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a07164-b888-71a0-8260-6e0b3d68d601",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Spectral Rice Damage Evidence Ledger",
+  "dataset": "GD-RGBMS-DB: UAV RGB and Multispectral Dataset for Rice Grain Discoloration Segmentation, Zenodo 17008818",
+  "license": "CC BY 4.0",
+  "created_at": "2026-09-05T17:15:28.6138619+05:30",
+  "updated_at": "2026-09-05T18:31:00+05:30",
+  "stage": "pilot_rejected",
+  "reason_code": "insufficient_independent_acquisition_families",
+  "blocker": "Measured source has only two physical field clusters and three contiguous flight sessions on one date; no stable group-safe hidden split is possible.",
+  "status_note": "Rejected at the pilot gate. Extra crops would increase rows but not independent source families, and the upstream random-frame lists mix adjacent flight frames across every split.",
+  "evidence": {
+    "official_record": "https://zenodo.org/records/17008818",
+    "official_api_record": "https://zenodo.org/api/records/17008818",
+    "direct_import_urls": [
+      {
+        "file": "GD-RGBMS-DB.zip",
+        "url": "https://zenodo.org/api/records/17008818/files/GD-RGBMS-DB.zip/content",
+        "bytes": 981683806,
+        "checksum": "md5:f068d53c59609bb75e274b69e6037d56"
+      }
+    ],
+    "local_source": {
+      "path": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Spectral Rice Damage Evidence Ledger\\source_official\\GD-RGBMS-DB.zip",
+      "bytes": 981683806,
+      "md5": "f068d53c59609bb75e274b69e6037d56",
+      "sha256": "25106cafa0d46fcf662a5a1dc74a56c78e2e216a8da573aa0ff69f25f32ad45e",
+      "zip_crc_passed": true,
+      "non_directory_members": 1207,
+      "uncompressed_bytes": 982585839
+    },
+    "license_id": "cc-by-4.0",
+    "license_evidence": "Captured Zenodo API metadata reports metadata.license.id=cc-by-4.0 and access_right=open. The archive contains readmes but no separate license or conflicting rights notice.",
+    "attribution": {
+      "creators": [
+        "Nguyen, Van Hoa",
+        "Cong Le, Doan",
+        "Le Thanh, Phong",
+        "Bui Thi Mai, Phung"
+      ],
+      "doi": "10.5281/zenodo.17008818",
+      "publication_date": "2025-08-30"
+    },
+    "archive_join": {
+      "rgb_files": 400,
+      "ms_files": 400,
+      "native_mask_files": 400,
+      "joined_triplets": 400,
+      "missing_triplet_members": 0,
+      "shape": [900, 1200],
+      "rgb_format": "JPEG RGB",
+      "ms_format": "three-channel PNG composite described by the archive readme as Green, Red Edge, and NIR",
+      "mask_format": "two-colour RGB PNG"
+    },
+    "native_targets": {
+      "nonempty_masks": 400,
+      "foreground_rgb": [240, 128, 128],
+      "background_rgb": [173, 216, 230],
+      "unknown_colour_pixels": 0,
+      "mean_positive_fraction": 0.05415288657407408,
+      "median_positive_fraction": 0.05754953703703704,
+      "positive_fraction_min": 0.0007194444444444444,
+      "positive_fraction_max": 0.14556388888888888,
+      "median_components_at_300x225": 14
+    },
+    "post_filter_usable_source_rows": 400,
+    "independent_family_audit": {
+      "acquisition_dates": 1,
+      "date": "2025-06-10",
+      "physical_field_clusters": 2,
+      "field_cluster_counts": [183, 217],
+      "contiguous_acquisition_sessions": 3,
+      "session_counts": [105, 78, 217],
+      "median_consecutive_seconds": 2.0,
+      "median_consecutive_displacement_metres": 4.3,
+      "conclusion": "Any group-safe split has only one held-out field or one held-out flight session. Crop variants cannot repair independent-family scarcity."
+    },
+    "upstream_split_leakage": {
+      "train_rows": 280,
+      "validation_rows": 60,
+      "test_rows": 60,
+      "all_three_sessions_in_every_split": true,
+      "both_fields_in_every_split": true
+    },
+    "semantic_duplicate_audit": "No exact local duplicate. Closest local analogue is the blocked Multispectral Undertext Reading With Spatial Evidence challenge; closest public families are canonical RGB/MS segmentation, mask refinement, and multimodal sensor-failure segmentation.",
+    "capability_baselines": "Not run after terminal group-stability failure; a random-frame result would be leaky and a three-session fold would be too unstable to certify readiness.",
+    "null_metric_audit": "Not run because the terminal pilot rejection prevented creation or tuning of a full grader.",
+    "lookup_risk": "Not passed. The source is public and exposes exact UAV filenames, timestamps, coordinates, altitude, and neighboring frames. Exact copies, ordinary resizes, or ordinary crops would be visually fingerprintable; no transformed public package was built after rejection.",
+    "import_route": "Direct official URL import is live and the exact file is below 1 GB decimal. Untouched-file fallback is the verified official GD-RGBMS-DB.zip with the same byte count and MD5.",
+    "pilot_report": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Spectral Rice Damage Evidence Ledger\\pilot_evidence\\PILOT_AUDIT_REPORT.md",
+    "machine_report": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Spectral Rice Damage Evidence Ledger\\pilot_evidence\\pilot_inventory.json",
+    "final_audit_report": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Spectral Rice Damage Evidence Ledger\\FINAL_AUDIT_REPORT.md",
+    "previous_review_line_coverage": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Spectral Rice Damage Evidence Ledger\\audit\\PREVIOUS_REVIEWS_LINE_COVERAGE.json",
+    "accepted_description_scan": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Spectral Rice Damage Evidence Ledger\\audit\\ACCEPTED_DESCRIPTION_SCAN.json",
+    "audit_input_inventory": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Spectral Rice Damage Evidence Ledger\\audit\\AUDIT_INPUT_INVENTORY.json"
+  },
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": true,
+    "post_filter_scale_passed": false,
+    "split_stability_passed": false,
+    "semantic_duplicate_audit_passed": true,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": false,
+    "import_route_verified": true,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [],
+    "not_run_after_terminal_rejection": [
+      "Capability-matched RGB/MS/fused segmentation baselines",
+      "Full grader null and malformed-input battery",
+      "Prepared-artifact source-retrieval attack"
+    ]
+  },
+  "notes": [
+    "Pilot downloaded and verified the exact official ZIP, inspected every archive member, joined all 400 RGB/MS/mask triplets, and decoded all image headers and masks.",
+    "Native targets pass provenance: every Mark PNG is a non-empty two-colour source annotation aligned at 1200x900 with its RGB and MS files.",
+    "Scale and split stability fail: one date, two physical field clusters, three contiguous acquisition sessions, and 400 tightly spaced frames are not enough independent source families for a stable structured image challenge.",
+    "The official train/validation/test lists are unusable for this challenge because every split mixes both fields and all three sessions.",
+    "Full build was not started. The named Sprint 5 folder is an audit-only rejection package and contains no prepare.py, grade.py, solution notebook, config, or participant-facing challenge description.",
+    "Preferred provenance route remains the official direct URL. The only fallback is the untouched verified official GD-RGBMS-DB.zip; no processed raw ZIP was created.",
+    "The readiness validator was run and correctly returned NOT BUILD READY because verdict=Reject and the scale, split, lookup, capability-baseline, and null-metric gates are not passed.",
+    "Challenge-specific pilot evidence and the untouched official ZIP were relocated into the named Sprint 5 folder. This authoritative registry record remains at the shared coordination path by design.",
+    "The final adversarial audit checked all 3,405 lines of prev_reviews.txt, scanned 33 accepted challenge descriptions, and confirmed that the current formulation remains rejected and has no submission-ready grader or description."
+  ]
+}

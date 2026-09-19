@@ -1,0 +1,28 @@
+{
+    "title":  "Multispectral Undertext Reading With Spatial Evidence",
+    "slug":  "multispectral-undertext-reading-with-spatial-evidence",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019f86c3-7359-76b2-b28d-d30ed80a96aa",
+    "output_folder":  "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Multispectral Undertext Reading With Spatial Evidence",
+    "dataset":  "Archimedes Palimpsest official release",
+    "license":  "CC BY 3.0 Unported",
+    "created_at":  "2026-07-22T03:48:06.0723547+05:30",
+    "updated_at":  "2026-07-22T12:40:14.6903469+05:30",
+    "blocker":  "Mandatory pilot gate not proven: under the stricter metric, the measured lightweight four-band KNN score (0.330053062) did not materially outperform the best single-band KNN score (0.331144471), and no trained intended CPU multispectral recognizer was completed.",
+    "notes":  [
+                  "Build task started in owner task 019f86c3-7359-76b2-b28d-d30ed80a96aa. Reading current rules, accepted examples, and independently verifying official Archimedes source/license before implementation.",
+                  "Structurally complete challenge folder built at the required D: output path with prepare.py, grade.py, generate.py, zip_raw_for_upload.py, public/private prepared data, forms, source verification, local audit summary, and synced PASTE_THIS files.",
+                  "Official source and license verified: Archimedes Palimpsest official release, CC BY 3.0 Unported. TEI audit found 132 TEI files, 8,310 mapped lb/facs lines, 3,263 unclear tags, 6,381 supplied tags, and 195 gap tags.",
+                  "Clean source zip created: archimedes_palimpsest_official_subset.zip, 95,307,092 bytes, sha256 9098f7963df5b8af8d2f1d94b1f02c6e0044db6b8f8e3a32cf55bdaa09c4aaee, 910 members, only untouched official files plus provenance.",
+                  "Prepared split: 3,949 examples, 2,747 train rows, 1,202 test rows, 45 train physical-leaf groups, 19 test physical-leaf groups, zero group overlap, public size 312,540,590 bytes.",
+                  "Leakage probes: exact public-image SHA256 hits in raw images 0/15,796; public file-size hits in raw images 0/15,796; source-token hits in public CSVs 0; coarse raw-thumbnail retrieval rank1 0.0125, rank5 0.04375.",
+                  "Grader tightened again for spatial/state strictness: match IoU threshold 0.35, higher evidence-state weight, explicit lost/unclear count agreement, lower detection-only credit. Smoke passed with sample 0.219955574, perfect oracle 1.0, shuffled perfect 1.0; structural malformed submissions raise InvalidSubmissionError; row-local malformed JSON/boxes/evidence markers score zero for the affected row.",
+                  "challenge_audit.py passed with zero failures and one known dataset-form warning for the real unstructured raw media/XML archive.",
+                  "Updated baseline scores: text-prior-only 0.127319018, UV-only 0.299554783, visible-only 0.331144471, NIR-only 0.308335002, tungsten-only 0.316397969, four-band KNN 0.330053062, PCA/edge fusion KNN 0.337977834, oracle 1.0.",
+                  "Updated targeted grader exploit probes: exact hidden text with generic boxes 0.182509448; oracle boxes with all text marked lost 0.438773891; exact hidden text with shifted boxes 0.000088856.",
+                  "Aikyatan/checkpoint audit report added at AIKYATAN_CHECKLIST_AUDIT.md and upload instructions added at UPLOAD_INSTRUCTIONS.md.",
+                  "Blocked rather than ready_for_review because the required intended-multispectral pilot gate was not demonstrated by the measured four-band baseline.",
+                  "Accepted-description comparison completed against D:\\create_challenge_synthetic\\shipd_domain_challenge_docs, D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\accepted, and D:\\create_challenge_synthetic_output_folder\\sprint_3\\accepted. challenge_description.md now exactly matches the platform-visible problem-description block in CHALLENGE_FORM_FILL.md."
+              ]
+}

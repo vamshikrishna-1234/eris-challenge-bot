@@ -1,0 +1,30 @@
+{
+  "title": "Watch-Grounded Inhaler Protocol Integrity Audit",
+  "slug": "watch-grounded-inhaler-protocol-integrity-audit",
+  "status": "uploaded",
+  "owner_machine": "VAMSHI",
+  "owner_task": "019fc43b-09f4-71a3-8e1c-e16306f04762",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Watch-Grounded Inhaler Protocol Integrity Audit",
+  "dataset": "DPI-Watch: An Inhaler Sound Dataset, Zenodo 15221786",
+  "license": "CC BY 4.0",
+  "created_at": "2026-08-03T12:00:00+05:30",
+  "updated_at": "2026-08-04T14:26:29+05:30",
+  "blocker": "",
+  "notes": [
+    "Duplicate audit across both sprint roots and both Shipd challenge-document mirrors found no inhaler-use or dry-powder device-audio challenge.",
+    "Source MD5, CC BY 4.0 rights, participant-safe split, native annotation grounding, grader red-team suite, and byte-for-byte deterministic rebuild all passed.",
+    "Prepared 212 labeled and 72 hidden 48-second episodes; public tree is 436,268,994 bytes with SHA-256 2b3f5555df265cea88a4aab261c61abdd2b9e3a9ff882bc6ffd817f896623d65.",
+    "Revised measured scores: timing/majority prior 0.192974, duration-only 0.216999, audio ExtraTrees 0.407108, CUDA CNN 0.455227, perfect 1.0.",
+    "Residual public-source fragment recognition risk is accepted and disclosed; no source secrecy or anti-lookup claim is made.",
+    "Official archive imported by direct URL to dataset jd72c6zn3k3xevd5zg9vt6qzp18a8v4g; platform extraction exposed exactly 72 files.",
+    "All four dataset validation checks passed: duplicate detection, file structure, title quality, and description quality.",
+    "Challenge jx7dxvcb33fk11havbbnqaacjd8a96q8 uploaded with Medium, A10G, audio tag, exact description, grade.py, and prepare.py; platform prepare produced public/private outputs.",
+    "Challenge checks and agent evaluation were not run during initial upload, per explicit user instruction.",
+    "Platform Trivial Issues wording correction applied on 2026-08-04: Overview now explicitly says five timing values (four event durations plus the inhalation-to-post-exhalation gap). Local copies, smoke checks, platform autosave, same-URL persistence, and code-block table visibility were verified; checks were not rerun.",
+    "Agent difficulty revision prepared on 2026-08-04 after Run 1 scored 0.7195 and Run 3 scored 0.7184. Removed additive consistency credit, gated optional timing by presence correctness, made complete joint audit accuracy the largest core component, and converted calibration to a 5% multiplicative modulation. A deterministic nested-skill sweep is strictly monotone: 0.192974, 0.404293, 0.605722, 0.799047, 1.0.",
+    "Platform upload of the revised grader and description was initially delayed because Run 2 kept Version 1 locked beyond the normal evaluation duration; no alternate URL or page was opened.",
+    "Version 2 is now live on the same challenge URL with Pipeline v2, the corrected grader, synchronized prepare script, and clarified coupled whole-episode description. Platform preparation completed successfully; all four existing dataset checks remain passed.",
+    "The novelty checker first displayed 4/10 even though its own analysis found no exact match, placed the task in the RECOMBINED band, and explicitly capped it at 6. The description now states the existing coupled whole-episode contract directly; the refreshed novelty gate passed and enabled agent evaluation without hiding DPI-Watch or claiming frontier novelty.",
+    "Three Version 2 agent attempts were launched as evaluation round 2 of 3 on 2026-08-04 and are currently running."
+  ]
+}

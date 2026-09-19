@@ -1,0 +1,29 @@
+﻿{
+    "title":  "CT Tree-Core Crossdating And Ring Evidence Ledger",
+    "slug":  "ct-tree-core-crossdating-and-ring-evidence-ledger",
+    "status":  "ready_for_review",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019f856a-f328-79d0-99dd-8a4639318980",
+    "output_folder":  "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\CT Tree-Core Crossdating And Ring Evidence Ledger",
+    "dataset":  "CT scanned increment cores accompanying the paper Beech latewood density as a proxy for temperature reconstruction (Zenodo 18481194)",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-07-21T21:31:21.2936587+05:30",
+    "updated_at":  "2026-07-24T07:35:00.0000000+05:30",
+    "blocker":  "",
+    "notes":  [
+                  "Build completed in staged workspace and prepared for final folder mirroring.",
+                  "Official Zenodo v1 source and CC BY 4.0 license verified; clean source ZIP size 260,205,684 bytes, sha256 ee5dd5b0e4f51790f3fc9639aa2f2e641261bc256a3e7588a5e18803867354e3.",
+                  "Prepared check run produced 435 train and 126 test episodes, public size 52,044,828 bytes, private size 322,964 bytes.",
+                  "Train/test physical tree overlap is zero; every scored test subgroup has at least 30 examples.",
+                  "Sample score 0.021799, perfect oracle 1.000000, simple peak plus correlation 0.011481, source-fingerprint lookup 0.021757.",
+                  "challenge_audit.py completed with zero failures; details in CHECKPOINT_REVIEW.md and FINAL_AUDIT.md.",
+                  "Post-review audit completed against checkpoints, prev_reviews, accepted CV descriptions, source lookup, and grader exploit checks; compliance report added.",
+                  "Source lookup stress probe added: density rank-1 1/126, CT texture rank-1 4/126, median rank 999 for both.",
+                  "grade.py now raises InvalidSubmissionError for structural malformed submissions while row-local malformed ring JSON scores zero for the affected row.",
+                  "Dedicated raw upload copy created at raw_upload/ct_tree_core_official_source_subset.zip.",
+                  "Accepted challenge-description pass completed: sampled accepted Sprint 3 challenge forms, switched to ## Submission, added output table, removed text-language code fences, and reran smoke/baseline/source-lookup checks.",
+                  "Reviewer yash9439 density revision fixed on 2026-07-23: prepare.py repairs official density NaN gaps before normalization and validates all prepared density npz payloads; regenerated data has 0 all-NaN files, 0 non-finite files, 561/561 unique density hashes, and no train/test signal-hash overlap.",
+                  "Post-revision audit rerun on final D: folder: smoke, analyze, challenge_audit, custom exploit checks, grader strictness, source lookup, and determinism passed; report saved as POST_REVISION_AUDIT_2026-07-23.md.",
+                  "Source-secrecy revision completed on 2026-07-24: removed participant-visible source/license/attribution breadcrumbs from CHALLENGE_FORM_FILL.md, synced final D: folder, updated challenge-builder/eris skill guidance, and reran challenge_audit with zero failures."
+              ]
+}

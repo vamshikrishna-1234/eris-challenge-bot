@@ -1,0 +1,27 @@
+{
+  "title": "Laundry Resource-State Reconstruction From Sound and Vibration",
+  "slug": "laundry-resource-state-reconstruction-from-sound-and-vibration",
+  "status": "ready_for_review",
+  "owner_machine": "VAMSHI",
+  "owner_task": "019fc5e5-805f-73e1-8b49-1be020d29b65",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Laundry Resource-State Reconstruction From Sound and Vibration",
+  "dataset": "LARCO v6, Zenodo 10.5281/zenodo.19666168",
+  "license": "CC BY 4.0 for audio.zip, vibrations.zip, and general.zip",
+  "created_at": "2026-08-03T10:01:22.7754534+05:30",
+  "updated_at": "2026-08-04T10:18:00+05:30",
+  "blocker": "",
+  "notes": [
+    "GPU-only From Scratch build complete. Public source-lookup remains a disclosed, owner-accepted, non-blocking warning.",
+    "All challenge artifacts are consolidated under the exact Sprint 4 output folder; earlier/superseded material is contained under organizer-only _recovery_artifacts and excluded from manifests/uploads.",
+    "Clean raw upload: 31 cycles, 97 verified official members, 1,950,380,817 bytes, MD5 117cdc39a746a6079298e013234e6146, SHA-256 90931fec37b5682bada1e23ffe612cae66506b8ca0b479348713540ee9162a4c.",
+    "Canonical prepared data: 101 train rows/21 cycles, 33 test rows/10 held-out-family cycles, 185,905,955 public+private bytes; 272 public/private files rebuild byte-for-byte through prepare(raw, public, private).",
+    "Leakage hardening: private-token IDs, fixed-size media, time/channel transforms, local AGC, coarsened context, zero exact source-media hashes; 134-way match probe top-1 3.03%, top-5 12.12%, median rank 33.",
+    "Difficulty-hardening grader: active-bin plus transition-aware profile scoring, resource-active totals, four-bin event tolerance, central state/event weights; no nonlinear cap/exponent or all-or-nothing penalty.",
+    "Grader: oracle 1.0, sample 0.199404, global structural faults raise InvalidSubmissionError, row-local faults score that row zero; red team and 13/13 unit tests pass.",
+    "Measured pure From Scratch GPU baseline: RTX 3050 6GB, 174,700 parameters, 30 epochs/144.78s train, 6.33s inference, 12.27 MiB peak VRAM, score 0.382461; fusion gain +0.041353 over strongest single modality. Stable participant reference stack: PyTorch 2.3.0 with CUDA 12.1.",
+    "Ensemble stress: strongest base 0.470063, best pair blend 0.453658, validation-selected global head mix 0.472299; measured margin below 0.65 is 0.177701. This is evidence, not an unconditional future-solver guarantee.",
+    "Novelty internally assessed 8/10 with no local duplicate. Final reviewer checklist passes with one disclosed lookup warning; canonical paste copies and final 341-file frozen manifest pass.",
+    "Problem description revised against accepted examples: compact file-overview, train.csv, test.csv, submission, and metric tables are present. Because this Shipd editor strips native table nodes, the live form uses five persisted multiline monospaced table blocks; refresh verification passed without encoding artifacts.",
+    "Platform revision: corrected the prepared private filename from answer.csv to the required answers.csv, rebuilt data successfully on Shipd, and reran pre-submission checks. Shipd now reports 12/12 with zero validation failures and zero check errors; Problem Originality, Novelty Assessment, Trivial Issues, and Grade Sample Validation are complete."
+  ]
+}

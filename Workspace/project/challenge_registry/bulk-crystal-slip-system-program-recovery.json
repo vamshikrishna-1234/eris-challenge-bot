@@ -1,0 +1,26 @@
+﻿{
+    "title":  "Bulk Crystal Slip-System Program Recovery",
+    "slug":  "bulk-crystal-slip-system-program-recovery",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fbd5e-73f5-7402-a9b9-a231442ea0d5",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Bulk Crystal Slip-System Program Recovery",
+    "dataset":  "Rejected primary: Dryad 10.5061/dryad.sj3tx96g8; rejected alternate pilot: Zenodo 10.5281/zenodo.10003246",
+    "license":  "Primary CC0 1.0; alternate CC BY 4.0 (both official APIs verified)",
+    "created_at":  "2026-08-01T18:15:04.1340530+05:30",
+    "updated_at":  "2026-08-02T22:30:00+05:30",
+    "blocker":  "The best accessible alternate, Zenodo 10003246, was fully downloaded and inspected. It lacks active internal slip-surface targets; its exact boundary labels and target-adjacent variables are public and source-matchable. Measured leave-one-zone-out macro-F1 is 0.771761 from misorientation alone and 0.793405 from canonical fields, while 3D boundary-only features score 0.275630. A build would fail the scientific-label, lookup, novelty, GPU, one-specimen generalization, and <=0.65 agent-headroom gates.",
+    "notes":  [
+                  "Dedicated GPU build task created with gpt-5.6-sol at xhigh; selected four-file Dryad v4 source is 2,390,122,399 bytes and CC0 1.0; active-slip label and platform per-file-size gates are mandatory.",
+                  "Current Shipd URL-import UI advertises a 100 GB maximum file size, so the selected source sizes pass the live platform size gate.",
+                  "Official Dryad API reconfirmed version 4, version API ID 450769, publication date 2026-07-02, CC0 1.0, filenames, byte sizes, and SHA-256 values.",
+                  "Official README confirms DCT meshed slip planes and topograph slip-band contrast but does not establish active-surface masks, event assignments, boundary endpoints, or transmission labels.",
+                  "Blocked handoff artifacts are in E:\\create_challenge_synthetic_output_folder\\sprint_4\\Bulk Crystal Slip-System Program Recovery; no synthetic targets, challenge scripts, or form were created.",
+                  "2026-08-01 full checkpoints/previous-reviews audit completed. Exact-title artifacts were already consolidated in the required Sprint 4 folder; the mandated registry record remains under challenge_registry.",
+                  "Fresh direct-URL checks still return HTTP 401 for all four official files, no exact local payload archives were found, and no upload ZIP was created because an empty, reconstructed, or preprocessed ZIP would violate the raw-source rule.",
+                  "Current audit verdict remains blocked/do not upload: novelty >=6, scientific labels, split fairness, source retrieval, prepared artifact quality, GPU runtime, baseline headroom, grader behavior, and participant description are not certified.",
+                  "2026-08-01 alternative-source scout completed. Accessible Zenodo records 10828880 and 10003246 provide useful HRDIC/EBSD or DCT/interaction data, but they are different specimens and neither supplies aligned active 3D slip-surface positions. ESRF session 10.15151/ESRF-ES-953230844 is about 4.99 TB with relevant scans generally 13-31 GB each. No drop-in replacement passed the source, label, split, and size gates; see ALTERNATIVE_SOURCE_SCOUT.md.",
+                  "2026-08-02 Zenodo 10003246 alternate pilot completed. Seven official files (266,684,183 bytes) downloaded with all MD5 checksums verified. Real contents: 588 DCT grains, 2,319 GB meshes/1,465,176 face rows, 233 surface grains, and 362 interaction rows. A 2D-to-3D graph/normal probe found partial real alignment, but no active internal slip surfaces exist.",
+                  "Measured held-zone source baselines: majority 0.205226 macro-F1, 3D boundary-only 0.275630, 3D+trace 0.305401, misorientation-only 0.771761, canonical variables 0.793405, and highest-Schmid candidate appears among active systems for 96.5665% of grains. Alternate rejected for lookup, canonical-task novelty, GPU relevance, one-specimen split, and <=0.65 headroom failures. No challenge scripts, grader, forms, prepared split, sample, agent score, or upload ZIP were created."
+              ]
+}

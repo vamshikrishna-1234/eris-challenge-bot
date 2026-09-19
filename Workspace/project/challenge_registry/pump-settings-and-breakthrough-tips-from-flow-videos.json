@@ -1,0 +1,75 @@
+{
+  "title": "Pump Settings And Breakthrough Tips From Flow Videos",
+  "slug": "pump-settings-and-breakthrough-tips-from-flow-videos",
+  "status": "rejected",
+  "stage": "revision_audit_rejected_no_resubmission",
+  "phase": "terminal",
+  "verdict": "Reject",
+  "owner_machine": "VAMSHI",
+  "owner_task": "current revision audit; task id unavailable",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\legacy_revisions\\Pump Settings And Breakthrough Tips From Flow Videos",
+  "dataset": "Real Flow Cell Videos With Pump And Breakthrough Labels",
+  "dataset_id": "jd72cr5qyepsdcz3pf1ex41pw189hpty",
+  "problem_id": "jx7dx7nnn6xd5mxfhry5pkyjwn89hr3w",
+  "license": "CC BY 4.0",
+  "license_source": "https://zenodo.org/records/14222725",
+  "domain": "Video",
+  "gpu_tier": "CPU",
+  "compute": "No resubmission; revision rejected at source/native-truth/stability gates",
+  "blocker": "Real experimental contours are converted into synthetic/composited videos; heuristic labels and only 16 independent hidden experiments prevent an honest repair from this exact source.",
+  "raw_bytes": 48301536,
+  "independent_groups": 32,
+  "created_at": "2026-09-13T04:14:13+05:30",
+  "updated_at": "2026-09-13T18:48:15.9128666+05:30",
+  "evidence": {
+    "source": {
+      "record": "10.5281/zenodo.14222725",
+      "version": "v2",
+      "archive_name": "ExperimentalData.zip",
+      "archive_bytes": 48301536,
+      "archive_md5": "8cd58abe7a03f96fb46fd49322f0f8e5",
+      "workbooks": 32,
+      "native_video_files": 0
+    },
+    "prepared": {
+      "rows": 576,
+      "render_variants_per_experiment": 18,
+      "train_rows": 288,
+      "test_rows": 288,
+      "train_independent_experiments": 16,
+      "test_independent_experiments": 16
+    },
+    "agent_scores": [0.5679, 0.5736, 0.565],
+    "audit": "E:\\create_challenge_synthetic_output_folder\\legacy_revisions\\Pump Settings And Breakthrough Tips From Flow Videos\\REVISION_AUDIT_2026-09-13.md",
+    "replacement_source_search": "E:\\create_challenge_synthetic_output_folder\\legacy_revisions\\Pump Settings And Breakthrough Tips From Flow Videos\\REPLACEMENT_SOURCE_SEARCH_2026-09-13.md",
+    "replacement_search_verdict": "No compatible real-media source passed independent-scale and native-target gates"
+  },
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": false,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": false,
+    "post_filter_scale_passed": false,
+    "split_stability_passed": false,
+    "semantic_duplicate_audit_passed": false,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": false,
+    "import_route_verified": false,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [
+      "synthetic/composited core video inputs",
+      "heuristic tip and counterfactual targets",
+      "16 independent hidden experiments",
+      "missing exact raw_upload.zip and canonical organizer package",
+      "unreproduced source retrieval and grader regression audits"
+    ]
+  },
+  "notes": [
+    "This is an existing platform revision, not a new automation-batch slot.",
+    "The active two-slot controller batch was not modified.",
+    "No platform edit, check rerun, resubmission, or Run Agents action was performed.",
+    "A bounded replacement-source search inspected the closest permissive real time-lapse and video repositories; none passed the independent-unit and native-target gates."
+  ]
+}

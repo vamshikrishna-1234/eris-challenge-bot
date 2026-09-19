@@ -1,0 +1,212 @@
+{
+  "timestamp": "2026-07-22T23:07:44+05:30",
+  "homepageCount": 59,
+  "alreadyRecordedBeforeDetail": 41,
+  "newCandidates": 18,
+  "appended": 18,
+  "skippedAfterDetail": 0,
+  "failures": 0,
+  "by_bucket": {
+    "CPU": {
+      "Sequence-To-Sequence.md": 6,
+      "Other.md": 2,
+      "NLP.md": 2,
+      "Object-Detection.md": 4,
+      "RAG.md": 1,
+      "Computer-Vision.md": 1,
+      "From-Scratch.md": 1,
+      "LLM-Evaluation.md": 1
+    },
+    "Non-CPU": {}
+  },
+  "cpu_total": 93,
+  "non_cpu_total": 8,
+  "very_novel_count": 7,
+  "very_novel_titles": [
+    "Six-Statement Intruder Localization and Consensus Restoration",
+    "WebAssembly Conformance Trace Fragment Recovery",
+    "Conserved Device-Code Allocation Repair",
+    "Contrastive Trajectory Evidence Set Completion",
+    "Interleaved Loanword Stream Deconvolution",
+    "Decoding Transformation Sequences on Unseen Typefaces",
+    "Evaluator Audit Trail Recovery"
+  ],
+  "appended_items": [
+    {
+      "id": "jx792w2csra4bays8fr0xwtzg18avva4",
+      "title": "Dialogue Turn Argument Extraction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx792w2csra4bays8fr0xwtzg18avva4",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx7f2qxyhnk4cn79emghtc27v58awtjz",
+      "title": "Northeast India Shared Tokenizer Design",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7f2qxyhnk4cn79emghtc27v58awtjz",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other"
+    },
+    {
+      "id": "jx7a4bp0rv127gedcxhehq24h18ahzrp",
+      "title": "Six-Statement Intruder Localization and Consensus Restoration",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7a4bp0rv127gedcxhehq24h18ahzrp",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md",
+      "displayed_domain": "NLP",
+      "novel_reason": "structured repair/completion under consistency constraints",
+      "design_trick": "Locate an inconsistent statement and restore consensus jointly."
+    },
+    {
+      "id": "jx76jrc5e62k9vqzcawn30hh698as67y",
+      "title": "WebAssembly Conformance Trace Fragment Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx76jrc5e62k9vqzcawn30hh698as67y",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "trace/sequence recovery output rather than a flat label",
+      "design_trick": "Recover missing conformance trace fragments as structured execution evidence."
+    },
+    {
+      "id": "jx711xq0vxy30sk54t3yknzym58apa72",
+      "title": "Conserved Device-Code Allocation Repair",
+      "url": "https://shipd.ai/quests/eris/challenges/jx711xq0vxy30sk54t3yknzym58apa72",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md",
+      "displayed_domain": "NLP",
+      "novel_reason": "structured repair/completion under consistency constraints",
+      "design_trick": "Repair a constrained code allocation while preserving conservation rules."
+    },
+    {
+      "id": "jx7ceva4xr7zszhwn6221y9rw98asv2g",
+      "title": "Contrastive Trajectory Evidence Set Completion",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7ceva4xr7zszhwn6221y9rw98asv2g",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "structured repair/completion under consistency constraints",
+      "design_trick": "Complete contrastive evidence sets instead of predicting one class."
+    },
+    {
+      "id": "jx78b1z7wkwat0zd9yj00h37qn8ah910",
+      "title": "Compositional Facility Evidence Normalization",
+      "url": "https://shipd.ai/quests/eris/challenges/jx78b1z7wkwat0zd9yj00h37qn8ah910",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx7dfda1se8t3gg27xr699q3c18aptn6",
+      "title": "Informal-to-Formal Theorem Retrieval with Adversarial Local Negatives",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7dfda1se8t3gg27xr699q3c18aptn6",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx7btshk3p31902nqca341zxm98ayvep",
+      "title": "Work-Zone Safety Evidence Inventory Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7btshk3p31902nqca341zxm98ayvep",
+      "bucket": "CPU",
+      "domain": "Object Detection",
+      "file": "Object-Detection.md",
+      "displayed_domain": "Object Detection"
+    },
+    {
+      "id": "jx7baeg5jdp3vesgnsv5xyrnx58ayygf",
+      "title": "Historic Newspaper Visual Region Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7baeg5jdp3vesgnsv5xyrnx58ayygf",
+      "bucket": "CPU",
+      "domain": "Object Detection",
+      "file": "Object-Detection.md",
+      "displayed_domain": "Object Detection"
+    },
+    {
+      "id": "jx75nw7642c7b64qx2twjqyf298at54s",
+      "title": "Printing Element Provenance Detection",
+      "url": "https://shipd.ai/quests/eris/challenges/jx75nw7642c7b64qx2twjqyf298at54s",
+      "bucket": "CPU",
+      "domain": "Object Detection",
+      "file": "Object-Detection.md",
+      "displayed_domain": "Object Detection"
+    },
+    {
+      "id": "jx70ngyzkbcyf6gkgnjaywzcph8atg7v",
+      "title": "Medieval Charter HTR Error Localisation",
+      "url": "https://shipd.ai/quests/eris/challenges/jx70ngyzkbcyf6gkgnjaywzcph8atg7v",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx7fkdhtx5yx2kcghpgmkqvvkd8atjyt",
+      "title": "Coded Symptom-to-Disease Diagnosis",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7fkdhtx5yx2kcghpgmkqvvkd8atjyt",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md",
+      "displayed_domain": "RAG"
+    },
+    {
+      "id": "jx7cr1f1f41epgg440h7mevphd8ardz9",
+      "title": "Ceramic Layer Recovery Routing",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7cr1f1f41epgg440h7mevphd8ardz9",
+      "bucket": "CPU",
+      "domain": "Object Detection",
+      "file": "Object-Detection.md",
+      "displayed_domain": "Object Detection"
+    },
+    {
+      "id": "jx7a5x92gvm3cwyw4hda9a4a1n8asvne",
+      "title": "Coil Quarantine",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7a5x92gvm3cwyw4hda9a4a1n8asvne",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision"
+    },
+    {
+      "id": "jx79z7g4c0jts3yyps66beq3g58arhds",
+      "title": "Interleaved Loanword Stream Deconvolution",
+      "url": "https://shipd.ai/quests/eris/challenges/jx79z7g4c0jts3yyps66beq3g58arhds",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "trace/sequence recovery output rather than a flat label; strong benchmark-design or linguistic generalization angle",
+      "design_trick": "Separate interleaved linguistic streams with sequence-level deconvolution."
+    },
+    {
+      "id": "jx7e2n9xkmeaxect1tfs6q39t98a7q7r",
+      "title": "Decoding Transformation Sequences on Unseen Typefaces",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7e2n9xkmeaxect1tfs6q39t98a7q7r",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md",
+      "displayed_domain": "From Scratch",
+      "novel_reason": "trace/sequence recovery output rather than a flat label",
+      "design_trick": "Decode unseen typeface transformation programs rather than labels."
+    },
+    {
+      "id": "jx74n1e12dzgtefkrmezca11ds89xfcf",
+      "title": "Evaluator Audit Trail Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx74n1e12dzgtefkrmezca11ds89xfcf",
+      "bucket": "CPU",
+      "domain": "LLM Evaluation",
+      "file": "LLM-Evaluation.md",
+      "displayed_domain": "LLM Evaluation",
+      "novel_reason": "trace/sequence recovery output rather than a flat label",
+      "design_trick": "Recover the evidence/audit path behind an evaluator decision."
+    }
+  ]
+}

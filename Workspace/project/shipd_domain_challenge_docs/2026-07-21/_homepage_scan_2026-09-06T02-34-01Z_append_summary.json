@@ -1,0 +1,31 @@
+{
+  "homepageCardsFound": 36,
+  "skippedAlreadyBeforeDetail": 4,
+  "detailPagesAttempted": 32,
+  "appendedTotal": 32,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Computer Vision": 2,
+      "LLM Evaluation": 1,
+      "Sequence To Sequence": 1,
+      "Fine-Tuning": 2,
+      "From Scratch": 1
+    },
+    "CPU": {
+      "Computer Vision": 4,
+      "RAG": 2,
+      "From Scratch": 4,
+      "Sequence To Sequence": 10,
+      "Fine-Tuning": 1,
+      "NLP": 2,
+      "LLM Evaluation": 1,
+      "Object Detection": 1
+    }
+  },
+  "veryNovelAdded": [
+    "Constrained Endoscopic Mask Triage",
+    "Change Mosaic Ledger: Counterfactual Semantic Transition Recognition"
+  ],
+  "limitations": []
+}

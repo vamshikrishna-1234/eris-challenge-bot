@@ -1,0 +1,37 @@
+I have to fill all these details for creation of dataset:
+Title
+Required
+A clear, descriptive name for your dataset 
+
+Description
+Required
+Document your dataset thoroughly: columns, data types, characteristics, and any relevant context. Note that images are currently not supported.
+
+Data Files
+Required
+For synthetic generated datasets, upload exactly two source files: `generate.py` and `raw_upload.zip`. The zip is automatically extracted by the platform and may appear in validation as a `raw_upload/` directory beside `generate.py`.
+
+**Flat zip contents:** `raw_upload.zip` should contain the raw corpus files directly (for example `scenes.csv`, `images/`, `videos/`, `LICENSE.txt`) and should not contain `raw_data/`, a challenge folder, `public/`, `private/`, caches, or source code. The dataset description's File Structure should match the validator-visible layout: top-level `generate.py` plus extracted `raw_upload/`.
+
+For non-generated or legacy real-data datasets, upload the raw files or a flat archive and document the platform-visible file tree accurately.
+
+Source Files
+
+
+Import from URL (up to 100GB)... is alos available
+Import
+Supports HTTP/HTTPS URLs. Maximum file size: 100GB.
+
+No files uploaded yet.
+
+License & Source
+Attribution and licensing information:
+
+
+ODC Attribution License (ODC-By)-exmaple
+On sites like Kaggle/Hugging Face, datasets are often re-uploaded by users from their original source.
+
+It is your responsibility to verify the license from the original source. Failing to do so may result in review delays, and rejection in some cases.
+link to the dataset :(if not synthetic):
+https://huggingface.co/datasets/HuggingFaceFW/fineweb
+

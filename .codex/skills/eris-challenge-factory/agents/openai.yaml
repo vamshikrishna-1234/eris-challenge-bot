@@ -1,0 +1,4 @@
+interface:
+  display_name: "Eris Challenge Factory"
+  short_description: "Research, hand off, build, and audit Project Eris challenges"
+  default_prompt: "Use the Eris Challenge Factory workflow to research or build this challenge, applying live rules, novelty, licensing, CPU, leakage, and verification gates."

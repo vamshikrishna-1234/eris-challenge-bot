@@ -1,0 +1,37 @@
+{
+  "title": "Land Treatment Prescription and Follow-Up Portfolio",
+  "slug": "land-treatment-prescription-and-follow-up-portfolio",
+  "status": "rejected",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a082d3-0eff-7831-8e21-672c15c431ae",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Land Treatment Prescription and Follow-Up Portfolio",
+  "dataset": "USGS LTDL v7.0; tracker E089",
+  "license": "CC0 1.0 Universal",
+  "created_at": "2026-09-14T08:35:36.7383204+05:30",
+  "updated_at": "2026-09-14T08:42:42+05:30",
+  "stage": "local_source_pilot_complete",
+  "reason_code": "public_source_answer_reversibility",
+  "blocker": "The proposed soil/vegetation-to-confirmed-implemented-seed-mix formulation exposes 98.1289% of complete native targets through exact public-source matching; common-word TF-IDF with 50% word dropout recovers 97.3% on 1,000 queries.",
+  "notes": ["User requested local-only work. No uploads, platform draft changes, or agent runs.", "CAPTCHA/source access resolved; full official archive acquired and CRC-verified.", "Rejected formulation, not a proof against every possible use of LTDL. No fake release files or completed-build claim."],
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": true,
+    "lookup_attack_passed": false,
+    "unresolved_gates": ["Public-answer retrieval fails", "No final source-family split, GPU baseline, metric-null audit, or full challenge novelty validation: early-stop source gate"]
+  },
+  "evidence": {
+    "source_archive_bytes": 1003924474,
+    "source_sha256": "7cb33ceb0c4d727b2d0d9ef6c3a3cafe79fa732e373720416bbd00ed4de9e9c9",
+    "crc_all_members_passed": true,
+    "eligible_native_target_projects": 1924,
+    "field_offices_before_final_grouping": 115,
+    "source_exact_complete_target_recovery": 0.9812889812889813,
+    "word_dropout_tfidf_complete_target_recovery": 0.973,
+    "fuzzy_query_count": 1000,
+    "results_path": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Land Treatment Prescription and Follow-Up Portfolio\\source_lookup_audit.json",
+    "readme": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Land Treatment Prescription and Follow-Up Portfolio\\README.md"
+  }
+}

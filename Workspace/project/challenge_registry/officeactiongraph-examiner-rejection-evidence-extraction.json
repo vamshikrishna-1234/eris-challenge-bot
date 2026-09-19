@@ -1,0 +1,19 @@
+{
+    "title": "OfficeActionGraph Examiner Rejection Evidence Extraction",
+    "slug": "officeactiongraph-examiner-rejection-evidence-extraction",
+    "status": "blocked",
+    "owner_machine": "VAMSHI",
+    "owner_task": "019fe0b6-969c-7853-ba03-20f255a178f2",
+    "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\OfficeActionGraph Examiner Rejection Evidence Extraction",
+    "dataset": "USPTO Office Action Research Dataset, Office Action APIs, and official office-action text",
+    "license": "U.S. government public data and any PatentsView CC BY 4.0 components; independently verify exact redistribution terms",
+    "created_at": "2026-08-08T14:58:59.3252961+05:30",
+    "updated_at": "2026-08-08T15:25:00+05:30",
+    "blocker": "Mandatory source/native-label gate failed: official text+structured join could not be run because current USPTO ODP API endpoints returned 403 without credentials, no API key was present, and the public OARD structured CSV route lacks office-action prose and native evidence spans. Building would require invented or heuristic spans, which is disallowed.",
+    "notes": [
+        "Moved blocked audit folder to E:\\create_challenge_synthetic_output_folder\\sprint_4\\OfficeActionGraph Examiner Rejection Evidence Extraction and kept only this registry record updated.",
+        "Created blocked audit folder with SOURCE_VERIFICATION.md, DATA_ACQUISITION.md, GATE_AUDIT.md, NOVELTY_AND_DUPLICATE_AUDIT.md, and scripts/probe_uspto_gate.py.",
+        "USPTO OARD structured CSV release is documented as about 800 MB and public-domain-marked, but it contains structured rejection/citation fields, not exact rejection-text spans.",
+        "PatentsView was not used."
+    ]
+}

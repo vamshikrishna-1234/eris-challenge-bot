@@ -1,0 +1,56 @@
+# Preferred raw-source upload
+
+Preferred path: run the local helper and upload the resulting clean ZIP.
+
+```powershell
+python build_source_subset_zip.py --staging official_raw_subset --output waggle_dance_raw_subset.zip
+```
+
+Upload:
+
+```text
+waggle_dance_raw_subset.zip
+```
+
+This clean ZIP contains the official CSV files below plus unchanged extracted date-level members from `Berlin2019_tracks.zip` for:
+
+```text
+Berlin2019_tracks/2019-08-25.csv
+Berlin2019_tracks/2019-08-27.csv
+Berlin2019_tracks/2019-08-28.csv
+Berlin2019_tracks/2019-08-29.csv
+Berlin2019_tracks/2019-09-02.csv
+Berlin2019_tracks/2019-09-05.csv
+Berlin2019_tracks/2019-09-10.csv
+Berlin2019_tracks/2019-09-11.csv
+```
+
+# Fallback official URL imports
+
+Use these only if the platform/reviewer explicitly accepts importing the full 1.4 GB official track archive despite the user's approximately 1 GB source-budget preference.
+
+Required official CSV URLs:
+
+```text
+https://zenodo.org/api/records/7928121/files/Berlin2019_dances.csv/content
+https://zenodo.org/api/records/7928121/files/Berlin2019_dances_with_manually_verified_times.csv/content
+https://zenodo.org/api/records/7928121/files/Berlin2019_feeder_experiment_log.csv/content
+https://zenodo.org/api/records/7928121/files/Berlin2019_followers.csv/content
+https://zenodo.org/api/records/7928121/files/Berlin2019_waggle_phases.csv/content
+https://zenodo.org/api/records/7928121/files/Berlin2019_dance_classifier_labels.csv/content
+```
+
+Required track archive URL for fallback:
+
+```text
+https://zenodo.org/api/records/7928121/files/Berlin2019_tracks.zip/content
+```
+
+Not required:
+
+```text
+https://zenodo.org/api/records/7928121/files/Berlin2019_dance_classifier_unlabeled.csv/content
+https://zenodo.org/api/records/7928121/files/Berlin2021_waggle_phase_classifier_labels.csv/content
+https://zenodo.org/api/records/7928121/files/Berlin2021_waggle_phase_classifier_ground_truth.zip/content
+https://zenodo.org/api/records/7928121/files/Berlin2021_waggle_phases.csv/content
+```

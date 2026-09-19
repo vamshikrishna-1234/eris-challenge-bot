@@ -1,0 +1,21 @@
+﻿{
+    "title":  "Smartphone Acoustic-To-Vibration Motor State Reconstruction",
+    "slug":  "smartphone-acoustic-to-vibration-motor-state-reconstruction",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fc60a-8682-7971-8b2a-b6aaa0f29d4a",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Smartphone Acoustic-To-Vibration Motor State Reconstruction",
+    "dataset":  "IM-VACD v1, Mendeley Data DOI 10.17632/yc8yhg5xjd.1",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-03T10:41:49.2581152+05:30",
+    "updated_at":  "2026-08-03T18:49:37.3014729+05:30",
+    "blocker":  "Mandatory non-lookup pilot gates failed: query-specific continuous acceleration phase is not recoverable (phase-aware mean centered correlation only 0.0209-0.0231), the full model waveform head is below calibration-only (0.3739 vs 0.3792), the nearest-waveform template beats the intended full model (0.4626 vs 0.3993), and measured novelty is 4.5/10.",
+    "notes":  [
+                  "Dedicated GPU From Scratch build task created with GPT-5.6 Sol xhigh. Public source lookup is accepted as non-blocking; synchronization, source-grounded sequence targets, non-regression framing, and novelty remain mandatory pilot gates.",
+                  "Official v1 archive verified: 545,852,387 ZIP bytes, 256 CRC-clean CSV members, 3,681,237,633 native bytes, SHA-256 58e823944d0ada395383fa9afb0a6449a150fe684d4b00374ca1804d415b5efb. Build uses the 160-file rigid-mount branch (2,290,605,966 native bytes) because cross-record calibration is scientifically defensible there; cross-phone condition captures are sequential, not simultaneous.",
+                  "Prepared data and strict grader complete: 80 train, 40 calibration, 40 test; 27.45 MB public. Perfect/shuffled-perfect score exactly 1.0, weak sample 0.3862, structural and row-local malformed tests pass. Clean rigid source ZIP is 338,000,061 bytes with SHA-256 d0facbbaeb159743acaf08620f7cffd38e115258b29d8dc3f74d57f13d4c2941; full-source and subset-source preparations match byte-for-byte apart from the truthful provenance receipt.",
+                  "Final GPU pilot: query-only 0.3119, calibration-plus-query 0.3993 (+0.0874), 21.86 s full training and 139,926,016 peak allocated VRAM on RTX 3050 6GB. Mandatory waveform/novelty gates nevertheless failed: phase-aware FIR/cross-spectrum mean correlations were only 0.0231/0.0209, the full waveform head trailed calibration-only, and a solver-visible nearest-record template scored 0.4626. Build completed and marked blocked; lookup risk was not the blocker.",
+                  "Ensemble acceptance-risk audit completed: all 168 fixed two/three-method combinations stayed below 0.65; best solver-valid ensemble 0.4829, private whole-row oracle 0.4872, and private mixed-head oracle 0.5269. Grader not arbitrarily rescaled; a separate platform agent rollout remains unmeasured.",
+                  "Platform upload completed on the two assigned Shipd URLs without navigation away. Dataset source archive IM-VACD_v1_rigid_platform_upload.zip (337,991,259 bytes; SHA-256 e580cf6d05f250d5dfb2c63c1da98f0b3b25c454ed5a9f05dabb0313bfd7ce4d) was uploaded and rebuilt; all dataset validation checks passed. Challenge fields and canonical grade/prepare scripts were autosaved, and Pipeline v1 successfully generated public/private artifacts. Challenge checks/evaluation and submission were intentionally not run. Scientific registry status remains blocked."
+              ]
+}

@@ -1,0 +1,27 @@
+﻿{
+    "title":  "Multi-Hole Ocean Core Splice Ledger and Masked Sensor Bridge Recovery",
+    "slug":  "multi-hole-ocean-core-splice-ledger-and-masked-sensor-bridge-recovery",
+    "status":  "ready_for_review",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019f84a9-e776-7fb0-ad2d-f8def7af583a",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Ocean-Core Composite Splice Recovery",
+    "dataset":  "IODP ocean-core correlation tables and masked physical-property sensor profiles",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-07-21T18:00:42.9568824+05:30",
+    "updated_at":  "2026-08-02T02:12:44+05:30",
+    "blocker":  "",
+    "notes":  [
+                  "Dedicated Codex task created and prompted for full Build-mode implementation.",
+                  "Build completed end to end in the dedicated output folder.",
+                  "Source package ocean_core_official_source.zip verified at 7,910,067 bytes, SHA256 70ee8320c9f4736dfb74e57b77e6236813e9902adc2c9e9fa26f8a2e350d3a2d.",
+                  "Prepared split: 238 train rows, 177 test rows, complete Expedition 320 families in train and Expedition 321 families in test.",
+                  "Smoke checks after masked-proxy bridge redesign: sample score 0.187248518929, perfect score 1.000000000000; strongest public cheap baseline 0.331496976556; nearest-template all-sensor baseline 0.312078242495; source lookup top1 0.0847.",
+                  "Challenge audit helper reported 0 failures.",
+                  "Final 2026-07-21 follow-up audit completed against checkpoints, prev_reviews, accepted examples, source lookup, malformed-submission behavior, and upload ZIP simulation; no blockers found.",
+                  "Follow-up grader hardening uses ROW_STRICTNESS_POWER = 1.25 plus a required bridge_json head; public cheap baselines now stay below 0.34.",
+                  "Accepted-description pass repeated against D-drive shipd_domain_challenge_docs and both accepted folders; CHALLENGE_FORM_FILL.md was rewritten in accepted style for the revised masked proxy bridge schema.",
+                  "Platform originality warning at novelty 5/10 was addressed with an actual schema/task redesign: public bridge_query_json, required bridge_json, central bridge scoring weight 0.26, regenerated public/private data, synced paste files, smoke/analyze/ZIP simulation rerun.",
+                  "Platform title/originality wording was revised from earlier correlation-heavy names to Multi-Hole Ocean Core Splice Ledger and Masked Sensor Bridge Recovery, emphasizing both the structured splice ledger and masked sensor-bridge recovery.",
+                  "Visible title revised to Multi-Hole Ocean Core Splice Ledger and Masked Sensor Bridge Recovery to emphasize the novel splice-ledger plus masked sensor-bridge output rather than generic sequence correlation."
+              ]
+}

@@ -1,0 +1,245 @@
+{
+  "scrapedAt": "2026-08-03T14:06:07+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\AppData\\Local\\Temp\\shipd_heartbeat_20260803_1403_details.json",
+  "payload": {
+    "scrapedAt": "2026-08-03T08:36:00.366Z",
+    "homepage": {
+      "url": "https://shipd.ai/quests/eris/",
+      "homepageCardsFound": 23,
+      "skippedAlready": 22,
+      "candidateLinks": [
+        {
+          "id": "jx7d85hxz5p0e333zptwgc4b5h8bgm14",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7d85hxz5p0e333zptwgc4b5h8bgm14",
+          "title": "Stroboscopic Gearbox Repair Synthesis",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "difficulty": "Hard",
+          "scoreContext": "Beat samluu206's score of 0.759!"
+        },
+        {
+          "id": "jx70kc9eq9bv96efv06nkq6he58bmr1g",
+          "href": "https://shipd.ai/quests/eris/challenges/jx70kc9eq9bv96efv06nkq6he58bmr1g",
+          "title": "Culture-Well Organoid Neighborhood Graph",
+          "domainChip": "PROMPT ENGINEERING",
+          "difficulty": "Medium",
+          "scoreContext": "Beat samluu206's score of 0.653!"
+        },
+        {
+          "id": "jx708gb18ns4864tnb2ykqmmfh8bh1q3",
+          "href": "https://shipd.ai/quests/eris/challenges/jx708gb18ns4864tnb2ykqmmfh8bh1q3",
+          "title": "Two-Angle Polarization Completion And Coupled Stress-Optic Mapping",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Be the first to climb the leaderboard!"
+        },
+        {
+          "id": "jx7drmbgykg284z6hfsckcyc3h8aymxd",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7drmbgykg284z6hfsckcyc3h8aymxd",
+          "title": "EchoTherm: Dual-Sensor Contact-Thermal Replay From Sound, Force, and Motion",
+          "domainChip": "FINE-TUNING",
+          "difficulty": "Medium",
+          "scoreContext": "Be the first to climb the leaderboard!"
+        },
+        {
+          "id": "jx76wf7tkhrgzw4zb6da6zcxr98az9ft",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76wf7tkhrgzw4zb6da6zcxr98az9ft",
+          "title": "EEG-Guided Spontaneous Attention Path Reconstruction",
+          "domainChip": "FINE-TUNING",
+          "difficulty": "Medium",
+          "scoreContext": "Be the first to climb the leaderboard!"
+        },
+        {
+          "id": "jx7b4371b9knbzgvs01jvbgssh8arenq",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7b4371b9knbzgvs01jvbgssh8arenq",
+          "title": "CT Tree-Core Crossdating And Ring Evidence Ledger",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Be the first to climb the leaderboard!"
+        },
+        {
+          "id": "jx7cyadcxcngewrznzjq7fy9fd8a4d2z",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7cyadcxcngewrznzjq7fy9fd8a4d2z",
+          "title": "Compositional Thermal Detection Across Unseen Time-of-Day and Altitude",
+          "domainChip": "OBJECT DETECTION",
+          "difficulty": "Hard",
+          "scoreContext": "Be the first to climb the leaderboard!"
+        },
+        {
+          "id": "jx7dpsf6kb19t93y5psn1aemj58a5nhs",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7dpsf6kb19t93y5psn1aemj58a5nhs",
+          "title": "Distributed LoRa Packet Event And Consensus Recovery",
+          "domainChip": "OTHER",
+          "difficulty": "Medium",
+          "scoreContext": "Be the first to climb the leaderboard!"
+        },
+        {
+          "id": "jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+          "title": "Electrical-Tree Growth-Order Reconstruction",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Be the first to climb the leaderboard!"
+        },
+        {
+          "id": "jx73vy9vj52rq71hxhg9cvvf618bjz94",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73vy9vj52rq71hxhg9cvvf618bjz94",
+          "title": "Urban Surface Marking Extent Profile Recovery",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Beat neofrazer's score of 0.778!"
+        },
+        {
+          "id": "jx75dcdk2g02dg37wgy102g3t18b23hx",
+          "href": "https://shipd.ai/quests/eris/challenges/jx75dcdk2g02dg37wgy102g3t18b23hx",
+          "title": "Middle Polish Archive Variant Lattice",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "difficulty": "Medium",
+          "scoreContext": "Beat vanya's score of 72.784!"
+        },
+        {
+          "id": "jx71tgn9g046k3e3w8dnns8vhs8bj729",
+          "href": "https://shipd.ai/quests/eris/challenges/jx71tgn9g046k3e3w8dnns8vhs8bj729",
+          "title": "Bubble Plume Cell Contour Profile Recovery",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Beat douglas's score of 0.620!"
+        },
+        {
+          "id": "jx7c42zsh4qf5jp9ne09dvb6w189zjgv",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7c42zsh4qf5jp9ne09dvb6w189zjgv",
+          "title": "Multimodal Upper-Limb Motion Recovery",
+          "domainChip": "OTHER",
+          "difficulty": "Medium",
+          "scoreContext": "Beat medullaoblongata's score of 0.425!"
+        },
+        {
+          "id": "jx76mdfta4qvjx17cg5qf2nxp189w7c9",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76mdfta4qvjx17cg5qf2nxp189w7c9",
+          "title": "Masked Evidence Pair Relation Prediction",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "difficulty": "Hard",
+          "scoreContext": "Beat samluu206's score of 0.420!"
+        },
+        {
+          "id": "jx73n1797n4gnwhw9r3an91nhs8avb7y",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73n1797n4gnwhw9r3an91nhs8avb7y",
+          "title": "Canal Surface Position-Shape Card Inventory",
+          "domainChip": "OBJECT DETECTION",
+          "difficulty": "Medium",
+          "scoreContext": "Beat xbongox's score of 0.598!"
+        },
+        {
+          "id": "jx7f8pv5d87hcm29jkzxj6ma018b3mja",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7f8pv5d87hcm29jkzxj6ma018b3mja",
+          "title": "Wearable Sensor Episode Chronology Reconstruction",
+          "domainChip": "OTHER",
+          "difficulty": "Medium",
+          "scoreContext": "Beat jesuisnadi's score of 0.620!"
+        },
+        {
+          "id": "jx71h1v5zyh49btygy64thfpas8bkndw",
+          "href": "https://shipd.ai/quests/eris/challenges/jx71h1v5zyh49btygy64thfpas8bkndw",
+          "title": "Shuffled Multi-Channel Room Recording Repair",
+          "domainChip": "OTHER",
+          "difficulty": "Medium",
+          "scoreContext": "Beat duongnguyen's score of 0.481!"
+        },
+        {
+          "id": "jx71nphzvaf8ftg36xhp9tkfcx8b5h64",
+          "href": "https://shipd.ai/quests/eris/challenges/jx71nphzvaf8ftg36xhp9tkfcx8b5h64",
+          "title": "Leaf Health Markup Report Reconstruction",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Beat poggerman's score of 0.586!"
+        },
+        {
+          "id": "jx7c0ct5wn385e245541010yrx8bmekx",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7c0ct5wn385e245541010yrx8bmekx",
+          "title": "Slide Microfragment Radial Ordering Certificate",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Beat aneeshm44's score of 0.536!"
+        },
+        {
+          "id": "jx77jb1sk01v7f36emp2jh4qad8ap9jf",
+          "href": "https://shipd.ai/quests/eris/challenges/jx77jb1sk01v7f36emp2jh4qad8ap9jf",
+          "title": "Spoken Command Queue Compilation",
+          "domainChip": "OTHER",
+          "difficulty": "Medium",
+          "scoreContext": "Beat kelvinleo's score of 0.858!"
+        },
+        {
+          "id": "jx724tq4g83yg130gpzt7zq5cn8bmrte",
+          "href": "https://shipd.ai/quests/eris/challenges/jx724tq4g83yg130gpzt7zq5cn8bmrte",
+          "title": "Meal Region Inventory Recovery",
+          "domainChip": "OBJECT DETECTION",
+          "difficulty": "Medium",
+          "scoreContext": "Beat zip_zip_zap_zap's score of 0.869!"
+        },
+        {
+          "id": "jx7cp7wg1bha5yncwyk5698fp58a4jgb",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7cp7wg1bha5yncwyk5698fp58a4jgb",
+          "title": "Cavitation Collapse Forecasting From Pre-Collapse Shadowgraphy",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Beat khoango6804's score of 0.452!"
+        },
+        {
+          "id": "jx73q3azf1qd82rgm796gt79r18b5kxz",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73q3azf1qd82rgm796gt79r18b5kxz",
+          "title": "Hive Entrance Flow Record Recovery",
+          "domainChip": "COMPUTER VISION",
+          "difficulty": "Medium",
+          "scoreContext": "Beat zip_zip_zap_zap's score of 0.772!"
+        }
+      ],
+      "newCandidates": [
+        {
+          "id": "jx76wf7tkhrgzw4zb6da6zcxr98az9ft",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76wf7tkhrgzw4zb6da6zcxr98az9ft",
+          "title": "EEG-Guided Spontaneous Attention Path Reconstruction"
+        }
+      ],
+      "failures": []
+    },
+    "detailRun": {
+      "details": [
+        {
+          "compute": "A10G",
+          "description": "Neuro-steered hearing aids should follow a listener when attention moves between competing speakers instead of requiring a manual control. In this challenge, each example is a complete 60-second listening episode with continuous EEG and two synchronized competing Mandarin speech streams. Reconstruct the listener's behaviorally reported attention path over the whole episode: which candidate stream is attended at each fixed time step, where directional switches occur, and where the available report does not support a precise state.\nOverview\nObjective: for each 60-second episode, predict the listener's attention state at every 0.5-second step and the corresponding confidence-weighted directional switches.\nEach EEG episode is a 3840 x 62 float16 array: 60 seconds at 64 Hz, with time on the first axis and order-preserved EEG channels on the second. The matching stereo 16 kHz WAV lasts 60 seconds. Audio channel 0 is candidate stream_A; audio channel 1 is candidate stream_B. Candidate order is source-neutral and balanced. The audio candidates are inputs for neural tracking; the output does not copy either waveform.\nThis is a full-episode temporal reconstruction task, not an independent-window classifier. For every test episode, submit all three synchronized objects:\nA 120-step state path on a 0.5-second grid using stream_A, stream_B, or uncertain.\nA contiguous segment representation of exactly the same state path, with calibrated confidence per segment.\nAn ordered sequence of directional switch intervals with previous, next, and confidence.\nThe uncertain state is not a creator-invented soft label. It is used before the first behaviorally reported attention state and in grid cells containing a clustered response-defined boundary. Button times are behavioral reports and motor events, not exact cognitive onset times. Direction-changing reports less than 0.5 seconds apart are clustered into one bounded event; repeated same-state presses do not create switches.\nTraining, validation, and hidden test use disjoint listener groups and disjoint speech families. A model therefore has to generalize to both unseen listeners and unseen speech content. Public identifiers are opaque, row order is randomized, fixed-size payloads remove size cues, and original participant, trial, block, event-code, timestamp, and source filename fields are absent.\nPrior spontaneous-attention benchmarks primarily score left/right decisions in fixed windows or switch detection near isolated events. This challenge instead scores a complete continuous path, directional event chronology, boundary intervals, uncertainty calibration, and agreement between the path and its event list on held-out listeners and held-out speech. A no-switch classifier, a timing template, or a button-transient detector leaves most of the scored object unresolved.\nTask Specification\nstates_json must decode to a JSON list of exactly 120 strings. Index k represents [0.5k, 0.5(k+1)) seconds. Allowed values are stream_A, stream_B, and uncertain.\nsegments_json must decode to a non-empty JSON list of objects with exactly start_step, end_step, state, and confidence. Each segment covers the half-open step range [start_step, end_step), so end_step is exclusive. Segments must be ordered, contiguous, non-overlapping, cover exactly step indices 0 through 119 inclusive, finish with end_step = 120, and reconstruct states_json. Step bounds are integers; confidence is finite and in [0, 1].\nswitches_json must decode to an ordered JSON list of objects with exactly onset_start_s, onset_end_s, previous, next, and confidence. Times are finite seconds in [0, 60]; each interval is at most 3 seconds; intervals may not overlap. previous and next must be different decisive states, and each direction must agree with the nearest available decisive states in states_json. At most 40 switches are accepted per episode.\nIntended Approach\nStrong solutions should fine-tune an open-source model or build and train an architecture from scratch. These are the two intended model-learning routes for this challenge.\nFor the fine-tuning route, adapt an open-source speech or multimodal encoder to the two candidate Mandarin streams, combine it with a learned EEG encoder and cross-modal fusion, and fine-tune the network on the provided training episodes. Learned output heads should produce the attention states, switch intervals, and calibrated confidence. The open-source weights should be updated locally; frozen hosted inference alone is not the intended solution.\nFor the from-scratch route, initialize and train the EEG encoder, dual audio encoders, cross-modal attention or correlation blocks, and learned prediction heads entirely from the provided data. Convolutional encoders and trainable attention blocks are appropriate building components. In either route, predictions must come from trained EEG-audio representations rather than rule-only timing templates, independent-window heuristics, or metadata shortcuts.\nWhat Not To Use\nDo not use source-corpus lookup, media fingerprint matching, recovered source filenames or event arrays, participant identification, trial/order/timestamp reconstruction, row-size or hash tricks, manual test labeling, hardcoded id maps, hosted commercial EEG/speech APIs, private files, or grader exploitation. Do not reduce the task to tabular binary classification, independent windows, saved spectrogram images, computer vision, object detection, or waveform copying. Do not use response/motor artifacts as a substitute for cross-modal attention decoding.\nEnforcement On Invalid Approaches\nSolutions that obtain labels through public-source matching, hidden metadata reconstruction, private-file access, hardcoded answers, hosted inference, or rule-only shortcuts may be rejected even when their CSV is structurally valid. The intended evidence is learned EEG and speech temporal modeling from the public challenge data.\nDataset\nThe public dataset contains prepared train, validation, and test directories plus a metadata file and a sample submission. Train and validation include labels. Test contains only inputs. Paths inside each manifest are relative to the public root.\nPublic Files\n| Item | Description |\n|---|---|\n| `metadata.json` | Signal and label contract |\n| `train/manifest.csv` | Train input index |\n| `train/labels.csv` | Train sequence labels |\n| `train/eeg/*.npy` | Train EEG episodes |\n| `train/audio/*.wav` | Train speech candidates |\n| `val/manifest.csv` | Validation input index |\n| `val/labels.csv` | Validation labels |\n| `val/eeg/*.npy` | Validation EEG episodes |\n| `val/audio/*.wav` | Validation speech candidates |\n| `test/manifest.csv` | Test input index |\n| `test/eeg/*.npy` | Hidden-test EEG episodes |\n| `test/audio/*.wav` | Hidden-test speech candidates |\n| `sample_submission.csv` | Valid weak template |\nmanifest.csv Columns\n| Column | Type | Description |\n|---|---|---|\n| `episode_id` | string | Opaque episode token |\n| `eeg_file` | string | Relative NPY path |\n| `audio_id` | string | Opaque audio token |\n| `audio_file` | string | Relative WAV path |\n| `duration_s` | float | Always 60 seconds |\n| `eeg_sampling_rate_hz` | int | Always 64 |\n| `eeg_samples` | int | Always 3840 |\n| `eeg_channels` | int | Always 62 |\n| `audio_sampling_rate_hz` | int | Always 16000 |\n| `audio_channels` | int | Always 2 |\nlabels.csv Columns\n| Column | Type | Description |\n|---|---|---|\n| `episode_id` | string | Opaque episode token |\n| `states_json` | JSON string | 120 state values |\n| `segments_json` | JSON string | Contiguous segments |\n| `switches_json` | JSON string | Directional events |\nTest Input Columns\ntest/manifest.csv has the same ten input columns as the train and validation manifests. It has no attention state, segment, switch, confidence, participant, trial, event, or source-identity field.\nSubmission Format\nSubmit one CSV row for every test episode_id, using these columns in this exact order.\n| Column | Type | Constraint |\n|---|---|---|\n| `episode_id` | string | Exact hidden-test ID |\n| `states_json` | JSON string | Exactly 120 states |\n| `segments_json` | JSON string | Half-open full cover of indices 0-119 |\n| `switches_json` | JSON string | Ordered event list |\nepisode_id,states_json,segments_json,switches_json\nep_ae424016ec115e4b7791,\"[\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\",\"\"stream_A\"\"]\",\"[{\"\"start_step\"\":0,\"\"end_step\"\":120,\"\"state\"\":\"\"stream_A\"\",\"\"confidence\"\":0.5}]\",\"[]\"\nThis is the first machine-valid row of the generated sample file; it contains all 120 state values.\nEvaluation\nThe official metric is AttentionPathScore, a transparent 0-to-1 joint sequence score. Higher is better. A perfect valid prediction scores exactly 1.0; a fully malformed row scores 0.0 for that row.\nAll formulas below are applied separately to each episode.\nStateScore\nFor each decisive state s in {stream_A, stream_B} that occurs in the reference path, define Recall_s as the number of correctly predicted reference steps of state s divided by the number of reference steps of state s. A decisive state absent from the reference is omitted from the mean. For the uncertain state, let TP_u, FP_u, and FN_u be the usual step-level binary counts.\nBalancedRecall = mean(Recall_s for decisive states s present in the reference),\nor 0 if neither decisive state is present\nUncertainF1 = 1                                      if 2*TP_u + FP_u + FN_u = 0\n2*TP_u / (2*TP_u + FP_u + FN_u)      otherwise\nStateScore = 0.80*BalancedRecall + 0.20*UncertainF1\nSwitch matching, EventScore, and BoundaryScore\nFor a submitted switch p and reference switch r, define the endpoint gap in seconds as:\ngap(p,r) = 0.5 * (abs(p.onset_start_s - r.onset_start_s)\n+ abs(p.onset_end_s - r.onset_end_s))\nA pair is eligible only when previous and next agree exactly and gap(p,r) <= 1.5. Eligible pairs are sorted by (gap, submitted_index, reference_index) and accepted greedily while both events remain unmatched. This produces a deterministic one-to-one matching. Let P be the submitted event count, R the reference event count, M the matched-pair count, and gap_j the gap of matched pair j.\nEventScore = 1                         if P + R = 0\n2*M / (P + R)             otherwise\nBoundaryScore = 1                                           if max(P,R) = 0\nsum_j max(0, 1 - gap_j/1.5) / max(P,R)      otherwise\nCalibrationScore\nAt state step k, let c_k be the segment confidence and let y_k = 1 when the submitted state equals the reference state, otherwise y_k = 0. For submitted event i, let q_i be its confidence and let z_i = 1 when that event is in the one-to-one reference matching, otherwise z_i = 0.\nStateBrier = (1/120) * sum_k (c_k - y_k)^2\nEventBrier = (1/P) * sum_i (q_i - z_i)^2                 when P > 0\nCombinedBrier = StateBrier                               when P = 0\n0.75*StateBrier + 0.25*EventBrier        when P > 0\nCalibrationScore = max(0, 1 - 2*CombinedBrier)\nConsistencyScore\nDerive a transition list from the submitted state path as follows. A direct change between decisive states at grid index k creates a point transition at 0.5*k seconds. A contiguous uncertain run covering half-open indices [a,b) and bracketed by different decisive states creates one point transition at 0.25*(a+b) seconds. Match submitted switches to these derived transitions with the same direction, 1.5-second endpoint-gap rule, and greedy procedure above. Let T be the number of derived transitions, C the number of matches, and E the number of unmatched submitted switches satisfying onset_start_s <= 1e-9 or onset_end_s >= 60 - 1e-9; these edge events have only one observable state side.\nE is a subset of P: every accepted edge switch is already counted once among the submitted switches in P. Because the state outside the 60-second episode is unobservable, each such edge switch is treated as matching one virtual boundary reference transition. Therefore the extra + E in the denominator counts those virtual reference transitions, while C + E counts ordinary matches plus virtual-boundary matches. The submitted edge switch itself is not counted twice.\nConsistencyScore = 1                          if P + T + E = 0\n2*(C + E) / (P + T + E)    otherwise\nEpisode and final scores\nThe per-episode score is:\nEpisodeScore = clip(0.35*StateScore\n+ 0.30*EventScore\n+ 0.15*BoundaryScore\n+ 0.10*CalibrationScore\n+ 0.10*ConsistencyScore, 0, 1)\nThe final score is the macro mean of episode scores within each hidden listener, followed by the mean across hidden listeners. Long steady segments therefore cannot dominate simply by contributing more rows.\nWrong columns or column order, duplicate IDs, a missing/extra/foreign ID, or an invalid ID encoding raises InvalidSubmissionError and the submission is not scored. A row-local malformed JSON value, illegal enum, non-finite value, invalid range, inconsistent segment cover, impossible switch direction, excessive size/depth/count, or overlapping event makes only that row score 0.0. Error messages do not reveal labels, listener groups, event details, or split logic.",
+          "difficulty": "Medium",
+          "domain": "Fine-Tuning",
+          "gpu": "",
+          "id": "jx76wf7tkhrgzw4zb6da6zcxr98az9ft",
+          "scoreContext": "Top Score | — | Created",
+          "scoring": "↑ Higher is better",
+          "status": "Pending Review",
+          "tags": [
+            "medical"
+          ],
+          "title": "EEG-Guided Spontaneous Attention Path Reconstruction",
+          "url": "https://shipd.ai/quests/eris/challenges/jx76wf7tkhrgzw4zb6da6zcxr98az9ft"
+        }
+      ],
+      "failures": []
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 23,
+    "skippedAlreadyBeforeDetail": 22,
+    "detailPagesAttempted": 1,
+    "appendedTotal": 1,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "Non-CPU": {
+        "Fine-Tuning": 1
+      },
+      "CPU": {}
+    },
+    "veryNovelAdded": [
+      "EEG-Guided Spontaneous Attention Path Reconstruction"
+    ],
+    "limitations": []
+  }
+}

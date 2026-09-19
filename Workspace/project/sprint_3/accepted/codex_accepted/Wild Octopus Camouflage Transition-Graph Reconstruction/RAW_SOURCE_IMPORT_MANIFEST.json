@@ -1,0 +1,26 @@
+{
+  "challenge_title": "Hidden Surveillance Activity Ledger Recovery",
+  "source": "Multiview Extended Video with Activities (MEVA)",
+  "publisher": "Kitware Inc. and IARPA",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "repository_url": "https://gitlab.kitware.com/meva/meva-data-repo",
+  "repository_commit": "421841a75577b697c314e952e585aecbb1b99e17",
+  "video_bucket": "https://mevadata-public-01.s3.amazonaws.com/",
+  "raw_archive": {
+    "filename": "OFFICIAL_RAW_FILES_ONLY.zip",
+    "bytes": 969981917,
+    "sha256": "fd878a4b013dd818888d12fd619cd17622df9b1cb1c43bf62db61f3aab3404cd",
+    "members": 70,
+    "untouched_uncompressed_bytes": 970257026
+  },
+  "selected_video_count": 21,
+  "independent_session_groups": 15,
+  "prepared_items": {"train": 479, "test": 175, "total": 654},
+  "import_manifest": "generate.py::source_objects()",
+  "notes": [
+    "All archive members are official files downloaded from the MEVA repository/bucket; no clips, frames, labels, splits, or prepared assets are in the archive.",
+    "The archive is used as a clean transport fallback because the source consists of more than five stable URLs.",
+    "All extraction, synchronization, transformation, grouping, and target derivation occur in prepare.py."
+  ]
+}

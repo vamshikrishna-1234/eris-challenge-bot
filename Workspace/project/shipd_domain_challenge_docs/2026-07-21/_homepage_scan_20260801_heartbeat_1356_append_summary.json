@@ -1,0 +1,12 @@
+{
+  "homepageCardsFound": 0,
+  "skippedAlreadyBeforeDetail": 0,
+  "detailPagesAttempted": 0,
+  "appendedTotal": 0,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {},
+  "veryNovelAdded": [],
+  "limitations": [
+    "No /challenges/ or /problems/ card links were visible in the bounded homepage Explore/feed scan."
+  ]
+}

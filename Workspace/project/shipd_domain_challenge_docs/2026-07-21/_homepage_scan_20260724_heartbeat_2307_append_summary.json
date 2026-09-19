@@ -1,0 +1,139 @@
+{
+  "timestamp": "2026-07-24T23:07:20+05:30",
+  "homepageCount": 23,
+  "alreadyRecordedBeforeDetail": 13,
+  "newCandidates": 10,
+  "appended": 10,
+  "skippedAfterDetail": 0,
+  "failures": 0,
+  "by_bucket": {
+    "CPU": {
+      "RAG.md": 2,
+      "Computer-Vision.md": 4,
+      "LLM-Evaluation.md": 1,
+      "NLP.md": 1,
+      "Prompt-Engineering.md": 1,
+      "From-Scratch.md": 1
+    },
+    "Non-CPU": {}
+  },
+  "cpu_total": 143,
+  "non_cpu_total": 8,
+  "very_novel_count": 7,
+  "very_novel_titles": [
+    "Curatorial Search Query Challenge",
+    "Evidence-Guided Sustainability Claim Retrieval and Ledger Reconstruction",
+    "Flightline View-Graph Budgeting",
+    "Scientific Answer Evaluation Under Evidence Changes",
+    "Chromosome Contact Fragment Scaffolding",
+    "Contaminated Manuscript Identification",
+    "Few-Shot Recovery of Hidden Revision Decision Rules"
+  ],
+  "appended_items": [
+    {
+      "id": "jx70awrs25r05gwtcm1mw4n3958b22wn",
+      "title": "Curatorial Search Query Challenge",
+      "url": "https://shipd.ai/quests/eris/challenges/jx70awrs25r05gwtcm1mw4n3958b22wn",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md",
+      "displayed_domain": "RAG",
+      "novel_reason": "the submitted object is a constrained retrieval query rather than the retrieved answer",
+      "design_trick": "Score query design directly against retrieval behavior, turning search strategy into the benchmark output."
+    },
+    {
+      "id": "jx77ry0z55e2admt0sraf4tcw58b2m7n",
+      "title": "Evidence-Guided Sustainability Claim Retrieval and Ledger Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx77ry0z55e2admt0sraf4tcw58b2m7n",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md",
+      "displayed_domain": "RAG",
+      "novel_reason": "damaged sustainability claims require both retrieval and ledger repair across values, dates, units, and scope",
+      "design_trick": "Use realistic report-like fields and require evidence-backed reconstruction of a structured claim ledger."
+    },
+    {
+      "id": "jx7d1h53dcyhrb3z9bvyddhpv18ayxcj",
+      "title": "Basketball Court Landmark Trace Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7d1h53dcyhrb3z9bvyddhpv18ayxcj",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision"
+    },
+    {
+      "id": "jx7626qeq2167zsdqmqpke1t158b0ssm",
+      "title": "Flightline View-Graph Budgeting",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7626qeq2167zsdqmqpke1t158b0ssm",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "photogrammetry edge-budget selection is a graph-optimization output grounded in real UAV views",
+      "design_trick": "Ask solvers to choose a minimal connected camera graph under visual matching constraints."
+    },
+    {
+      "id": "jx75h8v31m3x8ga13trtsgncsh8b2rsd",
+      "title": "Scientific Answer Evaluation Under Evidence Changes",
+      "url": "https://shipd.ai/quests/eris/challenges/jx75h8v31m3x8ga13trtsgncsh8b2rsd",
+      "bucket": "CPU",
+      "domain": "LLM Evaluation",
+      "file": "LLM-Evaluation.md",
+      "displayed_domain": "LLM Evaluation",
+      "novel_reason": "LLM evaluation is tested under changing evidence rather than static answer judging",
+      "design_trick": "Score whether an evaluator updates its judgment when evidence is withdrawn, contradicted, or narrowed."
+    },
+    {
+      "id": "jx7dmpeb11xk6b8729e6t6vxxs88y39h",
+      "title": "Chromosome Contact Fragment Scaffolding",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7dmpeb11xk6b8729e6t6vxxs88y39h",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "contact-map quilt scaffolding combines ordered assembly, decoy exclusion, and join-evidence matrices",
+      "design_trick": "Recover an oriented scaffold and evidence matrix from noisy contact fragments with overlapping decoys."
+    },
+    {
+      "id": "jx788b3g4bwtehypyapajg45rx8axdeg",
+      "title": "Contaminated Manuscript Identification",
+      "url": "https://shipd.ai/quests/eris/challenges/jx788b3g4bwtehypyapajg45rx8axdeg",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md",
+      "displayed_domain": "NLP",
+      "novel_reason": "computational philology contamination detection is an uncommon structured NLP setting",
+      "design_trick": "Use variant readings across manuscripts to detect contamination rather than classify ordinary document topics."
+    },
+    {
+      "id": "jx75kcr4n7y8p98yberj3tavcs89mae9",
+      "title": "Few-Shot Recovery of Hidden Revision Decision Rules",
+      "url": "https://shipd.ai/quests/eris/challenges/jx75kcr4n7y8p98yberj3tavcs89mae9",
+      "bucket": "CPU",
+      "domain": "Prompt Engineering",
+      "file": "Prompt-Engineering.md",
+      "displayed_domain": "Prompt Engineering",
+      "novel_reason": "few-shot latent rule induction over revision alternatives creates a compact prompt-engineering benchmark pattern",
+      "design_trick": "Infer an unstated rule from demonstrations and apply it to new competing revisions."
+    },
+    {
+      "id": "jx75ztsrvyksb2t1j7h9cas1jx89g8k8",
+      "title": "From-Scratch Protein Family Pair-Dependency Modeling",
+      "url": "https://shipd.ai/quests/eris/challenges/jx75ztsrvyksb2t1j7h9cas1jx89g8k8",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md",
+      "displayed_domain": "From Scratch"
+    },
+    {
+      "id": "jx76kt7cydaxk341egy5fc2gfs8asma7",
+      "title": "Evidence-Guided Flood Mask Repair",
+      "url": "https://shipd.ai/quests/eris/challenges/jx76kt7cydaxk341egy5fc2gfs8asma7",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision"
+    }
+  ],
+  "skipped_after_detail": []
+}

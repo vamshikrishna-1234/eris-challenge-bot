@@ -1,0 +1,4 @@
+Source: AMI Meeting Corpus, University of Edinburgh and AMI consortium.
+Please cite the AMI Meeting Corpus when using these derived clips and labels.
+This derived dataset clips headset-mix meeting audio and aligns transcript windows with AMI automaticSG_MAN disfluency annotations and manual word timings.
+Modifications: selected bounded meeting subset; clipped WAV windows; normalized token transcripts; derived inclusive token-index spans for reparandum/interregnum/repair onset.

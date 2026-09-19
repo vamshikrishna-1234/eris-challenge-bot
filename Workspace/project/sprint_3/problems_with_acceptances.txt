@@ -1,0 +1,178 @@
+for "C:\Users\vamsh\Downloads\create_challenge_synthetic\sprint_3\3d_challenges\Hidden Pipe-Network Routing From Dye Arrival Timing"
+
+Problem Research
+
+Automated research findings about this challenge's originality
+
+
+
+Novelty Score
+
+4/10
+
+Low
+
+Novelty score must be 5 or more (out of 10) to submit this challenge.
+
+Analysis
+
+The problem is not a verbatim copy of any known public competition or dataset. The nearest neighbour found is 'Uncovering the Temporal Dynamics of Diffusion Networks' (Gómez-Rodríguez et al., 2011), which shares the core idea of inferring latent routing/transmission structure from observed event times (cascades). However, the proposed benchmark differs in modality (top-down video), output format (per-clip outlet→inlet JSON routing + integer frame delays), evaluation protocol (hybrid route/delay loss with subgroup scoring), and the requirement to combine computer vision with timing-based attribution. The task recombines cascade inference with video detection and bespoke JSON outputs, placing it in the RECOMBINED band (5-6). A score of 7+ is not warranted because clear prior art exists in the cascade/diffusion inference literature, and the cite-or-cap rule applies. Score is capped at 6.
+
+
+
+Similar Problems Found
+
+•
+
+Uncovering the Temporal Dynamics of Diffusion Networks (Gómez-Rodríguez, Balduzzi, Schölkopf, 2011) — infers latent network structure and transmission rates from cascade event times
+
+•
+
+Continuous-time diffusion and scalable influence estimation papers — probabilistic machinery for transmission likelihoods and delay modeling
+
+•
+
+DiTEC-WDN (2025) — large synthetic water distribution network dataset, relevant for water/pipe network context
+
+•
+
+USGS karst tracer dye studies — real-world tracer injection and timing-based detection methodology
+
+
+
+for "C:\Users\vamsh\Downloads\create_challenge_synthetic\sprint_3\3d_challenges\Retrodiction Drop Order From A Settled Pile":
+
+Problem Research
+
+Automated research findings about this challenge's originality
+
+
+
+Novelty Score
+
+4/10
+
+Low
+
+Novelty score must be 5 or more (out of 10) to submit this challenge.
+
+Analysis
+
+No exact or near-verbatim copy found. The problem is a non-trivial recombination of existing components: stack/stability prediction (ShapeStacks, ECCV 2018), per-object collapse prediction (shelf replenishment robotics work, 2022), and occlusion-ordered amodal layering (CObL, ICCV 2025). No single published benchmark combines two oblique RGB renders, abstaining partial-order retrodiction, per-object remove-one collapse sets, and the specific composite scoring with abstention penalties. However, at least two well-known directly relevant prior lines exist, so the score is capped at 6 (RECOMBINED band). Cite-or-cap applied: nearest neighbour ShapeStacks is named and compared in detail, but the overlap is substantial enough that the score does not reach 7+.
+
+
+
+Similar Problems Found
+
+•
+
+ShapeStacks (Groth et al., ECCV 2018) — visual intuition for object stacking and stability prediction from images
+
+•
+
+Shelf Replenishment Based on Object Arrangement Detection and Collapse Prediction for Bimanual Manipulation (Motoda et al., Robotics 2022) — per-object collapse prediction when items are removed
+
+•
+
+CObL: Toward Zero-Shot Ordinal Layering without User Prompting (ICCV 2025) — occlusion-ordered amodal layer recovery from images
+
+•
+
+MessyKitchens (arXiv 2026) — contact-rich 3D scene reconstruction dataset for cluttered scenes
+
+
+
+for "C:\Users\vamsh\Downloads\create_challenge_synthetic\sprint_3\3d_challenges\Hidden Ball Masses From Elastic Collision Dynamics":
+
+Problem Research
+
+Automated research findings about this challenge's originality
+
+
+
+Novelty Score
+
+4/10
+
+Low
+
+Novelty score must be 5 or more (out of 10) to submit this challenge.
+
+Analysis
+
+The agent found no verbatim match to the full problem statement. The nearest neighbour is CoPhy/BallsCF, which shares multi-ball collision videos with mass as a hidden confounder. Key differences include the 1D frictionless lane constraint, printed numeric IDs that persist across recolour/mirror augmentations, a per-video JSON submission mapping ball IDs to mass relative to ball 0, an explicit lightest-to-heaviest ordering output, a confidence score, and a custom multi-term scoring blend (mass_score, order_score, calibration, worst-subgroup blending). These differences require composing known tools in a non-trivial way but do not constitute a frontier-level contribution, placing the problem firmly in the RECOMBINED band. The cite-or-cap rule is satisfied: the agent named CoPhy/BallsCF as the closest neighbour and explained why it is not close enough to cap the score below 6.
+
+
+
+Similar Problems Found
+
+•
+
+CoPhy / BallsCF (multi-ball collision videos with mass as hidden confounder)
+
+•
+
+Filtered-CoPhy (curated subsets of BallsCF used in recent papers)
+
+•
+
+HiddenMass-50K (Hugging Face dataset inferring hidden center-of-mass offset from video)
+
+•
+
+NVIDIA PhysicalAI Physical-Interaction Scenes (synthetic multi-object interaction scenes)
+
+•
+
+CRIPP-VQA, ComPhy, Galileo (papers/datasets on inferring implicit physical properties from video)
+
+
+
+
+
+for "C:\Users\vamsh\Downloads\create_challenge_synthetic\sprint_3\3d_challenges\claude_charitha\Cross-Camera Track Correspondence And 3D Localization":
+
+Problem Research
+
+Automated research findings about this challenge's originality
+
+
+
+Novelty Score
+
+3/10
+
+Low
+
+Novelty score must be 5 or more (out of 10) to submit this challenge.
+
+Analysis
+
+The agent found no verbatim copy of any existing competition or benchmark. The nearest neighbour is Styles et al. 'Multi-Camera Trajectory Forecasting' (arXiv 2020), which shares the high-level goal of predicting trajectories across a camera network but differs substantially in input contract (roster-only centroids vs. video), identity recovery constraint (motion-only, no appearance), scene design (synthetic mini-arena with colored corner fiducials), and scoring function (squared correspondence + forecasting heads + calibration + worst-subgroup blend). The agent places this in the RECOMBINED band (5-6) at the upper end (6) because while all individual components (multi-camera re-ID, trajectory forecasting, multi-view calibration) are well-studied, their specific combination with the motion-only constraint, roster-first API, tiled-panel framing, and novel evaluation design creates a nontrivial composition not solvable by dropping in any single prior solution. The cite-or-cap rule is satisfied: the agent named Styles et al. as the closest neighbour and explained why it is not close enough to push the score to 7+, so 6 is appropriate. No grounding bonus is awarded because the problem statement does not cite a specific named public dataset or verifiable real-world source; the task is synthetically framed with no documented provenance.
+
+
+
+Similar Problems Found
+
+•
+
+Styles et al., 'Multi-Camera Trajectory Forecasting: Pedestrian Trajectory Prediction in a Network of Cameras' (arXiv 2020, WNMF dataset)
+
+•
+
+TEMPO: Efficient Multi-View Pose Estimation, Tracking, and Forecasting (ICCV 2023)
+
+•
+
+MVTracker (ETHZ VLG): data-driven multi-view 3D point tracker
+
+•
+
+MTMMC: A Large-Scale Real-World Multi-Modal Camera Tracking Benchmark (CVPR 2024)
+
+•
+
+Multiview-X Multi-Camera Tracking 3D dataset (Kaggle listing)
+
+
+

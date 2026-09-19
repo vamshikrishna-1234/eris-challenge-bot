@@ -1,0 +1,144 @@
+{
+  "timestamp": "2026-07-23T17:05:08+05:30",
+  "homepageCount": 51,
+  "alreadyRecordedBeforeDetail": 40,
+  "newCandidates": 11,
+  "appended": 11,
+  "skippedAfterDetail": 0,
+  "failures": 0,
+  "by_bucket": {
+    "CPU": {
+      "From-Scratch.md": 2,
+      "Sequence-To-Sequence.md": 4,
+      "Fine-Tuning.md": 1,
+      "Computer-Vision.md": 3,
+      "Other.md": 1
+    },
+    "Non-CPU": {}
+  },
+  "cpu_total": 121,
+  "non_cpu_total": 8,
+  "very_novel_count": 6,
+  "very_novel_titles": [
+    "Budgeted Wavelength Acquisition For Microscopy Spectrum Completion",
+    "Manuscript Reading-Flow Card Reconstruction",
+    "Slot-Constrained Certificate Fragment Provenance",
+    "Exposure-Controlled Fluorescence Conservation Routing",
+    "Masked Helioseismic Band Energy-Profile Reconstruction",
+    "Local-Fight Move-Order Recovery In Go"
+  ],
+  "appended_items": [
+    {
+      "id": "jx73w4mexbta14fhdxp1qdxrvs8ay19x",
+      "title": "Mouse Trace to Caption Binding Assignment",
+      "url": "https://shipd.ai/quests/eris/challenges/jx73w4mexbta14fhdxp1qdxrvs8ay19x",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md",
+      "displayed_domain": "From Scratch"
+    },
+    {
+      "id": "jx7fv0kvkp2y4z0225skq9qdb58aw2h3",
+      "title": "Budgeted Wavelength Acquisition For Microscopy Spectrum Completion",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7fv0kvkp2y4z0225skq9qdb58aw2h3",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "budgeted acquisition plus spectrum completion gives a reusable active-measurement challenge shape",
+      "design_trick": "Let solvers choose or infer a limited set of measurements, then score reconstruction of withheld spectral evidence."
+    },
+    {
+      "id": "jx74q4gk8yyjjsf2d5vvnxpdz58ax7aj",
+      "title": "Vocal Imitation Sound Category Recognition",
+      "url": "https://shipd.ai/quests/eris/challenges/jx74q4gk8yyjjsf2d5vvnxpdz58ax7aj",
+      "bucket": "CPU",
+      "domain": "Fine-Tuning",
+      "file": "Fine-Tuning.md",
+      "displayed_domain": "Fine-Tuning"
+    },
+    {
+      "id": "jx7cvsmd2cc5mx6xpf2x4kgve58ay7m9",
+      "title": "Manuscript Reading-Flow Card Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7cvsmd2cc5mx6xpf2x4kgve58ay7m9",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "document reading-order recovery from visual manuscript evidence is a strong structured CV pattern",
+      "design_trick": "Convert page layout into ordered flow cards with spatial/evidence consistency, not just OCR or classification."
+    },
+    {
+      "id": "jx742pdmv49kmc7n472mp0k5ax8ayv7e",
+      "title": "Slot-Constrained Certificate Fragment Provenance",
+      "url": "https://shipd.ai/quests/eris/challenges/jx742pdmv49kmc7n472mp0k5ax8ayv7e",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "fragment provenance under slot constraints is a clean leakage-resistant ledger task",
+      "design_trick": "Require each fragment to be placed into constrained certificate slots while preserving provenance consistency."
+    },
+    {
+      "id": "jx7datmf5vtyb0nmz4yzwfdryh8ar2pn",
+      "title": "Ranking Disordered Voices by Roughness Against Breathiness",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7datmf5vtyb0nmz4yzwfdryh8ar2pn",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md",
+      "displayed_domain": "From Scratch"
+    },
+    {
+      "id": "jx71cnt7bg1fyzgkg0ys6368s18ajv4h",
+      "title": "Exposure-Controlled Fluorescence Conservation Routing",
+      "url": "https://shipd.ai/quests/eris/challenges/jx71cnt7bg1fyzgkg0ys6368s18ajv4h",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "routing under exposure/conservation constraints creates a nonstandard microscopy-style output",
+      "design_trick": "Score a route/program that obeys physical conservation constraints rather than independent detections."
+    },
+    {
+      "id": "jx7886fm61r2p1nccgrmd5sxqs8b0r1r",
+      "title": "Spoken Emphasis Consensus Sequencing",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7886fm61r2p1nccgrmd5sxqs8b0r1r",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx774jkxk6k3g3hs2fv3brqses8b0tsa",
+      "title": "Hidden Binary Stars",
+      "url": "https://shipd.ai/quests/eris/challenges/jx774jkxk6k3g3hs2fv3brqses8b0tsa",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx7b7vmkbfptpr71w7yzrs6f618ax24y",
+      "title": "Masked Helioseismic Band Energy-Profile Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7b7vmkbfptpr71w7yzrs6f618ax24y",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "masked solar-physics signal reconstruction is an unusual real-world sequence completion pattern",
+      "design_trick": "Hide bands/windows in a physical signal and score profile reconstruction plus consistency across frequencies."
+    },
+    {
+      "id": "jx7cv178rxz4fyht6gbyw1cehd8atcqt",
+      "title": "Local-Fight Move-Order Recovery In Go",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7cv178rxz4fyht6gbyw1cehd8atcqt",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "recovering move order from a local board fight is a distinctive game-state sequence reconstruction task",
+      "design_trick": "Ask for the plausible ordered action trace behind a final local configuration, not the next move only."
+    }
+  ],
+  "skipped_after_detail": []
+}

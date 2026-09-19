@@ -1,0 +1,23 @@
+{
+    "title":  "Pocket Gazetteer Compiler",
+    "slug":  "pocket-gazetteer-compiler",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fd7bb-1e8a-7d12-b2ca-6462c032f6d5",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Pocket Gazetteer Compiler",
+    "dataset":  "GeoNames cities500.zip and alternateNamesV2.zip, official daily dump",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-06T21:08:09.7880335+05:30",
+    "updated_at":  "2026-08-07T10:46:43.9374775+05:30",
+    "blocker":  "Mandatory honesty gates failed on 2026-08-06. A deterministic public n-gram/edit alias index scored 0.677083 overall and 0.974167 on controlled typo queries, exceeding the approximately 0.60 rejection threshold; a learned character SGD model scored 0.666250 overall and did not materially improve. Full public-source GeoNames reconstruction scored 0.982500 overall and 0.997500 on held-out real aliases. The current task is ordinary fuzzy gazetteer indexing/source lookup rather than a defensible From Scratch learned compact retrieval-model challenge.",
+    "notes":  [
+                  "2026-08-06 source gate verified official GeoNames URLs, CC BY 4.0 license, schemas, archive contents, exact byte sizes, and SHA-256 checksums. Evidence preserved in the output folder.",
+                  "2026-08-06 blocked build before prepare.py/grade.py/forms because public-source, domain, learning-materiality, natural-difficulty, and novelty-position gates failed. See HONESTY_GATE_AUDIT.md and HONESTY_GATE_PILOT_RESULTS.json.",
+                  "2026-08-06 moved all challenge-owned artifacts from D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Pocket Gazetteer Compiler to E:\\create_challenge_synthetic_output_folder\\sprint_4\\Pocket Gazetteer Compiler.",
+                  "2026-08-06 Sprint 4 checklist audit completed in SPRINT4_CHECKLIST_AUDIT.md. Status remains blocked; no prepare.py, grade.py, platform forms, sample submission, or dataset upload bundle were created.",
+                  "2026-08-06 CPU-only grader review completed in CPU_GRADER_REVIEW.md. No grader change was made because no grade.py/grader.py exists and the high scores come from source lookup/deterministic retrieval, not generous grading. CPU rerun reproduced public deterministic n-gram/edit 0.677083, learned char SGD 0.666250, and full-source n-gram/edit 0.982500.",
+                  "2026-08-06 accepted challenge description references checked across requested C, D, and E roots. Structure notes saved in ACCEPTED_DESCRIPTION_STRUCTURE_NOTES.md. Status remains blocked; no participant-facing challenge description was created.",
+                  "2026-08-07 simple CPU/no-training baselines measured in SIMPLE_CPU_BASELINE_AUDIT.md. Weak baselines are low: abstain 0.000000, constant most-popular 0.000833, random 0.001667, exact public-name lookup 0.016250, weak country-popularity prior 0.095833. Status remains blocked because deterministic fuzzy retrieval and full-source lookup probes are high.",
+                  "2026-08-07 Shipd upload preflight checked requested problem/dataset tabs in the in-app browser and stopped before edits. Required package files are missing and honesty gates remain blocked. Evidence saved in SHIPD_UPLOAD_PREFLIGHT_BLOCKER.md."
+              ]
+}

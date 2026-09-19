@@ -1,0 +1,21 @@
+﻿{
+    "title":  "Handwritten Circuit Error Repair",
+    "slug":  "handwritten-circuit-error-repair",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fdad1-84c0-7533-8d76-7b7fd1013dd6",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Handwritten Circuit Error Repair",
+    "dataset":  "CGHD official Zenodo release/version, conditional on an untouched official sub-1-GB source and native topology labels",
+    "license":  "Verified Zenodo metadata license cc-by-4.0; source-size gate failed before packaging",
+    "created_at":  "2026-08-07T11:31:11.9538870+05:30",
+    "updated_at":  "2026-08-07T11:49:10.8758729+05:30",
+    "blocker":  "Official CGHD Zenodo releases expose only monolithic archives; smallest official file is 1,044,369,171 bytes and cited v6 is 2,666,450,407 bytes, exceeding the required sub-1-GB raw-source cap.",
+    "notes":  [
+                  "2026-08-07: Build-mode gate audit completed after reading eris-challenge-factory SKILL.md, build-workflow.md, build-task-template.md, workspace rules, checkpoints, reviewer memory, registry, archives, and relevant accepted graph/connectivity examples.",
+                  "2026-08-07: Zenodo API checked all 16 official CGHD versions. Each version exposes exactly one archive. Version 6 cghd-zenodo-6.zip is 2,666,450,407 bytes md5:2da6a35090854ccdfd9da7b948d13905. Latest version 16 cghd-zenodo-16.zip is 4,876,870,577 bytes md5:6557f02e7569323e411e1f4d5cb3933d. Smallest official archive version 1 CGHD-1152.zip is 1,044,369,171 bytes md5:b02a5fd575608842b5384d3c2aca2838, still above 1,000,000,000 bytes.",
+                  "2026-08-07: No official sub-1-GB archive or per-member download was found. Per handoff, no locally processed source subset or third-party mirror may be used. Challenge blocked; no weakened substitute built.",
+                  "2026-08-07: Moved owned challenge folder from D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Handwritten Circuit Error Repair to E:\\create_challenge_synthetic_output_folder\\sprint_4\\Handwritten Circuit Error Repair per user request.",
+                  "2026-08-07: Completed requested checkpoint, previous-review, exploit, malformed-submission, lookup, accepted-description, and checklist_aikyatan audit. Final report is E:\\create_challenge_synthetic_output_folder\\sprint_4\\Handwritten Circuit Error Repair\\FINAL_AUDIT_REPORT.md. No dataset upload zip was created because every acceptable official CGHD source/member remains over the raw-source cap.",
+                  "2026-08-07: User clarified CPU-only. Reviewed baseline/agent-trial score request. No grader changes were possible because grade.py/grader.py, prepared data, sample submission, baseline scores, and agent-trial scores do not exist for this source-blocked challenge. Recorded E:\\create_challenge_synthetic_output_folder\\sprint_4\\Handwritten Circuit Error Repair\\GRADER_SCORE_REVIEW.md."
+              ]
+}

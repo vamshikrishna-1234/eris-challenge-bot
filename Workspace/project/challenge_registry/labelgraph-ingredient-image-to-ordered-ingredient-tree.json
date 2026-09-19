@@ -1,0 +1,24 @@
+{
+    "title":  "LabelGraph Ingredient Image to Ordered Ingredient Tree",
+    "slug":  "labelgraph-ingredient-image-to-ordered-ingredient-tree",
+    "status":  "rejected",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "claude-code-session-2026-08-09",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\LabelGraph Ingredient Image to Ordered Ingredient Tree",
+    "dataset":  "Open Food Facts ingredient images, product records, taxonomies, and allergen fields",
+    "license":  "Images CC BY-SA; database ODbL and Database Contents License; verify selected media rights and obligations",
+    "created_at":  "2026-08-08T14:58:59.3013775+05:30",
+    "updated_at":  "2026-08-09T00:10:00.0000000+05:30",
+    "blocker":  "Source/native-label gate failed permanently: Open Food Facts exposes ingredient images, OCR/corrected text, product-level allergen/traces fields, taxonomies, and computed ingredient analysis, but no verified source-native ordered ingredient tree with canonical IDs and exact contains/may_contain scope tied to the selected ingredient image revision. A follow-up salvage attempt confirmed even a downgraded flat-ordered-ingredient target fails: Robotoff's human-validated ingredient_spellcheck insights (the only genuinely human-validated ingredient-text signal in the ecosystem) have source_image null on every entry, so no reduced target is image-grounded either. No alternative public dataset was found. Building would treat parser/product-level analysis as truth, violating the mandatory native-target gate. Final verdict: rejected, see FINAL_REJECTION_AUDIT.md.",
+    "notes":  [
+                  "2026-08-08: Build stopped before prepare.py/grade.py/forms. Created blocker evidence in the exact challenge folder: SOURCE_VERIFICATION.md, BLOCKED_GATE_REPORT.md, DATA_ACQUISITION.md, OFF_PILOT_METADATA_PROBE.json.",
+                  "2026-08-08: Bounded metadata probe attempted 2,000 products but public API paging returned repeated 503/401 after 300 records. Probe did not satisfy the mandatory pilot audit; source-native tree provenance failed independently.",
+                  "2026-08-08: Closest local duplicate neighbor is Receipt OCR Ledger Slot Repair; target would be distinct only if valid image-grounded native ingredient-tree labels were available.",
+                  "2026-08-08: Moved challenge evidence folder from D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3 to E:\\create_challenge_synthetic_output_folder\\sprint_4 and added Sprint 4 audit report.",
+                  "2026-08-08: Confirmed the CPU-only contract. Grader revision request is blocked because no grader, prepared answers, baseline scores, or agent-trial results exist; no score changes were fabricated. See GRADER_REVISION_BLOCKED.md.",
+                  "2026-08-08: Confirmed current usable data size is 0 train and 0 test rows; the 300 API records are probe metadata only. Added a hard resume gate of at least 5,000 verified usable pairs, including at least 4,000 train and 1,000 private test rows.",
+                  "2026-08-09: Added CONTINUATION_HANDOFF.md with exact paths, skill and policy files, current blocker, CPU/data contracts, resume gates, and a ready-to-paste next-agent prompt. Ownership has not been transferred.",
+                  "2026-08-09: User explicitly authorized ownership transfer to this Claude Code session (owner_task claude-code-session-2026-08-09, prior Codex task 019fe0b6-89a8-74f3-9ac5-54680c583eb9 released). Directive: attempt a good-faith salvage of the native-label gate before accepting rejection; do not violate any mandatory gate to do so.",
+                  "2026-08-09: Performed live salvage verification: Open Food Facts product edit-history/editor-trail check (editors dominated by bot/generic-app accounts, e.g. new-nutrition-bot, kiliweb), live Robotoff insights query for the spot-check product (only label/claim insights are human-validated + image-linked, no ingredient-tree insight type exists), live Robotoff ingredient_spellcheck insight sample (genuinely human-validated but flat-text-only and source_image is null on every entry, so not image-grounded), and an external search for alternative hand-annotated image-grounded ingredient-tree/allergen datasets (none found). No viable native-label path exists for the full task or any reduced version. User reviewed this evidence and selected: mark rejected now. Registry status set to rejected. See FINAL_REJECTION_AUDIT.md for full evidence."
+              ]
+}

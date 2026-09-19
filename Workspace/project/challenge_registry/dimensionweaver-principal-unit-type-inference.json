@@ -1,0 +1,21 @@
+{
+    "title":  "DimensionWeaver Principal Unit-Type Inference",
+    "slug":  "dimensionweaver-principal-unit-type-inference",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fd7bd-91eb-71c1-90fe-7cc7a748ff07",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\DimensionWeaver Principal Unit-Type Inference",
+    "dataset":  "EMBL-EBI BioModels encoded SBML models, pinned official snapshot",
+    "license":  "CC0",
+    "created_at":  "2026-08-06T21:11:03.7475266+05:30",
+    "updated_at":  "2026-08-06T22:52:15.3628790+05:30",
+    "blocker":  "Mandatory phase-zero coverage gate failed: 348 official BioModels SBML files audited; 10,491 candidate connected equation cases; 2,081 cases with sufficient native source-grounded anchors/targets (19.836%, below required 40%). Principal/free type-scheme output also remains a deterministic symbolic constraint-propagation task rather than demonstrated From Scratch learning.",
+    "notes":  [
+                  "Evidence preserved in E:\\create_challenge_synthetic_output_folder\\sprint_4\\DimensionWeaver Principal Unit-Type Inference\\SOURCE_VERIFICATION.md",
+                  "Phase-zero details in E:\\create_challenge_synthetic_output_folder\\sprint_4\\DimensionWeaver Principal Unit-Type Inference\\PHASE_ZERO_AUDIT.md",
+                  "Audit manifest and checksums in E:\\create_challenge_synthetic_output_folder\\sprint_4\\DimensionWeaver Principal Unit-Type Inference\\audit\\biomodels_phase_zero_manifest.csv",
+                  "Sprint 4 requested checklist audit in E:\\create_challenge_synthetic_output_folder\\sprint_4\\DimensionWeaver Principal Unit-Type Inference\\SPRINT4_REQUESTED_AUDIT_REPORT.md",
+                  "CPU-only grader/score review in E:\\create_challenge_synthetic_output_folder\\sprint_4\\DimensionWeaver Principal Unit-Type Inference\\CPU_GRADER_SCORE_REVIEW.md",
+                  "Accepted challenge description structure review in E:\\create_challenge_synthetic_output_folder\\sprint_4\\DimensionWeaver Principal Unit-Type Inference\\ACCEPTED_DESCRIPTION_STRUCTURE_REVIEW.md"
+              ]
+}

@@ -1,0 +1,21 @@
+﻿{
+    "title":  "Volcano Plume Visual-Infrasound Wavefield Recovery",
+    "slug":  "volcano-plume-visual-infrasound-wavefield-recovery",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fdc83-9f07-76c3-9c29-20857cfa96dc",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Volcano Plume Visual-Infrasound Wavefield Recovery",
+    "dataset":  "Official Boise State infrasound_data/9 dataset for volcano opto-acoustics at Yasur Volcano, Vanuatu, December 9, 2019",
+    "license":  "Official dataset record uses custom permissive terms requiring attribution, DOI reference, license clarity on redistribution, and preserved notices; not CC BY 4.0",
+    "created_at":  "2026-08-07T19:25:37.2248692+05:30",
+    "updated_at":  "2026-08-08T23:18:28.8284752+05:30",
+    "blocker":  "Current blockers: full native MP4/MAT/TXT contents have not been inspected, the single 710-second Yasur session may not provide stable event-disjoint train/test/private evaluation, and novelty remains high risk because the source paper already demonstrates optical infrasound/wavefield recovery from this dataset. Raw size is no longer a blocker under user policy; source lookup is documented as an accepted risk.",
+    "notes":  [
+                  "Build mode started from task 019fdc83-9f07-76c3-9c29-20857cfa96dc. Mandatory gates will be evaluated before implementation.",
+                  "Blocked after source audit: official record is Yasur/Vanuatu rather than the handoff's Fuego description; dataset terms are custom permissive and not CC BY 4.0; browser-observed official ZIP size is 1,089,308,953 bytes; one public 710-second session with approximately six featured explosions is not enough for stable event-disjoint evaluation and is practically vulnerable to source timestamp lookup.",
+                  "Moved blocked audit folder from D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3 to E:\\create_challenge_synthetic_output_folder\\sprint_4.",
+                  "Completed Sprint 4 checklist audit against checkpoints, previous-review lessons, accepted challenge description patterns, lookup/reversibility concerns, grader strictness requirements, and current GPU-only guidance. No upload ZIP was created because the challenge remains blocked.",
+                  "User clarified this is CPU-only. Removed GPU-only guidance as a blocker, added GRADER_BASELINE_REVIEW.md, and made no grader changes because no grade.py/grader.py, prepared split, baseline scores, or agent-trial scores exist for this blocked challenge.",
+                  "User clarified on 2026-08-08 that raw official uploads around 1-2 GB are acceptable and prepare.py may select only the needed subset while keeping prepared data around 300-500 MB or less. Updated audit docs so raw size is no longer a current blocker; source lookup remains documented as user-accepted risk."
+              ]
+}

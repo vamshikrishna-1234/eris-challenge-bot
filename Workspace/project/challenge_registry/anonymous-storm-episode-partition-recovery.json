@@ -1,0 +1,62 @@
+{
+  "title": "Storm Episode Bipartition Clustering",
+  "slug": "anonymous-storm-episode-partition-recovery",
+  "status": "agent_runs_started",
+  "phase": "shipd_evaluating_difficulty",
+  "verdict": "Proceed",
+  "owner_machine": "VAMSHI",
+  "owner_task": "/root/eris_task_2_storm",
+  "output_folder": "E:\\Eris Challenge Bot\\Workspace\\output\\anonymous-storm-episode-partition-recovery",
+  "dataset": "NOAA NCEI Storm Events 2022 details snapshot",
+  "domain": "Earth Science",
+  "compute": "CPU",
+  "license": "U.S. Government public-domain data",
+  "created_at": "2026-09-16T21:00:00+05:30",
+  "updated_at": "2026-09-19T01:11:51+05:30",
+  "blocker": null,
+  "notes": [
+    "Text-bearing formulation rejected after 99% lookup; production formulation contains no narrative text.",
+    "Final 2022-only hard-pair construction produces a measured CPU capability baseline of 0.413 without changing native labels or metric.",
+    "Bound to immutable slot eris-five-20260916-task-002 and exact Shipd dataset/problem ids.",
+    "Dataset is Ready after fresh zero-warning validation. Challenge v1 has 8/8 green checks, novelty 6/10, Target Recoverability 0/100, and no bypasses.",
+    "Run Agents was clicked exactly once; Shipd shows Evaluating difficulty with Runs 1-3 running. Workflow stopped at the requested terminal state."
+  ],
+  "immutable_slot": "eris-five-20260916-task-002",
+  "shipd": {
+    "dataset_id": "jd79vgwan6k9q45kp7tzmt4qyx8c17qy",
+    "dataset_url": "https://shipd.ai/quests/eris/datasets/jd79vgwan6k9q45kp7tzmt4qyx8c17qy",
+    "problem_id": "jx76xz5dfyjzpm82s8mgmmkw1x8c0p6w",
+    "problem_url": "https://shipd.ai/quests/eris/problems/jx76xz5dfyjzpm82s8mgmmkw1x8c0p6w"
+  },
+  "readiness": {
+    "verdict": "Proceed", "native_targets_verified": true, "official_access_verified": true,
+    "redistribution_verified": true, "source_package_verified": true, "post_filter_scale_passed": true,
+    "split_stability_passed": true, "semantic_duplicate_audit_passed": true, "lookup_attack_passed": true,
+    "capability_matched_baseline_passed": true, "null_metric_audit_passed": true,
+    "import_route_verified": true, "reviewer_premortem_completed": true, "unresolved_gates": []
+  },
+  "evidence": {
+    "source_verification": "E:\\Eris Challenge Bot\\Workspace\\output\\anonymous-storm-episode-partition-recovery\\SOURCE_VERIFICATION.md",
+    "novelty_audit": "E:\\Eris Challenge Bot\\Workspace\\output\\anonymous-storm-episode-partition-recovery\\NOVELTY_AND_DUPLICATE_AUDIT.md",
+    "reviewer_premortem": "E:\\Eris Challenge Bot\\Workspace\\output\\anonymous-storm-episode-partition-recovery\\REVIEWER_PREMORTEM.md",
+    "readiness_card": "E:\\Eris Challenge Bot\\Working\\pre_scout_20260916\\stormevents\\PILOT_READINESS_CARD.md",
+    "pilot_report": "E:\\Eris Challenge Bot\\Working\\pre_scout_20260916\\stormevents\\episode_partition_pilot_report.json",
+    "source_rows": 69887, "source_episodes": 10464, "eligible_episodes": 4647,
+    "production_analysis": "E:\\Eris Challenge Bot\\Workspace\\output\\anonymous-storm-episode-partition-recovery\\ANALYSIS_RESULTS.json",
+    "final_audit": "E:\\Eris Challenge Bot\\Workspace\\output\\anonymous-storm-episode-partition-recovery\\FINAL_AUDIT_RESULTS.json",
+    "source_archive": "E:\\Eris Challenge Bot\\Workspace\\output\\anonymous-storm-episode-partition-recovery\\source_upload.zip",
+    "train_cases": 1600, "test_cases": 500,
+    "train_native_episodes": 3200, "test_native_episodes": 1000,
+    "sample_score": 0.127, "cpu_capability_baseline_score": 0.4155,
+    "public_exact_episode_lookup_top1": 0.026,
+    "public_exact_pair_lookup": 0.004, "perfect_score": 1.0,
+    "deterministic_prepare_runtime_seconds": 94.56018109997967,
+    "final_audit_warnings": 0,
+    "live_checks_passed": 8,
+    "live_checks_total": 8,
+    "live_novelty_score": 6,
+    "live_target_recoverability_score": 0,
+    "grade_sha256": "587332a8de41cce607179add6baead521dd9a398024a24aabc57bd7beb44cc16",
+    "prepare_sha256": "a64dcb2d5c9a131efcfa2b0e1c9a7a8a119086a90a319a705f38b98e8a3ed97d"
+  }
+}

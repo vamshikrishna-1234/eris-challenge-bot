@@ -1,0 +1,26 @@
+{
+  "absolute_paths": false,
+  "empty_graph_score": 0.18971428571428572,
+  "id_format_ok": true,
+  "public_media_bytes": 460026529,
+  "public_media_count": 654,
+  "public_size_bytes": {
+    "all_equal": false,
+    "count": 654,
+    "max": 961477,
+    "min": 414018
+  },
+  "retrieval_probe": {
+    "median_hamming": 88.5,
+    "min_hamming": 63,
+    "near_exact_lt_8": 0,
+    "public_samples": 24,
+    "raw_samples": 300
+  },
+  "rows": {
+    "test": 175,
+    "train": 479
+  },
+  "sample_score": 0.1447082202272265,
+  "source_tokens_in_public_csv": false
+}

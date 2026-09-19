@@ -1,0 +1,695 @@
+{
+  "scrapedAt": "2026-08-04T02:07:27+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\AppData\\Local\\Temp\\shipd_heartbeat_20260804_0203_details.json",
+  "payload": {
+    "scrapedAt": "2026-08-03T20:37:21.674Z",
+    "homepage": {
+      "url": "https://shipd.ai/quests/eris/",
+      "homepageCardsFound": 38,
+      "skippedAlready": 25,
+      "candidateLinks": [
+        {
+          "difficulty": "Medium",
+          "domainChip": "OTHER",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76xtykm7c9dc7x87jxtgz01d8bm222",
+          "id": "jx76xtykm7c9dc7x87jxtgz01d8bm222",
+          "scoreContext": "Beat neofrazer's score of 0.629!",
+          "title": "Cross-Sensor Seasonal Identity Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7a879z87bhcjbc17bn8qzxxx8brmt3",
+          "id": "jx7a879z87bhcjbc17bn8qzxxx8brmt3",
+          "scoreContext": "Beat ivycer's score of 58.284!",
+          "title": "Cross-Modal Robot Dispatch"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7dqycbv11k0gvjsw6q5rcrqd8bqma9",
+          "id": "jx7dqycbv11k0gvjsw6q5rcrqd8bqma9",
+          "scoreContext": "Beat dp2406's score of 66.034!",
+          "title": "Anchor-Conditioned Emission Peak Drift"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7274k4m5qjdy2tdyph6fqht18bqft9",
+          "id": "jx7274k4m5qjdy2tdyph6fqht18bqft9",
+          "scoreContext": "Beat jesuisnadi's score of 0.529!",
+          "title": "Wrapped Phase Closure Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7caxp0cng5s5yena7nqfmd1x8bgq09",
+          "id": "jx7caxp0cng5s5yena7nqfmd1x8bgq09",
+          "scoreContext": "Beat mayank_thakur's score of 50.482!",
+          "title": "Marginalia: Ordered Citation Path Recovery"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "OTHER",
+          "href": "https://shipd.ai/quests/eris/challenges/jx72vh02sfcxy7adps1xd3hj918b172t",
+          "id": "jx72vh02sfcxy7adps1xd3hj918b172t",
+          "scoreContext": "Beat samluu206's score of 0.135!",
+          "title": "Audio Trace Mosaic Chain-of-Custody Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76wf7tkhrgzw4zb6da6zcxr98az9ft",
+          "id": "jx76wf7tkhrgzw4zb6da6zcxr98az9ft",
+          "scoreContext": "Beat supegirl's score of 0.364!",
+          "title": "EEG-Guided Spontaneous Attention Path Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx760ayp83gvbmwe5g5kss661x8bsdfy",
+          "id": "jx760ayp83gvbmwe5g5kss661x8bsdfy",
+          "scoreContext": "Beat supegirl's score of 0.325!",
+          "title": "Cross-Sensor Cell Identity Reconciliation"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx79s18n5jzkytyxknhx21vcwd8bqfxf",
+          "id": "jx79s18n5jzkytyxknhx21vcwd8bqfxf",
+          "scoreContext": "Beat zzz_grs's score of 0.341!",
+          "title": "Drum Feel Microtiming Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx78j73z53r6vrhh4nb523zy8s8bqjte",
+          "id": "jx78j73z53r6vrhh4nb523zy8s8bqjte",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Open-World Attribution Of A Stripped Object Description To Its Image"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73c05906r8keqwm3j4b6720d8bp1br",
+          "id": "jx73c05906r8keqwm3j4b6720d8bp1br",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Cadencefall: Audio Timbre Retrieval and Instrument Matching"
+        },
+        {
+          "difficulty": "Hard",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7f0cgrcdr8rjkyxsq3563w798bmb1n",
+          "id": "jx7f0cgrcdr8rjkyxsq3563w798bmb1n",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Support-Conditioned Tumor Contour Segmentation"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "NLP",
+          "href": "https://shipd.ai/quests/eris/challenges/jx71mazbqmvwqat2dx2gjtprsh8b33b9",
+          "id": "jx71mazbqmvwqat2dx2gjtprsh8b33b9",
+          "scoreContext": "Beat hitlocation's score of 40.349!",
+          "title": "BenchLink: Cross-Document Hearing Grounding"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "COMPUTER VISION",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73kfgqtzf66cwv5schfs1kq58b2j7a",
+          "id": "jx73kfgqtzf66cwv5schfs1kq58b2j7a",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Crystallization Field Object Cell Audit"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7drmbgykg284z6hfsckcyc3h8aymxd",
+          "id": "jx7drmbgykg284z6hfsckcyc3h8aymxd",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "EchoTherm: Dual-Sensor Contact-Thermal Replay From Sound, Force, and Motion"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "COMPUTER VISION",
+          "href": "https://shipd.ai/quests/eris/challenges/jx72mh6tzxh5wvg4sw7e5gbq2x8awtnk",
+          "id": "jx72mh6tzxh5wvg4sw7e5gbq2x8awtnk",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Masked Row-Plot Window Repair"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "COMPUTER VISION",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7b4371b9knbzgvs01jvbgssh8arenq",
+          "id": "jx7b4371b9knbzgvs01jvbgssh8arenq",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "CT Tree-Core Crossdating And Ring Evidence Ledger"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx71nfsry6kf4dwaxwx1jc9bh58a8psw",
+          "id": "jx71nfsry6kf4dwaxwx1jc9bh58a8psw",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Score-Grounded Trombone Embouchure Control Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "OTHER",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7dpsf6kb19t93y5psn1aemj58a5nhs",
+          "id": "jx7dpsf6kb19t93y5psn1aemj58a5nhs",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Distributed LoRa Packet Event And Consensus Recovery"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "LLM EVALUATION",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7dwtbj7wqqrvss6thxweaer18a27tg",
+          "id": "jx7dwtbj7wqqrvss6thxweaer18a27tg",
+          "scoreContext": "Beat abhaymee's score of 0.392!",
+          "title": "Technical Standard Errata Provenance Prediction"
+        },
+        {
+          "difficulty": "Hard",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7d85hxz5p0e333zptwgc4b5h8bgm14",
+          "id": "jx7d85hxz5p0e333zptwgc4b5h8bgm14",
+          "scoreContext": "Beat spyrant's score of 0.795!",
+          "title": "Stroboscopic Gearbox Repair Synthesis"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7f4jv5chcg8tstwwwcm26tc989t1za",
+          "id": "jx7f4jv5chcg8tstwwwcm26tc989t1za",
+          "scoreContext": "Beat mrnguyen's score of 0.727!",
+          "title": "Reciprocal-Space Lineage Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "NLP",
+          "href": "https://shipd.ai/quests/eris/challenges/jx71kne5rqd2x4fm9vm7ban5h18bjxbb",
+          "id": "jx71kne5rqd2x4fm9vm7ban5h18bjxbb",
+          "scoreContext": "Beat xbongox's score of 0.590!",
+          "title": "Precedence Transfer: Does the Governing Concern Survive a Change of Readership"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "NLP",
+          "href": "https://shipd.ai/quests/eris/challenges/jx74feetxw7vmsr0hch291n60d8bkswg",
+          "id": "jx74feetxw7vmsr0hch291n60d8bkswg",
+          "scoreContext": "Beat mango's score of 0.532!",
+          "title": "Cross-Solvent Dissolution Behavior from Molecular Structure"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76n9c1kwtq8n8z04jxsxj2jd8bm21n",
+          "id": "jx76n9c1kwtq8n8z04jxsxj2jd8bm21n",
+          "scoreContext": "Beat saikrishna295's score of 77.926!",
+          "title": "Phylogenetic Corridor Assembly from Shuffled Evidence Cards"
+        },
+        {
+          "difficulty": "Easy",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx705rgpfre1mw2gtawhyjmd1d8bntew",
+          "id": "jx705rgpfre1mw2gtawhyjmd1d8bntew",
+          "scoreContext": "Beat jesuisnadi's score of 0.831!",
+          "title": "Multimodal Actuator Translation"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "PROMPT ENGINEERING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx70kc9eq9bv96efv06nkq6he58bmr1g",
+          "id": "jx70kc9eq9bv96efv06nkq6he58bmr1g",
+          "scoreContext": "Beat gallantknight's score of 0.666!",
+          "title": "Culture-Well Organoid Neighborhood Graph"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx75jc8etvfkavastazjg2tzmh88kkbw",
+          "id": "jx75jc8etvfkavastazjg2tzmh88kkbw",
+          "scoreContext": "Beat samluu206's score of 0.555!",
+          "title": "Genetic Epistasis Prediction from Gene Function Text"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "href": "https://shipd.ai/quests/eris/challenges/jx71ennmg80086g538agfbfkk98bp9qr",
+          "id": "jx71ennmg80086g538agfbfkk98bp9qr",
+          "scoreContext": "Beat laddulal's score of 0.474!",
+          "title": "Chinese Abstract Generation"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx75c9c3s5twfc44ec3sgfsbrx8bjt1h",
+          "id": "jx75c9c3s5twfc44ec3sgfsbrx8bjt1h",
+          "scoreContext": "Beat rustam's score of 0.530!",
+          "title": "Speech Mixture Speaker Attribution"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76v1ts9bj273y6d6rwaxq2j58bqaw3",
+          "id": "jx76v1ts9bj273y6d6rwaxq2j58bqaw3",
+          "scoreContext": "Beat duongnguyen's score of 0.341!",
+          "title": "Scientific Abstract Context Span Recovery"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx72qtnxnh4cg4hyq8a08v1tcd8b17gf",
+          "id": "jx72qtnxnh4cg4hyq8a08v1tcd8b17gf",
+          "scoreContext": "Beat amtech's score of 0.442!",
+          "title": "Pollution Prevention Opportunity-Method Graph Recovery"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "NLP",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76v853kenhx7n7pkhrx5egdh8bpfrf",
+          "id": "jx76v853kenhx7n7pkhrx5egdh8bpfrf",
+          "scoreContext": "Beat cohort3's score of 0.761!",
+          "title": "Descriptive Passage Item Grounding"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx77qbbqfksbcnqky0ww23nd7n8bqqgz",
+          "id": "jx77qbbqfksbcnqky0ww23nd7n8bqqgz",
+          "scoreContext": "Beat arin's score of 68.161!",
+          "title": "Forest Chorus: Fine-Band Activity Recovery"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73c2m8ty3k51x0pth0ejvq9d8bnpjk",
+          "id": "jx73c2m8ty3k51x0pth0ejvq9d8bnpjk",
+          "scoreContext": "Beat rekht's score of 0.926!",
+          "title": "Tactile Surface Route Decoding"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "href": "https://shipd.ai/quests/eris/challenges/jx797zjgz5kde6jxyr82pdgb718bj9me",
+          "id": "jx797zjgz5kde6jxyr82pdgb718bj9me",
+          "scoreContext": "Beat morax's score of 0.510!",
+          "title": "Multilingual Document Reading-Order Graph Repair"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx741ver2cx3jn387z1tfe2a1h8bnv86",
+          "id": "jx741ver2cx3jn387z1tfe2a1h8bnv86",
+          "scoreContext": "Beat shikum's score of 0.633!",
+          "title": "Multimodal Roadside Audit Slate"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx72jwy6fsbk4sdhsdaczvbrn18brtrb",
+          "id": "jx72jwy6fsbk4sdhsdaczvbrn18brtrb",
+          "scoreContext": "Beat jesuisnadi's score of 0.774!",
+          "title": "Subsea Transect Retention Memory"
+        }
+      ],
+      "newCandidates": [
+        {
+          "difficulty": "Medium",
+          "domainChip": "OTHER",
+          "href": "https://shipd.ai/quests/eris/challenges/jx76xtykm7c9dc7x87jxtgz01d8bm222",
+          "id": "jx76xtykm7c9dc7x87jxtgz01d8bm222",
+          "scoreContext": "Beat neofrazer's score of 0.629!",
+          "title": "Cross-Sensor Seasonal Identity Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7a879z87bhcjbc17bn8qzxxx8brmt3",
+          "id": "jx7a879z87bhcjbc17bn8qzxxx8brmt3",
+          "scoreContext": "Beat ivycer's score of 58.284!",
+          "title": "Cross-Modal Robot Dispatch"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7dqycbv11k0gvjsw6q5rcrqd8bqma9",
+          "id": "jx7dqycbv11k0gvjsw6q5rcrqd8bqma9",
+          "scoreContext": "Beat dp2406's score of 66.034!",
+          "title": "Anchor-Conditioned Emission Peak Drift"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7274k4m5qjdy2tdyph6fqht18bqft9",
+          "id": "jx7274k4m5qjdy2tdyph6fqht18bqft9",
+          "scoreContext": "Beat jesuisnadi's score of 0.529!",
+          "title": "Wrapped Phase Closure Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx760ayp83gvbmwe5g5kss661x8bsdfy",
+          "id": "jx760ayp83gvbmwe5g5kss661x8bsdfy",
+          "scoreContext": "Beat supegirl's score of 0.325!",
+          "title": "Cross-Sensor Cell Identity Reconciliation"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx79s18n5jzkytyxknhx21vcwd8bqfxf",
+          "id": "jx79s18n5jzkytyxknhx21vcwd8bqfxf",
+          "scoreContext": "Beat zzz_grs's score of 0.341!",
+          "title": "Drum Feel Microtiming Reconstruction"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73c05906r8keqwm3j4b6720d8bp1br",
+          "id": "jx73c05906r8keqwm3j4b6720d8bp1br",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Cadencefall: Audio Timbre Retrieval and Instrument Matching"
+        },
+        {
+          "difficulty": "Hard",
+          "domainChip": "FROM SCRATCH",
+          "href": "https://shipd.ai/quests/eris/challenges/jx7f0cgrcdr8rjkyxsq3563w798bmb1n",
+          "id": "jx7f0cgrcdr8rjkyxsq3563w798bmb1n",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Support-Conditioned Tumor Contour Segmentation"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "NLP",
+          "href": "https://shipd.ai/quests/eris/challenges/jx71mazbqmvwqat2dx2gjtprsh8b33b9",
+          "id": "jx71mazbqmvwqat2dx2gjtprsh8b33b9",
+          "scoreContext": "Beat hitlocation's score of 40.349!",
+          "title": "BenchLink: Cross-Document Hearing Grounding"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "COMPUTER VISION",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73kfgqtzf66cwv5schfs1kq58b2j7a",
+          "id": "jx73kfgqtzf66cwv5schfs1kq58b2j7a",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Crystallization Field Object Cell Audit"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "COMPUTER VISION",
+          "href": "https://shipd.ai/quests/eris/challenges/jx72mh6tzxh5wvg4sw7e5gbq2x8awtnk",
+          "id": "jx72mh6tzxh5wvg4sw7e5gbq2x8awtnk",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "title": "Masked Row-Plot Window Repair"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "SEQUENCE TO SEQUENCE",
+          "href": "https://shipd.ai/quests/eris/challenges/jx73c2m8ty3k51x0pth0ejvq9d8bnpjk",
+          "id": "jx73c2m8ty3k51x0pth0ejvq9d8bnpjk",
+          "scoreContext": "Beat rekht's score of 0.926!",
+          "title": "Tactile Surface Route Decoding"
+        },
+        {
+          "difficulty": "Medium",
+          "domainChip": "FINE-TUNING",
+          "href": "https://shipd.ai/quests/eris/challenges/jx72jwy6fsbk4sdhsdaczvbrn18brtrb",
+          "id": "jx72jwy6fsbk4sdhsdaczvbrn18brtrb",
+          "scoreContext": "Beat jesuisnadi's score of 0.774!",
+          "title": "Subsea Transect Retention Memory"
+        }
+      ],
+      "failures": [
+        "Initial dashboard load showed Unable to load Eris dashboard data; reload succeeded and the full visible feed was scanned."
+      ]
+    },
+    "detailRun": {
+      "details": [
+        {
+          "compute": "A10G",
+          "description": "Overview\nEarth-observation archives combine measurements made by instruments that respond to different physical properties. Optical sensors record reflected light, radar responds to structure and moisture, and environmental products describe the climate, soil, and terrain around a location. When export metadata is damaged, measurements from several nearby survey points can become mixed even though each individual sequence remains intact.\nEach challenge case contains four optical anchor sequences from geographically and ecologically confusable survey points. It also contains a shuffled bank of four radar sequences and a separate shuffled bank of four environmental context records. Every radar sequence has additionally been circularly shifted by an unknown number of months.\nThe task is to reconstruct the one-to-one identity binding for all three modalities and recover the radar phase shift. A valid answer must use every radar candidate and every context candidate exactly once. Independent nearest-neighbor predictions are therefore insufficient unless they also form a complete case-level assignment.\nTraining cases use one survey year. Test cases use different, previously unseen survey-point identities from a later survey year. Public identifiers are generated independently for each modality and contain no shared point code.\nTask\nFor every case_id, produce one binding clause for each optical anchor in the published anchor order.\nEach clause has this exact form:\nOPT_id=RAD_id@phase,CTX_id\nThe four clauses are joined with | and contain no whitespace.\nphase is an integer from 0 through 11. It is the number of positions by which the published radar sequence was rolled forward relative to calendar order. Applying a roll of -phase restores its original January-to-December order.\nDataset\nThe public dataset contains three CSV files and three compressed NumPy files.\ntrain.csv: 6,000 labeled four-anchor reconstruction cases.\ntest.csv: 1,500 unlabeled cases built from unseen later-year survey points.\nsample_submission.csv: one structurally valid random binding for every test case.\noptical.npz: anonymous optical IDs and normalized arrays with shape N x 12 x 10 x 3 x 3.\nradar.npz: anonymous radar IDs and normalized, phase-shifted arrays with shape N x 12 x 2 x 3 x 3.\ncontext.npz: anonymous context IDs, monthly environmental arrays with shape N x 12 x 18, and static soil-terrain arrays with shape N x 35.\nAll tensor values are finite float16 values standardized with training-pool statistics. Missing source measurements are represented by 0.0 after standardization.\ntrain.csv Columns\ncase_id (string): anonymous case identifier.\nanchor_ids (string): four optical IDs separated by semicolons; this order defines the required output-clause order.\nanchor_photo_masks (string): four six-bit availability masks in anchor order. Bits describe east, west, north, point, close-up, and south survey views.\nradar_candidate_ids (string): the four admissible radar IDs, separated by semicolons and shuffled.\ncontext_candidate_ids (string): the four admissible environmental-context IDs, separated by semicolons and shuffled independently.\nbinding_path (string): target four-clause reconstruction path.\ntest.csv Columns\ncase_id (string): anonymous case identifier.\nanchor_ids (string): ordered optical anchor IDs.\nanchor_photo_masks (string): ordered six-bit photo-availability masks.\nradar_candidate_ids (string): shuffled admissible radar IDs.\ncontext_candidate_ids (string): independently shuffled admissible context IDs.\nsample_submission.csv Columns\ncase_id (string): copied from test.csv.\nbinding_path (string): a complete, syntax-valid four-clause path.\nEvaluation\nThe score is bounded in [0, 1], where higher is better:\nScore = 0.25 * RadarAssignmentSkill + 0.20 * ContextAssignmentSkill + 0.25 * PhaseSkill + 0.30 * ExactCaseAccuracy\nRadarAssignmentAccuracy is the fraction of optical anchors assigned their correct radar candidate. Four-way random accuracy is 0.25, so RadarAssignmentSkill = max(0, (RadarAssignmentAccuracy - 0.25) / 0.75).\nContextAssignmentAccuracy is the fraction of optical anchors assigned their correct environmental candidate. ContextAssignmentSkill = max(0, (ContextAssignmentAccuracy - 0.25) / 0.75).\nPhaseMacroF1 is standard one-vs-rest macro F1 over the twelve phase labels 0 through 11. A phase with neither true nor predicted examples in the evaluated answer partition is omitted. False positives or false negatives cause that phase to be included. The uniform twelve-way chance reference is 1/12, so PhaseSkill = max(0, (PhaseMacroF1 - 1/12) / (11/12)).\nExactCaseAccuracy is the fraction of cases for which all four radar assignments, all four context assignments, and all four phase labels are simultaneously correct.\nThe three skill terms are chance-normalized to [0, 1]. The four components appear exactly once in the displayed formula and their weights sum to 1.00.\nSubmission\nSubmit a CSV containing exactly these columns:\ncase_id\nbinding_path\nExample:\ncase_id,binding_path\nCASE_0123456789abcd,OPT_11111111111111=RAD_aaaaaaaaaaaaaa@3,CTX_bbbbbbbbbbbbbb|OPT_22222222222222=RAD_cccccccccccccc@0,CTX_dddddddddddddd|OPT_33333333333333=RAD_eeeeeeeeeeeeee@11,CTX_ffffffffffffff|OPT_44444444444444=RAD_55555555555555@6,CTX_66666666666666\nFor each case, clauses must follow anchor_ids order. Every listed radar candidate and every listed context candidate must occur exactly once. Missing IDs, duplicate IDs, foreign candidates, malformed clauses, invalid phases, nulls, empty predictions, and extra columns are rejected before scoring.\nAllowed And Prohibited Methods\nAllowed\nTrain contrastive, sequence, assignment, or multimodal neural models using the supplied public data.\nUse generic pretrained encoders that were not trained to recover identities from this source collection.\nEnforce the one-to-one assignment with Hungarian matching, optimal transport, beam search, or another learned decoding strategy.\nProhibited\nExternal source matching, geolocation lookup, or recovery of original survey-point identifiers.\nHardcoded test bindings, manually labeled test cases, or answer tables obtained outside the public challenge data.\nRow-order, file-order, hash, or identifier reversal shortcuts.\nNon-ML lookup systems whose purpose is to reconnect anonymous records to the source release.",
+          "difficulty": "Medium",
+          "domain": "Other",
+          "gpu": "",
+          "id": "jx76xtykm7c9dc7x87jxtgz01d8bm222",
+          "scoreContext": "Beat neofrazer's score of 0.629!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [],
+          "title": "Cross-Sensor Seasonal Identity Reconstruction",
+          "url": "https://shipd.ai/quests/eris/challenges/jx76xtykm7c9dc7x87jxtgz01d8bm222"
+        },
+        {
+          "compute": "A10G",
+          "description": "Cross-Modal Robot Dispatch\nOverview\nBuild a fine-tuned cross-modal system for an asynchronous electronics-sorting robot.\nA physical item is visible to an optical camera, but four recent X-ray acquisitions are waiting in the scanner queue. Exactly one X-ray depicts the current optical item; the other three are stale scans selected preferentially from visually and operationally similar items. The model must return one structured robot-dispatch record containing:\nthe X-ray slot that belongs to the optical item;\nthe operational action for that acquisition;\nevery visible battery-hazard box in the matched X-ray.\nThe three possible actions are:\nremove: one or more batteries are visible and must be removed before downstream processing;\nrelease: the acquisition provides clear no-battery evidence and the item may continue;\nreacquire: the acquisition is not safe to route because its internal-state evidence is missing or contradictory, so another X-ray should be requested.\nThis is not ordinary object detection. A detector can help localize batteries, but it cannot by itself reconcile the optical and X-ray queues, reject stale scans, or decide when the scanner should reacquire the item. The task jointly tests cross-modal retrieval, acquisition-quality recognition, localization and robot routing.\nTraining and test sets are separated by physical item. Multiple acquisitions of one item share a public item_group, allowing group-aware validation while preventing images of the same physical object from appearing in both splits.\nYour complete solution must run on one NVIDIA A10G GPU with 24 GB VRAM and finish within 1 hour, including training, validation, inference and writing the submission. Fine-tuning a CV backbone, detector or multimodal matching model is required.\nDataset\ndataset/public/\n├── train.csv\n├── test.csv\n├── sample_submission.csv\n└── panels/\n├── train/\n│   └── <shard>/panel_<opaque_id>.jpg\n└── test/\n└── <shard>/panel_<opaque_id>.jpg\nThe prepared dataset contains:\n1,535 training episodes from 296 physical-item groups;\n667 test episodes from 125 held-out physical-item groups.\nThe item_group sets in train.csv and test.csv are disjoint.\nPanel layout\nEvery panel_path points to one 832 × 448 RGB image. The left side contains the optical view of the current item. The right side contains four candidate X-rays in this fixed slot order:\n┌──────────────────────────┬──────────────┬──────────────┐\n│                          │              │              │\n│      optical image       │    scan 0    │    scan 1    │\n│                          │              │              │\n│                          ├──────────────┼──────────────┤\n│                          │              │              │\n│                          │    scan 2    │    scan 3    │\n│                          │              │              │\n└──────────────────────────┴──────────────┴──────────────┘\nThe tile rectangles use (left, top, width, height) pixel coordinates:\n| Region | Rectangle |\n|---|---|\n| Optical image | (16, 16, 416, 416) |\n| Scan slot 0 | (448, 36, 184, 184) |\n| Scan slot 1 | (640, 36, 184, 184) |\n| Scan slot 2 | (448, 228, 184, 184) |\n| Scan slot 3 | (640, 228, 184, 184) |\nBattery boxes use normalized [x1, y1, x2, y2] coordinates relative to the matched X-ray tile, not relative to the complete panel. Coordinates satisfy:\n0 ≤ x1 < x2 ≤ 1\n0 ≤ y1 < y2 ≤ 1\ntrain.csv\nepisode_id,item_group,panel_path,dispatch\nColumns:\nepisode_id\nData type: string\nOpaque identifier unique within train.csv.\nitem_group\nData type: string\nOpaque physical-item group. Rows sharing this value are different X-ray acquisitions of the same optical item.\npanel_path\nData type: string\nRelative path from dataset/public/ to the composite panel.\ndispatch\nData type: JSON object serialized as a string\nTarget record with exactly scan_slot, action, and hazards.\nExample target:\n{\"scan_slot\":2,\"action\":\"remove\",\"hazards\":[[0.1842,0.2731,0.4175,0.6889]]}\nTarget constraints:\nscan_slot is an integer from 0 through 3;\naction is remove, release, or reacquire;\nhazards is a list containing at most eight normalized boxes;\nremove has at least one hazard box;\nrelease and reacquire have an empty hazard list.\nExample rows:\nepisode_id,item_group,panel_path,dispatch\nep_6c22266bdb169455e73a8d,itm_fc08d591bd647f5a457b,panels/train/9d/panel_9d029819bfb4cbdeab1e7e8ed0.jpg,\"{\"\"scan_slot\"\":1,\"\"action\"\":\"\"remove\"\",\"\"hazards\"\":[[0.19375,0.416016,0.465625,0.493359],[0.202344,0.480859,0.460156,0.548828]]}\"\nep_31b1d6c59e2e082e49b92c,itm_9e2279c29d8346846fad,panels/train/bd/panel_bd9762077bcb45c6a54000df79.jpg,\"{\"\"scan_slot\"\":2,\"\"action\"\":\"\"release\"\",\"\"hazards\"\":[]}\"\nep_857519e1fde33ad7d59247,itm_52d965bcc0afd0d5da66,panels/train/a6/panel_a6a5d893ce57ee275e16edff04.jpg,\"{\"\"scan_slot\"\":2,\"\"action\"\":\"\"reacquire\"\",\"\"hazards\"\":[]}\"\ntest.csv\nepisode_id,item_group,panel_path\nThe columns have the same meaning as in train.csv, but dispatch is hidden. Every test episode_id must appear exactly once in the submission.\nsample_submission.csv\nepisode_id,dispatch\nThe sample is a format-valid serialization example. It uses a weak fixed action and contains no target information.\nSubmission format\nWrite predictions to:\nworking/submission.csv\nThe CSV must contain exactly these columns in this order:\nepisode_id,dispatch\nEach dispatch cell must be a valid JSON object with exactly these keys:\n{\"scan_slot\":0,\"action\":\"release\",\"hazards\":[]}\nA multi-row example:\nepisode_id,dispatch\nep_73f8fdbeab237e66321b19,\"{\"\"scan_slot\"\":2,\"\"action\"\":\"\"remove\"\",\"\"hazards\"\":[[0.181,0.264,0.426,0.701]]}\"\nep_18b6701cbd295bd21d16ba,\"{\"\"scan_slot\"\":0,\"\"action\"\":\"\"reacquire\"\",\"\"hazards\"\":[]}\"\nRows may appear in any order. The grader rejects wrong columns, missing or extra IDs, duplicate IDs, missing values, non-finite numbers, invalid slots, unknown actions, extra or repeated JSON keys, malformed boxes, duplicate boxes, and action/box inconsistencies. Invalid values are not clipped or repaired.\nEvaluation\nThe score measures four coupled capabilities:\ncross-modal scan pairing;\npairing-gated action classification;\nbalanced positive/empty hazard handling;\ncomplete robot dispatch for every action type.\nTo prevent physical items with many X-ray acquisitions from dominating, episode i in item group g receives weight:\nw_i = 1 / number_of_episodes_in_group_g\nThus, the total unnormalized weight of every item group is one.\n1. Group-balanced pair accuracy\nFor episode i:\npair_i = 1 if predicted_scan_slot_i = true_scan_slot_i, else 0\nThe pairing component is the weighted mean:\npair_accuracy = weighted_mean(pair_i, w_i)\nThis is equivalent to averaging pairing accuracy within each item group and then averaging the groups.\n2. Pairing-gated action macro-F1\nAn action receives credit only when its predicted scan slot is correct. For an incorrectly paired episode, the effective action prediction is replaced by a mismatch value distinct from all three valid actions.\nUsing the item-group weights, compute F1 separately for:\nrelease, remove, reacquire\nand average the three values:\naction_score = mean(F1_release, F1_remove, F1_reacquire)\nThis prevents a correct action word attached to the wrong scan from receiving credit and prevents the frequent action from dominating the component.\n3. Pairing-gated hazard score\nFor one episode, let T be the true hazard-box set and P the predicted set. A wrong scan slot forces the episode box score to 0.\nFor a correctly paired episode:\nT empty and P empty  → box_score = 1\nexactly one is empty → box_score = 0\nWhen both sets are non-empty, standard intersection over union is:\nIoU(a, b) = area(a ∩ b) / area(a ∪ b)\nFind a maximum-weight one-to-one matching between T and P using IoU as the edge weight. Define:\nsoft_iou = maximum_matched_IoU_sum / max(|T|, |P|)\nFor each threshold τ ∈ {0.30, 0.50, 0.70}, let m_τ be the maximum number of one-to-one pairs with IoU ≥ τ:\nbox_f1_τ = 2 × m_τ / (|T| + |P|)\nThe episode score is:\nbox_score = 0.40 × soft_iou\n+ 0.60 × mean(box_f1_0.30, box_f1_0.50, box_f1_0.70)\nExtra predicted boxes reduce both terms. Compute separate item-group-weighted means for episodes with and without true hazard boxes:\nhazard_positive = weighted_mean(box_score | T non-empty, w_i)\nhazard_empty    = weighted_mean(box_score | T empty, w_i)\nCombine them with the harmonic mean:\nhazard_score = 0, if either mean is 0\nhazard_score = 2 × hazard_positive × hazard_empty\n/ (hazard_positive + hazard_empty), otherwise\nThe harmonic mean prevents excellent empty-scan handling from compensating for failure to localize real batteries, and vice versa.\n4. Balanced complete-dispatch score\nAn episode is complete when:\nthe scan slot is correct;\nthe action is correct;\nwhen true hazards exist, box_score ≥ 0.65;\nwhen no true hazard exists, no box is predicted.\nCompute a weighted complete rate separately for true release, remove, and reacquire episodes. The component is their three-way harmonic mean:\ncomplete_action = weighted_mean(complete_i | true action, w_i)\nbalanced_complete = harmonic_mean(\ncomplete_release,\ncomplete_remove,\ncomplete_reacquire\n)\nIf any action has zero complete rate, balanced_complete is zero. A system must therefore complete all three robot workflows rather than specializing in the majority action.\nFinal score\nscore = 100 × (\n0.20 × pair_accuracy\n+ 0.20 × action_score\n+ 0.40 × hazard_score\n+ 0.20 × balanced_complete\n)\nNot allowed\nExternal APIs or hosted inference services.\nExternal copies, labels, metadata, or annotations for the same physical items.\nManual labeling of test panels.\nHard-coding predictions by episode_id or item_group.\nRecovering source identities or using filenames, row order, JPEG artifacts, repeated-tile frequency, preparation details, or grader behavior instead of modeling the visual task.",
+          "difficulty": "Medium",
+          "domain": "Fine-Tuning",
+          "gpu": "",
+          "id": "jx7a879z87bhcjbc17bn8qzxxx8brmt3",
+          "scoreContext": "Beat ivycer's score of 58.284!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "image",
+            "multimodal",
+            "text",
+            "Dataset source is visible after the challenge closes."
+          ],
+          "title": "Cross-Modal Robot Dispatch",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7a879z87bhcjbc17bn8qzxxx8brmt3"
+        },
+        {
+          "compute": "A10G",
+          "description": "Anchor-Conditioned Emission Peak Drift\nOverview\nRemote laser spectrometers often compare multiple statistical summaries of repeated measurements. A detailed reference analysis may already exist for one aggregate, while a newly computed aggregate is retained only as compressed telemetry. The scientific question is then not “what is the entire new spectrum?” but how did its important peak morphology move relative to the trusted reference?\nEvery challenge row contains an anchor aggregate and a query aggregate from the same real planetary-rover laser-spectroscopy target. The anchor includes its known 12-zone peak signature. For both aggregates, you receive masked 96-bin intensity and curvature streams plus 12 zone loads. No query morphology sketch is provided: its fine peak properties must be inferred from changes in the compressed physical signals.\nYour objective is to predict a directed 12-zone drift field from anchor to query. For each wavelength zone, determine whether the hidden query peak moved left or right, whether the peak became more or less prominent, and whether it became sharper or broader.\nIn plain language: use a known anchor signature and two compressed aggregate spectra to predict how the query peak changed in every wavelength zone.\nThis is a From Scratch paired-signal challenge. Every learned embedding, encoder, attention layer, convolution, and prediction head must be initialized from random weights and trained only with the supplied competition files. Pretrained spectroscopy, chemistry, materials, planetary-science, remote-sensing, vision, language, or general-purpose representations are not permitted.\nThe data comes from real calibrated laser-induced breakdown spectroscopy measurements. Original measurement names, source filenames, mission timestamps, coordinates, elemental annotations, composition estimates, and high-resolution test spectra are absent. Participant identifiers are fresh opaque codes.\nAnchor and Query Views\nEach physical measurement target has two statistical aggregate spectra, represented by direction codes:\nV00: the first aggregate is the anchor and the second is the query;\nV01: the second aggregate is the anchor and the first is the query.\nTraining contains both reciprocal directions for every training target. This teaches how a transition reverses when anchor and query are exchanged.\nTest contains only one deterministic direction for each held-out physical target. The reverse test view is not provided, because its detailed anchor signature would disclose the hidden query morphology. All examples from one physical target stay in one split.\nWhat You Must Predict\nThe spectrum is divided into 12 fixed wavelength zones, z00 through z11, ordered from lower to higher wavelength. Predict three signed transition columns for every zone.\nPeak migration state\nmigration_state_zXX is an integer in {-2, -1, 0, 1, 2}:\n-2: the query peak moved left by at least three fine slots;\n-1: the query peak moved left by one or two fine slots;\n0: the strongest fine peak remained in the same slot;\n1: the query peak moved right by one or two fine slots;\n2: the query peak moved right by at least three fine slots.\n“Left” means toward a lower wavelength, and “right” means toward a higher wavelength. Each hidden fine slot spans 32 calibrated source channels.\nProminence direction\nprominence_direction_zXX is an integer in {-1, 0, 1}:\n-1: prominence decreased;\n0: prominence tier was unchanged;\n1: prominence increased.\nSharpness direction\nsharpness_direction_zXX is an integer in {-1, 0, 1}:\n-1: sharpness decreased and the peak became broader or less distinct;\n0: sharpness tier was unchanged;\n1: sharpness increased.\nTogether, the 36 integers form a fixed-width directed peak-drift field.\nInput Columns\nid — string — fresh identifier for one directed anchor-query case.\npair_code — string — opaque physical-target key. It occurs twice per training pair and once per test pair.\ndirection_code — string — V00 or V01, identifying the anchor-query orientation.\nanchor_location_stream — string — 12 known fine peak slots, each from 0 through 15.\nanchor_prominence_stream — string — 12 known anchor prominence tiers, each from 0 through 3.\nanchor_sharpness_stream — string — 12 known anchor sharpness tiers, each from 0 through 3.\nanchor_intensity_stream — string — 96 quantized anchor-intensity values.\nquery_intensity_stream — string — 96 quantized query-intensity values.\nanchor_curvature_stream — string — 96 signed anchor-curvature values.\nquery_curvature_stream — string — 96 signed query-curvature values.\nanchor_zone_load_stream — string — 12 relative anchor zone loads.\nquery_zone_load_stream — string — 12 relative query zone loads.\nThe 96-position streams contain 12 consecutive zones of eight bins each. Position 8 × z + b corresponds to coarse bin b of zone z.\nIntensity and zone-load values range from 0 through 7. Curvature values range from -3 through 3. In the 96-position streams, 9 marks one unavailable bin per zone. Anchor and query masking patterns may differ.\nWhy It Is Difficult\nThe query's fine peak locations, prominence tiers, and sharpness tiers are not supplied, even in low-bit form. They must be inferred from spectral changes and cross-zone structure relative to the known anchor.\nEach visible spectral bin averages 64 hidden calibrated channels, while one fine peak slot spans 32 channels. The observed bins therefore cannot directly reveal a one- or two-slot movement. Prominence and sharpness transitions depend on sub-bin structure removed during compression.\nTraining supplies reciprocal directions, but test supplies only one orientation per unseen target. Memorizing pair codes or copying the anchor cannot recover the query transition.\nDataset\ntrain.csv\nContains 48,926 directed rows from 24,463 physical targets. Both reciprocal directions are present for every training target. The file contains the 12 input columns and all 36 transition targets.\ntest.csv\nContains 6,116 rows from 6,116 held-out physical targets. Only one direction is present for each target, and the file contains the 12 input columns.\nsample_submission.csv\nContains every test identifier and all 36 target columns in the required order, initialized to zero.\nmetadata.json\nDocuments stream dimensions, token grammars, transition states, masking counts, and split sizes. It contains no source name, source link, original target identifier, or held-out group list.\nEvaluation\nThe Anchor-Conditioned Drift Score combines class-balanced migration recovery, class-balanced morphology-direction recovery, and exact local transition agreement.\nMigration term\nFor migration column j and state s, define\nR_m(j,s) = correctly predicted rows whose true migration state is s / rows whose true migration state is s.\nLet S_j be the migration states present in the hidden answers for column j. Then\nM = mean over the 12 migration columns j of [mean over s in S_j of R_m(j,s)].\nProminence-direction term\nUsing the same macro-recall construction over the states -1, 0, and 1:\nP = mean balanced recall over the 12 prominence-direction columns.\nSharpness-direction term\nH = mean balanced recall over the 12 sharpness-direction columns.\nJoint transition term\nFor row i and zone z, let T(i,z) = 1 only when migration, prominence direction, and sharpness direction are all predicted exactly; otherwise T(i,z) = 0.\nT = mean over all rows i and zones z of T(i,z).\nFinal score\nScore = 100 × (0.25 × M + 0.175 × P + 0.175 × H + 0.40 × T)\nThe metric ranges from 0 to 100, and higher is better. Balanced terms prevent unchanged transitions from dominating, while the 40% joint term rewards physically coherent recovery of the complete local transition rather than 36 disconnected guesses. There is no score cap, hidden multiplier, or test-dependent remapping.\nSubmission Format\nSubmit one CSV with exactly 37 columns in the order shown by sample_submission.csv: id, the 12 migration-state columns, the 12 prominence-direction columns, and the 12 sharpness-direction columns. Include every test identifier exactly once.\nAll values must be finite integers in their stated ranges. A row containing any missing, non-integer, infinite, or out-of-range value receives zero credit for every component. Extra columns, reordered columns, missing rows, duplicate identifiers, and unknown identifiers are rejected.\nExample using real test identifiers:\nid,migration_state_z00,migration_state_z01,migration_state_z02,migration_state_z03,migration_state_z04,migration_state_z05,migration_state_z06,migration_state_z07,migration_state_z08,migration_state_z09,migration_state_z10,migration_state_z11,prominence_direction_z00,prominence_direction_z01,prominence_direction_z02,prominence_direction_z03,prominence_direction_z04,prominence_direction_z05,prominence_direction_z06,prominence_direction_z07,prominence_direction_z08,prominence_direction_z09,prominence_direction_z10,prominence_direction_z11,sharpness_direction_z00,sharpness_direction_z01,sharpness_direction_z02,sharpness_direction_z03,sharpness_direction_z04,sharpness_direction_z05,sharpness_direction_z06,sharpness_direction_z07,sharpness_direction_z08,sharpness_direction_z09,sharpness_direction_z10,sharpness_direction_z11\nAD0006E0A276F9B5,0,-1,1,0,2,-2,0,1,0,-1,2,0,1,0,-1,1,0,1,-1,0,1,0,-1,0,0,1,0,-1,1,0,1,-1,0,1,0,-1\nAD000C4B223FAF4C,1,0,-1,2,0,1,-2,0,1,0,-1,0,0,-1,1,0,1,-1,0,1,0,-1,1,0,-1,0,1,0,-1,1,0,1,-1,0,1,0\nFrom-Scratch Rules\nTrain only on the supplied competition files.\nInitialize every learned representation and prediction component from random weights.\nDo not use pretrained spectroscopy, chemistry, materials, planetary-science, remote-sensing, vision, language, multimodal, or foundation-model encoders or embeddings.\nDo not use external datasets, spectral libraries, atomic-line databases, source-recording searches, removed metadata, or high-resolution source spectra.\nOriginal neural architectures, learned token embeddings, hand-engineered spectral features, categorical lookup models, and classical models trained solely on train.csv are permitted.\nGPU training is recommended: training contains 48,926 directed cases, 444 ordered signal values per row, and 36 coupled transition targets.",
+          "difficulty": "Medium",
+          "domain": "From Scratch",
+          "gpu": "",
+          "id": "jx7dqycbv11k0gvjsw6q5rcrqd8bqma9",
+          "scoreContext": "Beat dp2406's score of 66.034!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "feature-engineering",
+            "large-scale",
+            "Dataset source is visible after the challenge closes.",
+            "Leaderboard"
+          ],
+          "title": "Anchor-Conditioned Emission Peak Drift",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7dqycbv11k0gvjsw6q5rcrqd8bqma9"
+        },
+        {
+          "compute": "A10G",
+          "description": "Overview\nRecover the spatial closure structure of a slowly moving terrain region from three synchronized interferometric views. For every case, predict a 6 by 6 signed phase-flow tensor, a 4 by 4 connectivity matrix between image quadrants, and one closure state. The three input files encode the same observation as wrapped phase, phase sine, and phase cosine.\nWrapped radar phase contains discontinuities whenever values cross the phase boundary. A coherent creeping region can therefore look fragmented in one encoding while remaining connected across another. The task is to learn a phase-aware representation that distinguishes a real spatial boundary from a wrapping discontinuity and then summarizes the region's topology. Models are trained using only the supplied examples, so the benchmark measures whether useful phase structure can be learned from scratch rather than imported from ordinary natural-image features.\nDataset\nFiles\n| Path | Description |\n|---|---|\n| `train.csv` | Labeled interferometric cases. |\n| `test.csv` | Interferometric cases whose targets are withheld. |\n| `sample_submission.csv` | Submission schema and baseline values. |\n| `phase_views/` | Opaque TIFF images for the three synchronized phase encodings. |\nThe three paths in one row refer to the same geographic observation. Every prepared view is a 128 by 128 RGB TIFF. TIFF encoding retains phase contrast without JPEG artifacts.\nAll three public views receive the same deterministic crop, rotation, and mirror transform so their pixels remain spatially registered. Mild view-specific radiometric calibration removes source-byte identity without changing the phase relationship.\nPrepared Data Summary\n| Quantity | Value |\n|---|---:|\n| Training rows | 6,746 |\n| Test rows | 1,641 |\n| Training `closed` | 1,956 |\n| Training `single_breach` | 4,498 |\n| Training `fragmented` | 292 |\n| Test `closed` | 466 |\n| Test `single_breach` | 1,086 |\n| Test `fragmented` | 89 |\nThe split keeps perceptually related wrapped-phase observations together. No TIFF payload hash occurs in both splits.\nCSV Columns\n| Column | Present in | Data type | Description |\n|---|---|---|---|\n| `case_id` | Train and test | String | Opaque unique identifier. |\n| `wrapped_phase_path` | Train and test | String | Relative path to the wrapped-phase TIFF. |\n| `sine_phase_path` | Train and test | String | Relative path to the sine-of-phase TIFF. |\n| `cosine_phase_path` | Train and test | String | Relative path to the cosine-of-phase TIFF. |\n| `phase_flow_tensor` | Train only | JSON integer matrix, shape 6 by 6 | Dominant signed wrapped-phase progression inside the moving region. `-1` is negative progression, `1` is positive progression, and `0` means insufficient moving-region coverage. Rows run top to bottom and columns left to right. |\n| `island_connectivity_matrix` | Train only | JSON integer matrix, shape 4 by 4 | Connectivity among top-left, top-right, bottom-left, and bottom-right quadrants, in that order. Entry `[i,j]` is `1` when one labeled moving-region component touches both quadrants, else `0`. Diagonal entries mark whether that quadrant contains moving-region evidence. |\n| `closure_state` | Train only | Categorical string | `closed`, `single_breach`, or `fragmented`. |\nclosed means the region does not touch the image boundary. single_breach means the region reaches the image boundary. fragmented means four or more disconnected region components are present.\nExample targets:\nphase_flow_tensor = [[0,0,0,0,0,0],[0,1,1,-1,0,0],[0,1,1,-1,-1,0],[0,-1,-1,1,1,0],[0,0,-1,1,0,0],[0,0,0,0,0,0]]\nisland_connectivity_matrix = [[1,1,0,0],[1,1,0,1],[0,0,0,0],[0,1,0,1]]\nclosure_state = single_breach\nEvaluation\nThe Phase Closure Reconstruction Score is:\nScore = 0.42 * PhaseFlowScore\n+ 0.40 * ConnectivityScore\n+ 0.18 * ClosureStateScore\nMinimum score: 0.0. Maximum score: 1.0. Higher is better.\nPhaseFlowScore\nFor one sample, hidden phase-flow tensor Y and prediction P use entry weight 3.0 where Y is nonzero and 1.0 elsewhere.\nentry_agreement = sum(w[i,j] * I(Y[i,j] = P[i,j])) / sum(w[i,j])\nsign_agreement = mean(I(sign(Y[i,j]) = sign(P[i,j]))) over cells where Y[i,j] != 0\nsample_phase_flow = 0.24 * entry_agreement\n+ 0.16 * sign_agreement\n+ 0.60 * I(Y = P)\nIf a hidden tensor has no nonzero cells, sign_agreement is 1.0. PhaseFlowScore is the mean sample score.\nConnectivityScore\nOnly the six entries above the diagonal are used for partial agreement because the matrix is symmetric.\npair_agreement = mean(I(Y[i,j] = P[i,j])) for i < j\nsample_connectivity = 0.30 * pair_agreement + 0.70 * I(Y = P)\nConnectivityScore is the mean sample score.\nClosureStateScore\nCompute recall independently for every closure state present in the hidden answers, then average those recalls equally. Invalid states are incorrect.\nMalformed matrices receive zero for their component.\nSubmission Format\nSave predictions to ./working/submission.csv with exactly:\ncase_id,phase_flow_tensor,island_connectivity_matrix,closure_state\nExample:\ncase_id,phase_flow_tensor,island_connectivity_matrix,closure_state\npc42c10f645a77c008a229,\"[[0,0,0,0,0,0],[0,1,1,-1,0,0],[0,1,1,-1,-1,0],[0,-1,-1,1,1,0],[0,0,-1,1,0,0],[0,0,0,0,0,0]]\",\"[[1,1,0,0],[1,1,0,1],[0,0,0,0],[0,1,0,1]]\",single_breach\nThe grader requires exact column order and the exact hidden ID set. It rejects duplicate IDs, extra rows, extra columns, and unknown IDs. Matrix text is limited to 360 characters and must contain integer values in the documented shape and range.\nMethod Requirements\nLearn model parameters only from the supplied training examples. Pretrained image weights and external phase datasets are not permitted. GPU training is appropriate for learning the joint wrapped, sine, and cosine representation within the 30-minute A10G runtime.\nWhat Not To Use\nDo not use external source matching, geographic lookup, reverse image search, or source archive identifiers.\nDo not derive answers from case_id, path names, row order, TIFF byte size, or file hashes.\nDo not retrieve labels from public mirrors or reconstruct source filenames from image content.\nDo not hardcode hidden-region templates or hidden-answer patterns.\nDo not exploit malformed submissions, duplicate IDs, extra columns, or grader edge cases.",
+          "difficulty": "Medium",
+          "domain": "From Scratch",
+          "gpu": "",
+          "id": "jx7274k4m5qjdy2tdyph6fqht18bqft9",
+          "scoreContext": "Beat jesuisnadi's score of 0.529!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "image",
+            "text",
+            "multimodal",
+            "Dataset source is visible after the challenge closes."
+          ],
+          "title": "Wrapped Phase Closure Reconstruction",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7274k4m5qjdy2tdyph6fqht18bqft9"
+        },
+        {
+          "compute": "A10G",
+          "description": "Overview\nMatch five unlabeled cells across three synchronized optical measurements. Each board has an optical-path-difference anchor row followed by amplitude and hologram rows. The latter two rows may be permuted, locally degraded, and visually confusable with nearby cells. Predict the two cross-sensor assignment matrices, the evidence-quality grade for every matched cell, and the overall packet condition.\nIn label-free imaging flow cytometry, one physical cell can look radically different in optical path, amplitude, and raw interference measurements. A swapped sensor packet can corrupt downstream cell analysis even when every individual panel appears plausible. This challenge evaluates adaptation of a visual encoder to cross-sensor cellular morphology, where identity must survive acquisition physics, hard negative cells with similar morphology, and degraded local evidence.\nDataset\nFiles\n| Path | Description |\n|---|---|\n| `train.csv` | Labeled cross-sensor packet records. |\n| `test.csv` | Packet records without target columns. |\n| `sample_submission.csv` | Schema-valid baseline predictions. |\n| `sensor_packets/` | 1074 by 624 RGB JPEG evidence boards. |\nEach board is a 3 by 5 panel array. Rows are OPD, amplitude, and hologram. Columns are numbered 1 through 5 independently within every row. The OPD row fixes the anchor identity order. The amplitude and hologram rows contain the same five physical cells but can be reordered. A blurred panel or blocked band is degraded evidence, not a new cell. Some packets deliberately contain near-neighbor cells with similar morphology, so evidence quality is not just an artifact detector.\n| Prepared item | Count |\n|---|---:|\n| Training packets | 2,115 |\n| Hidden test packets | 500 |\n| Opaque packet images | 2,615 |\nPacket states are represented in both splits:\n| Packet state | Train | Test |\n|---|---:|---:|\n| `triple_concordance` | 214 | 60 |\n| `shared_reindex` | 615 | 145 |\n| `sensor_divergence` | 767 | 178 |\n| `evidence_gap` | 519 | 117 |\nThe training evidence-quality entries contain 519 zeros, 8,642 ones, and 11,989 twos. Code 1 can arise from visible degradation or from a true match whose morphology is too similar to another candidate cell in the same packet.\nColumns\n| Column | Present in | Data type | Description |\n|---|---|---|---|\n| `case_id` | Train and test | String | Opaque unique packet identifier. |\n| `cross_sensor_packet_path` | Train and test | String | Relative path under `sensor_packets/`. |\n| `sensor_order` | Train and test | String | Fixed statement of row and column ordering. |\n| `cell_assignment_tensor` | Train only | JSON integer tensor, shape 2 by 5 by 5 | Tensor plane 1 maps OPD anchors to amplitude columns; plane 2 maps OPD anchors to hologram columns. Every 5 by 5 plane is a permutation matrix. |\n| `evidence_quality_matrix` | Train only | JSON integer matrix, shape 2 by 5 | Rows are amplitude and hologram. Columns are OPD anchors 1-5. Values are `2` complete and distinctive, `1` degraded or visually ambiguous but usable, or `0` severely obstructed. |\n| `packet_state` | Train only | Categorical string | `triple_concordance`, `shared_reindex`, `sensor_divergence`, or `evidence_gap`. |\ntriple_concordance means amplitude and hologram both preserve the OPD order. shared_reindex means amplitude and hologram share the same non-identity order. sensor_divergence means the two non-anchor rows disagree with each other. evidence_gap takes precedence when any amplitude or hologram match has evidence code 0. Code 1 remains usable and does not by itself change the packet state.\nExample:\ncell_assignment_tensor = [[[0,1,0,0,0],[1,0,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]],[[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]]]\nevidence_quality_matrix = [[2,2,0,2,1],[2,2,1,2,2]]\npacket_state = evidence_gap\nEvaluation\nThe Cross-Sensor Identity Score combines three capabilities:\nScore = 0.72 * AssignmentScore\n+ 0.18 * EvidenceQualityScore\n+ 0.10 * PacketStateScore\nMinimum score: 0.0. Maximum score: 1.0. Higher is better.\nAssignmentScore\nA submitted assignment must contain two valid permutation matrices. An invalid tensor receives zero.\nentry_agreement = mean(I(Y[s,i,j] = P[s,i,j]))\nrow_match = mean(I(argmax(Y[s,i,:]) = argmax(P[s,i,:])))\nsample_assignment = 0.03 * entry_agreement\n+ 0.12 * row_match\n+ 0.85 * I(Y = P)\nAssignmentScore is the mean sample_assignment.\nEvidenceQualityScore\nFor hidden vector Y and submitted vector P:\nproximity = mean(max(0, 1 - abs(Y[i] - P[i]) / 2))\nsample_morphology = 0.15 * proximity + 0.85 * I(Y = P)\nEvidenceQualityScore is the mean sample score.\nPacketStateScore\nCompute accuracy separately within each hidden packet state, then average the four state accuracies equally. If a state is absent from the hidden set, it is omitted. Invalid labels are incorrect.\nSubmission Format\nWrite ./working/submission.csv with exactly these columns in order:\ncase_id,cell_assignment_tensor,evidence_quality_matrix,packet_state\nExample:\ncase_id,cell_assignment_tensor,evidence_quality_matrix,packet_state\ncl54de0617f4ea11f3b531,\"[[[0,1,0,0,0],[1,0,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]],[[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]]]\",\"[[2,2,0,2,1],[2,2,1,2,2]]\",evidence_gap\nJSON fields are limited to 220 characters. The grader rejects the wrong column order, extra columns, duplicate or unknown IDs, missing rows, and extra rows. Bad JSON, wrong shapes, non-integers, and values outside the documented vocabulary score zero for the affected component.\nMethod Requirements\nUse a learned visual model trained on the supplied packet boards. Local open-weight pretrained encoders may be adapted. The expected workload includes twelve-panel feature extraction and two cross-row assignments, for which the provided A10G is materially useful.\nThe solution time limit is 30 minutes on one A10G GPU.\nWhat Not To Use\nDo not map IDs, row positions, image names, hashes, compression size, or board layout seeds to targets.\nDo not match packet panels against external source images, source labels, or public mirrors.\nDo not create a fingerprint lookup table from duplicated source assets.\nDo not infer test answers from archive order or original cell-population folder names.\nDo not exploit submission parsing, duplicate rows, optional columns, or grader failure behavior.",
+          "difficulty": "Medium",
+          "domain": "Fine-Tuning",
+          "gpu": "",
+          "id": "jx760ayp83gvbmwe5g5kss661x8bsdfy",
+          "scoreContext": "Beat supegirl's score of 0.325!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "image",
+            "text",
+            "multimodal",
+            "Dataset source is visible after the challenge closes."
+          ],
+          "title": "Cross-Sensor Cell Identity Reconciliation",
+          "url": "https://shipd.ai/quests/eris/challenges/jx760ayp83gvbmwe5g5kss661x8bsdfy"
+        },
+        {
+          "compute": "A10G",
+          "description": "Drum Feel Microtiming Reconstruction\nOverview\nThis is a from-scratch / fine-tuning sequence-modeling challenge over expressive drum performances. For each row, you are given a two-bar drum pattern after it has been snapped to a simple sixteenth-note grid, plus noisy per-hit controller probes. Your task is to reconstruct the hidden human feel for every visible hit: whether that hit was played early or late, and how softly or strongly it was played.\nIn plain terms: the notes are already visible, but the groove is missing. You must denoise shifted timing and energy clues, then predict the timing and velocity residuals that make a quantized drum pattern feel like a human performance.\nThe source data consists of real MIDI drum performances recorded from drummers playing to a click track on an electronic drum kit. The challenge uses the MIDI-only release, not audio. Prepared rows hide all source filenames, drummer IDs, session IDs, and exact MIDI positions. Train and hidden test rows come from disjoint source performances, and hidden targets are built from source-new matched residual mosaics rather than directly exposing the original public grid window.\nThis is not audio transcription, beat tracking, genre classification, or ordinary next-token language modeling. It is an expressive-performance reconstruction task: learn timing and dynamics from quantized symbolic rhythm, style hints, tempo, local drum context, and training examples.\nDataset files\ntrain.csv contains 4,500 rows.\nid: string. Unique training row ID.\npattern_strip: string. Compact 32-slot drum grid summary. Each row segment is Dxx:.... and row segments are separated by |.\ngrid_shape: string. Always drumsx32, meaning drum aliases by 32 sixteenth-note slots.\ndrum_cards: JSON list. Row-local drum aliases and their public drum roles.\nhit_cards: JSON list. One visible hit card for every hit that must be predicted.\ntempo_bpm: integer. Source performance tempo.\ntempo_bucket: string. One of slow, medium, bright, or fast.\nstyle_hint: string. Coarse source style label such as funk, rock, or latin.\nbeat_type: string. beat or fill.\ndensity_bucket: string. sparse, medium, busy, or dense.\nmax_hits: integer. Number of hit tokens required in the answer for this row.\ntarget_feel: string. Training-only answer ledger.\ntest.csv contains 1,000 rows and has the same columns except target_feel.\nsample_submission.csv contains:\nid: string. Test row ID.\npredicted_feel: string. Empty dummy value. The sample scores 0.\nInput field schemas\npattern_strip is a compact grid display:\nEach segment has the form Dxx:cccccccccccccccccccccccccccccccc.\nDxx is a row-local drum alias from drum_cards.\nThe 32 characters after : correspond to slots 0 through 31.\n. means no hit from that drum in that slot.\n1 means one hit from that drum in that slot.\n2 means two or more hits from that drum in that slot.\ndrum_cards is a JSON list. Each item has:\ndrum: string. Row-local drum alias such as D01.\nrole: string. Public drum role, for example kick, snare, closed_hat, open_hat, ride, crash, high_tom, mid_tom, low_tom, or pedal_hat.\ndescription: string. Short readable version of the role.\nhit_cards is a JSON list. Each item has:\nhit: string. Hit alias such as H00. Every hit alias must appear exactly once in the submitted ledger.\nslot: integer. Sixteenth-note slot from 0 to 31 within the two-bar window.\ndrum: string. Row-local drum alias from drum_cards.\nslot_phase: string. bar_downbeat, beat, eighth, or off_sixteenth.\nsimultaneous_hits: integer. Number of visible hits sharing this slot.\nprev_slot_gap: integer. Slot distance to the previous hit, capped at 9.\nnext_slot_gap: integer. Slot distance to the next hit, capped at 9.\ntiming_probe: integer from 0 to 31. A noisy timing-side-channel code. Higher values usually indicate later hits, but the distribution is shifted by drum role, phase, style, tempo, density, and deterministic noise.\nenergy_probe: integer from 0 to 31. A noisy velocity-side-channel code. Higher values usually indicate stronger hits, but the distribution is shifted by drum role, phase, style, tempo, density, and deterministic noise.\nOutput grammar\nSubmit one predicted_feel string per test row.\nA prediction is a space-separated ledger with exactly one token for every hit in that row.\nToken format:\nH00:O-1:V3\nThe token means:\nH00: the row-local hit alias.\nO-1: timing-offset tier.\nV3: velocity tier.\nValid timing tiers are:\nO-3: very early.\nO-2: early.\nO-1: slightly early.\nO0: near the grid.\nO+1: slightly late.\nO+2: late.\nO+3: very late.\nValid velocity tiers are:\nV0: ghost or very soft.\nV1: soft.\nV2: medium.\nV3: strong.\nV4: accent or very strong.\nRules:\nUse only hit aliases present in the row.\nInclude every hit exactly once.\nDo not invent extra hits.\nDo not submit JSON, MIDI, natural language, comma-separated lists, or audio files.\nAn empty prediction is structurally allowed but scores 0 for the row.\nExample:\nid,predicted_feel 0a12bc34de56f789,H00:O-1:V3 H01:O0:V1 H02:O+1:V4\n## **Evaluation**\nStructurally invalid submission files are rejected. Structural errors include missing columns, extra columns, duplicate IDs, unknown IDs, missing IDs, wrong row count, or wrong column order. Rows are aligned by `id`, not by row order.\nMalformed row-level ledgers score 0 for that row. A row-level ledger is malformed if it has invalid tokens, duplicated hit aliases, missing hit aliases, unknown hit aliases, or unsupported timing/velocity labels.\nFor each valid row, the grader compares the predicted ledger to the hidden target ledger over the same hit aliases.\nFor each hit:\nOffsetHitScore = 1.00 if predicted offset tier equals true offset tier 0.20 if predicted offset tier is adjacent to the true tier 0.00 otherwise\nThe offset tier order is:\nO-3, O-2, O-1, O0, O+1, O+2, O+3\nFor each hit:\nVelocityHitScore = 1.00 if predicted velocity tier equals true velocity tier 0.15 if predicted velocity tier is adjacent to the true tier 0.00 otherwise\nThe velocity tier order is:\nV0, V1, V2, V3, V4\nFor each row:\nOffsetScore = mean(OffsetHitScore over all hits) VelocityScore = mean(VelocityHitScore over all hits) JointExact = fraction of hits with both exact offset tier and exact velocity tier\n`AccentBoundaryF1` is F1 over the set of hit aliases whose velocity tier is extreme (`V0` or `V4`).\nAccentBoundaryF1 = 1 if both predicted and true extreme-hit sets are empty 0 if exactly one of the two sets is empty 2 * precision * recall / (precision + recall) otherwise\n`GrooveTransitionScore` measures whether the predicted feel is coherent across adjacent visible hits. Sort hit aliases numerically from `H00` to the last hit in the row. For every adjacent pair `(left_hit, right_hit)`, compare this exact four-field transition:\n(left_offset_tier, left_velocity_tier, right_offset_tier, right_velocity_tier)\nThen:\nGrooveTransitionScore = number of adjacent hit-pair transitions exactly matched / number of adjacent hit-pair transitions\nThe row score is:\nrow_score = 0.30 * OffsetScore\n0.22 * VelocityScore\n0.16 * JointExact\n0.08 * AccentBoundaryF1\n0.24 * GrooveTransitionScore\nHidden rows are balanced across five private generation families, 200 rows per family:\n- `backbeat_style`\n- `cross_style_pulse`\n- `dense_drive`\n- `hat_syncopation`\n- `tom_fill_motion`\nThe family label is not present in public files. It is used only to prevent solutions from ignoring difficult rhythmic conditions.\noverall_mean = mean(row_score over all hidden rows) worst_family_mean = minimum family mean over the five private families bottom_20_mean = mean(row_score over the lowest-scoring 20% of hidden rows)\nfinal_score = 0.60 * overall_mean\n0.25 * worst_family_mean\n0.15 * bottom_20_mean\nScores are finite and bounded in `[0, 1]`. The sample submission scores 0. A perfect oracle scores 1.\n## **Recommended solution approach**\nReasonable approaches include training a sequence model, temporal convolution, transformer encoder, or hit-level classifier/regressor from scratch on the public rows. Strong solutions should model drum role, slot phase, tempo, style, local density, polyphony, neighboring-hit context, and the shifted noisy timing/energy probes jointly. Because the metric includes adjacent-hit transition consistency, independent hit-level classifiers usually need sequence-aware decoding, smoothing, or a learned structured model to be competitive. GPU use is appropriate for training compact neural sequence models within the 50-minute A10G limit.\n## **What not to use**\nDo not use source filenames, drummer IDs, session IDs, raw MIDI file order, or source split labels. They are absent from solver-facing files.\nDo not assume every hit is on the grid or medium velocity. Constant middle-tier predictions are valid but intentionally weak.\nDo not treat `timing_probe` or `energy_probe` as direct labels. They are noisy, shifted side-channel codes whose mapping changes with public row context.\nDo not key predictions to row IDs, row order, fixed drum-alias identities, or fixed hit aliases. Drum aliases and hit aliases are row-local.\nDo not submit the visible quantized pattern as the answer. The target is the hidden human feel residual ledger.\n## **Benchmark boundary**\nThe source corpus has been used for groove modeling and performance humanization research. This benchmark changes the evaluation contract: solvers submit a fixed, auditable residual ledger for each row-local hit, with source-performance-disjoint splits, row-local aliases, hidden source-new residual mosaics, exact grammar validation, and robust family/tail scoring.\nIt is therefore not ordinary drum transcription, not genre tagging, not audio classification, and not free-form MIDI generation. It is a constrained expressive-performance reconstruction benchmark for from-scratch or fine-tuned sequence models.",
+          "difficulty": "Medium",
+          "domain": "From Scratch",
+          "gpu": "",
+          "id": "jx79s18n5jzkytyxknhx21vcwd8bqfxf",
+          "scoreContext": "Beat zzz_grs's score of 0.341!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [],
+          "title": "Drum Feel Microtiming Reconstruction",
+          "url": "https://shipd.ai/quests/eris/challenges/jx79s18n5jzkytyxknhx21vcwd8bqfxf"
+        },
+        {
+          "compute": "A10G",
+          "description": "Cadencefall: Audio Timbre Retrieval and Instrument Matching\nOverview\nDomain: Fine-Tuning\nThe rhythm citadel of Cadencefall has lost the labels on its game-score relics. Each puzzle presents one anchor note and eight shuffled candidate notes. Restore three distinct routes:\nlower_slot — the candidate played by the anchor's exact hidden instrument at a lower pitch.\nupper_slot — the candidate played by that exact hidden instrument at a higher pitch.\nbridge_slot — a different instrument that shares both the anchor's hidden instrument family and its acoustic, electronic, or synthetic production source.\nThe two exact-instrument echoes are 4 through 16 semitones below and above the anchor. The bridge is selected near the anchor's pitch. Five adversarial foils come from other family-source pairs and are pitch-matched around the lower echo, anchor, and upper echo. Instrument names, source metadata, MIDI pitch, velocity, family, and production source are all held out. Audio paths and ids are opaque.\nThis is a structured unseen-instrument retrieval task, not instrument classification. All notes from an instrument stay on one side of the split. Test instruments never occur in training. A supplied audio encoder was pretrained only on training-side instruments; the intended solution fine-tunes it jointly across each nine-note puzzle with a global three-slot assignment. GPU execution is required and the 1.5-hour limit applies to the complete solution.\nEvaluation\nThe metric is macroTimbreRelayScore, maximized on the closed interval [0, 1].\nFor each row, let the predicted exact-instrument pair be the set containing lower_slot and upper_slot.\nT measures unordered exact-instrument pair overlap: it is the size of the set intersection between the predicted pair {lower_slot, upper_slot} and the true pair, divided by 2. Swapping the two predicted roles does not change T.\nO measures ordered slot accuracy: it is the mean of the exact lower_slot indicator and the exact upper_slot indicator. Swapping the two predicted roles can therefore reduce O even when T is unchanged.\nB is 1 when bridge_slot is exact and 0 otherwise.\nRow utility is U_row = 0.40*T + 0.40*O + 0.20*B.\nRows with a non-numeric, non-integer, repeated, missing, infinite, or out-of-range slot receive utility 0. Utilities are averaged within each hidden test anchor-instrument group. The group means are then macro-averaged so large instruments cannot dominate. The published score is:\nimport numpy as np\ndef parse_slot(value):\ntext = str(value)\nif len(text) > 128:\nreturn -1\ntry:\nnumber = float(text.strip())\nexcept (TypeError, ValueError, OverflowError):\nreturn -1\nif not np.isfinite(number) or number != np.floor(number):\nreturn -1\nslot = int(number)\nreturn slot if 0 <= slot <= 7 else -1\ndef evaluate(y_true, y_pred, hidden_groups):\nrow_utility = []\nfor truth, pred in zip(y_true, y_pred):\nlo, hi, bridge = map(parse_slot, pred)\nif min(lo, hi, bridge) < 0 or len({lo, hi, bridge}) < 3:\nrow_utility.append(0.0)\ncontinue\ntrue_lo, true_hi, true_bridge = map(int, truth)\ntwin = len({lo, hi} & {true_lo, true_hi}) / 2.0\nordered = 0.5 * (lo == true_lo) + 0.5 * (hi == true_hi)\nrow_utility.append(0.40 * twin + 0.40 * ordered + 0.20 * (bridge == true_bridge))\nrow_utility = np.asarray(row_utility, dtype=float)\ngroup_means = [row_utility[np.asarray(hidden_groups) == g].mean() for g in sorted(set(hidden_groups))]\nreturn float(np.mean(group_means))\nThe private group labels are used only for final scoring. Perfect structured recovery scores 1.0; wholly malformed content scores 0.0.\nDataset\nThe prepared public data has 4,800 training puzzles and 1,800 test puzzles. It includes 14,507 audio assets. The train and test sides share zero source instruments and zero audio notes.\ntrain.csv — puzzle paths plus all three slot targets.\ntest.csv — puzzle paths with the three targets held out.\nsample_submission.csv — label-free format example using a fixed distinct-slot baseline.\naudio/ — 14,507 four-second 16 kHz mono WAV assets with opaque randomized filenames.\ncheckpoints/base_encoder.pt — the supplied Cadencefall audio-encoder checkpoint for fine-tuning.\nColumns in train.csv:\nid (string) — opaque randomized puzzle identifier.\nanchor_path (string) — path relative to ./dataset/public/ for the anchor WAV.\ncandidate_0_path through candidate_7_path (string) — eight shuffled candidate WAV paths.\nlower_slot (integer) — correct lower exact-instrument candidate slot, 0 through 7.\nupper_slot (integer) — correct upper exact-instrument candidate slot, 0 through 7.\nbridge_slot (integer) — correct different-instrument family-source bridge slot, 0 through 7.\ntest.csv contains the same id and path columns but no target columns.\nSubmission\nWrite ./working/submission.csv with exactly 1,800 rows and exactly these columns in this order:\nid\nlower_slot\nupper_slot\nbridge_slot\nUse every test id exactly once. Row order does not matter because grading merges on id. Each slot must be an integer from 0 through 7, and the three slots in a row must be distinct.\nExample using real test ids:\nid,lower_slot,upper_slot,bridge_slot\nsyu4kau5zvup6fjk3pfb,0,1,2\nu6pntkeqtkt4j94h7efm,0,1,2\nz77874k7fxsaga72t99y,0,1,2\nRequirements\nComplete preprocessing, fine-tuning, inference, and CSV writing within 1.5 hours.\nRead only from ./dataset/public/.\nWrite only ./working/submission.csv.\nSubmit exactly the required header and 1,800 required ids, without duplicates or foreign ids.\nTreat each slot as an integer in 0 through 7 and keep all three predicted slots distinct.\nMissing, NaN, infinite, non-integer, repeated, oversized, or out-of-range slot content receives worst row utility.\nWhat Not To Use\nDo not use external datasets, pretrained weights other than checkpoints/base_encoder.pt, internet access, or runtime downloads.\nDo not install packages at runtime.\nDo not access hidden instrument names.\nDo not derive signal from ids or filenames; they are randomized and intentionally inert.\nExtra Modelling Information\nCadencefall changes the mechanism from pair verification or family classification into a nine-audio, three-role structured relay.\nA solver must jointly recover an ordered cross-pitch exact-instrument pair and a different-instrument family-source bridge under an instrument-disjoint holdout, while rejecting pitch-matched foils.\nGlobal slot exclusivity and hidden-group macro scoring make independent classification heads insufficient. This structured timbre-lineage assignment is the challenge's central novelty.",
+          "difficulty": "Medium",
+          "domain": "Fine-Tuning",
+          "gpu": "",
+          "id": "jx73c05906r8keqwm3j4b6720d8bp1br",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "text",
+            "large-scale",
+            "feature-engineering",
+            "Dataset source is visible after the challenge closes."
+          ],
+          "title": "Cadencefall: Audio Timbre Retrieval and Instrument Matching",
+          "url": "https://shipd.ai/quests/eris/challenges/jx73c05906r8keqwm3j4b6720d8bp1br"
+        },
+        {
+          "compute": "A10G",
+          "description": "Neurocartographer: Support-Conditioned Tumor Contour Segmentation\nOverview\nA damaged neuro-oncology archive contains many contrast-enhanced MRI slices, but most of their tumor contours have disappeared. One verified slice and its manual tumor mask remain for each patient. Your task is to build a neural segmentation model from random initialization, use each surviving image-mask pair as patient-specific support, and reconstruct the missing masks on the other slices.\nThis is support-conditioned medical image segmentation, not tumor-type classification and not mask copying. Every scored patient is absent from training. The model must learn from the provided training patients how the query image, support image, and support contour interact, then transfer that relationship to unseen patients. Predictions should recover fine tumor boundaries and preserve the ordering of lesion burden across each patient's query slices.\nFrom-scratch learning contract\nEvery learnable parameter used to produce the submission must begin from a fresh random initialization and be trained during the submitted run. Training may use only the supplied labeled training partition. Pretrained encoders, foundation models, externally trained weights, cached feature extractors, downloaded checkpoints, and parameters copied from another run are prohibited.\nEvaluation\nEach prediction is a binary 256 by 256 mask encoded as row-major run-length encoding. Runs are 1-indexed start length integer pairs separated by spaces.\nThe grader computes three quantities for every hidden patient case:\nDifficulty-weighted Dice overlap, worth 65 percent of case utility.\nDifficulty-weighted boundary F1, worth 25 percent. Boundaries match when they fall within a Chebyshev radius of two pixels.\nPairwise lesion-burden concordance, worth 10 percent. Every pair of query slices earns one when predicted mask areas have the same strict ordering as true mask areas. A true tie earns one only when the prediction is also tied.\nFor query i, the hidden difficulty weight uses the native-resolution annotated query and support mask areas before resizing:\nw_i = 1 + min(1, abs(log((query_area_i + 1) / (support_area_i + 1))) / 1.5)\nWithin a patient, Dice and boundary F1 are weighted means using w_i. Let D_c, B_c, and R_c be the three case quantities. Case utility and final score are:\nU_c = 0.65  *D_c + 0.25*  B_c + 0.10 * R_c\nU   = mean(U_c over patient cases)\nscore = 0.11 + 0.34 * (U / 0.25)                       when U <= 0.25\nscore = 0.45 + 0.15 * ((U - 0.25) / 0.40)             when 0.25 < U <= 0.65\nscore = 0.60 + 0.40 * ((U - 0.65) / 0.35)             when U > 0.65\nThe calibrated transform is continuous and strictly increasing. At the first knot, U = 0.25, the first branch gives 0.11 + 0.34 (0.25 / 0.25) = 0.45, and the second branch approaches the same value from above. At the second knot, U = 0.65, the middle branch gives 0.45 + 0.15 ((0.65 - 0.25) / 0.40) = 0.60, and the third branch approaches the same value from above. A perfect submission scores 1.0. The all-empty label-free sample scores approximately 0.110080, safely above the platform sample floor. The small excess over 0.11 comes from rare true area ties that an all-tied prediction matches. The patient-level mean prevents patients with many slices from dominating. The two calibration knots keep useful honest solvers in a discriminating middle band while preserving substantial headroom to the oracle.\nThe following compact function is the exact aggregation after ID validation, RLE decoding, and the per-case quantities above have been computed:\nimport numpy as np\ndef evaluate(case_dice, case_boundary_f1, case_burden_concordance):\ncase_utility = (\n0.65 * np.asarray(case_dice, dtype=float)\n+ 0.25 * np.asarray(case_boundary_f1, dtype=float)\n+ 0.10 * np.asarray(case_burden_concordance, dtype=float)\n)\nutility = float(np.clip(np.mean(case_utility), 0.0, 1.0))\nif utility <= 0.25:\nreturn float(0.11 + 0.34 * (utility / 0.25))\nif utility <= 0.65:\nreturn float(0.45 + 0.15 * ((utility - 0.25) / 0.40))\nreturn float(0.60 + 0.40 * ((utility - 0.65) / 0.35))\nDataset\nThe public dataset contains 2,116 labeled training queries from 162 patients and 705 unlabeled test queries from 54 different patients. Train and test patient groups have zero overlap. Every query image is distinct. Images and masks are 256 by 256 grayscale PNG files.\ntrain.csv contains id, case_token, query_image, support_image, support_mask, and target_mask_rle.\ntest.csv contains id, case_token, query_image, support_image, and support_mask.\nsample_submission.csv contains id and mask_rle with label-free empty-mask predictions.\nimages/ contains query and support MRI slices. Paths are randomized and contain no source identity, class, split, or target information.\nsupport_masks/ contains one trusted binary support contour per patient case.\nColumn meanings:\nid (integer) — independently randomized row identifier used only for grading joins.\ncase_token (string) — independently randomized patient-group token. It reveals which query rows share a support case, but no patient identity or target.\nquery_image (string) — relative path to the MRI slice whose mask must be predicted.\nsupport_image (string) — relative path to a different MRI slice from the same patient.\nsupport_mask (string) — relative path to the trusted binary mask aligned to support_image.\ntarget_mask_rle (string, training only) — true query mask in row-major RLE.\nThe median prepared tumor occupies 856.5 pixels, or about 1.31 percent of a training image. Modeling foreground imbalance and fine boundaries is therefore essential.\nSubmission\nSubmit one CSV with exactly these columns and exactly 705 rows:\nid — each test ID exactly once. Row order does not matter.\nmask_rle — row-major 1-indexed RLE for a binary 256 by 256 mask.\nA mask with foreground pixels 10 through 14 and 300 through 301 would be encoded as 10 5 300 2. An empty string encodes an empty mask.\nExample using real test IDs:\nid,mask_rle\n406291685957637,\"\"\n541106358386397,\"12001 8 12257 10\"\n911465444310659,\"30120 4\"\nRequirements\nUse exactly the 705 test IDs with no missing, duplicate, or foreign IDs.\nInclude exactly id and mask_rle; renamed, missing, or extra columns are rejected.\nRLE starts must be in 1 through 65,536. Lengths must be positive. Runs must be non-overlapping and remain within the image.\nBlank, NaN, non-finite, malformed, overlapping, odd-length, oversized, or out-of-range RLE cells are treated as empty masks, the worst content prediction. Structural submission errors raise a clean ValueError.\nFollow the from-scratch learning contract: initialize, train, and infer the neural image model on GPU during the submitted run. There is no CPU-training fallback.\nComplete the full run within 90 minutes.\nTrain preprocessing, threshold selection, and model selection using training patients only. Do not fit any statistic or threshold on test images.\nWhat not to use\nDo not use pretrained weights, foundation models, external datasets, external annotations, imported embeddings, cached features, or checkpoints from another run.\nDo not use network downloads at runtime or install packages from the notebook.\nDo not access hidden labels, source patient identifiers, or source tumor categories.\nDo not reverse-engineer randomized IDs, tokens, filenames, file order, or preparation logic.\nDo not use the benchmark for clinical diagnosis or treatment decisions.\nExtra Modelling Information\nNeurocartographer instead holds out entire patients, gives one same-patient contour anchor, scores many query slices as a patient set, weights the harder contour changes, and adds patient-wise lesion-burden ordering to boundary-aware segmentation.\nThe source MRI collection is commonly used for tumor classification or retrieval; this contour-relay mechanism is neither task.",
+          "difficulty": "Hard",
+          "domain": "From Scratch",
+          "gpu": "",
+          "id": "jx7f0cgrcdr8rjkyxsq3563w798bmb1n",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "image",
+            "medical",
+            "small-data",
+            "Dataset source is visible after the challenge closes."
+          ],
+          "title": "Support-Conditioned Tumor Contour Segmentation",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7f0cgrcdr8rjkyxsq3563w798bmb1n"
+        },
+        {
+          "compute": "A10G",
+          "description": "BenchLink: Cross-Document Hearing Grounding\nOverview\nPublic court archives can lose the relationship between an oral-hearing fragment and the written case record to which it belongs. Each row in this challenge contains a bench_packet built around one real judicial question and six anonymized candidate dossiers. Every dossier combines real advocate passages with material from a linked case record. Select the dossier that comes from the same hearing as the bench packet by assigning a relevance score to every candidate.\nNames, dates, application numbers, source identifiers, and a deterministic portion of the visible words have been removed. The five distractors come from different hearings chosen to resemble the true case, and all six dossiers receive the same query-conditioned passage-selection process. Solving the task therefore requires multilingual semantic grounding across the question, surrounding judicial context, advocacy, legal issues, and disposition language. This is a fixed-slate information-retrieval problem; no text generation or sequence reconstruction is required.\nThe intended first-order approach is to encode the bench packet and the labeled sections of each dossier with a multilingual long-context model, learn a pairwise relevance function from train.csv, and normalize the six scores within each row. A second-stage reranker can compare the precise legal issue raised by the judge with the advocate and case-record evidence.\nEvaluation Metric\nThere are N = 642 test rows and K = 6 candidates per row. For row i, let sᵢⱼ be the submitted score for candidate j and let yᵢ be the true candidate slot.\nA row is valid only when all six scores are finite real numbers in [0, 1] and their sum is positive. For a valid row, define pᵢⱼ = sᵢⱼ / Σₗ sᵢₗ. An invalid row contributes zero to every component below.\nLet ẑᵢ = argmaxⱼ pᵢⱼ, with the lowest-index slot selected on an exact tie. Define a = (1/N) Σᵢ 𝟙[ẑᵢ = yᵢ], where the indicator is zero for an invalid row. Chance-adjusted selection accuracy is A = clip((a − 1/K) / (1 − 1/K), 0, 1).\nFor a valid row, define its pairwise win rate as wᵢ = (1/(K − 1)) Σⱼ≠yᵢ (𝟙[pᵢyᵢ > pᵢⱼ] + 0.5 × 𝟙[pᵢyᵢ = pᵢⱼ]). Set wᵢ = 0 for an invalid row. Chance-adjusted pairwise discrimination is P = clip(2 × ((1/N) Σᵢ wᵢ) − 1, 0, 1).\nFor a valid row, calibrated gold mass is cᵢ = clip(1 + ln(max(pᵢyᵢ, 10⁻¹⁵)) / ln(K), 0, 1). Set cᵢ = 0 for an invalid row and define C = (1/N) Σᵢ cᵢ.\nThe final score is S = 100 × clip(0.30A + 0.50P + 0.20C, 0, 1).\nHigher is better. Uniform confidence across all six candidates scores exactly 0.00; a perfect one-hot ranking scores exactly 100.00. On the shipped files, a permitted raw token-count overlap control scores 28.80, while a public-only pretrained multilingual semantic encoder with train-selected score calibration reaches 41.60. The overlap control uses only unweighted token counts: it does not compute document frequencies, inverse-document-frequency weights, or TF–IDF vectors. Neither baseline uses private labels, source identifiers, or external source lookup.\nDataset\nThe public/ directory contains:\ntrain.csv — 1,101 labeled queries from 97 hearings.\nsample_id — integer — Fresh public identifier.\nlanguage_code — string — Language of the focal judicial utterance; en or fr.\nrender_code — string — Balanced presentation style, either r00 or r01; it is not predictive of the correct slot.\nbench_packet — string — The focal judicial question with optional neighboring context.\ncandidate_c0 through candidate_c5 — string — Six anonymized candidate dossiers.\nrelevance_c0 through relevance_c5 — integer — One-hot relevance labels; exactly one value is 1 in each row.\ntest.csv — 642 unlabeled queries from 52 hearings, containing only sample_id, language_code, render_code, bench_packet, and candidate_c0 through candidate_c5.\nsample_submission.csv — 642 rows with the required submission columns and uniform example scores.\nThe train and test hearings are disjoint. Candidate dossiers never cross that split. Correct slots are exactly balanced in the test set with 107 rows in each of c0 through c5. <mask> represents deterministic lexical removal, <name> replaces a likely proper name, and <num> replaces a number. Candidate order, row order, text length, and the two rendering styles do not encode the answer.\nSubmission\nSubmit a CSV with a header and exactly 642 data rows. Columns must appear in this exact order:\nsample_id — integer or equivalent string — Every test identifier exactly once.\nscore_c0 — float — Relevance score for candidate_c0.\nscore_c1 — float — Relevance score for candidate_c1.\nscore_c2 — float — Relevance score for candidate_c2.\nscore_c3 — float — Relevance score for candidate_c3.\nscore_c4 — float — Relevance score for candidate_c4.\nscore_c5 — float — Relevance score for candidate_c5.\nScores must be finite and in [0, 1]. They do not have to sum to one because the grader normalizes each valid row. A missing, duplicated, or unknown identifier, the wrong row count, or missing, extra, duplicated, or reordered columns raises a validation error. Malformed score rows receive no credit and cannot be used as abstentions.\nExample using real test identifiers:\nsample_id,score_c0,score_c1,score_c2,score_c3,score_c4,score_c5\n0,0.10,0.15,0.20,0.35,0.12,0.08\n1,0.28,0.08,0.17,0.11,0.21,0.15\nThe numbers demonstrate syntax only. Infer the scores from the corresponding rows in test.csv.\nWhat Not to Use\nSimple unweighted lexical overlap, such as raw token-count, set-overlap, or Jaccard features, is permitted for diagnostics, baselines, and submissions.\nTF–IDF is prohibited in every role, including feature construction, candidate scoring, model input, ensembles, and final submissions. More generally, do not use corpus-level inverse-document-frequency weights or TF–IDF sparse vectors. The permitted token-overlap baseline above is not TF–IDF because every token retains equal weight.\nSource-site lookup or reconstruction from external hearing identifiers is prohibited; public rows intentionally exclude those identifiers.\nCandidate position and render_code are balanced and cannot provide a ranking shortcut.\nDossier length varies as a nuisance property, while correct slots are balanced; length is not reliable evidence of provenance.\nA majority-slot or uniform-confidence submission scores at the metric floor.\nComparing only the focal sentence misses supporting material in the neighboring context, advocacy sections, and linked case record.\nExpected solutions use multilingual contextual encoders, section-aware long-context representations, pairwise relevance learning, and calibrated within-slate reranking.",
+          "difficulty": "Medium",
+          "domain": "NLP",
+          "gpu": "",
+          "id": "jx71mazbqmvwqat2dx2gjtprsh8b33b9",
+          "scoreContext": "Beat hitlocation's score of 40.349!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "text",
+            "small-data",
+            "Dataset source is visible after the challenge closes.",
+            "Leaderboard"
+          ],
+          "title": "BenchLink: Cross-Document Hearing Grounding",
+          "url": "https://shipd.ai/quests/eris/challenges/jx71mazbqmvwqat2dx2gjtprsh8b33b9"
+        },
+        {
+          "compute": "CPU",
+          "description": "Overview\nEach example is a microscope image from a crystallization screening field. The image may contain a liquid drop and small crystal objects. Your task is to recover the annotation-defined object audit for the image: how many annotated objects are present, whether they are drops or crystals, which coarse grid cells they touch, and a compact card for each annotated object.\nThis is not a request to mark every bright speck in the image. The target follows the annotation layer, so some visual debris may be unlabelled while clear drop and crystal objects are counted. Correct outputs need the image appearance and geometry of annotated drops and crystals to match the required structured JSON.\nDataset\nThe provided files are:\ntrain.csv: 260 labelled examples.\ntest.csv: 250 unlabelled examples.\nsample_submission.csv: A valid low-scoring submission that demonstrates the required file format.\nimages/: Resized microscope JPEG images referenced by train.csv and test.csv.\nColumns in train.csv:\nid (string): Unique row id.\nimage (string): Relative path to the image file.\nprompt (string): Natural-language task instruction.\nanswer_format_json (JSON object as string): Defines the image size [512,512], grid [24,24], valid classes drop and crystal, valid area bins, and required answer fields.\nanswer_json (JSON object as string): Ground-truth inventory for training rows.\ntest.csv has the same columns except answer_json.\nThe required answer_json object has these fields:\nobject_count (integer): Total number of annotated objects.\nclass_counts (object): Counts by class, using keys drop and/or crystal.\narea_counts (object): Counts by object area bin. Valid bins are tiny, small, medium, large, and field.\noccupied_cells (list of strings): 24 by 24 grid cells touched by any annotated object mask, encoded as r00c00 through r23c23.\ndrop_cells (list of strings): Grid cells touched by annotated drop masks.\ncrystal_cells (list of strings): Grid cells touched by annotated crystal masks.\nobject_cards (list of objects): One card per annotated object. Each card contains label, bbox, center_cell, and area_bin.\nAn object card looks like:\n{\"label\":\"crystal\",\"bbox\":[120,88,166,140],\"center_cell\":\"r05c06\",\"area_bin\":\"small\"}\nbbox is [x0,y0,x1,y1] in the 512 by 512 image, inclusive pixel coordinates.\nEvaluation\nThe score is the mean row score over all test rows. Each row score is between 0 and 1.\nFor a set field such as occupied_cells, precision is:\n|predicted_cells intersect true_cells| / |predicted_cells|\nRecall is:\n|predicted_cells intersect true_cells| / |true_cells|\nThe set F1 is 2 * precision * recall / (precision + recall). If both sets are empty, the F1 is 1. If only one set is empty, the F1 is 0.\nCount dictionaries are expanded into multisets before computing the same F1 formula. For example, {\"crystal\": 2, \"drop\": 1} becomes the multiset [crystal, crystal, drop].\nThe object-card score uses two duplicate-aware multiset F1 scores:\ncoarse_object_f1 compares (label, center_cell, area_bin).\nfine_object_f1 compares (label, center_cell, area_bin, quantized_bbox), where each bbox coordinate is rounded to a 32-pixel bin.\nobject_score = 0.65 * coarse_object_f1 + 0.35 * fine_object_f1\nThe cell score is:\ncell_score =\n0.45 * F1(occupied_cells)\n+ 0.25 * F1(drop_cells)\n+ 0.30 * F1(crystal_cells)\nThe object-count score is:\ncount_score = 1                         if predicted_count == true_count\ncount_score = max(0, 1 - abs(predicted_count - true_count) / max(1, true_count)) otherwise\nThe complete row score is:\nrow_score =\n0.12 * count_score\n+ 0.16 * F1(class_counts)\n+ 0.12 * F1(area_counts)\n+ 0.25 * cell_score\n+ 0.35 * object_score\nMalformed JSON or invalid field values receive 0 for that row. A submission with wrong columns, missing rows, extra rows, duplicate ids, or ids not matching the test set is rejected.\nSubmission\nSubmit a CSV file with exactly two columns:\nid (string)\nanswer_json (JSON object serialized as a CSV string)\nExample:\nid,answer_json\ncrdrop_example_01,\"{\"\"object_count\"\":1,\"\"class_counts\"\":{\"\"drop\"\":1},\"\"area_counts\"\":{\"\"medium\"\":1},\"\"occupied_cells\"\":[\"\"r10c10\"\"],\"\"drop_cells\"\":[\"\"r10c10\"\"],\"\"crystal_cells\"\":[],\"\"object_cards\"\":[{\"\"label\"\":\"\"drop\"\",\"\"bbox\"\":[205,205,305,305],\"\"center_cell\"\":\"\"r12c12\"\",\"\"area_bin\"\":\"\"medium\"\"}]}\"\ncrdrop_example_02,\"{\"\"object_count\"\":0,\"\"class_counts\"\":{},\"\"area_counts\"\":{},\"\"occupied_cells\"\":[],\"\"drop_cells\"\":[],\"\"crystal_cells\"\":[],\"\"object_cards\"\":[]}\"\nWhat Not To Use\nDo not use GPU acceleration.\nDo not use external datasets, additional checkpoints, or pretrained vision models.\nDo not use hosted inference APIs, remote OCR/vision services, or remote-code loaders.\nDo not include additional model weights, training corpora, or external annotation files.\nDo not search for matching images, external metadata, or external annotation files outside the provided files.\nDo not hardcode row ids, image hashes, or answer strings.\nDo not use files outside the provided public files at prediction time.",
+          "difficulty": "Medium",
+          "domain": "Computer Vision",
+          "gpu": "",
+          "id": "jx73kfgqtzf66cwv5schfs1kq58b2j7a",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "image",
+            "feature-engineering",
+            "Dataset source is visible after the challenge closes.",
+            "Leaderboard"
+          ],
+          "title": "Crystallization Field Object Cell Audit",
+          "url": "https://shipd.ai/quests/eris/challenges/jx73kfgqtzf66cwv5schfs1kq58b2j7a"
+        },
+        {
+          "compute": "CPU",
+          "description": "Overview\nEach row gives a prepared overhead image of a small crop-row plot and a partially filled worksheet for that image. One 4 by 6 rectangle of worksheet cells has been blanked out. Your job is to repair that hidden window: report which hidden cells contain visible plant centers, how crowded each occupied hidden cell is, and which plant category is dominant in that cell.\nThe worksheet uses a 12 by 12 grid laid over the image. The released part of the worksheet gives the crowding and dominant-category values outside the hidden rectangle, so the prediction should be consistent with both the image and the visible worksheet context.\nThe images contain crop plants and several weed types in overhead field views. Public row ids and filenames are remapped, and original collection identifiers are not included.\nDataset\nFile manifest:\nFile\tContents\ntrain.csv\t385 examples with image paths, damaged worksheet windows, output constraints, and ground-truth answer_json.\ntest.csv\t250 examples with image paths, damaged worksheet windows, and output constraints.\nsample_submission.csv\tLow-information valid submission showing the required two-column CSV format.\nimages/\tPrepared 384 by 256 row-plot images referenced by the CSV files.\nCSV columns:\nColumn\tType\tMeaning\nid\tstring\tPublic row identifier.\nimage\tstring\tRelative path to the row-plot image.\nprompt\tstring\tShort task instruction.\ndamaged_window_json\tJSON string\tVisible worksheet values and the coordinates of the hidden 4 by 6 window.\nanswer_format_json\tJSON string\tRequired output fields and allowed values.\nanswer_json\tJSON string\tGround-truth repair object for training rows only.\nFields inside damaged_window_json:\nField\tType\tMeaning\nimage_size\tlist of integers\t[width,height], always [384,256].\nworksheet_grid\tlist of integers\t[rows,columns], always [12,12].\nhidden_window\tobject\tLocation and cell names for the blanked 4 by 6 worksheet region.\nhidden_window.top_row\tinteger\tTop row index of the hidden rectangle.\nhidden_window.left_col\tinteger\tLeft column index of the hidden rectangle.\nhidden_window.height\tinteger\tHidden window height, always 4.\nhidden_window.width\tinteger\tHidden window width, always 6.\nhidden_window.cells\tlist of strings\tThe 24 hidden cell names, such as r04_c07, in row-major order.\nunknown_value\tinteger\tPlaceholder value -1 used inside the hidden rectangle.\nvisible_crowding_grid\tlist of 144 integers\tRow-major worksheet grid outside the hidden window. Values are 0, 1, 2, 3, or -1 for hidden cells.\nvisible_dominant_code_grid\tlist of 144 integers\tRow-major dominant-code grid outside the hidden window. Code 0 means empty, codes 1 to 5 are plant categories, and -1 marks hidden cells.\nvisible_occupied_cell_count\tinteger\tNumber of occupied cells outside the hidden window.\nvisible_dominant_code_totals\tobject\tCounts of visible occupied cells by category outside the hidden window.\nFields inside answer_format_json:\nField\tType\tMeaning\nrequired_fields\tlist of strings\tRequired keys in each submitted answer_json.\nhidden_window_cell_count\tinteger\tNumber of cells in the hidden window, always 24.\ncell_name_format\tstring\tCell-name format, for example r00_c00.\ncrowding_bin_values\tlist of integers\tAllowed crowding values for occupied hidden cells: 1, 2, or 3.\ndominant_codebook\tobject\tMaps integer codes to category names. Code 0 means empty; submitted occupied cells must use codes 1 to 5.\ndominant_code_values_for_hidden_occupied_cells\tlist of integers\tValid dominant codes for submitted occupied hidden cells.\nThe required answer_json object has:\nField\tType\tMeaning\nmissing_occupied_cell_count\tinteger\tNumber of occupied cells inside the hidden window.\nmissing_dominant_code_totals\tobject\tCounts of occupied hidden cells by category name.\nhidden_occupied_cells\tlist of objects\tOne object for each occupied hidden cell. Empty hidden cells are omitted.\nEach hidden_occupied_cells item contains:\nField\tType\tMeaning\ncell\tstring\tHidden worksheet cell such as r04_c07.\ncrowding_bin\tinteger\t1, 2, or 3, where 3 means three or more centers in that cell.\ndominant_code\tinteger\tDominant category code from 1 to 5.\nEvaluation\nThe score is the mean of the per-row repair scores. Higher is better:\nrow_score =\n0.10 * missing_count_score\n+ 0.14 * dominant_total_score\n+ 0.16 * occupied_cell_f1\n+ 0.36 * occupied_cell_triple_f1\n+ 0.12 * crowding_accuracy\n+ 0.12 * dominant_code_accuracy\nmissing_count_score compares the predicted and true number of occupied hidden cells:\nmissing_count_score =\n1 - abs(predicted_count - true_count)\n/ (predicted_count + true_count)\nIf both counts are zero, the score is 1.\ndominant_total_score applies the same count formula to the five-category totals:\ndominant_total_score =\n1 - sum_k abs(predicted_total_k - true_total_k)\n/ sum_k (predicted_total_k + true_total_k)\nIf both total dictionaries are all zero, the score is 1.\noccupied_cell_f1 is set F1 over the submitted occupied hidden-cell names:\noccupied_cell_f1 =\n2 * |predicted_cells intersect true_cells|\n/ (|predicted_cells| + |true_cells|)\noccupied_cell_triple_f1 is set F1 over exact triples (cell, crowding_bin, dominant_code).\ncrowding_accuracy is the fraction of true occupied hidden cells whose submitted crowding_bin is correct. Missing true cells count as incorrect. If there are no true occupied hidden cells, an empty prediction receives 1 and a non-empty prediction receives 0.\ndominant_code_accuracy is computed the same way using dominant_code.\nThe grader checks internal consistency before scoring each row. missing_dominant_code_totals must sum to missing_occupied_cell_count; hidden_occupied_cells must have that same length; cells cannot be duplicated; crowding bins must be 1, 2, or 3; dominant codes must be 1 through 5; and the dominant-code counts implied by hidden_occupied_cells must match missing_dominant_code_totals. Malformed JSON or an invalid row scores 0 for that row. Wrong columns, extra columns, missing rows, duplicate ids, or ids that do not match the test set make the whole submission invalid.\nSubmission\nSubmit a CSV with exactly two columns:\nid (string): must match the ids in test.csv; row order is not used by the grader.\nanswer_json (JSON string): predicted repair object using the schema above.\nExample:\nid,answer_json\nrowwin_example_001,\"{\"\"missing_occupied_cell_count\"\":2,\"\"missing_dominant_code_totals\"\":{\"\"maize\"\":1,\"\"amaranth\"\":0,\"\"barnyard_grass\"\":1,\"\"quickweed\"\":0,\"\"weed_other\"\":0},\"\"hidden_occupied_cells\"\":[{\"\"cell\"\":\"\"r04_c07\"\",\"\"crowding_bin\"\":1,\"\"dominant_code\"\":1},{\"\"cell\"\":\"\"r05_c08\"\",\"\"crowding_bin\"\":2,\"\"dominant_code\"\":3}]}\"\nrowwin_example_002,\"{\"\"missing_occupied_cell_count\"\":1,\"\"missing_dominant_code_totals\"\":{\"\"maize\"\":0,\"\"amaranth\"\":0,\"\"barnyard_grass\"\":0,\"\"quickweed\"\":0,\"\"weed_other\"\":1},\"\"hidden_occupied_cells\"\":[{\"\"cell\"\":\"\"r08_c02\"\",\"\"crowding_bin\"\":1,\"\"dominant_code\"\":5}]}\"\nWhat Not To Use\nDo not use external row-plot, agronomy-image, or overhead-field datasets.\nDo not search the web for matching images or source metadata.\nDo not submit memorized repair objects for individual test ids.\nDo not use GPU acceleration.\nDo not use pretrained agronomy-image, overhead-field, or vegetation-analysis models.\nDo not use hosted vision APIs.\nDo not install packages at runtime.\nDo not use additional model checkpoints, torch.hub, or trust_remote_code.",
+          "difficulty": "Medium",
+          "domain": "Computer Vision",
+          "gpu": "",
+          "id": "jx72mh6tzxh5wvg4sw7e5gbq2x8awtnk",
+          "scoreContext": "Be the first to climb the leaderboard!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "feature-engineering",
+            "image",
+            "Dataset source is visible after the challenge closes.",
+            "Leaderboard"
+          ],
+          "title": "Masked Row-Plot Window Repair",
+          "url": "https://shipd.ai/quests/eris/challenges/jx72mh6tzxh5wvg4sw7e5gbq2x8awtnk"
+        },
+        {
+          "compute": "A10G",
+          "description": "Tactile Surface Route Decoding\nOverview\nThis is a multimodal sequence-decoding challenge about touch. Each row contains a compressed trace from a soft tactile sensor as it scans several unknown surfaces in sequence. Your task is to output the ordered route of contacts: which row-local surface was touched, and the force tier of that contact.\nIn plain terms: read the vibration, resistance, motion, and pressure patterns, compare them with the row-local surface cards, and write the sequence of touched surface aliases plus force tiers, such as:\nS03:F1 S01:F2 S05:F0 S02:F1\nThe source data comes from real laboratory tactile-sensor recordings. The challenge rows are generated as new composite routes: a row combines transformed contact segments from source trials, removes texture names, and assigns fresh row-local aliases. Train and hidden test rows use disjoint source trial groups, so memorizing a source filename or public row ID cannot reveal the hidden route.\nThis is not texture classification. A prediction is a variable-length sequence over row-local contact tokens, and the same physical texture can have a different alias in every row.\nDataset files\ntrain.csv contains:\nid: string. Unique training row ID.\ntouch_raster: string. A compressed 15 by 96 multimodal tactile raster encoded with 64 printable symbols.\nraster_shape: string. Always 15x96.\nframe_unit: string. Always normalized_touch_time.\nsurface_cards: JSON list. Five row-local surface cards, one for each candidate surface alias.\nroute_length_hint: string. Always 4_or_5; the true route has four or five contacts.\nmax_segments: integer. Maximum number of route tokens allowed. Always 5.\ntarget_surface_route: string. Training-only contact route ledger.\ntest.csv has the same public columns but omits target_surface_route.\nsample_submission.csv contains:\nid: string. Test row ID.\npredicted_surface_route: string. Empty dummy route. The sample scores 0.\nThere are 3,600 training rows and 1,500 hidden test rows. Hidden test rows are balanced across five private generation families with 300 rows per family.\nInput field schemas\ntouch_raster:\nType: string.\nLength: 1,440 characters.\nDecoding alphabet: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_.\nDecoding method: map each character to an integer from 0 to 63 and reshape row-major to 15 sensor channels by 96 time frames.\nMeaning: larger values indicate stronger quantized sensor response after deterministic source-wide clipping and resampling.\nThe 15 channels are ordered as:\nchannels 0–1: piezovibration readings.\nchannels 2–7: piezoresistive velostat readings.\nchannels 8–13: IMU motion readings.\nchannel 14: pressure-like contact reading.\nsurface_cards is a JSON list of exactly five objects. Each object has:\nsurface: string. Row-local alias from S01 through S05.\nvibration_profile: list of eight integers from 0 to 63.\nresistance_profile: list of eight integers from 0 to 63.\nmotion_profile: list of eight integers from 0 to 63.\npressure_profile: list of four integers from 0 to 63.\ncontact_band: string. Coarse anonymized contact descriptor: low, medium, or high.\nprofile_energy_bucket: integer. Coarse total-energy bucket for the card.\nExample surface_cards item:\n{\"surface\":\"S03\",\"vibration_profile\":[31,34,35,29,27,30,32,33],\"resistance_profile\":[20,22,26,24,21,23,25,22],\"motion_profile\":[39,37,35,36,40,41,38,36],\"pressure_profile\":[48,51,49,50],\"contact_band\":\"medium\",\"profile_energy_bucket\":6}\nTask\nSubmit one ordered route string per row. A route is a space-separated sequence of contact tokens.\nValid examples:\nS03:F1 S01:F2 S05:F0 S02:F1\nS04:F0 S04:F2 S02:F1 S05:F1 S01:F2\nRules:\nEvery token must have the form Sxx:Fy.\nSxx must be one of S01, S02, S03, S04, or S05.\nFy is a force tier and must be one of F0, F1, or F2.\nF0, F1, and F2 represent low, medium, and high relative contact strength within the generated scan.\nThe route may contain repeated surface aliases.\nThe route may contain at most five tokens.\nAn empty route is structurally valid but scores 0 because every hidden route has contacts.\nDo not submit JSON, comma-separated values, source texture names, explanations, or extra columns.\nEvaluation\nStructurally invalid submission files are rejected. Structural errors include missing columns, extra columns, duplicate IDs, unknown IDs, missing IDs, wrong row count, or wrong column order.\nMalformed row-level routes score 0 for that row instead of crashing the grader. Rows are aligned by id, not row order.\nFor each row, let Pred be the submitted alias sequence and True be the hidden alias sequence.\nSurfaceEditSimilarity is normalized Levenshtein similarity after stripping force tiers and keeping only the surface aliases:\nSurfaceEditSimilarity =\nmax(0, 1 - edit_distance(PredSurfaces, TrueSurfaces) / max(len(Pred), len(True), 1))\nSurfacePositionAccuracy rewards exact surface aliases at exact positions, ignoring force tier:\nSurfacePositionAccuracy =\nnumber of positions i where PredSurface[i] == TrueSurface[i]\n/ max(len(Pred), len(True), 1)\nTokenPositionAccuracy rewards exact full contact tokens at exact positions:\nTokenPositionAccuracy =\nnumber of positions i where Pred[i] == True[i]\n/ max(len(Pred), len(True), 1)\nTokenBigramF1 is F1 over adjacent ordered full-token pairs. For example, S03:F1 S01:F2 S05:F0 has bigrams (S03:F1,S01:F2) and (S01:F2,S05:F0).\nTokenBigramPrecision = matched predicted token bigrams / number of predicted token bigrams\nTokenBigramRecall = matched predicted token bigrams / number of true token bigrams\nTokenBigramF1 = 0 if both denominators are not positive; otherwise\nTokenBigramF1 = 2 * TokenBigramPrecision * TokenBigramRecall / (TokenBigramPrecision + TokenBigramRecall)\nSurfaceMultisetF1 is F1 over the multiset of surface aliases, ignoring order and force tier but respecting repeated aliases.\nSurfaceMultisetPrecision = matched predicted surface aliases / number of predicted surface aliases\nSurfaceMultisetRecall = matched predicted surface aliases / number of true surface aliases\nSurfaceMultisetF1 = 2 * SurfaceMultisetPrecision * SurfaceMultisetRecall / (SurfaceMultisetPrecision + SurfaceMultisetRecall)\nExactRoute is 1 only when the entire normalized contact route exactly equals the hidden route, including force tiers; otherwise it is 0.\nThe row score is:\nrow_score =\n0.15 * SurfaceEditSimilarity\n+ 0.20 * SurfacePositionAccuracy\n+ 0.25 * TokenPositionAccuracy\n+ 0.25 * TokenBigramF1\n+ 0.05 * SurfaceMultisetF1\n+ 0.10 * ExactRoute\nThe hidden set is balanced across five private generation families:\nsteady_scan\nrepeat_contact\nweak_middle\ndropout_band\nspeed_warp\nFamily labels are not present in solver-facing files. They are used only for robust hidden scoring.\nFinal score:\noverall_mean = mean(row_score over all hidden rows)\nworst_family_mean = minimum family mean over the five private families\nbottom_20_mean = mean(row_score over the lowest-scoring 20% of hidden rows)\nfinal_score =\n0.75 * overall_mean\n+ 0.15 * worst_family_mean\n+ 0.10 * bottom_20_mean\nScores are finite and bounded in [0, 1]. The sample submission scores 0. A perfect oracle scores 1.\nSubmission format\nSubmit a CSV with exactly two columns in this order:\nid: test row ID.\npredicted_surface_route: space-separated contact route tokens.\nExample:\nid,predicted_surface_route\n0a12bc34de56f789,S03:F1 S01:F2 S05:F0 S02:F1\nWhat not to use\nDo not use raw source texture names, source filenames, experiment indices, row order, or fixed alias meanings. These are absent from solver-facing rows or regenerated per row.\nDo not assume a single global class label. Each row is a sequence route, aliases are local to that row, and the force tier must be inferred from the trace.\nDo not submit every surface card in a fixed order. The metric heavily rewards exact position and adjacent transition recovery.\nDo not optimize only clean scans. Hidden scoring includes repeated contacts, weak middle contacts, sensor-dropout bands, and speed-warped routes.\nBenchmark boundary\nThe nearest common task family is tactile texture classification from sensor recordings. That task predicts one texture label for one trial. This benchmark instead asks for source-disjoint contact-route reconstruction from composite multimodal traces, using row-local candidate cards, force-tier inference, and a sequence output grammar. It measures tactile sequence binding and in-context surface/force matching rather than ordinary sensor classification, regression, or metadata prediction. This is a completely original and highly novel problem.",
+          "difficulty": "Medium",
+          "domain": "Sequence To Sequence",
+          "gpu": "",
+          "id": "jx73c2m8ty3k51x0pth0ejvq9d8bnpjk",
+          "scoreContext": "Beat rekht's score of 0.926!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [],
+          "title": "Tactile Surface Route Decoding",
+          "url": "https://shipd.ai/quests/eris/challenges/jx73c2m8ty3k51x0pth0ejvq9d8bnpjk"
+        },
+        {
+          "compute": "A10G",
+          "description": "Overview\nFor each six-panel underwater transect board, predict three outputs: a retention-transition matrix showing whether each object class appears, persists, disappears, or stays absent between neighboring panels; a compact weak-link sequence naming the most important unstable transitions; and a mission disposition summarizing whether the short transect is stable, intermittent, degraded, or rapidly changing.\nThe input is not a set of independent classification images. It is a short ordered pass from an underwater survey vehicle, where adjacent panels can show the same asset class under changing turbidity, distance, edge truncation, and lighting. The task measures whether an adapted visual encoder can retain evidence across a sequence of views and distinguish true disappearance from weak but continuing visual support.\nThis is useful in subsea inspection workflows because survey teams often need to know whether a pipe, net, marker, or vehicle part remained visible across a pass, appeared only briefly, or was lost under poor imaging conditions. The ground truth is derived from object annotations and image-quality checks inside guarded acquisition blocks, with source blocks kept disjoint between training and hidden evaluation.\nDataset\nFiles\n| Path | Description |\n|---|---|\n| `train.csv` | Labeled six-panel transect records. |\n| `test.csv` | Transect records without target columns. |\n| `sample_submission.csv` | Schema-valid baseline submission. |\n| `survey_packets/` | 974 by 548 RGB JPEG boards containing six numbered underwater panels. |\nBoards use a 3 by 2 layout. Panels 1-3 run left to right on the first row; panels 4-6 run left to right on the second row. The panel numbers define temporal order for the transition matrix. Underwater color, contrast, scale, and edge clipping vary between panels.\nSource frames are grouped into guarded acquisition blocks before splitting. A source block belongs entirely to training or hidden evaluation, and eight neighboring frames around each block boundary are excluded from packet construction. This reduces adjacent-frame retrieval across the split.\n| Prepared item | Count |\n|---|---:|\n| Training transects | 1,433 |\n| Hidden test transects | 351 |\n| Opaque survey-board images | 1,784 |\nMission dispositions are represented in both splits:\n| Mission disposition | Train | Test |\n|---|---:|---:|\n| `stable_track` | 245 | 90 |\n| `intermittent_track` | 382 | 80 |\n| `evidence_loss` | 552 | 126 |\n| `scene_turnover` | 254 | 55 |\nThe training retention-transition matrix contains 28,385 absent-stable entries, 5,907 appearance entries, 2,796 persistence entries, and 5,902 disappearance entries.\nColumns\n| Column | Present in | Data type | Description |\n|---|---|---|---|\n| `case_id` | Train and test | String | Opaque unique transect identifier. |\n| `survey_packet_path` | Train and test | String | Relative JPEG path under `survey_packets/`. |\n| `frame_contract` | Train and test | String | Fixed statement that panels 1-6 form an ordered transect and that class rows use the documented order. |\n| `retention_transition_matrix` | Train only | JSON integer matrix, shape 6 by 5 | Rows are object classes. Columns are transitions 1->2 through 5->6. Values are `0` absent in both panels, `1` appears, `2` persists, and `3` disappears. |\n| `weak_link_sequence` | Train only | Ordered token sequence string | Up to eight panel-major event tokens for appearances, disappearances, and weak persistent links. Use `none` only when there are no event tokens. Tokens are joined by `>`. |\n| `mission_disposition` | Train only | Categorical string | One of `stable_track`, `intermittent_track`, `evidence_loss`, or `scene_turnover`. |\nThe matrix row order is fixed:\nrow 1 = propeller\nrow 2 = pipe_type2\nrow 3 = red_fin\nrow 4 = net\nrow 5 = qr_codes\nrow 6 = pipe\nTransition values:\n| Value | Meaning |\n|---:|---|\n| `0` | The class is absent in both neighboring panels. |\n| `1` | The class appears in the right panel after being absent in the left panel. |\n| `2` | The class is visible in both neighboring panels. |\n| `3` | The class disappears from the right panel after being visible in the left panel. |\nWeak-link tokens have this grammar:\np<left>-<right>:<class_name>:<event>\nleft and right must be neighboring panel numbers from 1-2 through 5-6. class_name must be one of propeller, pipe_type2, red_fin, net, qr_codes, or pipe. event must be appear, drop, or weak_keep. Tokens are ordered first by transition interval and then by the fixed class-row order.\nExample labeled values:\nretention_transition_matrix = [[0,0,0,0,0],[3,1,3,1,2],[3,0,0,1,2],[0,0,0,0,0],[1,3,1,3,0],[3,0,0,1,3]]\nweak_link_sequence = p1-2:pipe_type2:drop>p1-2:red_fin:drop>p1-2:qr_codes:appear>p1-2:pipe:drop>p2-3:pipe_type2:appear>p2-3:qr_codes:drop>p3-4:pipe_type2:drop>p3-4:qr_codes:appear\nmission_disposition = scene_turnover\nSubmission Format\nWrite the final file to exactly:\n./working/submission.csv\nThe CSV must contain exactly these columns in this order:\ncase_id,retention_transition_matrix,weak_link_sequence,mission_disposition\nExample:\ncase_id,retention_transition_matrix,weak_link_sequence,mission_disposition\nsr4e8a3d417bce5680544d,\"[[0,0,0,0,0],[3,1,3,1,2],[3,0,0,1,2],[0,0,0,0,0],[1,3,1,3,0],[3,0,0,1,3]]\",p1-2:pipe_type2:drop>p1-2:red_fin:drop>p1-2:qr_codes:appear>p1-2:pipe:drop>p2-3:pipe_type2:appear>p2-3:qr_codes:drop>p3-4:pipe_type2:drop>p3-4:qr_codes:appear,scene_turnover\nretention_transition_matrix must be a JSON integer matrix with shape 6 by 5 and values from 0 through 3. weak_link_sequence must be none or a >-delimited sequence of at most eight valid tokens. Each sequence field is limited to 520 characters. The grader rejects extra columns, reordered columns, duplicate IDs, unknown IDs, missing rows, and extra rows. Malformed matrices or invalid token strings receive zero for the affected component.\nEvaluation\nThe Subsea Retention Memory Score is:\nScore = 0.55 * TransitionMatrixScore\n+ 0.30 * WeakLinkSequenceScore\n+ 0.15 * MissionDispositionScore\nMinimum score: 0.0. Maximum score: 1.0. Higher is better.\nTransitionMatrixScore\nFor hidden matrix Y and submitted matrix P, define entry weights from the hidden truth:\nw[i,j] = 1.0 when Y[i,j] = 0\nw[i,j] = 1.6 when Y[i,j] = 2\nw[i,j] = 2.4 when Y[i,j] is 1 or 3\nweighted_agreement = sum(w[i,j] * I(Y[i,j] = P[i,j])) / sum(w[i,j])\nLet active mean matrix entries greater than zero.\nactive_iou = sum(active(Y) and active(P)) / sum(active(Y) or active(P))\nsample_transition = 0.18 * active_iou\n+ 0.22 * weighted_agreement\n+ 0.60 * I(Y = P)\nIf both active sets are empty, active_iou = 1.0. TransitionMatrixScore is the mean sample_transition across hidden rows.\nWeakLinkSequenceScore\nTokenize both sequences on >, with none treated as an empty sequence. Invalid tokens, duplicate tokens, overlong fields, or tokens out of panel-major order receive zero.\nset_f1 = 2 * |tokens_Y intersect tokens_P| / (|tokens_Y| + |tokens_P|)\nsimilarity = 1 - token_edit_distance(tokens_Y, tokens_P) / max(len(tokens_Y), len(tokens_P), 1)\nsample_sequence = 0.25 * set_f1\n+ 0.20 * similarity\n+ 0.55 * I(tokens_Y = tokens_P)\nIf both token sets are empty, set_f1 = 1.0. WeakLinkSequenceScore is the mean sample_sequence.\nMissionDispositionScore\nCompute recall separately for each hidden mission disposition present in the answer file, then average those recalls equally. Invalid disposition strings are incorrect.\nMethod Requirements\nUse the supplied labeled transect boards to fit the model. Open-weight visual encoders may be adapted locally. The intended workload uses GPU-batched six-panel feature extraction and temporal evidence aggregation within the A10G limit.\nThe solution time limit is 30 minutes on one A10G GPU.\nWhat Makes This Interesting\nThe central object is retention memory across a short underwater pass. A model must compare neighboring panels, detect whether evidence continues under viewpoint and water-quality changes, and emit a canonical transition certificate. This differs from single-image object detection because the answer depends on how visual evidence changes between panels, not only whether a category appears somewhere.\nWhat Not To Use\nThis is a finetuning challenge, please do not use the following methods :\nDo not use source-image lookup, reverse image search, external copies, original video identities, or source annotations.\nDo not infer targets from opaque IDs, row order, JPEG names, hashes, byte sizes, or archive position.\nDo not memorize exact train images and search for related hidden views outside the supplied data.\nDo not create hardcoded object-channel rules from source filenames or directory names.\nDo not exploit malformed fields, duplicate IDs, extra columns, optional columns, or grader exceptions.\nReference Validation\nExact hidden answers score 1.0. The sample submission scores 0.095372. An independent train-mode submission scores 0.119371. The prepared split has zero duplicate public payloads and zero train-test survey-board hash overlap.",
+          "difficulty": "Medium",
+          "domain": "Fine-Tuning",
+          "gpu": "",
+          "id": "jx72jwy6fsbk4sdhsdaczvbrn18brtrb",
+          "scoreContext": "Beat jesuisnadi's score of 0.774!",
+          "scoring": "↑ Higher is better",
+          "status": "Accepted",
+          "tags": [
+            "image",
+            "text",
+            "multimodal",
+            "Dataset source is visible after the challenge closes."
+          ],
+          "title": "Subsea Transect Retention Memory",
+          "url": "https://shipd.ai/quests/eris/challenges/jx72jwy6fsbk4sdhsdaczvbrn18brtrb"
+        }
+      ],
+      "failures": []
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 38,
+    "skippedAlreadyBeforeDetail": 25,
+    "detailPagesAttempted": 13,
+    "appendedTotal": 13,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "Non-CPU": {
+        "Other": 1,
+        "Fine-Tuning": 4,
+        "From Scratch": 4,
+        "NLP": 1,
+        "Sequence To Sequence": 1
+      },
+      "CPU": {
+        "Computer Vision": 2
+      }
+    },
+    "veryNovelAdded": [
+      "Cross-Sensor Seasonal Identity Reconstruction",
+      "Cross-Modal Robot Dispatch",
+      "Wrapped Phase Closure Reconstruction",
+      "Drum Feel Microtiming Reconstruction",
+      "Tactile Surface Route Decoding",
+      "Subsea Transect Retention Memory"
+    ],
+    "limitations": [
+      "Detail or homepage failures captured in cache: 1."
+    ]
+  }
+}

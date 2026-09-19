@@ -1,0 +1,31 @@
+{
+  "scrapedAt": "2026-08-14T18:33:11+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\.codex_tmp\\shipd_details_20260814_130223_empty.json",
+  "payload": {
+    "scrapedAt": "2026-08-14T13:02:23.315+05:30",
+    "source": "Shipd Eris home page",
+    "homepage": {
+      "homepageCardsFound": 5,
+      "skippedAlready": 5,
+      "failures": []
+    },
+    "detailRun": {
+      "details": [],
+      "failures": []
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 5,
+    "skippedAlreadyBeforeDetail": 5,
+    "detailPagesAttempted": 0,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "CPU": {},
+      "Non-CPU": {}
+    },
+    "veryNovelAdded": [],
+    "limitations": []
+  }
+}

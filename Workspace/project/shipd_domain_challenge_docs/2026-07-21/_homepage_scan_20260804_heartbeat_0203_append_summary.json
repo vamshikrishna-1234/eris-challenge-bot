@@ -1,0 +1,30 @@
+{
+  "homepageCardsFound": 38,
+  "skippedAlreadyBeforeDetail": 25,
+  "detailPagesAttempted": 13,
+  "appendedTotal": 13,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Other": 1,
+      "Fine-Tuning": 4,
+      "From Scratch": 4,
+      "NLP": 1,
+      "Sequence To Sequence": 1
+    },
+    "CPU": {
+      "Computer Vision": 2
+    }
+  },
+  "veryNovelAdded": [
+    "Cross-Sensor Seasonal Identity Reconstruction",
+    "Cross-Modal Robot Dispatch",
+    "Wrapped Phase Closure Reconstruction",
+    "Drum Feel Microtiming Reconstruction",
+    "Tactile Surface Route Decoding",
+    "Subsea Transect Retention Memory"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

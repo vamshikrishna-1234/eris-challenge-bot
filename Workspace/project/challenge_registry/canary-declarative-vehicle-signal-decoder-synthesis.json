@@ -1,0 +1,27 @@
+﻿{
+    "title":  "CANary Declarative Vehicle-Signal Decoder Synthesis",
+    "slug":  "canary-declarative-vehicle-signal-decoder-synthesis",
+    "status":  "accepted",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fd7b7-2c6a-7c51-a379-97f932f0578d",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\accepted\\CANary Declarative Vehicle-Signal Decoder Synthesis",
+    "dataset":  "ReCAN Data - Reverse engineering of Controller Area Networks, Version 2, DOI 10.17632/76knkx3fzv.2",
+    "license":  "MIT",
+    "created_at":  "2026-08-06T21:03:32.4348141+05:30",
+    "updated_at":  "2026-08-08T15:07:59.2458213+05:30",
+    "blocker":  "",
+    "notes":  [
+                  "Moved complete challenge folder to E:\\create_challenge_synthetic_output_folder\\sprint_4\\CANary Declarative Vehicle-Signal Decoder Synthesis.",
+                  "Verified official ReCAN v2 Mendeley source, MIT license claim, four selected official files, byte sizes, and SHA-256 checksums.",
+                  "Raw source subset is 623546632 bytes; prepared public plus private data is 126331274 bytes.",
+                  "prepare.py now casts string path arguments, resets stale output dirs, is deterministic byte-for-byte, and supports source discovery under raw root, raw_upload, or _source_cache.",
+                  "grade.py safely parses bounded declarative JSON and executes trusted decoder logic only.",
+                  "Scores after grading revision: perfect 1.0, sample 0.13168483315110974, public sparse correlation baseline 0.4626161810475566, abstain 0.03998800000000001.",
+                  "Novelty audit estimated 7/10; no local CAN/DBC/ReCAN decoder duplicate was found.",
+                  "Native labels support structural decoder recovery; unsupported signedness and physical roles are represented as UNKNOWN or source-grounded structural roles.",
+                  "Source lookup mitigation strengthened: participant-facing prompt and public prepared files contain no source names/DOI/vehicle names, target coordinates rotate, non-target payload bits are salted noise, and sampled payload-rotation source probe found zero hits.",
+                  "Challenge is CPU-only; visible form states CPU only with 10 CPU cores, 62 GB RAM, and 1.5 hour wall-clock target.",
+                  "Grading logic tightened by reducing format/partial structural credit and increasing hidden executable and joint consistency credit while preserving score range [0, 1].",
+                  "2026-08-08 accepted by the platform and moved intact to sprint_4\\accepted. Registry status and output_folder updated."
+              ]
+}

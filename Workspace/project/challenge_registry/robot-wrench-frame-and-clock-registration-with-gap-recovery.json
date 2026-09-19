@@ -1,0 +1,129 @@
+{
+  "title": "Robot Wrench Frame and Clock Registration With Gap Recovery",
+  "slug": "robot-wrench-frame-and-clock-registration-with-gap-recovery",
+  "status": "rejected",
+  "stage": "fresh_redesign_pilot_complete_rejected_before_build",
+  "verdict": "Reject",
+  "reason_code": "semantic_duplicate_and_source_reversibility",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a097ef-01d3-79e2-81c9-8b10f8f72137",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Robot Wrench Frame and Clock Registration With Gap Recovery",
+  "dataset": "REASSEMBLE, TU Wien version 1.0.0",
+  "license": "CC BY 4.0",
+  "created_at": "2026-09-14T01:42:31.6769069+05:30",
+  "updated_at": "2026-09-14T02:12:00+05:30",
+  "parent_rejected_candidate": "reassemble-contact-event-and-sensor-recovery",
+  "blocker": "",
+  "notes": [
+    "This was evaluated as a new participant contract, not as a status change to the rejected action/event candidate.",
+    "Fixed-microphone audio, action text, action intervals, object identities, and success labels were excluded from both pilots.",
+    "Two distinct deidentification designs were attacked before the candidate was rejected.",
+    "No output challenge folder, build scripts, forms, upload package, or platform draft was created."
+  ],
+  "evidence": {
+    "official_record_url": "https://researchdata.tuwien.ac.at/records/0ewrv-8cb44",
+    "official_archive_bytes": 58881334586,
+    "official_recording_families": 149,
+    "official_hidden_recording_families": 37,
+    "verified_collection_days": 5,
+    "pilot_files_available": 5,
+    "candidate_contract": {
+      "input": "A source-deidentified numeric packet containing robot-motion context and a partially missing six-axis wrench observed in an unknown proper signed-axis frame and with an unknown clock offset.",
+      "output": "The sensor-to-base signed axis transform, clock correction, and canonical wrench values only at withheld indices.",
+      "excluded": [
+        "all audio",
+        "all video",
+        "all action text",
+        "all action/event boundaries",
+        "all object labels",
+        "all success labels"
+      ]
+    },
+    "single_window_pilot": {
+      "recording_families": 5,
+      "base_windows": 86,
+      "prepared_rows": 516,
+      "learned_rotation_exact_accuracy": 0.06395348837209303,
+      "learned_lag_exact_accuracy": 0.27906976744186046,
+      "no_op_score": 0.11618977136719141,
+      "oracle_calibration_interpolation_score": 0.5308425888695529,
+      "source_exact_window_top1_accuracy": 1.0,
+      "source_assisted_rotation_exact_accuracy": 0.95,
+      "source_assisted_lag_exact_accuracy": 0.5388888888888889,
+      "source_assisted_score": 0.47604010416152726
+    },
+    "multiburst_pilot": {
+      "recording_families": 5,
+      "candidate_micro_windows": 363,
+      "prepared_rows": 726,
+      "row_unit": "four shuffled non-contiguous one-second bursts from one recording",
+      "learned_rotation_exact_accuracy": 0.048209366391184574,
+      "learned_lag_exact_accuracy": 0.12672176308539945,
+      "no_op_score": 0.12553906136556048,
+      "oracle_calibration_interpolation_score": 0.43458443964229976,
+      "source_component_top1_accuracy": 0.9958333333333333,
+      "source_all_four_exact_row_accuracy": 0.9833333333333333,
+      "source_assisted_rotation_exact_accuracy": 0.8722222222222222,
+      "source_assisted_lag_exact_accuracy": 0.8888888888888888,
+      "source_assisted_score": 0.39084544934216053
+    },
+    "metric_null_audit": {
+      "perfect_score": 1.0,
+      "no_op_score": 0.12553906136556048,
+      "copied_input_score": 0.10102846771887614,
+      "rotation_only_score": 0.32065792195145104,
+      "lag_only_score": 0.22126553967922902,
+      "calibration_only_score": 0.4163844002651195,
+      "waveform_only_score": 0.4420549532910385,
+      "finding": "The transparent coupled metric had a reasonable null floor and kept every one-head oracle below 0.45; metric shape was not the rejection cause."
+    },
+    "scale_projection": {
+      "pilot_base_windows_per_minute": 27.869658767915983,
+      "official_duration_minutes": 781,
+      "projected_base_rows": 21766,
+      "estimated_derived_numeric_corpus_bytes": 298107136,
+      "finding": "Projected row and byte capacity looked viable, but full post-filter extraction and exact import were not pursued after two decisive gates failed."
+    },
+    "novelty": {
+      "score_out_of_10": 4.0,
+      "required_minimum": 6.0,
+      "passed": false,
+      "closest_source_task": "REASSEMBLE multimodal temporal action segmentation; the proposed calibration task is different from the source's canonical task.",
+      "closest_local_challenges": [
+        "Wearable Muscle And Motion Stream Reassociation",
+        "Cross-Cardiac Waveform and Event Recovery",
+        "Audio-Guided Articulator Sequence Inpainting",
+        "Bridge Sensor Window Selection and Observability Matrix Prediction"
+      ],
+      "closest_external_work": [
+        "On the Calibration of Force/Torque Sensors in Robotics",
+        "SOAC: Spatio-Temporal Overlap-Aware Multi-Sensor Calibration",
+        "Observability-Aware Intrinsic and Extrinsic Calibration of LiDAR-IMU Systems"
+      ],
+      "finding": "The contract is a union of an accepted clock-offset/cross-modal reassociation solver family and accepted dense sensor-completion families, with a standard force/torque frame-calibration head. The robot domain and JSON/NPZ wrapper do not create substantive novelty."
+    },
+    "rejection_reasons": [
+      "novelty score 4.0/10 is below the required 6/10 threshold",
+      "single-window source retrieval recovered 100% of raw windows and 95% of frame transforms",
+      "multi-burst deidentification still recovered 99.58% of burst sources and 98.33% of complete row compositions",
+      "source-assisted multiburst search recovered 87.22% of frame transforms and 88.89% of clock offsets",
+      "the legitimate leave-one-recording-out model did not beat the null metric score on the stronger deidentification, indicating poor learnability after the transformations needed to resist lookup"
+    ]
+  },
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": false,
+    "post_filter_scale_passed": false,
+    "split_stability_passed": false,
+    "semantic_duplicate_audit_passed": false,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": true,
+    "import_route_verified": false,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": []
+  }
+}

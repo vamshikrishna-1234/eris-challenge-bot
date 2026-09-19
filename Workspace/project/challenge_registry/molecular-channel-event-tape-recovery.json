@@ -1,0 +1,196 @@
+{
+  "title": "Molecular Channel Event-Tape Recovery",
+  "slug": "molecular-channel-event-tape-recovery",
+  "status": "rejected",
+  "stage": "submission_pool_admission_rejected",
+  "reason_code": "canonical_task_public_retrieval_missing_native_targets_insufficient_independent_groups",
+  "status_note": "Rejected after a measured bounded pilot: the public-source lookup attack recovered 588/588 hidden windows at rank 1, the source's own receiver-only method nearly saturates the central heads, requested truth fields are absent, and 21 one-run regimes reuse only four unique symbol tapes.",
+  "owner_machine": "Local-Codex",
+  "owner_task": "01a08b29-6b9e-7571-801c-bffd00b77672",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery",
+  "dataset": "FAU SyMoCADS Closed-Loop Long-Term Experimental Molecular Communication System, Zenodo 13898880 v1",
+  "license": "CC BY 4.0 for the Zenodo dataset; audit-only GitHub code is MIT",
+  "created_at": "2026-09-10T17:21:33.6211203+05:30",
+  "updated_at": "2026-09-10T21:13:34.5017961+05:30",
+  "blocker": "",
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": false,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": true,
+    "post_filter_scale_passed": false,
+    "split_stability_passed": false,
+    "semantic_duplicate_audit_passed": false,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": false,
+    "import_route_verified": true,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": []
+  },
+  "evidence": {
+    "source": {
+      "record_url": "https://zenodo.org/records/13898880",
+      "doi": "10.5281/zenodo.13898880",
+      "version": "v1",
+      "license": "CC BY 4.0",
+      "official_total_bytes": 667026632,
+      "files": [
+        {
+          "name": "experiment_files.zip",
+          "url": "https://zenodo.org/records/13898880/files/experiment_files.zip?download=1",
+          "bytes": 327595208,
+          "md5": "8ee8a3b941bff470d6e123699426a195",
+          "sha256": "32173c0aef38c32d223b706688146fe99f65a1f19b03d83ac6bedd5cd642406e"
+        },
+        {
+          "name": "mmtb.db",
+          "url": "https://zenodo.org/records/13898880/files/mmtb.db?download=1",
+          "bytes": 339431424,
+          "md5": "33be70ad8e90d530680b850fc18097c0",
+          "sha256": "e6961fd52a545ac76146b40fc3667d4de91657afc21f602668e5f6dbc4208592",
+          "sqlite_integrity_check": "ok"
+        }
+      ],
+      "zip_member_count": 97,
+      "zip_experiment_directories": 24,
+      "zip_uncompressed_bytes": 917287048,
+      "import_route": "Direct platform URL import of both official Zenodo files"
+    },
+    "corpus_inventory": {
+      "physical_runs": 21,
+      "unique_dates": 14,
+      "nominal_regimes": 21,
+      "runs_per_regime": 1,
+      "total_symbols": 238000,
+      "runs_with_2000_symbols": 19,
+      "runs_with_100000_symbols": 2,
+      "projected_nonoverlap_64_symbol_windows_after_warmup": 3671,
+      "duplicate_symbol_tape_occurrences": 17,
+      "unique_symbol_tapes": 4,
+      "independence_conclusion": "Windows are correlated descendants of 21 physical runs; every regime has one run and most runs reuse one of four tapes."
+    },
+    "native_target_map": {
+      "ordered_symbol_sequence": "experiment_param.tx.symbolstring",
+      "symbol_start": "serial_feather symbols == S, rel_time",
+      "guard_or_symbol_end": "serial_feather symbols == G, rel_time",
+      "transmission_stop": "terminal serial_feather symbols == E, rel_time",
+      "receiver_waveform": "spec_feather rel_time and fluorescence",
+      "transmitter_trace": "serial_feather tx_intensity; answer-bearing via experiment_param.tx.symbol_map",
+      "transmitter_label_recovery_accuracy_minimum": 1.0,
+      "sampled_eraser_trace": "ABSENT",
+      "authoritative_unknown_flags": "ABSENT",
+      "authoritative_time_varying_channel_state": "ABSENT",
+      "deterministic_join": "message_data.rowid within pinned mmtb.db v1"
+    },
+    "official_baseline": {
+      "code_repository": "https://github.com/SyMoCADS/Media_Modulation_Testbed",
+      "commit": "69e9b80363100ab0970016f130cfa831fd0cb248",
+      "method": "authors' differential-correlation synchronization and adaptive-threshold detection",
+      "binary_symbol_accuracy": 1.0,
+      "binary_boundary_f1": 0.9295,
+      "mod4_symbol_accuracy": 1.0,
+      "mod4_boundary_f1": 0.9995,
+      "mod8_symbol_accuracy": 0.9641711229946524,
+      "mod8_boundary_f1": 0.985,
+      "runtime_seconds_range": [
+        1.509380199946463,
+        6.222766599967144
+      ]
+    },
+    "shortcut_audit": {
+      "queries": 588,
+      "independent_source_runs": 21,
+      "symbols_per_window": 64,
+      "samples_per_window": 768,
+      "masked_fraction": 0.18,
+      "attack": "normalized cross-correlation on visible samples against all public-source candidate windows",
+      "top1_source_window_accuracy": 1.0,
+      "top5_source_window_accuracy": 1.0,
+      "hidden_symbol_tape_copy_accuracy": 1.0,
+      "median_true_rank": 1.0,
+      "runtime_seconds": 5.380840500001796,
+      "linear_interpolation_mean_1_minus_nrmse": 0.0684811899643111,
+      "linear_interpolation_mean_nrmse": 1.0138837193415713
+    },
+    "ablations": {
+      "receiver_only_symbol_accuracy_strongest_range": [
+        0.9641711229946524,
+        1.0
+      ],
+      "metadata_or_control_only_symbol_accuracy": 0.30807142857142855,
+      "full_with_native_transmitter_trace_symbol_accuracy": 1.0
+    },
+    "provisional_metric_audit": {
+      "weights": {
+        "sequence_accuracy": 0.45,
+        "boundary_f1": 0.25,
+        "masked_waveform": 0.25,
+        "uncertainty": 0.05
+      },
+      "empty_no_op": 0.0,
+      "metadata_or_control_only_template": 0.13863214285714284,
+      "waveform_only_linear_interpolation": 0.017120297491077775,
+      "sequence_only_official_receiver_range": [
+        0.43387700534759355,
+        0.45
+      ],
+      "sequence_and_boundary_official_receiver_range": [
+        0.6662520053475935,
+        0.699875
+      ],
+      "full_input_if_transmitter_trace_exposed": 1.0
+    },
+    "semantic_duplicate_audit": {
+      "source_canonical_overlap": "Source paper already performs blind start detection, symbol-by-symbol synchronization, and symbol detection from receiver fluorescence.",
+      "closest_local_titles": [
+        "Cell Event Program Recovery from Fluorescence Traces",
+        "Audio-Guided Articulator Sequence Inpainting",
+        "Substation Protection Event Tape Recovery",
+        "Cardiac Sensor Patch Sequence Recovery",
+        "Cross-Cardiac Waveform and Event Recovery"
+      ]
+    },
+    "platform_draft_audit": {
+      "observed_at": "2026-09-10T19:54:36.8844298+05:30",
+      "problem_url": "https://shipd.ai/quests/eris/problems/jx70a9nfmt5qvx2g69e3q6hxws8drrsb",
+      "dataset_url": "https://shipd.ai/quests/eris/datasets/jd78ekbg46v2ppm6xnnagrhmx98dscgh",
+      "problem_title": "b",
+      "dataset_title": "Untitled Dataset",
+      "dataset_source_file_count": 0,
+      "dataset_prepared_file_count": 0,
+      "problem_raw_file_count_after_refresh": 0,
+      "problem_prepared_file_count": 0,
+      "problem_description": "empty",
+      "dataset_description": "unchanged template placeholder",
+      "source_url": "empty",
+      "license_selection": "CC0 1.0 default placeholder; incorrect for the intended CC BY 4.0 source",
+      "scripts": "unchanged platform templates only",
+      "stale_file_observation": "The initial problem view displayed a 202 KB data.csv row, but its storage target returned NoSuchKey. After returning to the editor, the authoritative raw-file list showed No processed files found.",
+      "dataset_check_result": "Platform displayed 'Checks passed with warnings. Ready to submit' despite the blank title, empty source URL, and zero files; the only visible warning was the missing source URL.",
+      "problem_check_result": "The challenge Run checks action was refused with 'Please fix the validation errors before running checks.' Agent runs remained disabled at 0/3.",
+      "publication_action": "not attempted because the local readiness verdict is Reject and the platform drafts contain no valid source package"
+    },
+    "artifacts": {
+      "comprehensive_audit_report": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\COMPREHENSIVE_AUDIT_REPORT.md",
+      "url_import_list": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\URL_IMPORT_LIST.txt",
+      "pilot_rejection_audit": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\PILOT_REJECTION_AUDIT.md",
+      "readiness_validation": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\READINESS_VALIDATION.txt",
+      "reusable_submission_pool": "C:\\Users\\vamsh\\.codex\\skills\\eris-submission-pool\\SKILL.md",
+      "data_acquisition": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\DATA_ACQUISITION.md",
+      "source_verification": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\SOURCE_VERIFICATION.md",
+      "full_database_inventory": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\pilot_work\\full_database_inventory.json",
+      "archive_inventory": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\pilot_work\\official_archive_inventory.json",
+      "official_baseline_results": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\pilot_work\\official_baseline_results.json",
+      "shortcut_audit_results": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\pilot_work\\shortcut_audit_results.json",
+      "zenodo_record_metadata": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Molecular Channel Event-Tape Recovery\\pilot_work\\zenodo_record_13898880.json"
+    }
+  },
+  "notes": [
+    "Audit-first instruction honored: no full challenge package was built after readiness gates failed.",
+    "The readiness validator is expected to return NOT BUILD READY because verdict is Reject and failed gates remain false; this is the truthful terminal state, not an unresolved pilot.",
+    "The linked Shipd dataset and problem drafts were inspected read-only on 2026-09-10. They are skeletal drafts with no valid raw or prepared files and were not modified or submitted.",
+    "The submission goal was explicitly resumed on 2026-09-10. The Eris submission-pool admission gate failed again because this registry remains Reject and the live drafts still contain no valid package; no website write was permitted."
+  ]
+}

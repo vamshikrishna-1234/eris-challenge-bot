@@ -1,0 +1,23 @@
+﻿{
+    "title":  "Neuro-Motor Speech Gap And Stream Reconstruction",
+    "slug":  "neuro-motor-speech-gap-and-stream-reconstruction",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fb553-6778-78c0-a26d-e233728b329d",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Neuro-Motor Speech Gap And Stream Reconstruction",
+    "dataset":  "JapanEEG, OpenNeuro ds007808 version 1.0.0",
+    "license":  "Blocked: OpenNeuro CC0, JapanEEG CC BY 4.0, and JapanEEG non-commercial terms conflict; transcript-bearing files include third-party book/game/comic text without unambiguous commercial redistribution evidence.",
+    "created_at":  "2026-07-31T04:47:19.4171379+05:30",
+    "updated_at":  "2026-07-31T08:14:25.2064523+05:30",
+    "blocker":  "Mandatory source gate failed for JapanEEG ds007808, and replacement search did not find a usable dataset with real synchronized EEG+EMG+speech audio, rich reconstructable text, commercial/platform redistribution rights, and enough grouped split diversity.",
+    "notes":  [
+                  "Build-mode source/license/content gate started in task 019fb553-6778-78c0-a26d-e233728b329d.",
+                  "OpenNeuro snapshot ds007808:1.0.0 dataset_description.json reports License=CC0 and DOI doi:10.18112/openneuro.ds007808.v1.0.0.",
+                  "JapanEEG access/legal pages report CC BY 4.0 but also non-commercial research wording unless separately licensed; this did not meet the requested unambiguous commercial/platform redistribution standard.",
+                  "Representative speechopen sidecars and event TSVs show transcript-bearing content from video games, books, comics, and unknown sources; example sidecar content=video game, detailed_content=逆転検事.",
+                  "Only cleaner sidecar category found was sentence/basic5000: 47 runs, all sub-01/acq-pangolin, complete untouched source size about 45.86 GiB; a below-3 GiB subset is too small and lacks speaker/device diversity.",
+                  "Evidence written to E:\\create_challenge_synthetic_output_folder\\sprint_4\\Neuro-Motor Speech Gap And Stream Reconstruction\\SOURCE_VERIFICATION.md and BLOCKED.md.",
+                  "Second-pass checkpoint/reviewer-memory/adversarial audit completed; AUDIT_REPORT.md added in the Sprint 4 challenge folder. No dataset upload zip created because the challenge remains blocked.",
+                  "Replacement-source search completed on 2026-07-31: T-MSPD has the right modalities but prohibits redistribution without written permission; JapanEEG ds007591 is cleaner but collapses into five-color-word closed-vocabulary classification; CSL-EMG_Array lacks EEG; VocalMind lacks facial EMG and has one participant; German EEG/EMA/audio appears CC-BY and promising for an EMA redesign but lacks facial EMG and requires source-file access. SOURCE_REPLACEMENT_SEARCH.md added."
+              ]
+}

@@ -1,0 +1,37 @@
+{
+  "scrapedAt": "2026-09-10T22:12:07+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\.codex_tmp\\shipd_heartbeat_2026-09-10T16-36-39Z_details.json",
+  "payload": {
+    "scrapedAt": "2026-09-10T16:36:39.465Z",
+    "source": "Shipd Eris homepage required retry",
+    "homepage": {
+      "homepageCardsFound": 0,
+      "skippedAlready": 0,
+      "failures": [
+        "Required retry: the authenticated in-app browser still returned no browser tabs."
+      ]
+    },
+    "detailRun": {
+      "details": [],
+      "failures": [
+        "No challenge detail pages were opened because homepage card discovery remained unavailable."
+      ]
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 0,
+    "skippedAlreadyBeforeDetail": 0,
+    "detailPagesAttempted": 0,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "CPU": {},
+      "Non-CPU": {}
+    },
+    "veryNovelAdded": [],
+    "limitations": [
+      "Detail or homepage failures captured in cache: 2."
+    ]
+  }
+}

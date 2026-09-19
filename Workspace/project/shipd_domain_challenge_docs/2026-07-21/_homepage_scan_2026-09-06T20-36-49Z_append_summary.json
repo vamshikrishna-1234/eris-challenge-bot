@@ -1,0 +1,28 @@
+{
+  "homepageCardsFound": 33,
+  "skippedAlreadyBeforeDetail": 20,
+  "detailPagesAttempted": 13,
+  "appendedTotal": 13,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "Other": 4,
+      "From Scratch": 2,
+      "Sequence To Sequence": 3,
+      "Fine-Tuning": 1,
+      "Computer Vision": 1
+    },
+    "Non-CPU": {
+      "Computer Vision": 1,
+      "Other": 1
+    }
+  },
+  "veryNovelAdded": [
+    "Satellite Embedding Index Reconciliation",
+    "Wireless CSI Phase Topology Inference",
+    "Multi-Mutant Causal-Symptom Relation Graph Reconstruction",
+    "Lightning Skeletons: 4D Discharge Gap Reconstruction",
+    "Grid Puzzle Response Ranking"
+  ],
+  "limitations": []
+}

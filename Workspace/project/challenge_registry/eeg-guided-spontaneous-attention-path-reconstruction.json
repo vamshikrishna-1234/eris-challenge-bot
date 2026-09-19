@@ -1,0 +1,24 @@
+{
+  "title": "EEG-Guided Spontaneous Attention Path Reconstruction",
+  "slug": "eeg-guided-spontaneous-attention-path-reconstruction",
+  "status": "ready_for_review",
+  "owner_machine": "VAMSHI",
+  "owner_task": "019fc43b-09f4-71a3-8e1c-e16306f04762",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\EEG-Guided Spontaneous Attention Path Reconstruction",
+  "dataset": "AASD: An Open Non-Invasive EEG Dataset for Spontaneous Auditory Attention Switch Decoding, Zenodo 17413336",
+  "license": "CC BY 4.0",
+  "created_at": "2026-08-03T02:15:17.1837430+05:30",
+  "updated_at": "2026-08-03T11:08:10.3418368+05:30",
+  "blocker": "",
+  "notes": [
+    "Built and audited end to end from the two untouched official Zenodo archives; source MD5 values verified.",
+    "Prepared counts are 436 train, 36 validation, and 36 hidden test; public output is 473981261 bytes.",
+    "Perfect score is 1.0, sample score is 0.29, grader red-team and deterministic repeat hashes pass.",
+    "User-accepted residual warning: public source retrieval is technically possible (60/60 audio and 12/12 sampled EEG exact matches after known transforms); anti-lookup is not claimed.",
+    "Other warnings: processed passive-control EEG and named EOG channels are absent; local GPU certification is inference-only DirectML on RTX 3050; novelty estimate 6.5/10 remains subject to reviewer judgment.",
+    "Platform revision 2026-08-03: difficulty set to Medium; visible approach reframed as fine-tuning or from-scratch; four description tables preserved as code blocks because the rich editor strips table nodes.",
+    "Problem-description revision 2026-08-03: added one-sentence objective, made end_step explicitly exclusive over indices 0-119, and documented exact State, Event, Boundary, Calibration, Consistency, episode, and listener-macro formulas directly from grade.py.",
+    "Domain-routing revision 2026-08-03: Intended Approach now explicitly requires either fine-tuning an open-source speech/multimodal model or training an EEG-audio architecture from scratch; sequence-family decoder wording was removed from that section. The subsequent user-run Problem Domain Classification check passed.",
+    "Metric-clarity revision 2026-08-03: documented that edge count E is a subset of submitted count P and that the extra denominator E represents virtual boundary reference transitions, so accepted edge switches are not double-counted."
+  ]
+}

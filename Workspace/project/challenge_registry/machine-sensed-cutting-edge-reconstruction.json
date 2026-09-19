@@ -1,0 +1,31 @@
+{
+    "title":  "Machine-Sensed Cutting-Edge Reconstruction",
+    "slug":  "machine-sensed-cutting-edge-reconstruction",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fc043-3631-7353-b2ab-de1cf687a199",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\accepted\\Machine-Sensed Cutting-Edge Reconstruction",
+    "dataset":  "Nonastreda v1 (Mendeley Data DOI 10.17632/m892d2wtzh.1)",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-02T07:40:31.4131541+05:30",
+    "updated_at":  "2026-08-03T00:00:00+05:30",
+    "blocker":  "Mandatory A10G strong-baseline/agent-ceiling measurement unavailable on VAMSHI because CUDA is not available.",
+    "notes":  [
+                  "Dedicated GPU build task created with gpt-5.5 at xhigh reasoning, the highest matching model configuration currently available on this host.",
+                  "Build mode started on VAMSHI after ownership and Sprint 4 destination verification.",
+                  "Prepare dry run exposed minor official microscope image dimension variance; registration canvas normalization patched before final data generation.",
+                  "Initial prepared output exceeded 500 MB; tool-edge canvas reduced to 640x206 before final prepare to satisfy data-volume guidance.",
+                  "Final prepared-size pass set the tool-edge output canvas to 600x194 to keep public+private under the 500 MB ceiling.",
+                  "Predictability gate revision: case construction now uses same-blade previous observations at least two stages back when possible to reduce trivial persistence and emphasize current chip/surface/force evidence.",
+                  "Final prepared split generated from final prepare.py: 432 cases, train 296, validation 44, private test 92, public+private 449607259 bytes.",
+                  "Grader smoke passed after final regeneration: perfect 1.0, sample 0.23986426411831702, structural/malformed checks pass.",
+                  "Source-retrieval audit after final regeneration: exact public input hash hits 0; file-size lookup accuracy 0.0109; pHash current lookup scores about 0.27-0.30; oracle raw-current direct score 0.4551370819282834.",
+                  "Blocked before submission because mandatory strong A10G baseline/agent-ceiling measurement cannot be run on VAMSHI: torch.cuda.is_available() is false.",
+                  "Audit revision: rebinned private mask-density subgroup thresholds and added MIN_GROUP_TEST guard in prepare.py.",
+                  "Checkpoint/prev-review/Aikyatan audit completed: dataset form source-only, hidden subgroup guard added, prepared data regenerated, paste copies byte-equivalent, expanded grader fuzz/determinism/source/file-size audits refreshed; still blocked only on mandatory A10G baseline gate.",
+                  "Dataset form title-quality revision: renamed dataset from \"Nonastreda Official Multimodal Tool-Edge Source\" to \"Nonastreda Official Multimodal Tool Wear Raw Dataset\" to accurately cover all modalities and source scope.",
+                  "Fresh checklist audit refresh: challenge already in Sprint 4, source/license reverified, sanity smoke rerun, hidden private robustness axes removed from participant-facing description, dataset title-quality fix retained; status remains blocked only on A10G ceiling gate.",
+                  "Accepted-description audit refresh: inventoried 33 accepted CHALLENGE_FORM_FILL files and four unique Computer Vision example documents across the requested roots; added explicit Task and Enforcement headings, expanded the visible metric definition, and corrected tags to the live platform vocabulary.",
+                  "Accepted handoff: moved challenge folder into Sprint 4 accepted and updated registry output_folder accordingly."
+              ]
+}

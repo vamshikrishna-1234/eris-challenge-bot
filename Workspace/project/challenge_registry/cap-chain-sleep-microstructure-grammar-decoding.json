@@ -1,0 +1,24 @@
+﻿{
+    "title":  "CAP-Chain Sleep Microstructure Event Reconstruction",
+    "slug":  "cap-chain-sleep-microstructure-grammar-decoding",
+    "status":  "ready_for_review",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fd502-19ee-7260-8ebf-3cda39c3b3b1",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\CAP-Chain Sleep Microstructure Grammar Decoding",
+    "dataset":  "CAP Sleep Database v1.0.0",
+    "license":  "Open Data Commons Attribution License v1.0",
+    "created_at":  "2026-08-06T08:27:00.7638776+05:30",
+    "updated_at":  "2026-08-06T15:33:10+05:30",
+    "blocker":  "",
+    "notes":  [
+                  "Built end to end in the requested output folder using six complete official CAP Sleep Database recordings.",
+                  "Clean raw source ZIP: E:\\create_challenge_synthetic_output_folder\\sprint_4\\CAP-Chain Sleep Microstructure Grammar Decoding\\cap_chain_sleep_source_upload.zip; 403,975,923 bytes; no prepared data inside.",
+                  "Prepared counts: train 507, val 230, test 246; public bytes 227,440,351; private bytes 246,737.",
+                  "Scores: oracle 1.0, sample 0.2555859368639717, strongest lightweight baseline 0.28241129514896235.",
+                  "Post-review audit updated visible wording to CPU-only From Scratch framing and removed Sequence To Sequence classifier cues.",
+                  "Platform survivability passed: prepare accepts string args, one-level nested raw discovery works, sample score remains above floor, and deterministic answer hash matches.",
+                  "CPU runtime evidence passed; CPU tier remains appropriate.",
+                  "Leakage audit passed: exact and rounded payload overlaps 0; raw-window top1 exact fingerprint rate 0.020325; top5 near-start 0.126016.",
+                  "Caveat: novelty passes only because the target is the coupled A/B event, subtype, duration, chain-boundary, and CAP-chain consistency object rather than ordinary CAP detection."
+              ]
+}

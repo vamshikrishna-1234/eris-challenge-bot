@@ -1,0 +1,23 @@
+{
+  "homepageCardsFound": 14,
+  "skippedAlreadyBeforeDetail": 7,
+  "detailPagesAttempted": 7,
+  "appendedTotal": 7,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "From Scratch": 2,
+      "Sequence To Sequence": 1,
+      "RAG": 1,
+      "NLP": 1,
+      "Computer Vision": 2
+    },
+    "CPU": {}
+  },
+  "veryNovelAdded": [
+    "Counterfactual Table Topology Blueprint Reconstruction"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

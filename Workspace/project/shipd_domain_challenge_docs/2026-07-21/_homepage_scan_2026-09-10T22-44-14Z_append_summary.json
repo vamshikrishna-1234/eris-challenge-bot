@@ -1,0 +1,29 @@
+{
+  "homepageCardsFound": 28,
+  "skippedAlreadyBeforeDetail": 0,
+  "detailPagesAttempted": 28,
+  "appendedTotal": 27,
+  "skippedAtAppendBecauseAlreadyRecorded": [
+    "jx7emzz0f2qsyqf7576hvzfra98dsfpk"
+  ],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Sequence To Sequence": 3,
+      "Recommendation": 3,
+      "Computer Vision": 5,
+      "Other": 4,
+      "From Scratch": 3,
+      "NLP": 2,
+      "Fine-Tuning": 2,
+      "RAG": 1
+    },
+    "CPU": {
+      "Computer Vision": 3,
+      "Object Detection": 1
+    }
+  },
+  "veryNovelAdded": [],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

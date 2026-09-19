@@ -1,0 +1,37 @@
+{
+  "scrapedAt": "2026-09-09T17:13:38+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\.codex_tmp\\shipd_heartbeat_2026-09-09T11-43-05Z_details.json",
+  "payload": {
+    "scrapedAt": "2026-09-09T11:43:05.938Z",
+    "source": "Shipd Eris homepage retry",
+    "homepage": {
+      "homepageCardsFound": 0,
+      "skippedAlready": 0,
+      "failures": [
+        "The homepage exposed no challenge cards after the required 30-minute read-only retry."
+      ]
+    },
+    "detailRun": {
+      "details": [],
+      "failures": [
+        "The homepage exposed no challenge cards after the required 30-minute read-only retry."
+      ]
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 0,
+    "skippedAlreadyBeforeDetail": 0,
+    "detailPagesAttempted": 0,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "CPU": {},
+      "Non-CPU": {}
+    },
+    "veryNovelAdded": [],
+    "limitations": [
+      "Detail or homepage failures captured in cache: 2."
+    ]
+  }
+}

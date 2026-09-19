@@ -1,0 +1,23 @@
+{
+  "homepageCardsFound": 10,
+  "skippedAlreadyBeforeDetail": 2,
+  "detailPagesAttempted": 8,
+  "appendedTotal": 8,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "Other": 2
+    },
+    "Non-CPU": {
+      "Other": 5,
+      "Computer Vision": 1
+    }
+  },
+  "veryNovelAdded": [
+    "Executable Rule-Patch Synthesis from Anonymous Historical Game Traces",
+    "Coupled Pendulum Hidden Coupling-Graph Inference"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

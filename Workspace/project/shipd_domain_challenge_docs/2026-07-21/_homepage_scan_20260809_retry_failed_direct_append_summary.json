@@ -1,0 +1,20 @@
+{
+  "homepageCardsFound": 0,
+  "skippedAlreadyBeforeDetail": 0,
+  "detailPagesAttempted": 6,
+  "appendedTotal": 6,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "NLP": 1,
+      "Other": 1,
+      "From Scratch": 2,
+      "Fine-Tuning": 1
+    },
+    "Non-CPU": {
+      "Fine-Tuning": 1
+    }
+  },
+  "veryNovelAdded": [],
+  "limitations": []
+}

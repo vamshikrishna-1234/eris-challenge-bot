@@ -1,0 +1,172 @@
+{
+  "timestamp": "2026-07-22T17:07:14+05:30",
+  "homepageCount": 65,
+  "alreadyRecordedBeforeDetail": 52,
+  "newCandidates": 13,
+  "appended": 13,
+  "skippedAfterDetail": 0,
+  "failures": 0,
+  "by_bucket": {
+    "CPU": {
+      "Sequence-To-Sequence.md": 3,
+      "Computer-Vision.md": 2,
+      "Other.md": 2,
+      "From-Scratch.md": 1,
+      "RAG.md": 2,
+      "NLP.md": 2,
+      "LLM-Evaluation.md": 1
+    },
+    "Non-CPU": {}
+  },
+  "cpu_total": 75,
+  "non_cpu_total": 8,
+  "very_novel_count": 9,
+  "very_novel_titles": [
+    "KnotScript: Anonymous Hypergraph Program Recovery",
+    "Blind Surface Contact Portfolio Reconstruction",
+    "Axis and Polarity: Spatial Relations from Jaw Vibration",
+    "FWS Refuge Evidence Route Reconstruction",
+    "Sanskrit Manuscript OCR Correction-Alignment Trace Decoding",
+    "Sound-Law Forensics",
+    "Legal-Move Preservation Ranking in Six-Piece Chess",
+    "PolicyProbe: Adaptive Identification of Multi-Agent Operating Rules",
+    "Future Paper Oracle: Evidence-Grounded Research Gap Audit and Question Repair"
+  ],
+  "appended_items": [
+    {
+      "id": "jx7erb0yhsrh7ww3k5s3jtrtax8aqfhv",
+      "title": "KnotScript: Anonymous Hypergraph Program Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7erb0yhsrh7ww3k5s3jtrtax8aqfhv",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "unusual executable/graph/rule-structure recovery output",
+      "design_trick": "Anonymous hypergraph/program recovery as the answer object."
+    },
+    {
+      "id": "jx7f3hn8w70vbz9dh18c6jxe9h8aq85x",
+      "title": "Matching a Surface's Relief to its Appearance",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7f3hn8w70vbz9dh18c6jxe9h8aq85x",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision"
+    },
+    {
+      "id": "jx730asx75p84481jpshaxh0758avqxp",
+      "title": "Blind Surface Contact Portfolio Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx730asx75p84481jpshaxh0758avqxp",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "nonstandard sensory framing with structured inference",
+      "design_trick": "Infer a contact portfolio from indirect surface-contact evidence."
+    },
+    {
+      "id": "jx7ag2nvvegejqvhtc6f2ekdmd8aq6r9",
+      "title": "Axis and Polarity: Spatial Relations from Jaw Vibration",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7ag2nvvegejqvhtc6f2ekdmd8aq6r9",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md",
+      "displayed_domain": "From Scratch",
+      "novel_reason": "nonstandard sensory framing with structured inference",
+      "design_trick": "Use jaw-vibration signals to recover spatial relation axis and polarity."
+    },
+    {
+      "id": "jx714cwmchpyg49s1sv9v9mf218ap8h1",
+      "title": "FWS Refuge Evidence Route Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx714cwmchpyg49s1sv9v9mf218ap8h1",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md",
+      "displayed_domain": "RAG",
+      "novel_reason": "unusual executable/graph/rule-structure recovery output; route/trace reconstruction rather than a flat label",
+      "design_trick": "Constrained evidence-route reconstruction for retrieval-style reasoning."
+    },
+    {
+      "id": "jx79rktrjc1cf0zrbr83g69nk98an1r8",
+      "title": "Cycle-Consistency Auditing of Clinical-Trial Record Batches",
+      "url": "https://shipd.ai/quests/eris/challenges/jx79rktrjc1cf0zrbr83g69nk98an1r8",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md",
+      "displayed_domain": "NLP"
+    },
+    {
+      "id": "jx79vcqywg7vwzcpwj27c289qd8an6ym",
+      "title": "Sanskrit Manuscript OCR Correction-Alignment Trace Decoding",
+      "url": "https://shipd.ai/quests/eris/challenges/jx79vcqywg7vwzcpwj27c289qd8an6ym",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "route/trace reconstruction rather than a flat label",
+      "design_trick": "Ask for OCR correction plus alignment trace, not just corrected text."
+    },
+    {
+      "id": "jx7d5jv7vsnmsw6qma1kjxw4t58ajt0a",
+      "title": "Sound-Law Forensics",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7d5jv7vsnmsw6qma1kjxw4t58ajt0a",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "route/trace reconstruction rather than a flat label; strong benchmark-design or leakage-control angle",
+      "design_trick": "Historical-linguistic forensics framed as structured transformation recovery."
+    },
+    {
+      "id": "jx70whewrsq3pwc6zz3dccf0r58akr05",
+      "title": "Legal-Move Preservation Ranking in Six-Piece Chess",
+      "url": "https://shipd.ai/quests/eris/challenges/jx70whewrsq3pwc6zz3dccf0r58akr05",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "unusual executable/graph/rule-structure recovery output; strong benchmark-design or leakage-control angle",
+      "design_trick": "Reuse the structured output or leakage-control pattern."
+    },
+    {
+      "id": "jx78sy1ft42jfesktr7aq34gtd8akygq",
+      "title": "Conversational Safety Rater Distribution Prediction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx78sy1ft42jfesktr7aq34gtd8akygq",
+      "bucket": "CPU",
+      "domain": "LLM Evaluation",
+      "file": "LLM-Evaluation.md",
+      "displayed_domain": "LLM Evaluation"
+    },
+    {
+      "id": "jx71256k48mnaw718qyz3bcx0d8aghg7",
+      "title": "Episodic Retinal Predicate Induction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx71256k48mnaw718qyz3bcx0d8aghg7",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision"
+    },
+    {
+      "id": "jx7bxaxcx7cft7f1fx6k8d6nax89p0ev",
+      "title": "PolicyProbe: Adaptive Identification of Multi-Agent Operating Rules",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7bxaxcx7cft7f1fx6k8d6nax89p0ev",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md",
+      "displayed_domain": "NLP",
+      "novel_reason": "unusual executable/graph/rule-structure recovery output; strong benchmark-design or leakage-control angle",
+      "design_trick": "Adaptive identification of hidden multi-agent operating rules."
+    },
+    {
+      "id": "jx7bkrn6zm55b2paj869efgdn989nthm",
+      "title": "Future Paper Oracle: Evidence-Grounded Research Gap Audit and Question Repair",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7bkrn6zm55b2paj869efgdn989nthm",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md",
+      "displayed_domain": "RAG",
+      "novel_reason": "route/trace reconstruction rather than a flat label; strong benchmark-design or leakage-control angle",
+      "design_trick": "Evidence-grounded research-gap audit and question repair as the prediction target."
+    }
+  ]
+}

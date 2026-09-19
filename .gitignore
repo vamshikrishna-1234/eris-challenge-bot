@@ -1,0 +1,19 @@
+# Runtime challenge work and generated packages
+/Working/*
+!/Working/.gitkeep
+/Workspace/output/*
+!/Workspace/output/.gitkeep
+
+# Durable runtime ledger; keep only the clean seed files
+/eris_automation/State/batches/*
+!/eris_automation/State/batches/.gitkeep
+/eris_automation/State/tasks/*
+!/eris_automation/State/tasks/.gitkeep
+
+# Transient local files
+status.tmp
+status.err
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+

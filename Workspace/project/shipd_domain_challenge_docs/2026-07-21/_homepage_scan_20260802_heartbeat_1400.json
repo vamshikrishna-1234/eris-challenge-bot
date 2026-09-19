@@ -1,0 +1,278 @@
+{
+  "scrapedAt": "2026-08-02T14:06:21+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\AppData\\Local\\Temp\\shipd_heartbeat_20260802_1400_details.json",
+  "payload": {
+    "scrapedAt": "2026-08-02T08:36:15.120Z",
+    "source": "Shipd Eris homepage heartbeat",
+    "homepage": {
+      "homepageCardsFound": 40,
+      "skippedAlready": 38,
+      "candidates": [
+        {
+          "id": "jx74m214b5a49nywhyap00f6cn8bnpag",
+          "url": "https://shipd.ai/quests/eris/challenges/jx74m214b5a49nywhyap00f6cn8bnpag",
+          "title": "Rotor-Safe Ultrasonic Notch Set Planning"
+        },
+        {
+          "id": "jx7ffxdj2z1qrcqd2m9m3qf1258bmejm",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7ffxdj2z1qrcqd2m9m3qf1258bmejm",
+          "title": "Responsive Image Crop Caption Repair Sequencing"
+        },
+        {
+          "id": "jx7anqz195e4hxxadey93mmvr18bkjw9",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7anqz195e4hxxadey93mmvr18bkjw9",
+          "title": "Layered Icon Stack Reconstruction"
+        },
+        {
+          "id": "jx784sdf4nts4xbqktgw8xad058a6k3z",
+          "url": "https://shipd.ai/quests/eris/challenges/jx784sdf4nts4xbqktgw8xad058a6k3z",
+          "title": "Diffraction Detector Evidence Routing"
+        },
+        {
+          "id": "jx70t04sfp45ygb29h4bztf8nd8a2mg5",
+          "url": "https://shipd.ai/quests/eris/challenges/jx70t04sfp45ygb29h4bztf8nd8a2mg5",
+          "title": "Molecular Stratification of Brain Tumors from H&E Patch Bags"
+        },
+        {
+          "id": "jx7ejgpry5tqqwkey8tkrxfeed896hap",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7ejgpry5tqqwkey8tkrxfeed896hap",
+          "title": "Dispatch State Vectors From Roadside Incident Clips"
+        },
+        {
+          "id": "jx73vy9vj52rq71hxhg9cvvf618bjz94",
+          "url": "https://shipd.ai/quests/eris/challenges/jx73vy9vj52rq71hxhg9cvvf618bjz94",
+          "title": "Urban Surface Marking Extent Profile Recovery"
+        },
+        {
+          "id": "jx734c72fwvnyz6m14d44b2xn98bmc5j",
+          "url": "https://shipd.ai/quests/eris/challenges/jx734c72fwvnyz6m14d44b2xn98bmc5j",
+          "title": "Cross-Source Pollen Grain Taxonomic Relatedness"
+        },
+        {
+          "id": "jx78csqy5n0gxy8j48j51h3mwd8bm4f8",
+          "url": "https://shipd.ai/quests/eris/challenges/jx78csqy5n0gxy8j48j51h3mwd8bm4f8",
+          "title": "Storm Region Ignition Forecasting from Satellite Imagery"
+        },
+        {
+          "id": "jx7eqw1bwb335hfjj9nck8nh8d8bnr9z",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7eqw1bwb335hfjj9nck8nh8d8bnr9z",
+          "title": "SAR-Optical Cross-Modal Retrieval and Orientation Recovery"
+        },
+        {
+          "id": "jx708gb18ns4864tnb2ykqmmfh8bh1q3",
+          "url": "https://shipd.ai/quests/eris/challenges/jx708gb18ns4864tnb2ykqmmfh8bh1q3",
+          "title": "Two-Angle Polarization Completion And Coupled Stress-Optic Mapping"
+        },
+        {
+          "id": "jx78vwvjftgm7s1mcdfwn10vy98b4w1s",
+          "url": "https://shipd.ai/quests/eris/challenges/jx78vwvjftgm7s1mcdfwn10vy98b4w1s",
+          "title": "Wall Fixture Inspection Sheet Reconstruction"
+        },
+        {
+          "id": "jx7b4371b9knbzgvs01jvbgssh8arenq",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7b4371b9knbzgvs01jvbgssh8arenq",
+          "title": "CT Tree-Core Crossdating And Ring Evidence Ledger"
+        },
+        {
+          "id": "jx7ct4gckvf7rnaz8sn7hws6rn8a8xmd",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7ct4gckvf7rnaz8sn7hws6rn8a8xmd",
+          "title": "Machine-Sensed Cutting-Edge Reconstruction"
+        },
+        {
+          "id": "jx7cp7wg1bha5yncwyk5698fp58a4jgb",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7cp7wg1bha5yncwyk5698fp58a4jgb",
+          "title": "Cavitation Collapse Forecasting From Pre-Collapse Shadowgraphy"
+        },
+        {
+          "id": "jx7cyadcxcngewrznzjq7fy9fd8a4d2z",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7cyadcxcngewrznzjq7fy9fd8a4d2z",
+          "title": "Compositional Thermal Detection Across Unseen Time-of-Day and Altitude"
+        },
+        {
+          "id": "jx7dpsf6kb19t93y5psn1aemj58a5nhs",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7dpsf6kb19t93y5psn1aemj58a5nhs",
+          "title": "Distributed LoRa Packet Event And Consensus Recovery"
+        },
+        {
+          "id": "jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+          "title": "Electrical-Tree Growth-Order Reconstruction"
+        },
+        {
+          "id": "jx7c42zsh4qf5jp9ne09dvb6w189zjgv",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7c42zsh4qf5jp9ne09dvb6w189zjgv",
+          "title": "Multimodal Upper-Limb Motion Recovery"
+        },
+        {
+          "id": "jx7ekeg0e2ab5cdxayjr5f4p1h8bk4ez",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7ekeg0e2ab5cdxayjr5f4p1h8bk4ez",
+          "title": "Catalan Administrative Discourse Operator Reconstruction"
+        },
+        {
+          "id": "jx769c9edbrzv9r3vws1efyw3n89rxhv",
+          "url": "https://shipd.ai/quests/eris/challenges/jx769c9edbrzv9r3vws1efyw3n89rxhv",
+          "title": "Animal Habitat Profile Extraction & Inference"
+        },
+        {
+          "id": "jx755qsh2cx7vtq32gcv1vky9s8b2xh0",
+          "url": "https://shipd.ai/quests/eris/challenges/jx755qsh2cx7vtq32gcv1vky9s8b2xh0",
+          "title": "Satellite Change Detection with Sensor Fault Diagnosis"
+        },
+        {
+          "id": "jx73taenmmfrnfz47yzst86rbn8bj2hn",
+          "url": "https://shipd.ai/quests/eris/challenges/jx73taenmmfrnfz47yzst86rbn8bj2hn",
+          "title": "Long Range Dependency Bridge Recovery"
+        },
+        {
+          "id": "jx7115y6sc75dzmnvfxf1ec3698args4",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7115y6sc75dzmnvfxf1ec3698args4",
+          "title": "Vessel Maneuver Program Reconstruction"
+        },
+        {
+          "id": "jx7393q98eypj5p84hknvzcq6x8b32s8",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7393q98eypj5p84hknvzcq6x8b32s8",
+          "title": "Bioacoustic Loss-Contingency Relay Planning"
+        },
+        {
+          "id": "jx7djz8b94wm5a4qn8xa3x1xn989z600",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7djz8b94wm5a4qn8xa3x1xn989z600",
+          "title": "Biocatalytic Product Recommendation: Ranking Candidates by Enzyme Relevance"
+        },
+        {
+          "id": "jx7dcgb40ptbr7mrk50amtxam58bkk9v",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7dcgb40ptbr7mrk50amtxam58bkk9v",
+          "title": "Thermochemical Voxel-to-Token Sequence Translation"
+        },
+        {
+          "id": "jx7er6jn81abacfan00zp5871589tpps",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7er6jn81abacfan00zp5871589tpps",
+          "title": "Diel Oxygen Regime Transcription"
+        },
+        {
+          "id": "jx75wwrh9p4ev4a460pejrmvqx89rjyp",
+          "url": "https://shipd.ai/quests/eris/challenges/jx75wwrh9p4ev4a460pejrmvqx89rjyp",
+          "title": "Forecasting Post-Approval Drug Safety Escalations"
+        },
+        {
+          "id": "jx73ky1jhtvz6qjjepc6pywzcn8bgbs5",
+          "url": "https://shipd.ai/quests/eris/challenges/jx73ky1jhtvz6qjjepc6pywzcn8bgbs5",
+          "title": "Reconstructing Full Prose from Telegraphic Compressions"
+        },
+        {
+          "id": "jx77297a1jy6kc09f4b1neagnn8933qq",
+          "url": "https://shipd.ai/quests/eris/challenges/jx77297a1jy6kc09f4b1neagnn8933qq",
+          "title": "Wind Turbine Blade Thermography Maintenance Triage"
+        },
+        {
+          "id": "jx7esa8cj1yzj3d644yqq4mswh8a66gm",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7esa8cj1yzj3d644yqq4mswh8a66gm",
+          "title": "Cross-Column Elution-Order Prediction"
+        },
+        {
+          "id": "jx707p88fqdv6ssa6rp1jbq1p18bna9z",
+          "url": "https://shipd.ai/quests/eris/challenges/jx707p88fqdv6ssa6rp1jbq1p18bna9z",
+          "title": "Roadside Message Panel Text-Region Recovery"
+        },
+        {
+          "id": "jx72w4x5bt3dtybe8ztz4n61h189tar8",
+          "url": "https://shipd.ai/quests/eris/challenges/jx72w4x5bt3dtybe8ztz4n61h189tar8",
+          "title": "Ordering Workplace Tasks by Their Importance to the Job"
+        },
+        {
+          "id": "jx7dhpaasfktynns3npt4kc8xd8a6bz8",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7dhpaasfktynns3npt4kc8xd8a6bz8",
+          "title": "Lumbar MRI Structure Slice Recovery"
+        },
+        {
+          "id": "jx73g4ty8by5kbxj0s7rwvxhrd8b4kps",
+          "url": "https://shipd.ai/quests/eris/challenges/jx73g4ty8by5kbxj0s7rwvxhrd8b4kps",
+          "title": "Visuo-Tactile Four-Phase Motion Program Recovery"
+        },
+        {
+          "id": "jx73whsgg3af11jk309fbjh5ms8bjx19",
+          "url": "https://shipd.ai/quests/eris/challenges/jx73whsgg3af11jk309fbjh5ms8bjx19",
+          "title": "Anonymous Spectrogram Event Binding"
+        },
+        {
+          "id": "jx7a77969yzb888ayhdxgwcx2n8arzff",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7a77969yzb888ayhdxgwcx2n8arzff",
+          "title": "Image And DNA-Guided Insect Taxonomic Hierarchy Prediction"
+        },
+        {
+          "id": "jx7182s1h177xekmf34tw7sde98bjq92",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7182s1h177xekmf34tw7sde98bjq92",
+          "title": "Shadow Motion Cause Separation"
+        },
+        {
+          "id": "jx7awrqghsn2nnyn257wwnk6hd8bmchf",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7awrqghsn2nnyn257wwnk6hd8bmchf",
+          "title": "Groundline: Polyphonic Voice-Path Recovery"
+        }
+      ],
+      "failures": [
+        "Initial homepage load showed Unable to load Eris data; recovered after refresh."
+      ]
+    },
+    "detailRun": {
+      "details": [
+        {
+          "id": "jx7ct4gckvf7rnaz8sn7hws6rn8a8xmd",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7ct4gckvf7rnaz8sn7hws6rn8a8xmd",
+          "title": "Machine-Sensed Cutting-Edge Reconstruction",
+          "domain": "Computer Vision",
+          "difficulty": "Medium",
+          "scoring": "↑ Higher is better",
+          "gpu": "A10G",
+          "status": "Pending Review",
+          "tags": [
+            "image",
+            "multimodal"
+          ],
+          "scoreContext": "Be the first to climb the leaderboard!; Top Score: not yet shown",
+          "description": "Overview\nPredict the current microscopic condition of a milling tool's cutting edge from indirect evidence collected while it is cutting.\nTask\nFor each case, you receive:\nInput\tMeaning\nprevious_tool_image\tEarlier microscope image of the same physical cutting edge\nchip_image\tPhotograph of chips produced during the current operation\nsurface_image\tPhotograph of the machined surface produced during the current operation\nforce_signal\tSynchronized current Fx, Fy, Fz cutting-force sequence\nYour submission must reconstruct:\nOutput\tMeaning\ncurrent_tool_image\tCurrent microscope image of the cutting edge\nedge_loss_mask\tBinary mask aligned to the reconstructed image; white marks newly lost/chipped edge material relative to the earlier image\nThis is cross-modal image reconstruction and damage localization. It is not ordinary wear classification, scalar wear regression, metadata lookup, or tabular prediction. Good solutions should learn how chip morphology, surface texture, force dynamics, and the earlier edge appearance jointly constrain the current edge state.\nWhat Not To Do\nUsing any of the approaches below is grounds for rejection on review, regardless of leaderboard score.\nDo not use source lookup, reverse-image search, original experiment names, raw filenames, source paths, physical tool IDs, blade IDs, run IDs, row order, file hashes, timestamps, wear labels, wear measurements, or public web copies to reconstruct hidden targets.\nDo not reduce the task to wear classification, scalar wear regression, current-wear-bin prediction, or tabular modeling.\nDo not submit the previous microscope image as the current image without solving the current reconstruction task.\nDo not ignore either output; the current image and edge-loss mask are both required.\nDo not use hosted APIs, hosted vision models, private files, internet access at inference time, or closed remote inference services.\nDo not exploit private/answers.csv, grader internals, file-system metadata, mtimes, CSV row order, malformed PNG payloads, or oversized image bombs.\nDo not submit wrong shapes, wrong modes, non-binary masks, missing IDs, extra IDs, duplicate IDs, reordered columns, or non-PNG payloads.\nEnforcement On Invalid Approaches\nSubmissions that score through lookup, metadata reconstruction, private-file access, external hosted models, or rule-only shortcuts that do not solve the cross-modal current-edge reconstruction task may be rejected even if the CSV passes the grader.\nIntended Approach\nA strong solution should train a compact multimodal image-to-image model on the public training set. A practical route is:\nEncode the earlier tool image at target resolution.\nResize and encode the chip and surface images.\nConvert the force signal into learned features or a rasterized time-series representation.\nTrain a U-Net, UNet++, compact ViT decoder, or hybrid encoder-decoder to predict the RGB current edge and binary mask.\nUse image reconstruction losses, BCE/Dice mask losses, and extra weighting around the edge-loss region.\nUse the public split_role == validation rows for model selection. A complete strong solution should fit within 1.5 hours on A10G.\nEvaluation\nThe metric is a normalized composite image score. Higher is better. The theoretical minimum is 0.0; the theoretical maximum is 1.0.\nFor each test case, submit:\nPrediction field\tRequired payload\ncurrent_tool_image_png_b64\tBase64-encoded RGB PNG, exact size 600 x 194\nedge_loss_mask_png_b64\tBase64-encoded grayscale PNG, exact size 600 x 194, values only 0 or 255\nThe row score combines:\nComponent\tWeight\nTool-image fidelity\t0.42\nEdge-loss mask quality\t0.38\nImage fidelity near true edge loss\t0.15\nCross-output consistency\t0.05\nThe four components are computed as follows, with every component clipped to [0,1]:\nTool-image fidelity: 0.38 * MAE_score + 0.22 * RMSE_score + 0.22 * gradient_score + 0.13 * structure_score + 0.05 * edge_F1, where MAE_score = clip(1 - MAE/54), RMSE_score = exp(-RMSE/54), and gradient_score = clip(1 - gradient_MAE/38). structure_score is the grader's channel-wise global luminance/variance/covariance similarity, and edge_F1 compares gradient-threshold edge maps with a one-pixel tolerance on the predicted edge map.\nEdge-loss mask quality: 0.58 * tolerant_F1 + 0.20 * IoU + 0.15 * boundary_F1 + 0.07 * density_score. tolerant_F1 dilates the predicted mask by one pixel; boundary_F1 compares two-pixel mask boundaries with a two-pixel tolerance on the predicted boundary; and density_score = exp(-abs(predicted_density - true_density)/0.025).\nImage fidelity near true edge loss: inside the true mask dilated by five pixels, 0.58 * clip(1 - MAE/42) + 0.42 * clip(1 - gradient_MAE/32). If the true mask is empty, this component uses the full-image fidelity score.\nCross-output consistency: the geometric mean of edge-loss mask quality and near-loss image fidelity.\nThe final score blends mean performance and hidden robustness:\nFinal = 0.85 * mean(row_score)\n+ 0.15 * worst_subgroup_mean\nThe robustness term evaluates confidential physically meaningful subgroups in the private test set. A perfect submission returns exactly 1.0.\nGlobal structural errors raise InvalidSubmissionError: wrong or reordered columns, missing IDs, extra IDs, duplicate IDs, blank IDs, an ID set mismatch, or overlarge payloads. Row-local corrupt base64, non-PNG payloads, wrong image mode, wrong image shape, or non-binary masks score zero for that row.\nDataset\nThe public split contains source-neutral prepared files only. It does not expose original experiment names, source filenames, source paths, physical tool IDs, blade IDs, run IDs, row order, timestamps, wear classes, wear measurements, source hashes, or private answer metadata.\nChecked prepared split:\nTrain cases: 296\nValidation cases: 44\nPrivate test cases: 92\nTool output size: 600 x 194\nChip image size: 512 x 512\nSurface image size: 384 x 384\nForce signal shape: (3, 8192)\nPublic prepared size: about 364.5 MB\nPrivate answer size: about 64.3 MB\nFile overview\nItem\tDescription\ntrain.csv\tTrain/validation manifest with input and target paths\ntest.csv\tTest manifest with input paths only\nsample_submission.csv\tValid weak template\ntrain/images/*_previous_tool.png\tEarlier microscope images\ntrain/images/*_chip.jpg\tCurrent chip images\ntrain/images/*_surface.png\tCurrent machined-surface images\ntrain/signals/*_force.npz\tCurrent force signals\ntrain/targets/*_current_tool.png\tTrain current-edge targets\ntrain/targets/*_edge_loss_mask.png\tTrain binary mask targets\ntest/images/*\tTest input images\ntest/signals/*\tTest input force signals\nAll paths are relative to the public dataset root.\ntrain.csv columns\nColumn\tType\tDescription\ncase_id\tstring\tOpaque case ID\nsplit_role\tstring\ttrain or validation\nprevious_tool_image\tpath\tEarlier microscope image\nchip_image\tpath\tCurrent chip photograph\nsurface_image\tpath\tCurrent machined-surface photograph\nforce_signal\tpath\tCurrent force NPZ\ncurrent_tool_image\tpath\tTrain target RGB PNG\nedge_loss_mask\tpath\tTrain target binary PNG\ntest.csv columns\nColumn\tType\tDescription\ncase_id\tstring\tOpaque case ID\nprevious_tool_image\tpath\tEarlier microscope image\nchip_image\tpath\tCurrent chip photograph\nsurface_image\tpath\tCurrent machined-surface photograph\nforce_signal\tpath\tCurrent force NPZ\nforce_signal NPZ contents\nArray\tShape\tType\tDescription\nforce\t(3,8192)\tfloat32\tRobust-normalized Fx/Fy/Fz signal\nsample_rate_hz\tscalar\tfloat32\t1000.0\naxis_order\t(3,)\tuint8\t[0,1,2]\nSubmission\nSubmit a CSV with exactly these columns in this order:\ncase_id,current_tool_image_png_b64,edge_loss_mask_png_b64\nColumn\tType\tConstraint\ncase_id\tstring\tSame set as test.csv\ncurrent_tool_image_png_b64\tbase64 PNG\tRGB, 600 x 194\nedge_loss_mask_png_b64\tbase64 PNG\tgrayscale, 600 x 194, binary values\nExample:\ncase_id,current_tool_image_png_b64,edge_loss_mask_png_b64\nte_004851dbf02e,<base64-rgb-png>,<base64-binary-mask-png>\nte_03e890a73395,<base64-rgb-png>,<base64-binary-mask-png>\nThe supplied sample_submission.csv is valid but weak. If the platform expects a file path, write the final CSV to ./working/submission.csv.",
+          "allLinesCount": 159,
+          "compute": "A10G"
+        },
+        {
+          "id": "jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+          "url": "https://shipd.ai/quests/eris/challenges/jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+          "title": "Electrical-Tree Growth-Order Reconstruction",
+          "domain": "Computer Vision",
+          "difficulty": "Medium",
+          "scoring": "↑ Higher is better",
+          "gpu": "A10G",
+          "status": "Pending Review",
+          "tags": [
+            "video"
+          ],
+          "scoreContext": "Be the first to climb the leaderboard!; Top Score: not yet shown",
+          "description": "Overview\nA high-voltage polymer specimen can develop a branching electrical-breakdown tree. During a hidden interval, new conductive branches appear and split while partial-discharge activity evolves in phase with the applied voltage.\nFor each case, you receive an optical microscopy anchor immediately before the interval, an optical anchor immediately after it, a synchronized phase-resolved partial-discharge (PRPD) video from the interval, and coarse strain context. Reconstruct which branch pixels first appeared in each of four temporal bins and the rooted parent/child growth graph that explains the branch-formation order.\nThis is temporal physical reconstruction. It is not image classification, scalar regression, ordinary final-tree segmentation, missing-view completion, or a request to copy the after image. The after anchor exposes only the final union. A useful model must use synchronized temporal evidence to assign branch births and use physical connectivity to construct a rooted graph.\nGPU solutions are allowed and expected. Use the A10G - Standard ML workloads tier. The maximum solution runtime is 1.5 hours.\nTask\nFor every test case_id, submit one strict JSON growth ledger containing:\nfour disjoint 256×256 masks, where mask b contains only pixels born in temporal bin b;\na rooted graph with branch segment identity, parent relation, birth bin, and a quantized endpoint on a finite 32×32 grid.\nThe train labels were deterministically derived from real withheld optical frames through persistent change detection, rooted filtering, thin-structure processing, and temporal assignment. They are derived targets, not claimed human annotations.\nIntended Approach\nUse a GPU multimodal architecture. A strong starting point is a shared optical encoder for the before/after anchors, a temporal 3D-CNN or video-transformer encoder for the PRPD sequence, a small embedding for the strain context, and cross-attention or feature fusion between the final-tree geometry and discharge timeline. Decode four thin birth masks and a rooted segment graph jointly or in a geometry-aware second stage. Useful losses include class-balanced focal/Dice losses for sparse masks, topology-aware losses, discrete endpoint classification, parent-edge classification, and temporal-order supervision.\nThe split is physical-specimen disjoint: every interval and derivative from one specimen stays on one side. Models must generalize to unseen specimens while the real coarse strain modes remain represented.\nWhat Not To Use / What Not To Do\nDo not recover or match prepared media to upstream public videos, source filenames, specimen/run identities, timestamps, frame indices, experiment order, or public-source records. Do not use runtime internet, hosted APIs, external answer services, runtime-downloaded weights, private files, grader internals, salted-ID inversion, row order, path strings, mtimes, file lengths, byte hashes, codec metadata, malformed JSON behavior, or fixed lookup maps as answer channels. Do not submit precomputed upstream labels, manually recovered test labels, a final-anchor copy presented as temporal reconstruction, or a hidden fallback such as disabling learned video models and silently switching to a metadata/interpolation hack when inference fails.\nSource lookup and external-answer recovery are prohibited even if an upstream source can be found. Submissions may be reviewed for retrieval, external calls, metadata-only behavior, fixed answer maps, private-answer access, and pipelines that bypass the required temporal multimodal reconstruction.\nEvaluation\nEach valid row receives four transparent components:\ntemporal_mask = micro-aggregated thin-structure F1 over four bins\nwith a 2-pixel spatial tolerance; matching stays within bin\nrooted_graph = 0.20 * matched_node_F1\n+ 0.80 * matched_parent_edge_F1\nbirth_order = geometry-match coverage\n* (0.40 * discrete_birth_bin_similarity\n+ 0.60 * pairwise_birth_order_agreement)\nunion = thin-structure F1 between the predicted and target growth unions\nwith the same 2-pixel tolerance\nrow_score = 0.50 * temporal_mask\n+ 0.30 * rooted_graph\n+ 0.15 * birth_order\n+ 0.05 * union\nGraph segments are matched with deterministic minimum-cost bipartite matching using only their 32×32 endpoint geometry. A pair is eligible when endpoint distance is at most 4 grid cells. Birth bins are excluded from node matching and rooted-graph scoring, so the birth-order component does not receive duplicate credit through the graph match. Parent edges are evaluated only through the resulting geometry mapping and dominate the graph component.\nThe leaderboard aggregate balances cases and real physical groups:\nfinal_score = 0.70 * mean_case_score\n+ 0.20 * mean_of_physical_specimen_means\n+ 0.10 * mean_of_real_strain_mode_means\nAll terms lie in [0,1]; higher is better. The theoretical minimum is 0.0, maximum is 1.0, and a perfect ground-truth submission scores exactly 1.0. There is no score cap, nonlinear power, or hidden suppression curve.\nSubmission-level structure is strict. Wrong or reordered columns, duplicate IDs, blank IDs, missing/extra/foreign IDs, an empty submission, or an oversized CSV raise InvalidSubmissionError. In an otherwise structurally valid submission, a row-local malformed, overlong, non-finite, out-of-range, cyclic, or schema-invalid JSON ledger scores zero only for that row. Grader errors do not reveal private labels, source groups, or answer content.\nDataset\nThe prepared public data contain de-identified optical anchors, synchronized cropped/re-encoded PRPD videos, coarse strain context, and train labels. Raw source titles, filenames, specimen/run identifiers, timestamps, frame counters, watermarks, audio, and identifying metadata are not participant inputs.\nFile overview\nItem\tDescription\ntrain/images/*.jpg\tbefore/after optical anchors for labeled cases\ntrain/prpd/*.mp4\tsynchronized 512×512, 48-frame PRPD evidence\ntrain/context/*.json\tcoarse strain mode and level\ntest/images/*.jpg\tbefore/after optical anchors for test cases\ntest/prpd/*.mp4\tsynchronized test PRPD evidence\ntest/context/*.json\tcoarse test strain context\ntrain.csv\tpublic inputs plus target_json\ntest.csv\tpublic test inputs only\nsample_submission.csv\tvalid weak final-anchor/geodesic sample\ntrain.csv columns\nColumn\tType\tDescription\ncase_id\tstring\topaque row key\nbefore_image\tstring\tpath to the pre-interval optical anchor\nafter_image\tstring\tpath to the post-interval optical anchor\nprpd_video\tstring\tpath to synchronized PRPD evidence\nstrain_context\tstring\tpath to coarse context JSON\ntime_bins\tinteger\talways 4\ntarget_json\tJSON string\ttemporal masks and rooted growth graph\ntest.csv columns\nColumn\tType\tDescription\ncase_id\tstring\topaque row key\nbefore_image\tstring\tpre-interval optical anchor path\nafter_image\tstring\tpost-interval optical anchor path\nprpd_video\tstring\tsynchronized PRPD video path\nstrain_context\tstring\tcoarse context JSON path\ntime_bins\tinteger\talways 4\nstrain_context has exactly strain_mode (none, tensile, or compressive) and strain_level (none, low, mid, or high as applicable). It contains no specimen/run ID.\nTarget and prediction JSON schema\n{\n\"case_id\": \"et_0123456789abcdef\",\n\"growth_masks_rle\": [\n{\"bin\": 0, \"size\": [256, 256], \"rle\": \"...\"},\n{\"bin\": 1, \"size\": [256, 256], \"rle\": \"...\"},\n{\"bin\": 2, \"size\": [256, 256], \"rle\": \"...\"},\n{\"bin\": 3, \"size\": [256, 256], \"rle\": \"...\"}\n],\n\"growth_graph\": {\n\"segments\": [\n{\"segment_id\": \"s0\", \"parent_id\": \"ROOT\", \"birth_bin\": 0, \"endpoint_bin\": [15, 11]},\n{\"segment_id\": \"s1\", \"parent_id\": \"s0\", \"birth_bin\": 2, \"endpoint_bin\": [18, 9]}\n]\n}\n}\nRLE is row-major, alternates background/foreground run counts starting with the background run, and must sum to 65536. The four masks must be pairwise disjoint. The graph must contain 1–64 segments. Segment IDs must be unique nonempty strings of at most 32 characters; every parent must be ROOT or another segment ID; the graph must be acyclic and have at least one root. birth_bin is an integer in [0,3]. endpoint_bin is [row_bin, column_bin] with two integers in [0,31]. Each complete JSON string is capped at 120,000 characters and must use exactly the documented keys.\nSubmission\nWrite ./working/submission.csv with exactly these columns in this order and exactly one row per test case:\nColumn\tType\tConstraint\ncase_id\tstring\texact test ID set; each ID once\nprediction_json\tJSON string\texact schema above; at most 120,000 characters\nExample CSV shape:\ncase_id,prediction_json\net_0123456789abcdef,\"{...strict escaped JSON...}\"",
+          "allLinesCount": 137,
+          "compute": "A10G"
+        }
+      ],
+      "failures": []
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 40,
+    "skippedAlreadyBeforeDetail": 38,
+    "detailPagesAttempted": 2,
+    "appendedTotal": 2,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "Non-CPU": {
+        "Computer Vision": 2
+      },
+      "CPU": {}
+    },
+    "veryNovelAdded": [
+      "Machine-Sensed Cutting-Edge Reconstruction",
+      "Electrical-Tree Growth-Order Reconstruction"
+    ],
+    "limitations": [
+      "Detail or homepage failures captured in cache: 1."
+    ]
+  }
+}

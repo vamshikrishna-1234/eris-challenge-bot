@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-19T11:00:00+05:30",
+  "portable_root": ".",
+  "path_mode": "relative_to_bot_root",
+  "external_file_dependencies": [],
+  "bundled_components": [
+    {
+      "path": ".codex/skills",
+      "description": "Automation (including persistent-success recovery, zero-routine-permission linked-draft editing, visible workers, and the default all-green stop-before-Run-Agents endpoint), factory, submission-pool, and solver-rule skills with all references, scripts, and assets"
+    },
+    {
+      "path": "eris_automation",
+      "description": "Durable controller, state, tests, audit tools, and internal skill validator"
+    },
+    {
+      "path": "Workspace/project/rules",
+      "description": "Living rules, checkpoints, templates, and previous-review memory"
+    },
+    {
+      "path": "Workspace/project/challenge_registry",
+      "description": "Lightweight registry metadata for ownership, source, novelty, and duplicate checks; bulky pilot evidence is intentionally excluded",
+      "file_count_at_packaging": 88
+    },
+    {
+      "path": "Workspace/project/sprint_3/accepted",
+      "description": "Accepted challenge examples used for audits"
+    },
+    {
+      "path": "Workspace/project/Shipd_Challenge_Archive_All",
+      "description": "Platform challenge archive used for duplicate checks"
+    },
+    {
+      "path": "Workspace/project/Shipd_Challenge_Archive_Novel",
+      "description": "Novel-challenge reference archive"
+    },
+    {
+      "path": "Workspace/project/shipd_domain_challenge_docs",
+      "description": "Domain-organized challenge reference documents"
+    },
+    {
+      "path": "Workspace/output",
+      "description": "Empty Git-ignored runtime root for future challenge packages"
+    },
+    {
+      "path": "Working",
+      "description": "Empty Git-ignored runtime scratch root for downloads, revisions, recovery, and browser-bridge records"
+    }
+  ],
+  "preserved_output_packages": [],
+  "runtime_requirements": [
+    "Codex",
+    "Python available as py or python",
+    "internet access",
+    "installed browser-control capability",
+    "authenticated Shipd session"
+  ]
+}

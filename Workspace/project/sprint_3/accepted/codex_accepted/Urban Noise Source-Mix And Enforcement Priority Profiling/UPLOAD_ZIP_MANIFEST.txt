@@ -1,0 +1,36 @@
+Upload zip:
+sonyc_ust_official_selected_source_files.zip
+
+Zip size bytes:
+736119248
+
+Zip SHA-256:
+0d1e24f36e3e0c0e09c7871231e98740ec99d36227e2a1544ab0c116fe1de471
+
+Zip members:
+annotations.csv
+dcase-ust-taxonomy.yaml
+README.md
+audio-0.tar.gz
+
+Official member checks:
+annotations.csv
+  size: 14488305
+  md5: 70b507b15bb4cfcce4870925302f276b
+  sha256: 65951d6e2c9609aa0d6b296fb6d56d852c6acf3a222092c41a352f99129b10c0
+dcase-ust-taxonomy.yaml
+  size: 1081
+  md5: 6c1cca1c4c383a6ebb0cb71cb74fe3a9
+  sha256: fe3659c49e3bda46ede2525d9d83b564d0340eca545f78dfe99f497a2e76d31b
+README.md
+  size: 11340
+  md5: bdfa3a4c0d90053f622b52afa0fc86f7
+  sha256: d92a31f276d3c24e80dc6946e1323e8b83c9f26872eb1ea0203fe9ae130d6c50
+audio-0.tar.gz
+  size: 721618074
+  md5: bbb4dbae7d2e58e18d24878b9ee1eb51
+  sha256: 590513f2bb28d15bfc3ef3adf732ccc7105b85059206c8f6eadc2db72cd97814
+
+Notes:
+This zip is only a transfer bundle of unchanged official Zenodo source files.
+It does not contain prepared public/private data, generated labels, processed audio, or answers.

@@ -1,0 +1,26 @@
+﻿{
+    "title":  "MapPatch OpenStreetMap Intent-to-Edit Compilation",
+    "slug":  "mappatch-openstreetmap-intent-to-edit-compilation",
+    "status":  "rejected",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fe0b6-8fd7-7d33-b13f-36fec5e93661",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\MapPatch OpenStreetMap Intent-to-Edit Compilation",
+    "dataset":  "OpenStreetMap real-changesets augmented before and after diffs",
+    "license":  "ODbL 1.0; preserve attribution and share-alike obligations",
+    "created_at":  "2026-08-08T14:58:59.3123795+05:30",
+    "updated_at":  "2026-08-09T10:10:00+05:30",
+    "blocker":  "Rejected after the bounded candidate-packet salvage pilot. A metadata-first sample downloaded 6,000 untouched official JSON objects (88,433,089 bytes). The strict 2-6 atom design produced 12 packets and projected 24,631, below the required 30,000; its keyword baseline scored 0.80 and 83.3% of topology/geometry signatures were unique. Relaxing phrase safety projected 55,420 but raised keyword accuracy to 0.859, comment retrieval to 25.9-37.0%, and unique topology signatures to 92.6%. Only 12 strict packets existed, so a valid 300-case blind audit could not be performed. No prepare.py, grade.py, forms, prepared split, or upload ZIP was created.",
+    "notes":  [
+
+                  "2026-08-08 Build-mode audit completed in the exact output folder. Created BLOCKED_BUILD_AUDIT.md, SOURCE_VERIFICATION.md, DATA_ACQUISITION.md, PILOT_GATE_AUDIT.md, NOVELTY_AND_DUPLICATE_AUDIT.md, and README.md.",
+                  "Official AWS Open Data Registry and real-changesets docs verified source structure: one JSON object per changeset with metadata/elements and old versions for modified/deleted features; license claim ODbL 1.0.",
+                  "Live S3 checks: listed prefixes 14/15/16 returned objects, prefixes 17/18 returned zero in the quick probe; docs example 142052985.json returned HTTP 404, while listed keys such as 148857621.json and 147186575.json downloaded.",
+                  "Pilot sample: listed 360 official objects totaling 26,472,703 bytes, downloaded 180 small/medium JSON payloads, and found only 42 generous structural survivors. Reject reasons included element count 88, too many operations 84, bot/import/mechanical markers 82, templated wording 81, incomplete metadata 14, no elements 3, and no comment 1.",
+                  "Nearest local OSM neighbor is the turn-restriction relation-completion challenge; MapPatch has a distinct target but shares the public OSM lookup surface. The blocker is not duplicate novelty alone; it is answerability plus source-retrieval risk."
+,
+                  "2026-08-08 moved blocked challenge audit folder from D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3 to E:\\create_challenge_synthetic_output_folder\\sprint_4 per user request."
+,
+                  "2026-08-08 added SPRINT4_CHECKLIST_AUDIT.md covering checkpoints, previous-review lessons, accepted-description patterns, exploit/lookup checks, grader strictness status, GPU/CPU rule conflict, and upload ZIP decision. No upload ZIP was created because the challenge remains blocked.",
+                  "2026-08-09 completed one bounded candidate-bounded salvage pilot over 6,000 official source objects. The lookup-safe design failed scale, blind-audit availability, keyword shortcut, and topology retrieval gates; the scale-relaxed design failed comment retrieval and keyword shortcut gates. Added SALVAGE_PILOT_REPORT.md, ARCHIVE_MANIFEST.md, salvage_pilot.py, and organizer evidence; final status rejected."
+              ]
+}

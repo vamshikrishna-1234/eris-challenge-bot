@@ -1,0 +1,36 @@
+{
+  "homepageCardsFound": 55,
+  "skippedAlreadyBeforeDetail": 28,
+  "detailPagesAttempted": 27,
+  "appendedTotal": 27,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Sequence To Sequence": 9,
+      "Computer Vision": 7,
+      "Fine-Tuning": 1,
+      "Object Detection": 1,
+      "Prompt Engineering": 1,
+      "Other": 5,
+      "From Scratch": 2
+    },
+    "CPU": {
+      "Object Detection": 1
+    }
+  },
+  "veryNovelAdded": [
+    "Cavitation Ensemble Phase Topology",
+    "MatureMap: Protein Processing Program Recovery",
+    "Sonar Echo Gap Reconstruction",
+    "Slide Microfragment Radial Ordering Certificate",
+    "Shuffled Multi-Channel Room Recording Repair",
+    "Duration-Constrained Command Program Decoding",
+    "Stroboscopic Gearbox Repair Synthesis",
+    "Wearable Sensor Episode Chronology Reconstruction",
+    "Middle Polish Archive Variant Lattice",
+    "Spoken Command Queue Compilation",
+    "Dual-Cipher Bag Alignment across Disjoint Alphabets",
+    "Isomer Stability Ranking From Infrared Spectra"
+  ],
+  "limitations": []
+}

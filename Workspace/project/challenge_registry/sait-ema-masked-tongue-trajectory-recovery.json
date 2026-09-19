@@ -1,0 +1,16 @@
+﻿{
+    "title":  "SAIT-EMA Masked Tongue-Trajectory Recovery",
+    "slug":  "sait-ema-masked-tongue-trajectory-recovery",
+    "status":  "ready_for_review",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fcee7-665d-71e1-9c35-4ef9ac0d93ee",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\SAIT-EMA Masked Tongue-Trajectory Recovery",
+    "dataset":  "SAIT-EMA: A Tridimensional Electromagnetic Articulography Database for Mandarin with Diverse Language Backgrounds",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-05T03:59:14.6596530+05:30",
+    "updated_at":  "2026-08-10T00:00:00.0000000+05:30",
+    "blocker":  "",
+    "notes":  [
+                  "Scale correction completed in sprint_4 on E:. Current audit metrics: raw_upload.zip 819.5 MB sha256 1fbd24df2becad4d761b1c7b9df68460bf40729aa7159a8f14e50674cb1487bb, 1,977 train / 523 test, hidden speaker groups 130/130/131/132, hidden material groups 270/156/97, sample 0.134655, zero 0.099022, simple CPU ridge 0.313902, strong CPU ExtraTrees 0.342188, KNN 0.256170, best small ensemble 0.342414, source lookup top1 2/523 top5 10/523 median rank 651.0/2500, perfect 1.0, CPU-only tier with 1.5 hour limit on 10 CPU cores and 62 GB RAM. No grader hardening applied because the measured ladder is below the 0.40 soft and 0.65 hard guards."
+              ]
+}

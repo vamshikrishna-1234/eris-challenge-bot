@@ -1,0 +1,161 @@
+{
+  "title": "Soil Laboratory-to-Field Horizon Matching",
+  "slug": "soil-laboratory-to-field-horizon-matching",
+  "status": "ready_for_review",
+  "stage": "challenge_checks_passed",
+  "phase": "awaiting_run_agents_confirmation",
+  "verdict": "Proceed",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a09438-bf1e-7141-a4ae-cc283f126dfe",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Soil Laboratory-to-Field Horizon Matching",
+  "dataset": "USDA NCSS companion NASIS_Morphological_09142021 SQLite snapshot with contemporaneous embedded laboratory table",
+  "license": "U.S. Government public domain mark on the official Data.gov catalog; NCSS citation and fitness disclaimers retained",
+  "license_source": "https://catalog.data.gov/dataset/ncss-soil-characterization-database",
+  "official_download_page": "https://ncsslabdatamart.sc.egov.usda.gov/database_download.aspx",
+  "official_companion_import_url": "https://new.cloudvault.usda.gov/index.php/s/tdnrQzzJ7ty39gs/download?path=%2F&files=NASIS_Morphological_09142021.sqlite.zip",
+  "domain": "From Scratch",
+  "fine_tuning": false,
+  "gpu_tier": "A10G",
+  "compute": "From-scratch structured pair model; measured on RTX 3050 6 GB, A10G target, below 1.5-hour ceiling",
+  "public_source_lookup_gate": "measured pass after representation redesign; no waiver used",
+  "blocker": "",
+  "raw_bytes": 142169085,
+  "expanded_source_bytes": 589557760,
+  "usable_pairs": 94243,
+  "independent_groups": 164,
+  "created_at": "2026-09-12T00:00:00+05:30",
+  "updated_at": "2026-09-12T23:11:50.7594330+05:30",
+  "evidence": {
+    "source": {
+      "archive_name": "NASIS_Morphological_09142021.sqlite.zip",
+      "archive_bytes": 142169085,
+      "archive_sha256": "3cb68cc7fa6613fe4d7963c34af974964f7ef7f9c429aa7a1bfdc8a119c52e4c",
+      "sqlite_name": "NASIS_Morphological_09142021.sqlite",
+      "sqlite_bytes": 589557760,
+      "sqlite_sha256": "de279c6bd08aac2ce89f5518d8d7b7706b93c58982293ecd996bbcf6566d9dfd",
+      "zip_crc_passed": true,
+      "official_url_returns_zip": true,
+      "current_lab_export_route": "ASP.NET POST download only; unchanged upload fallback, not invented as a stable raw GET"
+    },
+    "native_mapping": {
+      "raw_phsample_rows_nonblank": 392515,
+      "distinct_horizon_sample_pairs": 392463,
+      "distinct_morphology_samples": 389950,
+      "distinct_sampled_horizons": 389267,
+      "distinct_sampled_profiles": 63835,
+      "horizons_with_multiple_sample_ids": 2359,
+      "sample_ids_linked_to_multiple_horizons_excluded": 2225,
+      "duplicate_embedded_lab_ids_excluded": 1720,
+      "non_unique_horizon_ids_excluded": 9,
+      "non_unique_profile_ids_excluded": 1
+    },
+    "current_release_compatibility": {
+      "current_lab_layer_rows": 433542,
+      "morphology_samples_present_current": 383075,
+      "morphology_samples_absent_current": 6875,
+      "current_samples_absent_morphology": 50467,
+      "current_index_acquired_from_official_SDA": true,
+      "challenge_uses_current_release": false,
+      "reason": "The embedded 2021 lab table is contemporaneous with the frozen morphology/mapping snapshot and avoids mixed-release drift."
+    },
+    "prepared": {
+      "source_valid_profiles": 38725,
+      "eligible_profiles": 16131,
+      "train_profiles": 12000,
+      "test_profiles": 3200,
+      "train_samples": 74673,
+      "test_samples": 19570,
+      "train_native_one_to_many_profiles": 70,
+      "test_native_one_to_many_profiles": 32,
+      "train_groups": 139,
+      "test_groups": 25,
+      "split_group_overlap": 0,
+      "expanded_and_zip_input_outputs_identical": true,
+      "prepared_public_bytes": 47379839,
+      "prepared_private_bytes": 1012841,
+      "public_null_nan_inf_scan_passed": true
+    },
+    "baselines": {
+      "sample_cyclic": 0.2542446683332301,
+      "total_clay_sort": 0.23986585788735124,
+      "water_ph_sort": 0.22023279187753989,
+      "total_sand_sort": 0.25102187061593484,
+      "relative_texture_transition": 0.2718471699113582,
+      "from_scratch_gpu_pair_mlp": 0.5060549319392466,
+      "perfect": 1.0,
+      "initial_carbon_sort_before_feature_redesign": 0.7064661214738894,
+      "carbon_features_removed_after_shortcut_audit": true
+    },
+    "model_run": {
+      "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+      "pair_rows": 360607,
+      "features": 181,
+      "epochs": 40,
+      "runtime_seconds": 45.77891993522644,
+      "target_gpu": "A10G 24GB"
+    },
+    "grader": {
+      "perfect_score": 1.0,
+      "sample_score": 0.2542446683332301,
+      "duplicate_profile": "InvalidSubmissionError",
+      "wrong_columns": "InvalidSubmissionError",
+      "unknown_profile": "InvalidSubmissionError",
+      "missing_profile": "InvalidSubmissionError",
+      "malformed_json_scope": "row-local profile zero",
+      "nan_path_found": false
+    },
+    "novelty": {
+      "self_score": 6,
+      "live_platform_score": 6,
+      "maximum": 10,
+      "result": "live platform Novelty Assessment passed; 6/10 Medium",
+      "closest_neighbors": [
+        "Thermal Sensor Stack Ordering",
+        "Ocean Core Sediment Correlation and Sensor Bridge Reconstruction",
+        "generic hidden-linkage assignment challenges"
+      ]
+    },
+    "artifacts": {
+      "pilot_card": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Soil Laboratory-to-Field Horizon Matching\\PILOT_READINESS_CARD.md",
+      "source_verification": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Soil Laboratory-to-Field Horizon Matching\\SOURCE_VERIFICATION.md",
+      "leakage_audit": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Soil Laboratory-to-Field Horizon Matching\\LEAKAGE_AUDIT.md",
+      "novelty_audit": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Soil Laboratory-to-Field Horizon Matching\\NOVELTY_AUDIT.md",
+      "reviewer_premortem": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Soil Laboratory-to-Field Horizon Matching\\REVIEWER_PREMORTEM.md",
+      "grader_audit": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Soil Laboratory-to-Field Horizon Matching\\GRADER_AUDIT.md",
+      "compute_budget": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Soil Laboratory-to-Field Horizon Matching\\COMPUTE_BUDGET.md"
+    }
+  },
+  "readiness": {
+    "verdict": "Proceed",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": true,
+    "post_filter_scale_passed": true,
+    "split_stability_passed": true,
+    "semantic_duplicate_audit_passed": true,
+    "lookup_attack_passed": true,
+    "lookup_gate_waived": false,
+    "capability_matched_baseline_passed": true,
+    "null_metric_audit_passed": true,
+    "import_route_verified": true,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [],
+    "live_release_gates": [
+      "live platform novelty score must be at least 6",
+      "live platform domain and description checks must pass"
+    ]
+  },
+  "notes": [
+    "Build started only after a measured Pilot-to-Proceed gate.",
+    "The challenge uses the embedded 2021 laboratory table; the changing live lab export is compatibility evidence only.",
+    "The exact source-reversible public representation was rejected and replaced with a measured lookup-resistant complete panel; no lookup waiver is used.",
+    "The final source probe measures 0 exact matches, 2.0426% global rank-1 retrieval, 1.6382% exact field-profile recovery, and 1.3327% chained recovery.",
+    "The Shipd dataset draft was populated from the verified package, rebuilt successfully, passed Duplicate Detection and Dataset Quality with zero warnings, and was marked Ready.",
+    "The failed platform URL import was not retried; the verified fallback raw_upload.zip was uploaded and rebuilt instead.",
+      "The linked challenge now uses Hard difficulty, A10G, Maximize with bounds [0,1], three supported tags, the audited participant description, and byte-for-byte verified grade.py and prepare.py editor contents.",
+      "Live Run Prepare succeeded and exposed the expected five public files, two private files, and public/all ZIP bundles.",
+      "The first check run had one yellow Problem Originality warning. The description was substantively expanded with an explicit prediction-unit/output-contract comparison; the fresh rerun passed all seven checks with no warnings or failures.",
+      "The live platform Novelty Score is 6/10 (Medium), meeting the user's minimum of 6."
+  ]
+}

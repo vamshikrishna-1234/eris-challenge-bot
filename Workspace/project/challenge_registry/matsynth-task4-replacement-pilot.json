@@ -1,0 +1,48 @@
+{
+  "title": "MatSynth Task 4 Replacement Pilot",
+  "slug": "matsynth-task4-replacement-pilot",
+  "status": "rejected",
+  "verdict": "Reject",
+  "stage": "scout_pilot_complete",
+  "owner_machine": "VAMSHI",
+  "owner_task": "task4_replacement_pilot",
+  "updated_at": "2026-09-17T02:05:00+05:30",
+  "blocker": "Pinned official Parquet shards mix 2,129 CC BY-NC-ND 2.0 rows with CC0/CC-BY rows; zero official shards are CC0-only, the source is 432.9 GB, and public PBR input/target coexistence creates an unresolved exact/fuzzy retrieval route.",
+  "dataset": "MatSynth revision 5d5c84bbaf19fbdf64c617073a719e97082f6202",
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": false,
+    "source_package_verified": false,
+    "post_filter_scale_passed": true,
+    "split_stability_passed": false,
+    "semantic_duplicate_audit_passed": false,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": false,
+    "import_route_verified": false,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [
+      "commercially redistributable official source package",
+      "compact official import route",
+      "public-source lookup resistance",
+      "canonical-task novelty",
+      "capability-matched baseline"
+    ]
+  },
+  "evidence": {
+    "official_dataset": "https://huggingface.co/datasets/gvecchio/MatSynth",
+    "revision": "5d5c84bbaf19fbdf64c617073a719e97082f6202",
+    "official_files_inspected": 439,
+    "official_rows_inspected": 5789,
+    "official_parquet_bytes": 432921673286,
+    "license_counts": {"CC0": 3454, "CC-BY": 206, "CC BY-NC-ND 2.0": 2129},
+    "cc0_nonblend_rows": 3122,
+    "cc0_nonblend_sources": 6,
+    "pure_cc0_official_shards": 0,
+    "native_maps_all_rows": ["basecolor", "diffuse", "displacement", "height", "metallic", "normal", "roughness", "specular"],
+    "metadata_report": "Working/matsynth_metadata_pilot.json",
+    "pilot_report": "Working/pre_scout_20260917/MATSYNTH_TASK4_PILOT.md"
+  }
+}

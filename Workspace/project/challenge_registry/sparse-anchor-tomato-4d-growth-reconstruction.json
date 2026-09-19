@@ -1,0 +1,23 @@
+﻿{
+    "title":  "Plant View-Token Assignment, Later-Panel Recovery, and Growth-Visibility Ledger",
+    "slug":  "sparse-anchor-tomato-4d-growth-reconstruction",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019f3b64-430c-7872-a210-f28b11cfc021",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Sparse-Anchor Tomato 4D Growth Reconstruction",
+    "dataset":  "TomatoMAP: Tomato Multi-Angle Multi-Pose Dataset for Fine-Grained Phenotyping, official e!DAL DOI 10.5447/ipk/2025/14, img/1/Group1 + labels subset",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-07-31T19:56:49.8836671+05:30",
+    "updated_at":  "2026-08-02T02:30:00+05:30",
+    "blocker":  "Problem Research still displays 4/10 even though its latest written analysis assigns band 6. A substantive camera-unlabeled observed-view assignment revision now needs a platform rerun. Complete images are also unavailable locally, so retrieval, headroom, GPU runtime, and memory remain unmeasured.",
+    "notes":  [
+                  "2026-07-31: Implemented blocked package in Sprint 4 E: folder with source/schema verification, prepare.py, grade.py, forms, tests, analysis and GPU baseline helpers. Full run pending complete official source import.",
+                  "2026-07-31: Post-build checkpoint audit applied. prepare.py string-path contract fixed, grade.py image decode hardened, visible challenge description rewritten in accepted CV/GPU style, malformed submission tests expanded, and compliance audit added. Status remains blocked pending full official source import, retrieval probe, baselines, and headroom measurement.",
+                  "2026-07-31: Grader hardened without artificial score cap: stricter visual/detail/foreground tolerances, stronger wrong-view and duplicate-panel penalties, higher ledger/token weight, confidence calibration, and joint consistency multiplier. _analyze.py now includes train-prior and temporal-blend baselines for the eventual full prepared split. Baseline scores remain unmeasured because the complete official source/prepared split is unavailable.",
+                  "2026-08-01: Delta audit hardened DataFrame/index handling, exact RGB PNG and ledger schemas, generic errors, complete malformed-row zeroing, seed-aware aligned transforms, source scrubbing, retrieval/file-size probes, accepted-style description sections, and exploit tests. Local tests pass; status remains blocked on real retrieval and measured headroom/GPU gates.",
+                  "2026-08-01: Platform novelty scored the original contract 4/10. Added a source-supported nine-edge target-view visibility graph as ledger v2 and 20% score head. Real-label audit rejected a six-class 0.683-prior draft and retained three classes at 0.440 camera/profile-prior hidden accuracy. Prepare, grader, learned GPU graph head, analysis, tests, forms, and audits were updated; external novelty rerun remains required.",
+                  "2026-08-02: A second research result still displayed 4/10 while its own analysis explicitly assigned the revised contract to band 6 and justified a score above 5. Retitled to Cross-Visit Plant Panels, Growth Ledger, and Visibility Graph Recovery and reframed the boundary around exact scored objects instead of broad novel-view/4D research-family terms.",
+                  "2026-08-02: A third displayed 4/10 again carried a narrative band 6. Substantively revised inputs and outputs: observed camera tokens are withheld, within-visit lists are shuffled, view_assignment_json is required and weighted at 25%, GPU baseline learns assignment, and the measured profile/position prior scores 0.203125 with zero exact six-token mappings.",
+                  "2026-08-02: Removed decorative confidence/calibration from prepare, grader, baselines, tests, and description under the latest shared reviewer rule. Row score is transparently raw * (0.80 + 0.20 * joint)."
+              ]
+}

@@ -1,0 +1,35 @@
+{
+  "scrapedAt": "2026-08-17T18:39:16+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\.codex_tmp\\shipd_heartbeat_20260817_130830_details.json",
+  "payload": {
+    "scrapedAt": "2026-08-17T13:08:30.036Z",
+    "source": "Shipd Eris home page",
+    "homepage": {
+      "homepageCardsFound": 0,
+      "skippedAlready": 0,
+      "failures": [
+        "Shipd displayed “Unable to load Eris dashboard data.” A required 30-minute retry could not be scheduled because the automation service did not respond."
+      ]
+    },
+    "detailRun": {
+      "details": [],
+      "failures": []
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 0,
+    "skippedAlreadyBeforeDetail": 0,
+    "detailPagesAttempted": 0,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "CPU": {},
+      "Non-CPU": {}
+    },
+    "veryNovelAdded": [],
+    "limitations": [
+      "Detail or homepage failures captured in cache: 1."
+    ]
+  }
+}

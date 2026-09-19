@@ -1,0 +1,29 @@
+{
+  "homepageCardsFound": 12,
+  "skippedAlreadyBeforeDetail": 1,
+  "detailPagesAttempted": 11,
+  "appendedTotal": 11,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Object Detection": 1,
+      "Computer Vision": 2,
+      "NLP": 1,
+      "Sequence To Sequence": 4,
+      "From Scratch": 1,
+      "Other": 1,
+      "Fine-Tuning": 1
+    },
+    "CPU": {}
+  },
+  "veryNovelAdded": [
+    "Anonymous Sensor Cohort Reconstruction",
+    "Lost in Transmission: One-Sided Arabic-Latin Landmark Recovery",
+    "Handwritten Molecule Fragment Reassembly",
+    "Counterfactual Hypercube Recurrence Operator Inference",
+    "Discourse Patch Generation: Order and Graph Repair"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

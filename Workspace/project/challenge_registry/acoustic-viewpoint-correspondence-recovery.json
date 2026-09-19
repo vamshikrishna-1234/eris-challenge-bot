@@ -1,0 +1,116 @@
+{
+  "title": "Acoustic Viewpoint Correspondence Recovery",
+  "slug": "acoustic-viewpoint-correspondence-recovery",
+  "status": "rejected",
+  "verdict": "Reject",
+  "stage": "replaced_by_mras_renovation_response_compass",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a097eb-0c47-79a2-a6a5-fe2fa7ab3def",
+  "dataset": "AcousticRooms (CVPR 2025), clean-main release",
+  "domain": "From Scratch",
+  "compute_preference": "NVIDIA A10G 24 GB GPU and 64 GB RAM; 1.5-hour full-solve budget",
+  "license": "CC BY 4.0",
+  "license_source": "https://github.com/facebookresearch/AcousticRooms/blob/clean-main/LICENSE",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Acoustic Viewpoint Correspondence Recovery",
+  "created_at": "2026-09-13T17:25:00+05:30",
+  "updated_at": "2026-09-13T20:49:07+05:30",
+  "public_source_lookup_gate": "waived explicitly by user in the originating task; no passed lookup test claimed",
+  "raw_size_preference": "under 1 GB preferred; under 3 GB target; 5 GB outer bound",
+  "blocker": "Rejected after five formulations. Correspondence and topology are semantic duplicates; survey planning misses the fusion gate; native material counterfactuals do not exist per room; the ray-obstruction ledger is visually shortcuttable, lacks one intended class, and fused performance is 0.0011 below visual-only. Replaced by the licensed MRAS Renovation Response Compass candidate.",
+  "evidence": {
+    "official_repository": "https://github.com/facebookresearch/AcousticRooms",
+    "official_paper": "https://openaccess.thecvf.com/content/CVPR2025/html/Liu_Hearing_Anywhere_in_Any_Environment_CVPR_2025_paper.html",
+    "metadata_archive_bytes": 116009327,
+    "metadata_archive_sha256": "1A7C64A1BBFCC1D4F5D1110EAF5D39719394203781BF3A41D73D26F29FCD6F01",
+    "license_compatibility": {
+      "source_terms": "CC BY 4.0 permits sharing, adaptation, and commercial use with attribution and indication of changes; it has no ShareAlike or noncommercial condition.",
+      "project_rule_precedent": "Current Project Eris rules and accepted examples allow CC BY 4.0 data with attribution.",
+      "compatible": true
+    },
+    "native_inventory": {
+      "rir_metadata_rows": 302925,
+      "rooms": 260,
+      "categories": 10,
+      "depth_maps": 9650
+    },
+    "two_category_pilot": {
+      "categories": ["Bathrooms", "Bedrooms"],
+      "exact_local_source_bytes": 1087430808,
+      "rooms": 62,
+      "depth_panoramas": 1616,
+      "native_rirs": 25044,
+      "exact_receiver_joins": 1616,
+      "split": {"train_rooms": 40, "validation_rooms": 9, "test_rooms": 13, "overlap": 0}
+    },
+    "formulation_results": {
+      "receiver_correspondence": {
+        "novelty_out_of_10": 4.0,
+        "held_out_accuracy": 0.41875,
+        "chance_accuracy": 0.125,
+        "capability_passed": true,
+        "decision": "reject_semantic_duplicate_of_EchoKey"
+      },
+      "receiver_topology": {
+        "novelty_out_of_10": 4.5,
+        "visual_edge_f1": 0.6868686868686869,
+        "acoustic_edge_f1": 0.6565656565656566,
+        "fused_edge_f1": 0.7777777777777778,
+        "capability_passed": true,
+        "decision": "reject_semantic_duplicate_of_Shuffled_Multi_Channel_Room_Recording_Repair"
+      },
+      "residualized_survey_planning": {
+        "novelty_out_of_10_estimate": 6.0,
+        "test_rooms": 13,
+        "visual_normalized_score": 0.7492214906984052,
+        "acoustic_normalized_score": 0.38184993753211366,
+        "fused_normalized_score": 0.7681481147888308,
+        "fusion_delta_over_best_unimodal": 0.01892662409042567,
+        "required_delta": 0.05,
+        "capability_passed": false,
+        "decision": "hold"
+      },
+      "source_ray_obstruction_ledger": {
+        "train_receiver_packets": 1046,
+        "test_receiver_packets": 337,
+        "visual_macro_f1": 0.734317,
+        "acoustic_macro_f1": 0.507056,
+        "fused_macro_f1": 0.733176,
+        "fusion_delta_over_visual": -0.001141,
+        "missing_intended_classes": ["blocked"],
+        "capability_passed": false,
+        "decision": "reject_visual_shortcut_and_class_collapse"
+      }
+    },
+    "source_verification": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\complementary-sight-echo-recovery-acousticrooms\\SOURCE_VERIFICATION.md",
+    "novelty_audit": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\complementary-sight-echo-recovery-acousticrooms\\NOVELTY_AND_DUPLICATE_AUDIT.md",
+    "pilot_report": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\complementary-sight-echo-recovery-acousticrooms\\PILOT_AUDIT_REPORT.md",
+    "reviewer_premortem": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\complementary-sight-echo-recovery-acousticrooms\\REVIEWER_PREMORTEM.md",
+    "hold_card": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\complementary-sight-echo-recovery-acousticrooms\\PILOT_HOLD_CARD.md",
+    "pilot_folder": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\complementary-sight-echo-recovery-acousticrooms"
+  },
+  "readiness": {
+    "verdict": "Reject",
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "native_targets_verified": true,
+    "source_package_verified": false,
+    "post_filter_scale_passed": true,
+    "split_stability_passed": true,
+    "semantic_duplicate_audit_passed": false,
+    "lookup_gate_waived": true,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": false,
+    "import_route_verified": false,
+    "reviewer_premortem_completed": true,
+    "final_disposition": "No AcousticRooms formulation passed all mandatory gates"
+  },
+  "notes": [
+    "This is a new alternate-dataset candidate; the rejected BatVision registry remains unchanged.",
+    "The official source is now adopted as the preferred licensed alternate; the rejected BatVision registry remains immutable.",
+    "The full upstream archives total 7.791 GB, so exact category/room selection is required for a final package.",
+    "Blocked before Build mode: no final challenge scripts, platform import, checks, agents, or submission were created.",
+    "The receiver-local ray-obstruction redesign was piloted across all 25,044 joined Bathroom/Bedroom rows and rejected because the fused model did not improve over visual-only and the intended blocked class had zero support.",
+    "The licensed replacement is tracked separately as renovation-response-compass.json."
+  ]
+}

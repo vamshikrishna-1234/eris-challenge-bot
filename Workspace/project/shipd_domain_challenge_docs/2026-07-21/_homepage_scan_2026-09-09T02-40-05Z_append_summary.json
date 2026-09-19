@@ -1,0 +1,29 @@
+{
+  "homepageCardsFound": 12,
+  "skippedAlreadyBeforeDetail": 1,
+  "detailPagesAttempted": 11,
+  "appendedTotal": 11,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "From Scratch": 1,
+      "Other": 1
+    },
+    "Non-CPU": {
+      "Other": 2,
+      "Fine-Tuning": 2,
+      "Sequence To Sequence": 1,
+      "Object Detection": 1,
+      "From Scratch": 2,
+      "NLP": 1
+    }
+  },
+  "veryNovelAdded": [
+    "NTSB Causal Ledger: Final-Report Timeline and Finding Compilation",
+    "PAMAP2 Body-Key Privacy Amplifier",
+    "Georgian Syntactic Avalanche Ledgers"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

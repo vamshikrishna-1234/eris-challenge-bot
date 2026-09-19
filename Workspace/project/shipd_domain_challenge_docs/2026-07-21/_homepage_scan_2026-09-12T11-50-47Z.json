@@ -1,0 +1,37 @@
+{
+  "scrapedAt": "2026-09-12T17:23:29+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\.codex_tmp\\shipd_heartbeat_2026-09-12T11-50-47Z_details.json",
+  "payload": {
+    "scrapedAt": "2026-09-12T11:50:47.217Z",
+    "source": "Shipd Eris homepage bounded scan",
+    "homepage": {
+      "homepageCardsFound": 0,
+      "skippedAlready": 0,
+      "failures": [
+        "Browser execution timed out while reading the authenticated homepage."
+      ]
+    },
+    "detailRun": {
+      "details": [],
+      "failures": [
+        "No detail pages opened because homepage card discovery timed out."
+      ]
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 0,
+    "skippedAlreadyBeforeDetail": 0,
+    "detailPagesAttempted": 0,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "CPU": {},
+      "Non-CPU": {}
+    },
+    "veryNovelAdded": [],
+    "limitations": [
+      "Detail or homepage failures captured in cache: 2."
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Score-Grounded Trombone Embouchure Control Reconstruction",
+  "slug": "score-grounded-trombone-embouchure-control-reconstruction",
+  "status": "accepted",
+  "owner_machine": "VAMSHI",
+  "owner_task": "019fc25e-09a7-7d81-9a12-4fa8ba040773",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\accepted\\Score-Grounded Trombone Embouchure Control Reconstruction",
+  "dataset": "Dataset of Lip-Specific Forces, Mouthpiece Pressure, and Intraoral Pressure in 31 Trombone Players Across Controlled Parcours Tasks (Zenodo 18679877)",
+  "license": "CC BY 4.0",
+  "created_at": "2026-08-02T17:33:21.5263901+05:30",
+  "updated_at": "2026-08-04T01:57:48.3243351+05:30",
+  "blocker": "",
+  "residual_risk": "Source-reversibility audit remains failed: over 24 score-matched probes, audio source retrieval is top-1 0.458333 and top-5 0.833333; fused retrieval is top-1 0.291667 and top-5 0.625. The official archive exposes paired force traces.",
+  "accepted_risk": {
+    "accepted_by_user": true,
+    "accepted_at": "2026-08-02T23:49:07.7070062+05:30",
+    "scope": "Proceed to user review despite measured public-source retrieval risk; retain reports and do not claim the anti-lookup gate passed."
+  },
+  "notes": [
+    "All challenge-owned artifacts remain consolidated under the exact Sprint 4 output folder; no duplicate folder was created.",
+    "Final taxonomy: Fine-Tuning / From Scratch; GPU multimodal inverse temporal reconstruction, not CV, object detection, tabular classification, or scalar regression.",
+    "Official Zenodo ZIP verified: 489,512,593 bytes, MD5 0441e1dcc018405e43b998ebe21a572d, CC BY 4.0.",
+    "Prepared split: 607 train episodes / 221 test episodes, 23 train players / 8 test players, zero overlap; prepared bundle 182,542,862 bytes.",
+    "Latest smoke: official train-prior sample 0.156975, zero/balanced null 0.0, perfect/shuffled/indexed 1.0, structural faults raise InvalidSubmission, malformed payload rows receive zero.",
+    "Latest baselines: global train prior 0.156975, strongest simple score-plus-pressure ridge 0.306379, organizer neural pilot 0.304406.",
+    "Source retrieval is a failed user-accepted risk, preserved in SOURCE_RETRIEVAL_REPORT.md, LEAKAGE_AUDIT.md, and FINAL_AUDIT.md.",
+    "Preferred acquisition is the official Zenodo direct URL; no preprocessed or replacement raw ZIP was created.",
+    "Platform description revised with an explicit prediction objective, documented recording conditions, and unambiguous accounting for 96 distinct calibration clips across 32 run-specific three-entry sets.",
+    "Platform pre-submission validation completed 12/12 on 2026-08-03; Problem Description Quality, Trivial Issues, Novelty Assessment, and Problem Originality all passed. No agent runs or challenge evaluation were launched.",
+    "2026-08-04 accepted by the platform and moved intact to sprint_4\\accepted; registry and location-sensitive package references were updated while preserving the documented source-retrieval risk."
+  ]
+}

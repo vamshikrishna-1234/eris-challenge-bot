@@ -1,0 +1,62 @@
+{
+  "scrapedAt": "2026-09-12T17:56:45+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\.codex_tmp\\shipd_heartbeat_2026-09-12T12-24-51Z_details.json",
+  "payload": {
+    "scrapedAt": "2026-09-12T12:24:51.273Z",
+    "source": "Shipd Eris homepage required retry",
+    "homepage": {
+      "homepageCardsFound": 46,
+      "skippedAlready": 22,
+      "candidateUrls": [
+        "https://shipd.ai/quests/eris/challenges/jx756m0as6bh6fhs4zr3j2pkzn8e5p6m",
+        "https://shipd.ai/quests/eris/challenges/jx7ekqmp3kb1m1zwxkfh6e1j7s8e42ad",
+        "https://shipd.ai/quests/eris/challenges/jx78kv9k5aw1bnwq6w84c8ykad8dvxn4",
+        "https://shipd.ai/quests/eris/challenges/jx708cww1geadyeysghms2jjps8e2pz1",
+        "https://shipd.ai/quests/eris/challenges/jx78pf5s6rxh42a4h31g0hk9n58dy1sn",
+        "https://shipd.ai/quests/eris/challenges/jx7e38fvjvn2jce9tj5z5n291x8c75aa",
+        "https://shipd.ai/quests/eris/challenges/jx75x784pewep7vfp260m7g4an8e5dxv",
+        "https://shipd.ai/quests/eris/challenges/jx709jemzt1bmvj11qzg7f1vsd8e4wqa",
+        "https://shipd.ai/quests/eris/challenges/jx77bwh3gtcasr30krab3j606x8e3k2p",
+        "https://shipd.ai/quests/eris/challenges/jx71f3pdtn3gxgz1ay241ayvwd8e3ppb",
+        "https://shipd.ai/quests/eris/challenges/jx76evz0499a56nzckgmzmsr0d8e3qfa",
+        "https://shipd.ai/quests/eris/challenges/jx74175zmhgdc9vz6yvshsbt618e2hh0",
+        "https://shipd.ai/quests/eris/challenges/jx7e1pkpxj8qg2wehkesm23ns58e27a1",
+        "https://shipd.ai/quests/eris/challenges/jx74ztdvanaspq366jw7sp970x8e0znz",
+        "https://shipd.ai/quests/eris/challenges/jx728qgqfn0pgzh4xt8ryq9hc18dywej",
+        "https://shipd.ai/quests/eris/challenges/jx74gdasesyzkm1544vjr658ax8dwsbb",
+        "https://shipd.ai/quests/eris/challenges/jx72m372gz9xk1wczkpatv82818dxdc9",
+        "https://shipd.ai/quests/eris/challenges/jx79wpsemspvstn1a1ks2j441d8dvcnx",
+        "https://shipd.ai/quests/eris/challenges/jx7b04m5mdc5mw2nb3ve79pvg98c12gy",
+        "https://shipd.ai/quests/eris/challenges/jx7cx4705mqe1zzze50ytydnkx8e7yy8",
+        "https://shipd.ai/quests/eris/challenges/jx73wz2tmzjgywwfa6f8xr8h7h89rb84",
+        "https://shipd.ai/quests/eris/challenges/jx7fcrjb2esef95zzgnr5p6dtn8e7vf6",
+        "https://shipd.ai/quests/eris/challenges/jx74j69tsp1c9sj0re1npgmryn8dypfz"
+      ],
+      "failures": [
+        "Required retry: browser deadline elapsed before visible card text or detail pages could be captured."
+      ]
+    },
+    "detailRun": {
+      "details": [],
+      "failures": [
+        "Candidate URL list preserved; no challenge detail pages were opened."
+      ]
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 46,
+    "skippedAlreadyBeforeDetail": 22,
+    "detailPagesAttempted": 0,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {
+      "CPU": {},
+      "Non-CPU": {}
+    },
+    "veryNovelAdded": [],
+    "limitations": [
+      "Detail or homepage failures captured in cache: 2."
+    ]
+  }
+}

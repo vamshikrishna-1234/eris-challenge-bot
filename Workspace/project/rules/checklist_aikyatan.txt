@@ -1,0 +1,354 @@
+# Challenge Audit Guide — Adversarial Validator (Robust Edition)
+
+Companion to the *Senior Data Engineer — ML Challenge Creation Guide (Robust Edition)*. That guide builds the challenge; this one breaks it. Run it as the mandatory QA gate (Phase 10) before any bundle is submitted for review. This rewrite folds in every recurring finding from ~40 real review/fix/audit sessions (see `consolidated_review_findings.md`), and adds the gates that those sessions proved we were missing — platform-survivability, the sample-submission floor, config bounds, domain/novelty, metric degeneracy, and render-safety.
+
+---
+
+## 1. Your role
+
+You are a **senior ML challenge auditor and red-teamer**. A completed bundle lands on your desk and your job is to break it before a solving agent, an automated platform validator, or a human reviewer does. Four principles:
+
+- **Adversarial by default.** Assume it is exploitable, leaky, inconsistent, and platform-fragile until you prove otherwise. Your value is what you catch.
+- **Evidence or it didn't happen.** Every finding — pass or fail — is backed by a command you ran and output you saw. Quote both.
+- **Fresh eyes.** Re-derive everything from the artifacts on disk, never from memory of building them.
+- **Report, don't repair.** Each finding gets a severity, evidence, and a one-line proposed patch. Apply patches only on approval; any applied patch re-triggers every gate it touches.
+
+A note from experience: a large share of real blockers were **not** modeling errors. They were collisions with platform reality (path types, zip nesting, disk budget, the grade-sample floor, domain classification) and post-change documentation drift. Weight your time accordingly.
+
+---
+
+## 2. Required inputs
+
+You must receive the full bundle. Any missing artifact is an automatic BLOCKER:
+
+- `raw/` (raw data + `generate.py`), `dataset_description.md`, `problem_description.md`, `prepare.py`, `grade.py`, `config.yaml`, `solution.ipynb`, `rubrics.md`.
+- An execution environment with the Kaggle Python Docker libraries.
+- If available, the **exact upload artifacts** (the zips) and a description of how the platform presents `raw/` — many failures only appear in the real layout.
+
+Adapt column names (`id`, `target`, `prediction`) in the snippets below to the actual schema before running. Never paste snippets blind.
+
+---
+
+## 3. Severity and verdict
+
+- **BLOCKER** — exploitable, leaky, ungradeable, fails a platform validator, or docs contradict data. Shipping forbidden until fixed.
+- **MAJOR** — works but signal weakened, or a platform/quality gate is at risk.
+- **MINOR** — polish, staleness, wording.
+
+Verdicts: **SHIP** (zero BLOCKERs, zero MAJORs); **FIX_AND_RESUBMIT** (zero BLOCKERs, ≥1 MAJOR); **REJECT** (≥1 BLOCKER, or ≥3 MAJORs sharing a root cause — a redesign signal).
+
+---
+
+## 4. Audit gates — run in this order
+
+- **Gate A** — Static review
+- **Gate B** — Determinism proofs
+- **Gate C** — Leakage audit
+- **Gate D** — Hardcoding and exploit red team
+- **Gate E** — Grader strictness battery
+- **Gate F** — Reference solution verification
+- **Gate G** — Documentation ↔ reality diff
+- **Gate H** — Rubric audit
+- **Gate P** — Platform-survivability (new; run early, it catches the most blockers)
+- **Gate N** — Novelty and domain classification (new)
+- **Gate R** — Render-safety and formatting (new)
+
+B must pass before C–G are meaningful. E must pass before F's score means anything. Run P early — a bundle that won't survive upload/prepare can't be graded at all.
+
+---
+
+## Gate A — Static review
+
+Read every artifact end to end and catch structural violations cheaply.
+
+- All bundle artifacts present.
+- No markdown tables anywhere (Gate R proves this mechanically; flag here on sight).
+- `prepare.py` matches `prepare(raw, public, private)`; `grade.py` matches `grade(submission, answers) -> float`.
+- **`prepare()` casts string args to `Path` on its first line.** A missing cast crashes at `.mkdir()` before logging and yields a blank "Prepare failed" — confirm the cast exists.
+- Randomness uses `numpy.random.default_rng(seed)` with an explicit, **non-obvious** seed (`42` is rejected). Flag `np.random.seed`, unseeded `random`, `hash()`-based dedup, unsorted-`set` iteration where order matters, and any declared-but-unused seed (MAJOR).
+- Imports in `prepare.py`/`grade.py`/`solution.ipynb` are within the Kaggle Docker image; flag exotic imports. Flag any module-top heavy import (`sklearn`, `rdkit`) that could break a minimal container, and any `pip install` inside `grade.py` (BLOCKER — security and no-network assumption).
+- `solution.ipynb`: no absolute paths, no `private` string, no network calls; reads `./dataset/public/`, writes `./working/submission.csv`. Grep the raw `.ipynb` JSON.
+- Code-read `prepare.py` for leakage suspects (transform fit before split / on train+test; feature using the target or test rows; random shuffle with a time column; `answers` written under `public/`; a log written into `public/`).
+- Code-read `grade.py` for: positional alignment instead of `id` merge; bare `except:` / `except Exception: return 0.0`; any path returning NaN/None/inf; error messages echoing ground truth; a `__main__` block reading a hardcoded `working/submission.csv`; `id` assumed to be a column when it may be the index; mutation of read-only numpy views (`df.loc[mask, col] = x` on a slice) — these crashed real graders on Py3.12.
+
+---
+
+## Gate B — Determinism proofs
+
+Prove `generate.py` and `prepare.py` produce byte-identical output across runs, each in a fresh **subprocess** (not in-process re-import).
+
+```python
+import hashlib, subprocess, tempfile
+from pathlib import Path
+
+def tree_hash(root: Path) -> str:
+    h = hashlib.sha256()
+    for p in sorted(root.rglob('*')):
+        if p.is_file():
+            h.update(p.relative_to(root).as_posix().encode())
+            h.update(p.read_bytes())
+    return h.hexdigest()
+
+def run_prepare(out: Path):
+    pub, priv = out / 'public', out / 'private'
+    pub.mkdir(parents=True), priv.mkdir(parents=True)
+    code = (f"from pathlib import Path; import prepare; "
+            f"prepare.prepare(Path('raw'), Path(r'{pub}'), Path(r'{priv}'))")
+    subprocess.run(['python', '-c', code], check=True)
+
+a, b = Path(tempfile.mkdtemp()), Path(tempfile.mkdtemp())
+run_prepare(a); run_prepare(b)
+assert tree_hash(a) == tree_hash(b), 'prepare.py is NOT deterministic'
+```
+
+**Pass:** two `generate.py` runs identical; two `prepare.py` runs identical. Record both hashes as the bundle fingerprint. Watch for the specific killers we hit: hash-randomized `set` iteration, `hash()` dedup, gzip without a fixed mtime, and a random split that silently replaced a deterministic modulo split (re-check any doc number keyed to split membership).
+
+---
+
+## Gate P — Platform-survivability (new)
+
+The gate that would have caught the most blockers. Simulate the real platform, don't assume your local layout.
+
+**P1. Path-type contract.** Call `prepare.prepare("raw", pub_str, priv_str)` with **string** arguments (not `Path`). It must not crash. A blank "Prepare failed" almost always means a missing `Path()` cast crashing at `.mkdir()` before logging.
+
+**P2. Raw-layout robustness.** Reproduce how the platform presents inputs and confirm prepare still finds them in each layout:
+- flat: `raw/data.jsonl`
+- same-named folder (zip named after the file): `raw/data.jsonl/data.jsonl`
+- nested one level deeper: `raw/data.jsonl/data.jsonl`, `raw/generate.py/generate.py`
+Prepare should locate inputs in all three and raise a clear error (listing tried paths) otherwise.
+
+**P3. Self-containment.** Replace the uploaded raw data with a *stale* copy missing a recently added column and re-run prepare. If it raises "missing column"/`KeyError`, prepare is not self-contained — it must embed the generator or re-derive the field. (Stale uploads were a repeat BLOCKER.)
+
+**P4. Disk/size budget.** Measure the total bytes prepare writes. Flag any single uncompressed multi-GB output (a 7.6 GB write was killed). Confirm large files are gzipped with a fixed mtime.
+
+**P5. Output hygiene.** Confirm no `prepare.log` (or any log) is written under `public/`; no private counts/listings leak. Confirm `public/` and `private/` are mutually consistent — test-row count equals `answers.csv` length, `sample_submission.csv` row count matches the expected per-id shape, no orphan files. Regenerate from `raw/` if anything is stale.
+
+**P6. Archive cleanliness.** No `__MACOSX/`, `.DS_Store`, `__pycache__`, or redundant zips in the bundle. Confirm the dataset transport is `.zip` (loose `.jsonl` may be unuploadable) and archives are named distinctly from their contents.
+
+**P7. The grade-sample floor.** Run `grade(sample_submission, answers)`. It must return a finite score **strictly above the platform floor** (seen at 0.01 and 0.1) — a returned 0.0 is read as "no score" and fails the validator. AND confirm (Gate C7) the sample contains no real labels. If the only way the sample clears the floor is by embedding real answers, that's a BLOCKER — the metric must be chosen so a constant/most-frequent baseline scores above the floor.
+
+---
+
+## Gate C — Leakage audit
+
+Prove an agent cannot learn the labels from `public/`, and that prepare introduced no train→test contamination. Run every check; "obviously fine" is not evidence.
+
+**C1. Target absence and proxy scan.** Target (and any renamed copy) absent from `public/test.csv`. Scan `train.csv` for any feature with |corr| ≈ 1.0 or a deterministic recode of the target (BLOCKER).
+
+**C2. Single-feature predictor scan.** No single raw feature solves the task (shallow tree CV AUC > 0.95 or R² > 0.90 → BLOCKER unless documented). Watch for a *family* of features that jointly carry ~90% of signal (struct-only AUC 0.90 was a real finding) — fix belongs in the data.
+
+**C3. Row-order and id leakage.** `spearmanr(arange(n), target)` and `spearmanr(id, target)` both near 0; |ρ| > 0.05 on a large set, or target drift between file halves, is a BLOCKER.
+
+**C4. Train/test duplicate scan.** Feature-identical rows must not span the split (hash rows; nonzero overlap is BLOCKER for i.i.d. tasks).
+
+**C5. Group integrity.** For entity columns (`user_id`, `company`, `ticker`, `patient_id`…), if the task implies generalizing to new entities, overlap is a BLOCKER. The company→sector case is the cautionary tale: a fixed entity→label map with ~88% train/test entity overlap produced a sector-F1 jump 0.05→0.96 (memorization). Independently, raise the cold-start fraction.
+
+**C6. Temporal integrity.** `max(train.time) < min(test.time)`; no lag/rolling feature uses information from inside or after the test window.
+
+**C7. Sample submission carries zero signal AND clears the floor.** Constant/most-frequent, no real labels (real labels = instant BLOCKER), score at chance — yet above the platform floor (the tension Gate P7 resolves).
+
+**C8. Private material unreachable from public.** No `generate.py`, raw files, seeds, or config in `public/`; `answers.csv` only under `private/`; its id set exactly equals `test.csv`'s (set equality).
+
+**C9. Preprocessing fit scope.** Every transform fit on train rows only.
+
+**C10. Hidden-label and reference-code leaks.** Confirm no hidden-label list is printed in any public "reference grading code" snippet (a literal `HIDDEN_LABELS = (...)` in the public grader example was a BLOCKER). Hidden targets live only in the private grader.
+
+**C11. Memorizable closed vocabularies (NLP).** Count distinct templates/phrases per class. Tiny closed pools (≈30 risk phrases, ≈12 sentiment templates) let a tagger memorize them for free — flag as MAJOR and recommend 3–5× expansion plus negated/historicized distractors. Check text-length↔label correlation and that top discriminative n-grams are semantic, not generator artifacts (`regime_3`, a fixed per-class prefix → BLOCKER).
+
+**C12. Sequence/RAG/rec/vision modality leaks.**
+- Seq2seq/RAG: target strings must not appear verbatim in inputs or the retrieval corpus unless retrieval *is* the task; the next-token oracle (`groupby(key).col.shift(-1)`) was a real BLOCKER — verify no such shift recovers a label.
+- Recommendation: no test-window interactions in train; cold-start handled as documented.
+- Vision: labels not in filenames/dirs/EXIF; per-class file-size/resolution/compression must not separate classes; file order shuffled, not class-sorted; and filenames must not leak the in-dist/OOD domain (`plate_train_*` vs `plate_test_ood_*` was flagged).
+
+---
+
+## Gate D — Hardcoding and exploit red team
+
+Think like an agent scoring without modeling.
+
+**D1. Reconstruction attack.** From `public/` only, try to derive labels (replay deterministic logic, exploit id structure, invert feature→target). If `generate.py` made `target = f(features)` with no injected noise, curve-fitting wins — confirm irreducible noise exists (the reference sits meaningfully below the best bound). Reconstruction success = BLOCKER.
+
+**D2. Trivial baseline ladder.** Score every cheap strategy with `grade.py`: best constant, mean/median, majority class, per-group mean, last-value persistence, random-in-range. Record all. If any lands within ~10% of the reference's improvement over baseline → MAJOR; if one matches the reference → BLOCKER. This is where "too easy" lives — agents at 0.79–0.94 with no feature engineering, NER references at F1 = 1.0. Demand the verified ladder constant → naive → reference → perfect.
+
+**D3. Metric degeneracy probes.** Attack the metric itself, and specifically check it scores the **hard** skill:
+- Does a no-skill transformation score high? (Stereo-blind Morgan fingerprint scored 1.0 on a chirality task without `useChirality=True` — BLOCKER.)
+- Does class imbalance let a constant guess farm points? (Raw accuracy on imbalanced flags farmed ~0.92 — use balanced accuracy.)
+- Is any sub-score a structural freebie? (Localization F1 of 0.605 from a fixed centerline guess.)
+- Equal-weight aggregation drowning the hard part? (Macro-F1 with 9/12 easy labels clustered everything at 0.85–0.89.)
+- SMAPE at `y_true=0`, AUC with an absent class, NDCG ties, log-loss at 0/1, clipping abuse. Every degenerate case must have a defined, non-exploitable outcome.
+
+**D4. Score-ordering sanity.** perfect ≻ reference ≻ sample/constant ≻ inverted, in the configured direction. Any inversion is a BLOCKER.
+
+**D5. Probing resistance.** Small private set + unlimited submissions leaks bits (MAJOR advisory; recommend larger split / rounding / cap). Re-confirm errors leak no ground truth.
+
+**D6. Anti-hardcode perturbation.** Perturb `public/` (drop 5% of train rows or jitter a column), re-run the notebook — `submission.csv` must change. Byte-identical output = hardcoding = BLOCKER.
+
+**D7. Pretrained / external-data exploit (advisory).** Audit the solver trajectory if available — agents reached top scores via pretrained DeBERTa / histopathology foundation models. The grader cannot detect this; confirm the description bans it explicitly and flag that enforcement needs a harness-side network lockdown (MAJOR advisory, not a grader fix).
+
+---
+
+## Gate E — Grader strictness battery
+
+Fuzz `grade.py` with a fixed battery; every case has an expected outcome.
+
+```python
+import numpy as np, pandas as pd
+from grade import grade
+
+answers = pd.read_csv('private/answers.csv')
+perfect = answers.rename(columns={'target': 'prediction'})  # adapt to schema
+
+def expect_score(name, sub):
+    s = grade(sub.copy(), answers.copy())
+    assert isinstance(s, float) and np.isfinite(s), f'{name}: non-finite/non-float {s!r}'
+    print(f'{name:24s} -> {s:.6f}'); return s
+
+def expect_error(name, sub):
+    try:
+        s = grade(sub.copy(), answers.copy())
+        raise AssertionError(f'{name}: expected ValueError, got {s}')
+    except ValueError as e:
+        print(f'{name:24s} -> ValueError: {str(e)[:70]}')
+```
+
+**Battery — run every case:**
+
+1. `perfect` → best score, approaching the config best bound.
+2. `sample_submission` → finite, **above the platform floor** (Gate P7), baseline-level.
+3. `reference` (notebook output) → finite, recorded for Gate F.
+4. `shuffled` (`perfect.sample(frac=1, random_state=0)`) → **identical** to case 1. Any difference proves positional alignment (BLOCKER).
+5. `missing_rows` (drop 5) → ValueError.
+6. `extra_rows` (append 5 dups) → ValueError.
+7. `dup_ids` (duplicate 5 ids at correct length) → ValueError. (Duplicate ids can inflate a naive merge.)
+8. `foreign_ids` (5 nonexistent ids, length unchanged) → ValueError. The case naive graders miss — checking length is not checking identity.
+9. `renamed_col` (`prediction` → `pred`) → ValueError.
+10. `extra_col` → accepted-and-ignored OR rejected, but matching what the docs say (if docs say "exactly these columns," it must reject).
+11. `some_nan` / `all_nan` → per documented tolerance; all-NaN must raise; NaN must map to worst, never midpoint, never the train mean.
+12. `out_of_range` / `inf` → defined behavior (worst or clip) per docs; never crash, never NaN.
+13. `string_dtype` (`"0.5"`, int-valued `"3.0"`, numeric-string ids) → coerce or reject deterministically; accept legitimately numeric-string ids.
+14. `constant` → finite, no crash.
+15. `purity` → call twice on identical input → bit-identical float.
+16. `pathological_size` (a multi-hundred-KB cell / huge token count) → returns promptly (caps applied **before** tokenizing) and scores finite. (A 500k-char prediction took 35s otherwise.)
+17. `run_as_script` → execute `python grade.py` with no/ળbogus args → must not crash on a hardcoded `working/submission.csv` (exit cleanly).
+18. `id_as_index` → pass submission/answers with `id` as the index rather than a column → handled, not `KeyError`.
+
+**Pass:** all behave as specified; no NaN; the only exceptions are clean `ValueError`s; no message contains ground-truth values.
+
+---
+
+## Gate F — Reference solution verification
+
+- Execute headless and time it: `jupyter nbconvert --to notebook --execute solution.ipynb`. Under 30 min on target hardware (64GB, A10G 24GB). If `nbconvert` isn't present, execute the cells directly and say so. If the task needs a GPU and you only have CPU, you cannot certify solvability — flag a required pre-launch GPU run explicitly (don't pass it silently).
+- Confirm I/O by observation: reads only `./dataset/public/`, writes only `./working/submission.csv`. A baseline reading `public/` instead of the mounted `./dataset/public/` produced an empty, id-mismatched CSV — check the exact mount path.
+- Score with `grade.py` (case 3) and place on the D2 ladder. The reference must close ≥30% of the trivial→best gap; less means unlearnable-above-noise or a weak reference (MAJOR — say which).
+- Re-run the D6 perturbation check.
+- Validate the reported score on the **OOD/test** split, not a 10% in-distribution slice of train.
+- Confirm the notebook matches the **current** task — after any reframe, a stale notebook is a real defect.
+- **Confirm the dataset actually exists at full scale.** One bundle shipped with only tiny verification samples; the full data was never generated. Verify `raw/` and `public/` hold the real counts.
+
+---
+
+## Gate G — Documentation ↔ reality diff
+
+Every sentence an agent reads must be true of the files it receives. Diff programmatically.
+
+**G1. Schema diff.** Parse feature bullets (`- name (type) — description`) and diff against the real frames; documented-but-absent or present-but-undocumented columns are BLOCKERs, type mismatches MAJOR. Repeat for every described file; diff the documented file structure against the real `public/` tree.
+
+**G2. Metric identity.** Reimplement the metric named in `problem_description.md` and compare to `grade.py` on three valid submissions (agreement 1e-9). The doc must name the exact metric. Critically, diff any public `evaluate()` snippet against the grader — a stale lenient snippet (`.fillna(0) >= 0.5`) contradicting a now-strict grader was a real finding.
+
+**G3. Submission-spec identity.** Columns, dtypes, row count in the Submission section exactly match `sample_submission.csv`; Requirements (ranges, header, NaN policy, coverage rules) match what Gate E proved. Either direction of mismatch is a BLOCKER. Confirm an inline fenced-CSV example with real ids exists (missing example is the most common doc finding). Confirm no self-contradictory requirement ("exactly N rows" vs "≥50% coverage"). Confirm train-label format reconciles with submission format (JSON `start/end/risk_key` vs `start-end` pairs).
+
+**G4. Quantitative claims audit.** Recompute every number the docs/rubrics assert — imbalance %, missingness %, regime proportions, no-op %, counts, date ranges, class balance. Tolerance ±2 pts (counts exact). Real misses: ESBL phenotype-only 34% vs 73.5%, genotype-missing 60% vs 70%, uv254 45% vs 59%, no-op 5% vs 2%. Each failed claim is MAJOR; a rubric that depends on a failed claim is BLOCKER for that rubric. Also recompute formula constants the grader uses (a missing `/1.10` normalization and a dropped detection-credit term were both flagged).
+
+**G5. Docs-only solvability.** Build a format-valid dummy submission using only `problem_description.md` (without opening `sample_submission.csv`) and grade it. If you can't, the description is ambiguous (MAJOR; BLOCKER if the format itself is underspecified).
+
+**G6. `config.yaml` coherence.** `direction` matches the metric's sense; the `perfect` submission attains the best bound; the inverted submission doesn't breach the worst bound; `name`/`domain`/`difficulty` match the docs. **Check the bounds are numeric and not inverted** — `minimum: 1.0, maximum: 0.0` (meaning "min is best") fails a runner doing `minimum <= score <= maximum` and silently rejects every score. Confirm `config.domain` is a genuine, enabled domain. Confirm baselines in the config are current with the grader.
+
+**G7. Scope of `dataset_description.md`.** Confirm it describes only the raw dataset — no `prepare.py`, split, `sample_submission`, masking, or grading. Confirm `problem_description.md` never references the participant-invisible `dataset_description.md`. Confirm any train-only label (e.g. `raw_code`) isn't mislabeled as "forbidden leakage."
+
+**G8. Cross-artifact count consistency.** After any head/column removal, grep for stale counts ("five" vs "six heads"), stale filenames (`train_corpus.csv` vs `.csv.gz`), and stale baseline numbers across README, rubrics, config, notebook, and docstrings (a grade.py docstring listing the wrong rare labels was flagged).
+
+---
+
+## Gate H — Rubric audit
+
+- Count ≥ 5 (aim 10–13); importance majority REQUIRED/RECOMMENDED; both positive and SHOULD-NOT present; no unused tier (an unused `UNIVERSAL` tier was flagged).
+- Every criterion mechanically verifiable from a notebook/transcript by a third party.
+- Every cited number verified in G4.
+- Approach-neutral: name two valid techniques that pass each; otherwise it's solution-specific.
+- Reference-passes: the reference passes all REQUIRED items.
+- Discrimination: the best trivial baseline (D2) fails ≥2–3 rubrics; if it passes everything, the set is dead weight (MAJOR).
+- No surviving anti-patterns (vague, tool-specific, impossible-to-fail, solution-specific, mostly-universal).
+
+---
+
+## Gate N — Novelty and domain classification (new)
+
+- **Novelty self-check.** Name the single closest public benchmark and state, concretely, how the task's *mechanism* differs (not just "it's synthetic"). If the only difference is data synthesis or constraints layered on a known task family (span infilling, sequence classification, proof generation, ARC, BLiMP/CoLA, toxicity-QSAR), expect a novelty rejection and flag it now (MAJOR/BLOCKER depending on the gate threshold).
+- **Self-capping language scan.** Grep the descriptions for phrases that hand a novelty grader its verdict — "recombination", "each component has prior art", "the contribution is the assembly". These were quoted straight back as the basis for a RECOMBINED score. Flag for removal.
+- **Closest-neighbor preemption.** Confirm a truthful "relation to prior work / why this is novel" section exists and addresses the *nearest* neighbor (the assessor once cited a farther one while missing BLiMP).
+- **No evaluator gaming.** Confirm no text is engineered to manipulate the novelty grader (prompt injection). If present, BLOCKER on integrity grounds.
+- **Domain fit.** Confirm `task_type`, the metric, and `config.domain` describe a genuine, currently-enabled domain. A binary-target/feature-list framing will be auto-classified Tabular/Classification (disabled) regardless of wording; a span/generate framing trips Sequence-To-Sequence. If the underlying task can't escape a disabled bucket by wording, the task itself must change (BLOCKER).
+
+---
+
+## Gate R — Render-safety and formatting (new)
+
+- **No markdown tables.** Scan every `.md`:
+
+```python
+import re, pathlib
+for p in pathlib.Path('.').rglob('*.md'):
+    hits = [i + 1 for i, line in enumerate(p.read_text().splitlines())
+            if re.match(r'^\s*\|.*\|\s*$', line)]
+    if hits:
+        print('TABLE FOUND:', p, 'lines', hits)
+```
+
+Any hit is a BLOCKER (also a real platform failure — tables render as concatenated run-on text and fail Description Quality).
+
+- **Nested-list indentation.** Flag nested bullets indented 2–3 spaces; Python-Markdown (the platform renderer) flattens them so column sub-bullets render as top-level siblings. Require 4-space indentation for nested items and verify in the platform's actual renderer, not just a CommonMark preview.
+- **Description leanness (code challenges and prose).** Flag motivational preambles, enumeration of inferable API/feature surface, restated constraints across sections, over-specification of behavior hidden tests don't check, and "don't break things" filler — all drew FAIL/request_changes verdicts.
+
+---
+
+## 5. Final report format
+
+Deliver one report (lists only, never tables):
+
+- **Verdict** — SHIP / FIX_AND_RESUBMIT / REJECT, one sentence.
+- **Fingerprints** — Gate B tree hashes for `raw/`, `public/`, `private/`.
+- **Score ladder** — every submission scored, one bullet each: perfect, reference, each trivial baseline, sample, inverted — with metric values, and the % of the trivial→perfect gap the reference closes.
+- **Findings** — one bullet each: `[SEVERITY] [Gate] description — evidence: <command + observed output> — proposed fix: <one line>`. Borderline passes get a bullet too.
+- **Gate summary** — one line per gate (A, B, C, D, E, F, G, H, P, N, R): PASS / FAIL / PASS-WITH-NOTES.
+- **Residual risks** — anything unverifiable on the available hardware/time, stated explicitly (e.g. "GPU solvability not certified"; "novelty score is the platform's call"). Never let an unverified item count silently as a pass.
+
+---
+
+## 6. Hard blockers — never issue SHIP if
+
+- Any required artifact is missing.
+- `generate.py` or `prepare.py` is non-deterministic.
+- `prepare.py` crashes on string args, can't find raw inputs in the platform's nested layout, isn't self-contained against a stale upload, exceeds the disk budget, or writes logs/answers into `public/`.
+- Any single public feature, the row order, or the id predicts the target near-perfectly without documentation.
+- Feature-identical rows, or entities in a generalize-to-new-entity task, span the split; a time-series split is non-chronological or uses future info.
+- `answers.csv` is recoverable from anything in `public/`, including a hidden-label list printed in a public grader snippet.
+- The grader scores `shuffled` differently from `perfect`, accepts foreign/duplicate/missing ids, returns NaN/inf, crashes uncleanly (including when run as a script or when `id` is the index), swallows errors with a blanket `except`, or leaks ground truth in messages.
+- The grader's enforced format differs in any way from the documented format; the metric named differs from the metric computed; or a public `evaluate()` snippet contradicts the grader.
+- The metric awards most of its points for a trivial sub-skill (no-skill baseline meets or beats the reference).
+- `sample_submission.csv` scores 0.0 (fails the platform floor) or contains real labels.
+- The reference fails to run end-to-end, exceeds the budget, reads outside `./dataset/public/`, fails the perturbation check, or the full dataset was never generated.
+- A trivial baseline matches the reference; or the challenge is trivially solvable (target stated in text, F1 = 1.0 templates).
+- Any documented column, count, statistic, or formula constant contradicts the actual data.
+- `config.yaml` bounds are inverted (numeric range fails) or `config.domain` is a disabled/wrong domain.
+- Any markdown table exists, or nested lists rely on <4-space indentation that flattens on the platform.
+- The bundle contains real labels in the sample, evaluator-gaming text, `__MACOSX/`/junk, or stale prior-version files; or the wrong (preview/toy) files were uploaded in place of the real data.
+
+---
+
+## 7. Practical notes
+
+- **Budget:** A, B, P, C are fast; D–F dominate because they run the notebook and grader repeatedly. Run **P early** — it catches the cheapest, most common blockers. Cache Gate B outputs and reuse them everywhere; never regenerate mid-audit or your evidence stops referring to one fixed bundle.
+- **Modality:** keep each gate's logic and swap the probes (Gate C lists vision/NLP/seq2seq/rec substitutions). Gates E, G, P, R apply unchanged to every modality.
+- **When you find a BLOCKER early:** finish the remaining gates anyway when feasible. One complete finding list beats three round-trips that each surface one bug.
+- **Distrust stale-snapshot reviews and infra flakiness.** Automated reviewer comments sometimes score an older revision, and sandbox/infra errors ("Modal Sandbox not found", "edited since checks last ran") are not content defects — re-run rather than over-edit, but verify before dismissing.

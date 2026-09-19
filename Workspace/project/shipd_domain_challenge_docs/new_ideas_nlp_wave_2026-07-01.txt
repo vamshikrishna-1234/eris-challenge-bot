@@ -1,0 +1,2309 @@
+================================================================================
+NLP / FINE-TUNING / SEQ2SEQ / PRE-TRAINING / FROM-SCRATCH — FRESH IDEA BATCH
+Generated: 2026-07-01
+Scope: PHASE 1 ONLY (ideas for review/selection). Do not build until approved.
+================================================================================
+
+HOW THIS BATCH WAS VETTED FOR OVERLAP
+--------------------------------------------------------------------------------
+Before drafting, the following were read in full (via parallel research passes,
+not skimmed):
+
+- shipd_domain_challenge_docs/NLP.md (13 accepted/observed entries)
+- shipd_domain_challenge_docs/Fine-Tuning.md (10 distinct entries, 1 verbatim dup)
+- shipd_domain_challenge_docs/Sequence-To-Sequence.md (14 entries)
+- shipd_domain_challenge_docs/From-Scratch.md (8 distinct entries, 1 verbatim dup)
+- rules/LATEST.md, challenge_template_file_creation.txt, dataset_template_creation.txt,
+  checkpoints, reviewer_ideas, .cursor/rules/challenge-creation.mdc
+- rules/prev_reviews.txt (most recent entries, incl. 2026-07-01 feedback)
+- new_ideas.txt lines 2150-3764 — 17 previously brainstormed NLP/fine-tuning ideas
+  (numbered 39-55 in that file) that already exist as drafts, two of which
+  (Clearinghouse Trade-Break Reconciliation #42, Ops-Log Causal-Chain
+  Reconstruction #49) were actually BUILT and submitted.
+
+KEY LESSON FROM THIS WEEK'S REVIEWER FEEDBACK (2026-07-01, Ops-Log Causal-Chain):
+platform agents hit ~0.94 (too easy) because of exploitable TEXT surface shortcuts —
+direct service-name mentions, fixed severity tokens that leaked the root cause, and
+timestamp-only causal ordering. Every idea below was designed with this in mind:
+wherever a "hidden" mapping exists, the surface tokens are deliberately NOT a
+1:1 giveaway, and at least one axis is genuinely irreducible (not just noisy).
+
+THINGS DECLARED "ALREADY SPENT" AND DELIBERATELY AVOIDED BELOW:
+- The 17 prior-draft "hidden per-tenant/per-org/per-family policy, ontology,
+  pricing function, escalation matrix, edit-tagging convention, migration rule
+  table, identity-merge doctrine, control-flow graph, section-grammar,
+  corruption fingerprint, precedence convention, reward rubric, tool-state
+  machine, protocol grammar" shapes (ideas 39-55). None of the 23 ideas below
+  reuse any of those 17 "induce hidden X" shapes.
+- The NLP.md 3x-repeated recipe of "obfuscate a fictional protocol document,
+  mask the verdict, classify an ordinal/categorical label" (risk memos /
+  negotiation logs / redaction fields).
+- The From-Scratch.md 4x-repeated recipe of "invented vocabulary + train LM
+  from scratch + 4-option cloze/MCQ" (music/Mermaid/Sanskrit/dialect-MLP), and
+  its 2x-repeated "invent a fictional rule system, hide the rulebook, classify
+  the outcome" recipe (Skaldic, Ironhold).
+- The Fine-Tuning.md domains already twice-used (histopathology/medical
+  imaging, program synthesis) and its "hidden probe labels never disclosed"
+  and "hard parameter/method caps" tricks are noted but not re-copied verbatim.
+- Enterprise SRE/infra-logs and B2B ops-ticket verticals (heavily represented
+  already, including two BUILT submissions) are not reused as a workflow
+  setting anywhere below.
+
+Where a new idea still sits near a NAMED real benchmark (e.g. DISAPERE for
+peer-review alignment, WMT Quality Estimation, the "US Patent Phrase to Phrase
+Matching" Kaggle competition, BLiMP), the nearest-neighbor note says so
+explicitly and states the delta, per the cite-or-cap novelty convention this
+repo's own novelty checker uses. These notes are my best-effort assessment,
+not a substitute for the dispatched-research-agent novelty pre-vetting this
+repo normally runs before a build — recommend running that pass on whichever
+2-3 ideas you shortlist.
+
+FORMAT LEGEND (matches prompt_final_NLP Phase 1 spec):
+Title | Real-world context | What the solver sees | What they predict |
+Intended solution | Evaluation metric | Why hard for current agents |
+Why humans/experts can still improve it | Shortcuts killed |
+Data source & license | Dataset scale | Split plan | Schema |
+Baseline plan | Nearest-neighbor novelty note | Suggested platform metadata
+
+================================================================================
+SECTION A — NLP  (5 ideas)
+================================================================================
+
+--------------------------------------------------------------------------------
+A1. Error-Typed Quality Estimation For Code-Mixed Customer-Support Machine Translation
+--------------------------------------------------------------------------------
+Real-world context: Global support teams triage incoming tickets by
+auto-translating them, but agents cannot review every machine translation by
+hand. Quality Estimation (QE) — scoring a translation's reliability without a
+reference — decides which translations go straight to an agent and which get
+routed to a human translator first. The hardest QE traffic is code-mixed:
+customers blend a matrix language with English brand/product terms and
+occasional full-clause switches, which breaks MT systems in ways clean
+bilingual QE benchmarks never see.
+
+What the solver sees: `ticket_id`, `source_text` (a synthetic code-mixed
+customer message — a constructed Latin-script matrix language blended with
+English at the word, phrase, and clause level, generated with a controlled
+switching grammar so no real language's copyright/licensing is implicated),
+`mt_output` (a synthetic MT system's translation, generated with a rule+noise
+pipeline that injects four controlled error families), and `community_id`
+(an opaque code for the code-mixing register/community, e.g. differing
+switch-density and slang norms).
+
+What they predict: `quality_score` (float 0-1, overall reliability), and a
+4-way error-type multilabel set drawn from {omission, addition,
+mistranslation, register_mismatch} (a row can have 0-3 of these), plus a
+`route_decision` in {auto_send, human_review} implied by a fixed
+quality_score threshold stated in the challenge (so this head is a strict
+function of the score head, used only as a consistency check).
+
+Intended solution: fine-tune a small multilingual encoder (e.g. LaBSE,
+mDeBERTa-v3, or XLM-R-base) as a regression+multilabel head over the
+(source, mt_output) pair, or instruction-tune a small multilingual decoder
+(Qwen2.5-1.5B/3B, Gemma-2-2B) to emit the score and error tags jointly.
+Zero-shot prompting fails because the code-mixing grammar and the MT system's
+specific error signature are both synthetic and unseen in pretraining.
+
+Evaluation metric: 0.40 x (1 - normalized MAE on quality_score) + 0.35 x
+(macro-F1 over the 4 error tags) + 0.15 x worst-community macro-F1 (minimum
+across the 5 held-out community_id groups, penalizing models that only work
+on the majority register) + 0.10 x route-consistency (route_decision must
+equal the threshold function of the submitted quality_score, else that row's
+consistency term is 0). Theoretical min 0.0, max 1.0. Perfect labels score
+1.0 by construction.
+
+Why hard for current agents: a prompted LLM defaults to fluency-based
+translation-quality heuristics tuned on real language pairs; it has no prior
+on this constructed matrix language's switching grammar or on this specific
+synthetic MT system's error fingerprint (which error types it favors under
+which switch patterns), so its score and error-tag predictions are only
+weakly better than chance without training on the provided pairs.
+
+Why humans/domain experts can still improve it: linguists familiar with
+code-switching theory (matrix-language-frame principles) can hand-design
+better features for switch-point detection, and QE practitioners know how to
+calibrate score-vs-error-tag consistency losses — both improve the ceiling
+beyond a naively-tuned baseline.
+
+Shortcuts killed: length-only heuristics (MT output length ratio is
+deliberately decorrelated from quality by construction), keyword/lexical
+overlap scoring (BLEU-style surface overlap is explicitly a weak baseline we
+measure and report), source-text-only shortcuts (score must depend on
+mt_output, verified by a "swap-mt_output" sanity baseline), constant/majority
+scoring, and community-name lookup (community_id is an opaque integer, its
+switching norms must be learned from train examples only).
+
+Data source & license: fully synthetic (Option A). A controlled code-mixing
+generator produces the constructed-language/English blend; a rule+noise MT
+simulator produces mt_output with logged, ground-truth error injections.
+CC0 1.0, generator script included.
+
+Dataset scale: 18,000 train / 4,500 test rows, source+mt_output pairs average
+25-45 tokens each. Raw upload well under 100 MB (plain text/CSV only).
+
+Split plan: grouped by `community_id` (5 communities) with 1 community fully
+held out from training to test register transfer, plus a random split within
+the remaining 4 for the rest of test.
+
+Schema: public train/test columns = ticket_id, source_text, mt_output,
+community_id. Train-only additional columns = quality_score,
+error_omission/addition/mistranslation/register (0/1 each). Hidden grader
+groups = community_id (worst-group term) and error-type frequency bucket
+(rare-error rows weighted higher in macro-F1). Submission = ticket_id,
+quality_score, error_omission, error_addition, error_mistranslation,
+error_register, route_decision.
+
+Baseline plan: `_analyze.py` must report train-prior (mean quality_score),
+length-ratio-only regressor, source-mt lexical-overlap (chrF/BLEU-style)
+regressor, metadata-only (community_id one-hot) regressor, a zero-shot
+LLM-prompt proxy score (simulated via a fixed heuristic scorer standing in
+for prompting), and a shallow TF-IDF+linear model — all must land
+meaningfully below a fine-tuned encoder's expected performance.
+
+Nearest-neighbor novelty note: closest published work is the WMT Quality
+Estimation shared tasks (sentence-level QE, HTER/DA scoring) and industry QE
+tooling (TransQuest, OpenKiwi). The delta: those operate on clean bilingual
+pairs with a single scalar score; this task requires structured multi-type
+error attribution plus a held-out-community robustness term, on a
+deliberately code-mixed, low-resource-flavored register QE benchmarks don't
+cover. Expect a RECOMBINED (5-6) novelty band; recommend a pre-vetting pass
+before building.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G (small encoder) or
+H100 if instruction-tuning a decoder path is emphasized.
+
+--------------------------------------------------------------------------------
+A2. Incident Narrative Chronology And Causal-Link Reconstruction From First-Person Safety Reports
+--------------------------------------------------------------------------------
+Real-world context: Workplace and aviation safety investigators read
+free-text near-miss and incident reports that are almost never written in
+chronological order — people describe what they noticed first, then
+backfill "but actually the valve had failed ten minutes earlier." Turning
+these narratives into a clean timeline and causal chain is a real,
+labor-intensive step in root-cause analysis (used for OSHA-style incident
+review and aviation ASRS-style reporting).
+
+What the solver sees: `report_id`, `narrative` (a synthetic first-person
+incident report, 80-180 words, describing 4-7 discrete events using natural
+discourse structure — flashbacks, "I later realized," relative time
+expressions, implicit causal connectives), and a fixed `event_span_id` list
+marking which narrative spans correspond to which atomic event (pre-extracted
+so the task is ordering/causality, not span detection).
+
+What they predict: `chronological_order` (a permutation of the event_span_ids
+in true time order) and `causal_edges` (a JSON list of directed
+event-to-event causal links, from a set of candidate pairs given per row).
+
+Intended solution: fine-tune a small instruction-following LM (Llama-3.2-3B,
+Qwen2.5-3B-Instruct, Phi-3.5-mini) to emit both structured outputs jointly
+from the narrative, since chronology and causality are mutually constraining
+(a causal edge can never point backward in the predicted order — a
+consistency term rewards respecting this).
+
+Evaluation metric: 0.45 x mean Kendall-tau-based ordering score (rescaled to
+0-1) + 0.40 x edge-set F1 over causal_edges + 0.15 x order-causality
+consistency (fraction of predicted causal edges that do not contradict the
+predicted order). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: narratives are written to make the FIRST-STATED
+order tempting but wrong roughly 60% of the time (deliberate flashback
+framing); a prompted LLM without training on this specific narrative style's
+discourse-marker conventions over-relies on stated order and on generic
+temporal-connective heuristics ("then," "after") that this generator
+deliberately uses in both forward and backward-reference senses.
+
+Why humans/domain experts can still improve it: investigators trained in
+discourse analysis and causal-chain methodologies (e.g. 5-Whys, fault-tree
+review) recognize implicit causal discourse markers and non-linear narrative
+structure better than a generic model, and can hand-tune which connective
+patterns most reliably signal true causal vs. merely sequential mentions.
+
+Shortcuts killed: narrative mention order (explicitly decorrelated from true
+order), sentence length or position, keyword-only connective matching ("then"
+appears in both correct and misleading contexts by design), constant/identity
+permutation baseline, and majority-edge-set guessing.
+
+Data source & license: fully synthetic (Option A) generator that builds a
+true event timeline + causal DAG first, then renders a natural-language
+narrative using a style-randomized discourse planner that reorders/backfills
+on purpose. CC0 1.0.
+
+Dataset scale: 9,000 train / 2,200 test narratives, 4-7 events each. Raw
+upload a few tens of MB of text/JSON.
+
+Split plan: grouped by `narrative_style_family` (5 style templates
+controlling how much flashback/backfill is used) with 1 family held out
+entirely for test to prevent style-specific connective memorization.
+
+Schema: public = report_id, narrative, event_span_id list, candidate_pairs
+(for causal_edges). Train-only = chronological_order, causal_edges. Hidden
+grader groups = narrative_style_family (worst-group term folded into the 0.45
+ordering weight) and event-count bucket (4-5 vs 6-7 events, harder to order).
+Submission = report_id, chronological_order (comma-separated ids),
+causal_edges (JSON list of [from_id, to_id]).
+
+Baseline plan: `_analyze.py` must report stated-mention-order-as-prediction
+baseline, random-permutation baseline, connective-keyword-only heuristic
+(if/then/after/before triggers), metadata-only (event count) baseline, and a
+zero-shot-prompt proxy baseline, all compared against a fine-tuned model.
+
+Nearest-neighbor novelty note: nearest published work is temporal relation
+extraction (TimeML/TempEval shared tasks) and event causality extraction
+(e.g. CaTeRS, RED, the Causal-TimeBank). The delta: those largely score
+pairwise temporal/causal relation classification on newswire text; this task
+requires joint FULL-narrative reordering (a global permutation, not pairwise
+labels) plus a causal graph, scored with an explicit consistency term between
+the two, on a first-person flashback-heavy narrative style. RECOMBINED
+band expected — name TempEval/RED explicitly in the challenge's own novelty
+writeup when building.
+
+Suggested platform metadata: Difficulty Medium-Hard; GPU H100 (decoder
+instruction-tuning).
+
+--------------------------------------------------------------------------------
+A3. Cross-Lingual Risk-Signal Embedding Alignment For Multilingual Support Tickets
+--------------------------------------------------------------------------------
+Real-world context: Global support platforms want one shared "risk space"
+for tickets regardless of language, so downstream churn/urgency/escalation
+models don't need to be retrained per market. In practice, teams find their
+multilingual encoders bind risk signal to language-specific surface cues
+instead of the underlying semantics, so a model that looks great in English
+silently fails in other languages.
+
+What the solver sees: `ticket_id`, `text` (a synthetic support ticket in one
+of 6 languages — a mix of real high-resource languages rendered via a
+template+lexicon generator to stay license-clean, e.g. synthetic English,
+Spanish, and 4 others — no labels of any kind visible for any row, train or
+test).
+
+What they predict: one row per ticket_id in a single output file containing
+a fixed-dimension embedding vector (`emb_0`...`emb_{D-1}`, solver chooses D
+between 8 and 256) for every ticket in the combined train+test pool (this is
+a "submit representations, not labels" task).
+
+Intended solution: self-supervised or weakly-supervised multilingual
+representation learning (contrastive sentence-embedding training,
+translation-consistency objectives, or fine-tuning a multilingual encoder
+such as LaBSE/XLM-R with an in-batch contrastive loss) trained by the solver
+using only the unlabeled multilingual text; no labels exist for the solver
+to fit a shortcut to.
+
+Evaluation metric: the grader fits 3 independent frozen linear probes on the
+submitted embeddings using TRAIN rows only (urgency 3-class, topic 6-class,
+escalation-risk regression), each scored on held-out test rows, then reports
+0.5 x mean-in-language probe accuracy/R2 + 0.5 x worst-language probe
+accuracy/R2 (minimum across the 6 languages) — so an embedding space that
+only separates classes well in the majority language scores low on the
+worst-language term. Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: an off-the-shelf multilingual embedding model
+(used zero-shot, no training) typically clusters by SURFACE language before
+by semantic risk category, which the worst-language probe term punishes
+directly; genuinely closing the cross-lingual gap requires the solver to
+actually train/fine-tune on the provided unlabeled corpus (e.g. via
+translation-pair or paraphrase-consistency objectives the generator makes
+available), not just embed with a frozen off-the-shelf checkpoint.
+
+Why humans/domain experts can still improve it: ML engineers experienced in
+cross-lingual representation learning (hard-negative mining, language-adversarial
+training, translation-ranking objectives) can meaningfully close the
+worst-language gap beyond a naive single-objective contrastive baseline.
+
+Shortcuts killed: submitting one-hot or predicted-label vectors dressed up as
+"embeddings" (grader checks embedding rank/variance and rejects
+near-discrete submissions), raw TF-IDF/bag-of-words without any learned
+transformation (explicitly measured as a weak baseline), language-only
+clustering (directly penalized by the worst-language term), and constant
+embeddings (near-zero variance submissions score near the floor).
+
+Data source & license: fully synthetic (Option A). A template+lexicon
+generator produces topically-matched ticket text across the 6 languages from
+a shared underlying scenario bank, so genuine cross-lingual paraphrase pairs
+exist for self-supervised training. CC0 1.0.
+
+Dataset scale: 24,000 unlabeled tickets total (train+test pool combined,
+since embeddings are required for all rows), roughly 4,000 per language, 20-60
+words each. A few tens of MB.
+
+Split plan: the 3 probe tasks' held-out test rows are randomly split within
+each language (probe generalization is the point, not group holdout); the
+worst-language term itself is the robustness mechanism instead of a
+templated OOD split.
+
+Schema: public = ticket_id, text, language_code (visible; the point is
+whether the SOLVER's model uses it as a crutch, which the worst-language term
+penalizes). No labels ever shown. Submission = ticket_id, emb_0..emb_{D-1}
+for every row in train+test combined.
+
+Baseline plan: `_analyze.py` must report a frozen off-the-shelf multilingual
+encoder's embeddings (no fine-tuning) as the primary baseline to beat, plus
+TF-IDF+SVD, language-one-hot-augmented TF-IDF, and a monolingual-only
+(English-fitted) contrastive model evaluated cross-lingually to show the
+gap this task is designed to expose.
+
+Nearest-neighbor novelty note: nearest neighbors are cross-lingual sentence
+embedding benchmarks (LASER/LaBSE evaluation suites, MTEB's cross-lingual
+tasks) and this repo's own accepted NLP.md "Representation Learning for
+Compositional Generalization" (grader-side linear-probe format). The delta
+from the in-house neighbor: that task's holdout axis is an unseen
+ATTRIBUTE-COMBINATION within one language; this task's holdout axis is
+cross-LANGUAGE transfer of the same probes, a genuinely different robustness
+property. Recommend explicitly differentiating from both in the final
+writeup.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G.
+
+--------------------------------------------------------------------------------
+A4. Argument-Scheme Graph Extraction And Counterfactual Warrant Sensitivity In Appeal Letters
+--------------------------------------------------------------------------------
+Real-world context: Insurance appeals, academic grade appeals, and customer
+dispute letters all follow a persuasive structure — a claim, supporting
+evidence, and an implicit warrant connecting them. Adjusters and ombudsmen
+need to quickly see which evidence is actually load-bearing for a claim
+versus decorative, especially when deciding how a case would change if one
+piece of evidence were struck.
+
+What the solver sees: `letter_id`, `text` (a synthetic appeal letter, 100-200
+words, containing 1 main claim and 2-4 evidence statements, each evidence
+statement pre-segmented via `span_id` markers), and `evidence_pairs` (the
+candidate evidence-to-claim link list to be judged, since claim/evidence
+segmentation is given and the task is graph structure + counterfactual
+reasoning, not span detection).
+
+What they predict: `support_edges` (which evidence span_ids actually support
+the claim, as opposed to being restated background or a decorative
+aside — a JSON list), and for each evidence span_id, a
+`counterfactual_status` in {claim_survives, claim_weakens, claim_collapses}
+answering "if this evidence were removed, what happens to the claim's
+overall support," which requires the model to have modeled the IMPLICIT
+warrant (why the evidence would matter), not just detect its presence.
+
+Intended solution: fine-tune a small instruction LM (Qwen2.5-3B-Instruct,
+Llama-3.2-3B) or an encoder-based graph-construction head (DeBERTa-v3-large
+with pairwise span classification) trained on labeled letters to learn which
+surface evidence types carry real argumentative weight in this letter style
+versus which are filler, and to simulate the removal counterfactual.
+
+Evaluation metric: 0.40 x support_edges set-F1 + 0.45 x mean per-evidence
+counterfactual_status accuracy (3-class) + 0.15 x a "confident-filler" trap
+term: rows contain evidence written in confident, assertive language that is
+actually decorative (support_edges = false); this term is the accuracy on
+JUST those trap rows, so a model that equates confident phrasing with real
+support is directly punished. Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: prompted LLMs strongly correlate confident,
+detailed-sounding language with argumentative importance; this generator
+deliberately decouples surface confidence from true evidentiary weight
+(some load-bearing evidence is stated tersely, some filler is stated
+assertively), which only a model trained on this letter style's actual
+labeled support structure can learn to see past.
+
+Why humans/domain experts can still improve it: adjusters and appeals
+officers experienced in argumentation analysis (Toulmin-scheme reasoning)
+can identify implicit warrants better than a generic model and can tune the
+counterfactual-reasoning head's handling of multi-evidence interaction
+effects (two weak evidences jointly sufficient, individually not).
+
+Shortcuts killed: evidence span length/position, confident-language keyword
+cues (directly targeted by the trap term), lexical overlap between evidence
+and claim text, majority-class ("claim_survives" is majority) constant
+prediction, and template-family memorization (see split plan).
+
+Data source & license: fully synthetic (Option A), generated from an
+underlying argument-scheme template (claim + typed evidence + explicit
+ground-truth warrant-strength per evidence) that is never shown to the
+solver, then rendered into natural persuasive prose with randomized
+confidence-register per evidence item, decorrelated from true weight. CC0 1.0.
+
+Dataset scale: 7,500 train / 1,800 test letters, 2-4 evidence items each
+(roughly 22,000 evidence-claim judgments total). A few tens of MB.
+
+Split plan: grouped by `letter_domain` (insurance appeal / grade appeal /
+customer dispute / warranty claim — 4 domains) with 1 domain held out from
+training entirely to test transfer of the argument-scheme skill itself
+rather than domain-specific phrasing.
+
+Schema: public = letter_id, text, span markers, evidence_pairs candidate
+list, letter_domain. Train-only = support_edges, counterfactual_status per
+evidence. Hidden grader groups = letter_domain (worst-group) and the
+confident-filler trap subset. Submission = letter_id, support_edges (JSON),
+counterfactual_status per span_id.
+
+Baseline plan: `_analyze.py` must report a confidence-language-keyword
+heuristic (the trap baseline, expected to score near chance on the trap
+subset), evidence-length-only heuristic, lexical-overlap-with-claim
+heuristic, metadata-only (letter_domain) baseline, majority-class baseline,
+and a zero-shot-prompt proxy.
+
+Nearest-neighbor novelty note: nearest published work is argument mining
+(IBM Debater's Project Debater datasets, AraucariaDB, the IAM corpus) and
+RST-style discourse parsing. The delta: standard argument mining extracts the
+graph and stops; this task adds an explicit COUNTERFACTUAL robustness
+question per edge (does the claim survive evidence removal) as the dominant
+scored head, which is not a standard argument-mining output, plus a
+confidence-vs-weight decorrelation trap. Expect RECOMBINED band; name
+Project Debater / AraucariaDB explicitly when building.
+
+Suggested platform metadata: Difficulty Medium-Hard; GPU H100.
+
+--------------------------------------------------------------------------------
+A5. Peer-Review Rebuttal Point Alignment Under A Hidden Per-Venue Rubric
+--------------------------------------------------------------------------------
+Real-world context: Area chairs and journal editors skim author rebuttals
+against reviewer comments to judge whether concerns were actually addressed,
+partially addressed, or deflected — a task made harder because a single
+review often bundles several entangled sub-points, and what counts as
+"addressed" varies by field/venue culture (a terse acknowledgment satisfies
+some reviewing cultures and reads as dismissive in others).
+
+What the solver sees: `pair_id`, `review_text` (a synthetic reviewer comment
+containing 2-4 distinct sub-points, `point_id`-marked), `rebuttal_text` (the
+author's response), and `venue_family` (an opaque code for the reviewing
+culture, e.g. terse-tolerant vs. detail-expected).
+
+What they predict: for each `point_id` in the review, an `alignment_status`
+in {directly_addressed, partially_addressed, deflected, ignored}, plus one
+letter-level `rebuttal_confidence_gap` flag (1/0) marking whether the
+rebuttal's LANGUAGE is more confident/assertive than its actual content
+justifies — a direct, explicitly scored test of the "confident tone is not
+the same as substance" property.
+
+Intended solution: fine-tune a small encoder (DeBERTa-v3-large) as a
+per-point classifier reading (review_point, full_rebuttal, venue_family), or
+instruction-tune a small decoder LM to emit the structured per-point judgment
+set jointly, since points within one review are not independent (a rebuttal
+addressing point 1 thoroughly sometimes implies deflection on point 2 by
+omission).
+
+Evaluation metric: 0.35 x mean per-point macro-F1 (4-class) + 0.30 x
+worst-venue-family macro-F1 (minimum across 4 held-out venue families) + 0.20
+x rebuttal_confidence_gap F1 (the tone-vs-substance trap) + 0.15 x a
+set-completeness term (did the submission address every point_id present,
+with no missing/extra ids). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: a prompted LLM judges rebuttal quality largely
+by its own generic notion of thoroughness and politeness, which this
+generator deliberately decouples from actual alignment (confidently-worded
+non-answers are common by design), and it has no access to the venue-specific
+norm for what counts as "addressed" without training on labeled examples
+from that norm family.
+
+Why humans/domain experts can still improve it: experienced area chairs who
+have calibrated across many venues can transfer norm-sensitivity better than
+a generic model, and can hand-adjust the model's handling of bundled
+sub-points that partially resolve each other.
+
+Shortcuts killed: rebuttal length (a longer non-answer is common in the
+data), politeness/hedging keyword cues, point_id order, lexical overlap
+between review and rebuttal text (paraphrased non-answers are included by
+design), majority-class ("partially_addressed" is majority) prediction, and
+venue_family name lookup (opaque codes, norm must be learned from train
+examples of that family).
+
+Data source & license: fully synthetic (Option A). Reviews, rebuttals, and
+ground-truth per-point alignment are generated jointly from an underlying
+template that fixes true alignment first, then renders surface text with a
+randomized tone register decorrelated from true alignment for the trap rows.
+CC0 1.0.
+
+Dataset scale: 6,000 train / 1,500 test review-rebuttal pairs, 2-4 points
+each (roughly 18,000 point-level judgments). A few tens of MB.
+
+Split plan: grouped by `venue_family` (4 families) with 1 family held out
+entirely from training; remaining test rows randomly split from the other 3
+families.
+
+Schema: public = pair_id, review_text with point_id spans, rebuttal_text,
+venue_family. Train-only = alignment_status per point_id,
+rebuttal_confidence_gap. Hidden grader groups = venue_family (worst-group
+term) and the confidence-gap trap subset. Submission = pair_id, point_id,
+alignment_status, rebuttal_confidence_gap (one row per point_id).
+
+Baseline plan: `_analyze.py` must report a lexical-overlap-only heuristic
+(review/rebuttal word overlap as a proxy for "addressed"), rebuttal-length-only
+heuristic, politeness/hedge-keyword heuristic, metadata-only (venue_family)
+baseline, majority-class baseline, and a zero-shot-prompt proxy — all
+expected to underperform a fine-tuned model, especially on the
+confidence-gap trap subset.
+
+Nearest-neighbor novelty note: this closely neighbors DISAPERE (Kennard et
+al.), a real published dataset of review-rebuttal alignment annotations —
+this must be named explicitly and the delta stated clearly: DISAPERE labels
+whole review-rebuttal pairs with coarse categories; this task requires
+per-SUB-POINT alignment within a single bundled review (a set-alignment
+problem), adds a held-out per-venue-culture robustness term, and adds the
+tone-vs-substance trap as an explicitly scored head. Given the closeness to
+a named dataset, treat this as a MODERATE novelty-risk idea — pre-vet before
+committing to build, and consider it the first candidate to cut if the
+batch needs trimming.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G (encoder path) or
+H100 (decoder instruction-tuning path).
+
+================================================================================
+SECTION B — FINE-TUNING  (5 ideas)
+================================================================================
+
+--------------------------------------------------------------------------------
+B1. Grade-2 Braille Back-Translation Error Localization And Type Classification
+--------------------------------------------------------------------------------
+Real-world context: Braille transcription houses (e.g. national braille
+presses) run quality control by back-expanding contracted grade-2 braille
+into print text and checking it matches the source. Grade-2 braille uses
+~180 context-sensitive contractions (a single cell can mean different things
+depending on word position and neighboring cells), so many transcription
+errors are subtle disambiguation mistakes, not garbage output — exactly the
+kind of error a rule-based expander misses but a context-aware model catches.
+
+What the solver sees: `doc_id`, `source_print_text` (the intended English
+text), `braille_ascii` (the transcribed grade-2 braille rendered in standard
+6-dot ASCII braille notation, containing exactly one class of injected
+transcription error per row, or none), and `contraction_context_window`
+(the local cell window around the error-candidate region, for rows where an
+error-candidate flag is set).
+
+What they predict: `has_error` (0/1), `error_type` in {wrong_contraction_choice,
+word_boundary_error, missing_indicator, none}, and `error_span` (start/end
+cell indices in braille_ascii) when has_error=1.
+
+Intended solution: instruction-tune or LoRA-fine-tune a small open LM
+(Qwen2.5-1.5B/3B, Phi-3.5-mini) on (print_text, braille_ascii) pairs with
+labeled error spans/types, since correct disambiguation of a given
+braille cell requires the SAME contextual reasoning a human transcriptionist
+uses (surrounding word structure, part-of-speech position) rather than a
+static contraction lookup table (which has multiple valid expansions per
+cell and cannot resolve ambiguity alone).
+
+Evaluation metric: 0.30 x has_error accuracy + 0.35 x error_type macro-F1
+(computed only on has_error=1 rows, 4th "none" class scored on has_error=0
+rows) + 0.25 x error_span IoU-based localization score (0 if has_error
+predicted wrong) + 0.10 x worst-contraction-family term (minimum F1 across 5
+held-out families of contraction rules, e.g. whole-word signs vs.
+part-word signs vs. strong contractions). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: braille-ASCII text has essentially no
+representation in general LLM pretraining corpora, and the disambiguation
+rule for a given contracted cell depends on fine-grained positional/context
+cues published in braille transcription manuals but not densely represented
+in any pretraining corpus; a model must actually learn the (print, braille)
+mapping's context-sensitivity from the provided labeled pairs.
+
+Why humans/domain experts can still improve it: certified braille
+transcribers understand grade-2 disambiguation edge cases (e.g. the "st"
+sign's contextual restrictions) well enough to hand-curate hard negative
+examples and tune per-contraction-family error weighting beyond a naive
+uniform loss.
+
+Shortcuts killed: braille-ASCII length-only heuristics, print-text-only
+shortcuts (verified via a "hide braille_ascii" ablation baseline), constant
+"none" prediction (has_error is class-balanced by construction), and
+whole-cell exact-match lookup tables (explicitly measured and shown to be
+insufficient because the same cell has 3-6 valid expansions depending on
+context).
+
+Data source & license: fully synthetic (Option A). A rules-based
+grade-2 braille transcription engine (built from the public-domain grade-2
+braille contraction ruleset) transcribes procedurally generated English
+sentences, then a controlled error-injection pass introduces exactly one of
+the three error types (or none) per row with logged ground truth. CC0 1.0.
+
+Dataset scale: 14,000 train / 3,500 test rows, sentences 8-20 words. A few
+tens of MB (plain text/ASCII braille, no images).
+
+Split plan: grouped by `contraction_family` (5 families of grade-2 rules)
+with 1 family held out from training to test generalization of the
+disambiguation skill rather than memorization of one rule family's examples.
+
+Schema: public = doc_id, source_print_text, braille_ascii,
+contraction_context_window. Train-only = has_error, error_type, error_span.
+Hidden grader groups = contraction_family (worst-group term). Submission =
+doc_id, has_error, error_type, error_span_start, error_span_end.
+
+Baseline plan: `_analyze.py` must report a static-lookup-table baseline
+(picks the most frequent expansion per cell, ignoring context — expected to
+be clearly beaten), print-text-only baseline, length-only baseline,
+constant/majority baseline, and a zero-shot-prompt proxy (expected to be
+weak given near-zero braille-ASCII pretraining exposure).
+
+Nearest-neighbor novelty note: nearest work is academic research on
+braille-to-print back-translation and liblouis-style rule-engine
+transcription QA tooling; no widely-known public Kaggle/HF benchmark targets
+grade-2 contraction disambiguation error localization specifically. Low
+collision risk expected, but this is a narrow/niche vertical — verify real
+transcription-house workflow interest before committing significant build
+time.
+
+Suggested platform metadata: Difficulty Medium; GPU H100.
+
+--------------------------------------------------------------------------------
+B2. Air-Traffic Readback Error Detection And Span Localization Under ICAO Phraseology
+--------------------------------------------------------------------------------
+Real-world context: Pilots must read back air traffic control instructions
+(altitude, heading, squawk code, runway) verbatim; readback errors — a wrong
+digit, a transposed number, confusing one aircraft's callsign for another —
+are a well-documented, actively studied aviation safety problem (FAA and
+Eurocontrol both publish readback-error taxonomies). Automatically flagging
+mismatches at scale, from transcript text, is a genuine controller-support
+tool concept.
+
+What the solver sees: `exchange_id`, `controller_instruction` (synthetic
+ICAO-standard phraseology text, e.g. "Speedbird 202, climb flight level 180,
+turn left heading 270"), `pilot_readback` (the corresponding readback,
+correct or containing exactly one injected error type), and `callsign_roster`
+(the 2-4 aircraft callsigns active in this exchange, since callsign-confusion
+errors require knowing what the alternatives were).
+
+What they predict: `error_type` in {none, numeric_transposition,
+digit_substitution, callsign_confusion, parameter_omission,
+wrong_parameter_value}, and `error_token_span` (start/end token indices in
+pilot_readback) when error_type != none.
+
+Intended solution: LoRA/QLoRA fine-tune a small open LM (Qwen2.5-1.5B/3B,
+Llama-3.2-3B) on labeled (instruction, readback, error_type, span) examples,
+since distinguishing "two seven zero" from "two seven oh" style
+phonetic/numeric confusions, and callsign confusions between similar-sounding
+roster entries, both require pattern exposure to ICAO numeral phraseology
+specifically, which general pretraining under-represents relative to how
+finely it must be modeled here.
+
+Evaluation metric: 0.40 x error_type macro-F1 (6-class, imbalanced by
+design toward "none" ~40%) + 0.35 x span localization F1 (0 credit if
+error_type wrong) + 0.25 x worst-error-type recall (minimum recall across
+the 5 non-"none" classes, so a model that only catches the easy digit
+substitutions but misses callsign confusion is punished). Theoretical min
+0.0, max 1.0.
+
+Why hard for current agents: ICAO numeral phraseology ("tree," "fife,"
+"niner") and callsign-confusability patterns are a narrow, specialized
+register barely present in general pretraining; a prompted LLM without
+fine-tuning on labeled examples cannot reliably distinguish a genuine
+transposition from acceptable phraseology variance, and has no basis for
+learning which roster callsigns are "confusable" without seeing labeled
+confusion examples.
+
+Why humans/domain experts can still improve it: air traffic safety
+researchers with access to real readback-error taxonomies (beyond the
+6 classes modeled here) can extend the label schema and tune
+confusability-similarity features (phonetic edit distance between
+callsigns) beyond a naive baseline.
+
+Shortcuts killed: readback length, generic edit-distance-to-instruction
+(deliberately insufficient since correct paraphrase-style readbacks, e.g.
+reordering parameters, must NOT be flagged as errors), constant "none"
+prediction, and roster-position shortcuts (correct callsign is not always
+roster position 0).
+
+Data source & license: fully synthetic (Option A). A phraseology generator
+builds ICAO-compliant instruction/readback pairs from a controlled grammar,
+injecting one of five error types (or none) per row with exact ground truth
+and using a phonetic-confusability model to pick realistic wrong callsigns.
+CC0 1.0.
+
+Dataset scale: 16,000 train / 4,000 test exchanges, 15-30 words each. A few
+tens of MB.
+
+Split plan: grouped by `phraseology_dialect` (regional ICAO phraseology
+variants, e.g. US vs. UK vs. ICAO-standard-strict — 4 dialects) with 1
+dialect held out entirely from training.
+
+Schema: public = exchange_id, controller_instruction, pilot_readback,
+callsign_roster, phraseology_dialect. Train-only = error_type,
+error_token_span. Hidden grader groups = phraseology_dialect (worst-group)
+and error_type (worst-recall term). Submission = exchange_id, error_type,
+error_span_start, error_span_end.
+
+Baseline plan: `_analyze.py` must report a generic edit-distance-threshold
+baseline, keyword/number-mismatch-only baseline, constant-"none" baseline,
+metadata-only (dialect) baseline, and a zero-shot-prompt proxy, all compared
+against a fine-tuned model especially on the callsign_confusion and
+worst-recall terms.
+
+Nearest-neighbor novelty note: nearest neighbors are real ATC speech/text
+corpora and associated NLP research (ATCOSIM, ATCO2) and published
+aviation-safety studies on readback error detection. The delta: this task is
+purely text-based (no ASR/audio component, sidestepping those corpora's
+audio-licensing complexity), fully synthetic and license-clean, and frames
+the task as multi-type structured error classification + span localization
+rather than transcription accuracy. Name ATCO2/ATCOSIM explicitly in the
+build-time novelty writeup; expect RECOMBINED band.
+
+Suggested platform metadata: Difficulty Medium; GPU H100.
+
+--------------------------------------------------------------------------------
+B3. Patent Claim Dependency Untangling And Indefiniteness-Risk Flagging
+--------------------------------------------------------------------------------
+Real-world context: Patent claims reference each other ("as recited in claim
+3") to build a scope hierarchy; patent examiners and IP due-diligence
+reviewers must untangle this dependency tree and catch indefiniteness
+issues — a dependent claim referencing a nonexistent or ambiguous antecedent
+claim is a genuine, well-documented rejection ground under patent law.
+
+What the solver sees: `patent_id`, `claims_text` (a synthetic patent claims
+section, 5-12 claims, independent and dependent, with natural
+cross-reference language such as "The apparatus of claim 2, further
+comprising..."), each claim pre-segmented by `claim_number`.
+
+What they predict: `parent_claim` for each claim_number (its direct
+dependency target, or "independent" — building the full dependency tree),
+`indefiniteness_flag` (0/1, whether the claim's antecedent reference is
+broken, circular, or refers to a nonexistent claim number), and
+`narrows_scope` (0/1, whether a dependent claim actually adds a limiting
+element versus a redundant/vacuous addition) for dependent claims only.
+
+Intended solution: instruction-tune a small open LM (Qwen2.5-3B-Instruct,
+Llama-3.2-3B) to emit the structured dependency tree plus flags jointly,
+since resolving "claim 1 or 2" branching references and detecting redundant
+limitations both require reading full claim semantics, not just parsing
+reference numbers.
+
+Evaluation metric: 0.35 x parent_claim exact-match accuracy (tree-edge
+accuracy) + 0.30 x indefiniteness_flag F1 + 0.20 x narrows_scope accuracy
+(on dependent claims only) + 0.15 x a full-tree-validity bonus (1.0 only if
+the entire predicted tree for a patent is acyclic and internally
+consistent, 0 otherwise, per patent, then averaged) rewarding globally
+coherent trees over locally-plausible-but-inconsistent ones. Theoretical
+min 0.0, max 1.0.
+
+Why hard for current agents: roughly 10% of test claims contain a deliberate
+off-by-one or ambiguous branching reference (e.g. "claim 1 or 2" pointing
+into a spot where claim 2 doesn't logically support this dependent claim's
+added limitation) that a model must FLAG rather than silently resolve by
+picking the nearest plausible number — prompted LLMs strongly favor silently
+"fixing" apparent typos instead of flagging them as indefiniteness issues,
+which is exactly the wrong behavior in this legal context.
+
+Why humans/domain experts can still improve it: patent attorneys and
+examiners familiar with 35 U.S.C. 112(b) indefiniteness case law can extend
+the labeled edge cases (e.g. multiple dependent claim reference conventions)
+beyond what the training generator covers.
+
+Shortcuts killed: claim_number arithmetic shortcuts (e.g. "always parent =
+claim_number - 1," which is deliberately false in ~35% of rows due to
+non-sequential dependency structure), reference-phrase keyword-only matching
+(explicitly insufficient given the ambiguous-reference trap rows),
+majority-class flagging, and claim length/position heuristics.
+
+Data source & license: fully synthetic (Option A). A claims generator
+builds a ground-truth dependency tree and scope-narrowing structure first
+(varying tree shape, injecting indefiniteness cases with exact logged
+locations), then renders natural patent-claim prose from a controlled
+technical-domain vocabulary (mechanical/electrical/software widgets,
+invented to avoid resembling any real patent family). CC0 1.0.
+
+Dataset scale: 5,000 train / 1,200 test patents (5-12 claims each, roughly
+45,000 claim-level judgments total). A few tens of MB.
+
+Split plan: grouped by `technical_domain_family` (4 invented technical
+domains) with 1 family held out entirely from training.
+
+Schema: public = patent_id, claim_number, claim_text (per claim), reference
+phrase spans. Train-only = parent_claim, indefiniteness_flag,
+narrows_scope. Hidden grader groups = technical_domain_family (worst-group)
+and the indefiniteness-trap subset. Submission = patent_id, claim_number,
+parent_claim, indefiniteness_flag, narrows_scope.
+
+Baseline plan: `_analyze.py` must report a nearest-lower-number-heuristic
+baseline (claim N depends on N-1), reference-phrase-regex-only baseline
+(extracts the stated number, never flags indefiniteness), constant/majority
+baseline, metadata-only baseline, and a zero-shot-prompt proxy.
+
+Nearest-neighbor novelty note: patent NLP has real prior art, most notably
+the "US Patent Phrase to Phrase Matching" Kaggle competition (phrase
+similarity scoring) and academic patent-claim-parsing research (CLAIMS
+dataset, PatentMatch). This task is clearly different in kind from the
+Kaggle competition (dependency-tree + indefiniteness flagging vs. phrase
+similarity) but the vertical overlap means the writeup must explicitly
+name and distinguish from it to avoid reviewer confusion. Expect
+RECOMBINED band.
+
+Suggested platform metadata: Difficulty Medium-Hard; GPU H100.
+
+--------------------------------------------------------------------------------
+B4. VHF Radio Transcript Standardization Into Structured Maritime Message Records
+--------------------------------------------------------------------------------
+Real-world context: Vessel Traffic Service (VTS) operators handle VHF radio
+exchanges that mix informal phrasing, partial readbacks, and static-garbled
+fragments; IMO's Standard Marine Communication Phrases (SMCP) define a
+formal target vocabulary for safety-critical exchanges, and converting noisy
+real exchanges into standardized structured records is a genuine VTS
+logging and training-QA workflow.
+
+What the solver sees: `transcript_id`, `raw_transcript` (a synthetic VHF
+exchange, informal phrasing, partial readbacks, and 0-2 static-garbled
+fragments marked with a placeholder token), and `vessel_roster` (call signs
+active in the exchange).
+
+What they predict: `message_type` (from a closed SMCP-derived vocabulary of
+~15 message categories: e.g. traffic_clearance, position_report,
+distress_relay, pilot_request), `vessel_ref` (which roster vessel the
+message concerns), `intent_summary` (a short canonical-form SMCP-style
+phrase reconstructing the garbled/informal exchange into standard phrasing),
+and `urgency_tier` (routine/urgent/distress).
+
+Intended solution: fine-tune a small encoder-decoder or decoder LM
+(Flan-T5-base, Qwen2.5-1.5B/3B) on (raw_transcript, structured_record)
+pairs, since reconstructing the correct SMCP phrase through static-garbled
+fragments and informal phrasing requires learning the mapping from noisy
+surface forms to the formal target register, not just formal-phrase
+memorization.
+
+Evaluation metric: 0.25 x message_type macro-F1 + 0.20 x vessel_ref accuracy
++ 0.30 x intent_summary quality (chrF++ against the canonical SMCP
+reference phrase) + 0.25 x urgency_tier macro-F1 with a 2x weight multiplier
+on the distress class specifically (missing a distress signal is far worse
+than misclassifying a routine one — modeled directly in the score).
+Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: SMCP is a real but narrow published standard
+with limited representation in general pretraining relative to how
+precisely this task requires reconstructing it through noise, and the
+informal-to-formal mapping (which colloquial phrasings map to which SMCP
+category) must be learned from labeled pairs since the same informal phrase
+can map to different SMCP categories depending on exchange context (position
+in the conversation, roster state).
+
+Why humans/domain experts can still improve it: maritime communications
+specialists familiar with SMCP's exact phrase inventory can extend the
+category taxonomy and hand-correct systematic confusions between
+adjacent message types beyond a naive baseline.
+
+Shortcuts killed: raw_transcript length, keyword-only SMCP-phrase spotting
+(insufficient given informal paraphrase and garbling), constant/majority
+message_type, roster-position-zero shortcut for vessel_ref, and
+urgency-keyword-only heuristics (e.g. "mayday" appears in some non-distress
+training/drill exchanges by design, to block a pure keyword trigger).
+
+Data source & license: fully synthetic (Option A), grounded in the publicly
+published IMO SMCP phrase categories (used only as workflow/vocabulary
+grounding, not as a scraped dataset) with a controlled generator producing
+noisy informal exchanges and their canonical structured record. CC0 1.0.
+
+Dataset scale: 12,000 train / 3,000 test exchanges, 20-50 words. A few tens
+of MB.
+
+Split plan: grouped by `vts_region_style` (4 regional phrasing style
+variants) with 1 held out entirely from training.
+
+Schema: public = transcript_id, raw_transcript, vessel_roster,
+vts_region_style. Train-only = message_type, vessel_ref, intent_summary,
+urgency_tier. Hidden grader groups = vts_region_style (worst-group) and the
+distress-class weighted term. Submission = transcript_id, message_type,
+vessel_ref, intent_summary, urgency_tier.
+
+Baseline plan: `_analyze.py` must report an SMCP-keyword-spotting-only
+baseline, constant/majority baseline, roster-position-zero baseline,
+metadata-only baseline, and a zero-shot-prompt proxy, with particular
+attention to the distress-class recall gap.
+
+Nearest-neighbor novelty note: no widely-known public benchmark targets VHF
+maritime transcript standardization specifically; nearest general neighbors
+are ATC-style structured-communication NLP work (see B2) and generic ASR
+post-editing research. Low collision risk expected given the narrow,
+under-benchmarked vertical.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G or H100.
+
+--------------------------------------------------------------------------------
+B5. Museum Conservation Condition-Report Structuring Across Object-Type Families
+--------------------------------------------------------------------------------
+Real-world context: Museum and archive conservators write free-text
+condition reports during digitization and loan-prep workflows ("foxing on
+verso, minor tear upper right, prior restoration visible along fold");
+registrars need these turned into structured, searchable condition records,
+but conservation terminology is genuinely object-type-specific — the same
+word can mean different things, or simply not apply, depending on whether
+the object is a painting, textile, or bound book.
+
+What the solver sees: `report_id`, `object_type` (painting/textile/
+book/paper-work-on-paper — 4 families), and `condition_note` (a synthetic
+free-text conservator note, 20-60 words, using object-type-appropriate
+conservation terminology).
+
+What they predict: `damage_types` (a multilabel set drawn from a ~25-term
+controlled conservation vocabulary, where validity depends on object_type —
+e.g. "craquelure" is only valid for paintings, "foxing" only for paper/book),
+`severity` (1-5 per identified damage type, as a JSON map), and
+`treatment_urgency` (routine/monitor/urgent).
+
+Intended solution: fine-tune a small open LM (Qwen2.5-1.5B/3B,
+Llama-3.2-3B) or an encoder multilabel classifier (DeBERTa-v3-base)
+conditioned on object_type, since the same conservation term must map to
+different validity/severity conventions depending on object_type, which a
+flat term-to-code dictionary cannot represent correctly.
+
+Evaluation metric: 0.35 x damage_types set-F1 (computed with a hard penalty:
+predicting a damage type invalid for the given object_type scores that
+prediction as an automatic false positive) + 0.30 x severity mean bounded
+error (1 - normalized MAE, computed only over correctly-identified damage
+types) + 0.20 x treatment_urgency macro-F1 + 0.15 x worst-object-type
+macro-F1 (minimum across the 4 families). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: general pretraining conflates conservation
+terms loosely across object types (a prompted model does not reliably know
+that "craquelure" is a paint-specific term and will happily assign it to a
+textile note if the surface description sounds similar), so the
+object-type-conditioned validity rule must be learned from labeled examples
+rather than recalled from a generic glossary.
+
+Why humans/domain experts can still improve it: professional conservators
+can extend the controlled vocabulary with additional object-type-specific
+terms and correct systematic cross-type confusions (e.g. paper "cockling" vs
+textile "puckering") beyond what a naive baseline captures.
+
+Shortcuts killed: note length, flat keyword-to-code dictionary lookup
+(explicitly measured and shown insufficient due to homonym/near-synonym
+cross-type confusions), constant/majority damage type, object_type-only
+(ignoring note text) prediction, and treatment_urgency keyword-only
+heuristics ("tear" appears in both urgent and routine-severity notes by
+design).
+
+Data source & license: fully synthetic (Option A). A generator builds
+ground-truth damage/severity/urgency records per object-type family first,
+then renders natural conservator-register prose with a controlled
+terminology bank (including deliberate near-synonym cross-type traps). CC0
+1.0.
+
+Dataset scale: 9,000 train / 2,200 test reports across the 4 object-type
+families. A few tens of MB.
+
+Split plan: grouped by `object_type` for the worst-group robustness term
+(all 4 present in both train/test, not held out wholesale, since the point
+is cross-type disambiguation, not unseen-type transfer), plus a secondary
+grouped holdout by `collection_era_style` (older vs. modern condition-report
+writing conventions) with one style held out entirely.
+
+Schema: public = report_id, object_type, condition_note. Train-only =
+damage_types, severity, treatment_urgency. Hidden grader groups = object_type
+and collection_era_style (both worst-group terms). Submission = report_id,
+damage_types (list), severity (JSON map), treatment_urgency.
+
+Baseline plan: `_analyze.py` must report a flat keyword-to-code dictionary
+baseline (no object-type conditioning), object-type-only (ignore text)
+baseline, note-length-only baseline, constant/majority baseline, and a
+zero-shot-prompt proxy, all evaluated per object_type to show where the flat
+dictionary specifically fails.
+
+Nearest-neighbor novelty note: no widely-known public benchmark targets
+conservation condition-report structuring; nearest general neighbors are
+clinical-note structured-extraction work (different vocabulary/domain
+entirely) and general domain-shorthand extraction tasks in this repo's own
+prior batches (which target enterprise ops verticals, not cultural
+heritage). Low collision risk; genuinely under-benchmarked vertical.
+
+Suggested platform metadata: Difficulty Easy-Medium; GPU A10G or H100.
+
+================================================================================
+SECTION C — SEQUENCE-TO-SEQUENCE  (5 ideas)
+================================================================================
+
+--------------------------------------------------------------------------------
+C1. Gap-Filling Repair Of Redacted Steps In A Symbolic Proof Calculus With Verifier-Checked Multi-Valid Completions
+--------------------------------------------------------------------------------
+Real-world context: Proof-assistant "copilot" tools (a fast-growing area
+around Lean/Coq/Isabelle autoformalization) need to fill gaps in partially
+written formal proofs. This task models that workflow with a bespoke,
+simplified proof calculus (not real Lean/Coq syntax, to avoid any
+pretraining leakage or runtime-dependency licensing issue) so the emphasis
+stays on sequence-to-sequence structural repair rather than deep mathematics.
+
+What the solver sees: `proof_id`, `statement` (a short arithmetic/set-theory/
+algebra claim in a constrained symbolic notation), and `proof_sketch` (an
+ordered sequence of typed steps such as ASSUME(x), SUBST(a,b), APPLY(rule_id),
+QED, with 2-4 consecutive steps replaced by a single `<GAP>` token).
+
+What they predict: `filled_steps` (the sequence of steps that belongs in the
+gap — note MULTIPLE different step sequences can be logically valid, this is
+by design).
+
+Intended solution: fine-tune a small encoder-decoder (Flan-T5-base/large,
+CodeT5+) or decoder LM (Qwen2.5-Coder-1.5B) on (sketch-with-gap,
+one-valid-completion) pairs at scale, learning the calculus's typed
+inference-rule structure well enough to generate a NEW valid completion for
+unseen statements, rather than memorizing a fixed sketch-to-completion table.
+
+Evaluation metric: the grader runs the submitted `filled_steps` through a
+deterministic symbolic verifier (included in grade.py, not disclosed as
+runnable to the solver) that checks full logical validity of the completed
+proof. Score = 0.70 x (1.0 if the completed proof verifies as fully valid,
+else a graph-edit-distance-based partial score against the nearest valid
+completion the verifier can construct) + 0.30 x step-type sequence
+similarity (Levenshtein over step TYPES only, ignoring exact arguments, as a
+softer partial-credit signal). Theoretical min 0.0, max 1.0. Perfect (any
+fully valid completion, not just the reference one) scores 1.0 — a genuinely
+rare grading property in this repo's history, worth highlighting.
+
+Why hard for current agents: the calculus's notation and inference rules are
+bespoke and hold no pretraining prior, so a prompted LLM must reconstruct
+the rule system's constraints purely from the small number of visible
+worked (non-gapped) examples in-context, which does not scale to the harder,
+longer gaps in the private test set; a model fine-tuned on thousands of
+labeled sketch/completion pairs learns the calculus's structure directly.
+
+Why humans/domain experts can still improve it: people with formal-logic or
+proof-assistant tactic-design experience can hand-engineer better
+step-type transition priors (which step types plausibly follow which) to
+seed a stronger sequence model than a naive baseline.
+
+Shortcuts killed: gap-length-only heuristics, statement-text keyword
+matching (the calculus notation is symbolic, not lexical), copying the
+pre-gap steps verbatim (a common degenerate failure mode explicitly
+measured), and constant/most-frequent-completion baselines (which the
+verifier-based scoring directly punishes since most statements need a
+statement-specific completion to verify).
+
+Data source & license: fully synthetic (Option A). A generator constructs
+valid full proofs in the bespoke calculus first (so ground truth is
+correct-by-construction), then redacts 2-4-step spans, retaining the
+verifier as part of the generator/grader toolchain. CC0 1.0.
+
+Dataset scale: 10,000 train / 2,500 test proofs, 6-14 steps each (gap length
+2-4). A few tens of MB (plain symbolic text).
+
+Split plan: grouped by `rule_family_combination` (which subset of the
+calculus's ~20 inference rules a proof draws on) with several
+combinations held out entirely from training to test genuine rule-system
+generalization rather than memorized gap-filling patterns.
+
+Schema: public = proof_id, statement, proof_sketch (with `<GAP>` markers),
+gap_position. Train-only = filled_steps (one reference completion; note the
+grader accepts ANY verifier-valid completion, not just this one).  Hidden
+grader groups = rule_family_combination (worst-group term) and gap-length
+bucket. Submission = proof_id, filled_steps (sequence of step tokens).
+
+Baseline plan: `_analyze.py` must report a copy-preceding-steps baseline,
+most-frequent-completion-by-rule-family baseline, random-valid-rule-sampling
+baseline, constant baseline, and a zero-shot-prompt proxy (expected weak
+given the bespoke notation), all run through the actual verifier to report
+true verified-validity rates, not just surface similarity.
+
+Nearest-neighbor novelty note: nearest neighbors are neural theorem-proving /
+autoformalization research (e.g. GPT-f, Lean-adjacent copilot tools,
+miniF2F-style benchmarks) which use REAL proof assistants and often
+mathematically deep content. The delta: this task uses a bespoke, shallow
+calculus specifically to isolate the sequence-repair skill from deep
+mathematical reasoning, and its verifier-based "any valid completion counts"
+grading is a distinct, less common grading paradigm in this repo's
+challenge history. Name miniF2F/GPT-f explicitly when building; expect
+RECOMBINED-or-better band given the calculus is bespoke. Flag clearly that
+Phase 2 build effort is higher than average (a working symbolic verifier
+must ship inside grade.py).
+
+Suggested platform metadata: Difficulty Hard; GPU A10G (compact
+encoder-decoder) or H100.
+
+--------------------------------------------------------------------------------
+C2. Cross-Sentence Knowledge-Graph Triple Sequence Extraction From Technical Assembly Manuals
+--------------------------------------------------------------------------------
+Real-world context: AR-guided repair tools and automated manual-validation
+systems need a structured dependency/connection graph out of prose assembly
+instructions, but manuals routinely use pronouns and ellipsis across
+sentences ("Attach the bracket to the frame. Then secure it with two
+bolts.") that must be resolved correctly to build a correct graph.
+
+What the solver sees: `manual_id`, `passage` (a synthetic 4-8 sentence
+technical procedure passage describing component assembly, written with
+natural cross-sentence pronoun/ellipsis references), and `component_list`
+(the named components mentioned, as a disambiguation aid).
+
+What they predict: `triples` (an ORDERED sequence of (subject, relation,
+object) triples — order matters because it reflects procedural sequence, not
+just a set — where relation is drawn from a closed ~50-term domain relation
+vocabulary such as attaches_to, requires_step_before, connects_via,
+must_precede_safety).
+
+Intended solution: fine-tune a small encoder-decoder (Flan-T5-base,
+CodeT5+) or decoder LM (Qwen2.5-1.5B/3B) to autoregressively emit the triple
+sequence directly from the passage, since correct extraction requires
+resolving which earlier-mentioned component a pronoun refers to — a
+capability that improves substantially with supervised fine-tuning on
+labeled cross-sentence-coreference examples versus zero-shot extraction.
+
+Evaluation metric: 0.30 x triple-set F1 (order-independent, using
+relabeling-tolerant matching so component naming variance doesn't
+unfairly penalize) + 0.30 x ordered-sequence similarity (normalized edit
+distance over the emitted triple sequence, rewarding correct procedural
+order) + 0.25 x rare-relation recall (macro-averaged recall computed only
+over the bottom-quartile-frequency relations, e.g. must_precede_safety,
+so the model can't coast on common relations like attaches_to) + 0.15 x
+pronoun-resolution accuracy (a directly-scored sub-metric: for each
+pronoun/ellipsis site, did the extracted triple resolve it to the correct
+antecedent component). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: a prompted LLM extracting triples sentence-by-sentence
+misses cross-sentence antecedents unless it holds full-passage context
+carefully, and this generator specifically constructs passages where the
+naive "nearest noun" pronoun-resolution heuristic is wrong roughly 40% of
+the time (the correct antecedent is 2+ sentences back); fine-tuning on
+labeled passages teaches the model this manual-writing style's actual
+reference patterns.
+
+Why humans/domain experts can still improve it: technical writers and AR/
+robotics engineers familiar with assembly-manual conventions can extend the
+relation vocabulary and hand-tune the rare-relation weighting to match
+real safety-critical relation classes better than a naive uniform baseline.
+
+Shortcuts killed: nearest-noun pronoun heuristics (deliberately defeated),
+triple count/length-only heuristics, common-relation-only prediction
+(directly punished by the rare-relation recall term), component_list
+order, and set-only extraction that ignores procedural sequence (directly
+punished by the ordered-sequence term).
+
+Data source & license: fully synthetic (Option A). A generator builds the
+ground-truth component graph and procedural order first, then renders
+natural passage prose with controlled pronoun/ellipsis reference injection.
+CC0 1.0.
+
+Dataset scale: 8,500 train / 2,000 test passages, 4-8 sentences each
+(roughly 30,000 triples total). A few tens of MB.
+
+Split plan: grouped by `manual_family` (furniture/electronics/appliance/
+industrial-equipment — 4 families) with 1 family held out entirely from
+training to block surface-phrasing memorization.
+
+Schema: public = manual_id, passage, component_list, manual_family.
+Train-only = triples (ordered list). Hidden grader groups = manual_family
+(worst-group) and relation-frequency bucket (rare-relation term).
+Submission = manual_id, triples (JSON ordered list of [subject, relation,
+object]).
+
+Baseline plan: `_analyze.py` must report a nearest-noun-coreference
+heuristic extractor, sentence-local-only (no cross-sentence resolution)
+extractor, common-relation-only baseline, constant/empty baseline, and a
+zero-shot-prompt proxy, all compared against a fine-tuned model especially
+on the rare-relation and pronoun-resolution terms.
+
+Nearest-neighbor novelty note: nearest neighbors are general information
+extraction / knowledge-graph-triple-generation research (REBEL, WebNLG) and
+document-level relation extraction (DocRED). The delta: those target
+general-domain entities/relations extracted as an unordered set; this task
+requires a closed procedural-domain relation vocabulary, ORDER-sensitive
+output reflecting assembly sequence, and an explicit rare-relation and
+pronoun-resolution scoring term. Name WebNLG/DocRED explicitly when
+building; expect RECOMBINED band.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G or H100.
+
+--------------------------------------------------------------------------------
+C3. Meeting Transcript To Action-Item Sequence With Supersession And Hedge-Culture Disambiguation
+--------------------------------------------------------------------------------
+Real-world context: Automated meeting-notes tools already extract action
+items reasonably well when commitments are stated cleanly — the genuinely
+hard, unsolved part is meetings where someone revises or cancels an earlier
+statement mid-conversation ("actually, forget what I said about Friday,
+let's push it"), or where hedged, non-committal language ("we could ask
+Sarah, but let's not") gets mistaken for a real commitment. Different
+organizational cultures also phrase hedges and commitments differently,
+which is exactly where generic tools fail silently.
+
+What the solver sees: `meeting_id`, `transcript` (a synthetic multi-speaker
+meeting transcript with realistic disfluencies, interruptions, and vague
+references), and `culture_family` (an opaque code for the meeting's
+communication register, e.g. formal-exec vs. casual-startup vs.
+hierarchical-corporate — each with different hedge/commitment idioms).
+
+What they predict: `action_items` (an ORDERED sequence of {owner, task,
+deadline_or_null, status} where status is one of {new, supersedes_item_N,
+cancels_item_N}), with items that are purely hypothetical/rejected
+("we could... but let's not") correctly EXCLUDED, and a per-item
+`confidence` score.
+
+Intended solution: fine-tune a small decoder LM (Qwen2.5-3B-Instruct,
+Llama-3.2-3B) to emit the ordered structured action-item sequence directly
+from the transcript, since correctly distinguishing real commitments from
+hedges, and correctly linking supersession references to earlier items,
+both require exposure to this specific culture family's labeled phrasing
+patterns rather than generic commitment-detection heuristics.
+
+Evaluation metric: 0.30 x action-item set F1 (excluding hedge/rejected
+items correctly) + 0.25 x supersession/cancellation edge accuracy (did the
+model correctly link a revision to the right earlier item) + 0.20 x
+worst-culture-family F1 (minimum across 3 held-out culture families) + 0.15
+x hedge-rejection precision (specifically, of items the model DID emit as
+action items, what fraction were genuinely committed rather than
+hypothetical — directly penalizes the "any commitment-sounding keyword"
+shortcut) + 0.10 x confidence calibration (ECE-style, binned). Theoretical
+min 0.0, max 1.0.
+
+Why hard for current agents: a prompted LLM's generic notion of "sounds like
+a commitment" is tuned on broad web text, not on this task's specific
+per-culture-family hedge/commitment idiom set, which this generator
+deliberately varies (the SAME surface phrase can be a real commitment in one
+culture family and a routine hedge in another); fine-tuning on labeled
+examples from a given family teaches the model that family's actual
+pragmatics.
+
+Why humans/domain experts can still improve it: people experienced in
+organizational communication/discourse pragmatics can identify culture-specific
+hedge markers and correct systematic false-positive patterns beyond a
+naive baseline, and can improve supersession-chain resolution when multiple
+revisions stack on the same item.
+
+Shortcuts killed: commitment-keyword-only triggers ("let's," "we should" —
+deliberately also appear in rejected/hypothetical framings), speaker-position
+heuristics, item-count/length heuristics, constant/empty-set baseline, and
+culture_family name lookup (opaque code, pragmatics must be learned from
+train examples of that family).
+
+Data source & license: fully synthetic (Option A). A generator builds the
+ground-truth action-item set and supersession chain first, then renders a
+natural multi-speaker transcript with culture-family-conditioned hedge/
+commitment phrasing and injected hypothetical/rejected distractor
+statements. CC0 1.0.
+
+Dataset scale: 7,000 train / 1,700 test transcripts, 15-30 turns each. A few
+tens of MB.
+
+Split plan: grouped by `culture_family` (3 families) with 1 family held out
+entirely from training.
+
+Schema: public = meeting_id, transcript, culture_family. Train-only =
+action_items (ordered list with owner/task/deadline/status/confidence
+ground truth). Hidden grader groups = culture_family (worst-group) and the
+hedge-rejection trap subset. Submission = meeting_id, action_items (JSON
+ordered list).
+
+Baseline plan: `_analyze.py` must report a commitment-keyword-trigger
+baseline (expected to over-fire on hedges), first-speaker-only baseline,
+constant/empty baseline, metadata-only baseline, and a zero-shot-prompt
+proxy, all evaluated especially on hedge-rejection precision and the
+worst-culture-family term.
+
+Nearest-neighbor novelty note: nearest neighbors are meeting summarization/
+action-item extraction research (AMI/ICSI meeting corpora, QMSum) and
+commercial tools (Otter.ai, Fireflies-style products) — this vertical risks
+reading as "something GPT already does well." The delta this task leans on:
+the supersession/cancellation chain-linking requirement and the
+held-out-culture-family hedge/commitment disambiguation trap are not covered
+by AMI/QMSum-style extraction benchmarks or by generic product capability.
+Name AMI/QMSum explicitly when building. Treat as a MODERATE-risk idea —
+if the batch needs trimming, this is a reasonable candidate to cut before
+the stronger C1/C2.
+
+Suggested platform metadata: Difficulty Medium; GPU H100.
+
+--------------------------------------------------------------------------------
+C4. Historical Ledger Abbreviation Expansion Under Era-Specific Scribal Conventions
+--------------------------------------------------------------------------------
+Real-world context: Genealogy archives and family-history services rely on
+volunteer and automated transcription of historical ledgers (parish
+registers, account books) full of era-specific abbreviations ("Wm." for
+William, ditto marks, "£/s/d" currency shorthand, superscript ordinals);
+the same abbreviation can expand differently depending on era, region, and
+syntactic position, making this a genuine transcription-QA support workflow
+need, not a solved lookup problem.
+
+What the solver sees: `entry_id`, `raw_text` (a synthetic historical ledger
+line with era-appropriate abbreviations and occasional OCR-like character
+confusions), and `era_region` (an opaque code for the ledger's era/region
+scribal convention).
+
+What they predict: `expanded_text` (the fully expanded, normalized
+transcription) and structured fields `person_name`, `amount`, `date_or_null`
+extracted from the expanded form.
+
+Intended solution: fine-tune a small encoder-decoder (Flan-T5-base/large,
+ByT5-small for character-level robustness to OCR-like noise) on
+(raw, expanded) pairs at the character/subword level, since the same
+abbreviation token requires context-dependent expansion (a name-position
+"Jn." differs from a date-position "Jn.") that a static abbreviation
+dictionary cannot resolve, and OCR-like character noise requires
+sequence-level denoising rather than dictionary lookup.
+
+Evaluation metric: 0.35 x expanded_text character-level normalized edit
+similarity + 0.35 x structured-field exact-match accuracy (person_name,
+amount, date_or_null, averaged) + 0.20 x worst-era_region score (minimum
+across 4 held-out era/region conventions) + 0.10 x ambiguous-abbreviation
+subset accuracy (a specifically-tagged subset where the SAME abbreviation
+string requires different expansions depending on position — directly tests
+whether the model beats a static dictionary). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: general pretraining has some exposure to
+common historical abbreviations but not to this specific synthetic
+generator's era-conditioned expansion conventions and induced OCR-confusions,
+and a prompted LLM defaults to the single most common expansion for an
+abbreviation regardless of position, which this task's ambiguous-abbreviation
+subset directly penalizes.
+
+Why humans/domain experts can still improve it: genealogists and paleography
+specialists familiar with regional scribal convention variation can extend
+the abbreviation/convention bank and correct systematic era-confusions
+beyond a naive baseline.
+
+Shortcuts killed: static abbreviation-to-expansion dictionary lookup
+(explicitly measured and shown insufficient on the ambiguous-abbreviation
+subset), raw_text length, era_region name lookup (opaque code, convention
+must be learned from train examples), and position-agnostic expansion.
+
+Data source & license: fully synthetic (Option A). A generator produces
+ground-truth structured ledger entries first, then renders era-conditioned
+abbreviated surface text with controlled OCR-like character confusion
+injection. CC0 1.0.
+
+Dataset scale: 13,000 train / 3,200 test entries, 8-20 words each. A few
+tens of MB.
+
+Split plan: grouped by `era_region` (4 conventions) with 1 held out entirely
+from training.
+
+Schema: public = entry_id, raw_text, era_region. Train-only = expanded_text,
+person_name, amount, date_or_null. Hidden grader groups = era_region
+(worst-group) and the ambiguous-abbreviation trap subset. Submission =
+entry_id, expanded_text, person_name, amount, date_or_null.
+
+Baseline plan: `_analyze.py` must report a static abbreviation-dictionary
+baseline, raw-text-copy (no expansion) baseline, length-only baseline,
+constant/majority baseline, and a zero-shot-prompt proxy, with particular
+attention to the ambiguous-abbreviation subset gap.
+
+Nearest-neighbor novelty note: nearest neighbors are historical OCR
+post-correction research and the accepted Sequence-To-Sequence.md "Rosetta
+Stone: Ancient Egyptian Translation" entry (damage-marker restoration +
+translation of a dead language). The delta from that in-house neighbor:
+this task expands abbreviations in a still-understandable script/language
+(no translation step), with the core difficulty being position-dependent
+disambiguation of a KNOWN abbreviation set rather than restoring unknown
+damaged characters in a dead language. Low external collision risk.
+
+Suggested platform metadata: Difficulty Easy-Medium; GPU A10G.
+
+--------------------------------------------------------------------------------
+C5. Recipe Text To Executable Kitchen-Robot Command Sequence With Implicit-Step Insertion
+--------------------------------------------------------------------------------
+Real-world context: Kitchen-automation and cooking-robot systems need to
+convert informal human recipe text into complete, literal command
+sequences — and human recipes routinely omit "obvious" steps (a recipe that
+says "bake at 350F for 20 min" without ever saying "preheat the oven")
+that a correct execution plan must still include. This text-to-plan gap
+(inferring necessary but unstated steps) is a genuine, actively studied
+instruction-to-executable-plan problem.
+
+What the solver sees: `recipe_id`, `recipe_text` (a synthetic informal
+recipe, 60-120 words, following one of several cuisine/style conventions
+that differ in which steps they state explicitly versus leave implicit).
+
+What they predict: `command_sequence` (an ordered list of primitive robot
+commands from a closed ~40-action vocabulary with parameters, e.g.
+PREHEAT(temp), ADD(ingredient, qty), MIX(duration), WAIT(duration),
+TRANSFER(vessel_from, vessel_to) — including commands that have NO direct
+textual mention and must be inferred from physical/task preconditions).
+
+Intended solution: fine-tune a small decoder LM (Qwen2.5-3B-Instruct,
+Llama-3.2-3B) on (recipe_text, full_command_sequence) pairs, since
+predicting the implicit, textually-unstated commands requires learning
+precondition structure from labeled examples (e.g. "baking always requires
+a preceding PREHEAT unless the text already states one") rather than pure
+text extraction.
+
+Evaluation metric: 0.35 x explicit-command sequence similarity (normalized
+edit distance over commands with direct textual support) + 0.40 x
+implicit-command recall and precision (F1, computed ONLY over commands with
+NO direct textual mention — the dominant, hardest term, directly measuring
+precondition inference rather than extraction) + 0.25 x worst-cuisine-style
+F1 (minimum across 4 held-out style conventions that differ in which steps
+are typically left implicit). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: extraction-only approaches (and most
+prompted-LLM behavior defaults to extraction) systematically miss implicit
+commands since there is nothing to extract; correctly inferring them
+requires the model to have learned this task's specific precondition rules
+from labeled examples, and the held-out cuisine-style split means a style
+whose implicit-step conventions differ from the training distribution
+cannot be handled by memorizing one style's checklist.
+
+Why humans/domain experts can still improve it: culinary and robotics
+process engineers can extend the precondition rule set (e.g. handling
+less-common implicit steps like resting/cooling periods) and correct
+systematic errors in command parameterization beyond a naive baseline.
+
+Shortcuts killed: pure span-extraction (structurally cannot produce
+implicit commands, directly exposed by the implicit-command F1 term being
+worth more than the explicit term), command-count/length heuristics,
+constant/most-common-sequence baseline, and cuisine-style name lookup
+(the point is genuine precondition reasoning, not a per-style memorized
+checklist, tested via the held-out style).
+
+Data source & license: fully synthetic (Option A). A generator builds the
+full ground-truth command sequence (explicit + implicit) from a
+precondition-aware planner first, then renders natural recipe text that
+omits a style-conditioned subset of steps. CC0 1.0.
+
+Dataset scale: 9,000 train / 2,200 test recipes, 8-18 commands each. A few
+tens of MB.
+
+Split plan: grouped by `cuisine_style_family` (4 conventions differing in
+which steps are typically implicit) with 1 held out entirely from training.
+
+Schema: public = recipe_id, recipe_text, cuisine_style_family. Train-only =
+command_sequence (full ground truth, tagged per-command as
+explicit/implicit). Hidden grader groups = cuisine_style_family
+(worst-group) and the implicit-command subset (dominant scoring term).
+Submission = recipe_id, command_sequence (JSON ordered list).
+
+Baseline plan: `_analyze.py` must report a pure-extraction baseline (only
+emits commands with direct textual support, expected to score near zero on
+the implicit-command term by construction), most-common-full-sequence
+baseline, constant baseline, metadata-only baseline, and a zero-shot-prompt
+proxy.
+
+Nearest-neighbor novelty note: nearest neighbors are embodied
+instruction-following/planning benchmarks (ALFRED, PlanBench) and
+recipe-to-action-graph research (e.g. RecipeQA). The delta: ALFRED is
+vision-grounded in a 3D simulator (no text-only variant), PlanBench uses
+STRIPS-style block-world domains with no natural recipe text, and neither
+specifically scores an IMPLICIT-STEP-INSERTION term as the dominant metric.
+This is a real vertical overlap risk — name ALFRED/PlanBench explicitly and
+foreground the implicit-step contract when building; expect RECOMBINED band
+at best, possibly requiring extra differentiation work before submission.
+
+Suggested platform metadata: Difficulty Medium-Hard; GPU H100.
+
+================================================================================
+SECTION D — PRE-TRAINING  (4 ideas)
+================================================================================
+Note: this domain tag has ZERO confirmed accepted examples on the platform
+(several pretraining-flavored challenges were filed under Sequence-To-Sequence,
+NLP, or From-Scratch instead) — genuinely open territory. The ideas below
+lean into what actually distinguishes "Pre-Training" from those neighboring
+domains: broad corpus-level language modeling with a LOSS- or
+representation-native metric and multiple downstream probes, rather than one
+narrow supervised contract.
+
+--------------------------------------------------------------------------------
+D1. Continued Pretraining Under A Fixed-Tokenizer Bits-Per-Character Metric With Compositional Register Transfer
+--------------------------------------------------------------------------------
+Real-world context: Enterprises that continue-pretrain a small open model on
+their own technical corpus (equipment inspection logs, engineering change
+notices, defect taxonomies) need to know whether the resulting model
+actually generalizes to new COMBINATIONS of registers it saw individually
+during training, not just to more of the same register — a genuine
+production concern before deploying a domain-adapted model broadly.
+
+What the solver sees: `corpus.txt` (an unlabeled ~40MB synthetic multi-register
+technical corpus spanning 3 named registers — inspection logs, defect-taxonomy
+prose, engineering change notices — sharing one closed, self-consistent
+vocabulary/ontology across registers) and a fixed `eval_tokenizer.json`
+(the grader's canonical byte-level/BPE tokenizer, published so the solver's
+model can be evaluated on a shared unit regardless of the solver's own
+internal tokenizer choice).
+
+What they predict: for each position in a private held-out text stream
+(released only as context windows, no targets), a top-20 probability
+distribution over the canonical tokenizer's vocabulary for the next token:
+`id, top1_token...top20_token, top1_prob...top20_prob` (remaining
+probability mass is implicitly assigned to an "other" bucket for scoring
+purposes).
+
+Intended solution: continued-pretrain a small fixed open base model
+(Pythia-160M, GPT-2-small, Qwen2.5-0.5B) on the provided corpus using any
+self-supervised objective, then run inference with a final re-tokenization/
+projection step onto the canonical vocabulary for submission; a model that
+was never actually trained on this corpus (zero-shot base model, or a
+generic prompted LLM producing plausible-sounding but ungrounded
+probabilities) will assign far less probability mass to the correct token on
+this invented-ontology corpus.
+
+Evaluation metric: 0.55 x bounded cross-entropy skill score (rescaled
+against a unigram-frequency reference model computed from train only, so
+0 = no better than unigram, 1 = perfect prediction) + 0.30 x
+compositional-register transfer term: a held-out subset of the private
+stream consists of documents that MIX two registers within one document
+(never seen as a combination during training, though each register was seen
+individually) — scored the same way, isolated as its own term so memorizing
+per-register statistics without generalizing to novel combinations is
+directly penalized + 0.15 x top-1 accuracy (a simpler, more interpretable
+secondary signal). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: a generic pretrained LLM (used zero-shot, no
+further training) has never seen this corpus's invented ontology and
+vocabulary co-occurrence statistics, so its predictive probability mass on
+the true next token is measurably worse than a model that was actually
+continue-pretrained on the provided corpus — this is a clean, direct,
+hard-to-fake demonstration of the "training beats prompting" gap central to
+this whole wave, and the fixed grader-side tokenizer prevents gaming the
+metric via a trivially small custom vocabulary.
+
+Why humans/domain experts can still improve it: ML engineers experienced in
+continued-pretraining recipes (learning-rate schedules, replay of general
+text to avoid catastrophic drift, data deduplication) can achieve
+meaningfully better bits-per-character than a naive full-fine-tune baseline.
+
+Shortcuts killed: tiny/degenerate custom vocabularies that trivially
+"compress" the eval text (blocked by the fixed grader-side canonical
+tokenizer), constant/uniform-distribution submissions (scored at the
+skill-score floor of 0 by construction), unigram-frequency-only baselines
+(explicitly measured as the skill-score reference point, not a passing
+score), and copying training-corpus n-gram statistics without generalizing
+to the register-mixture subset (directly penalized by the compositional
+term).
+
+Data source & license: fully synthetic (Option A). A generator produces the
+multi-register corpus from a shared closed ontology, holds out a private
+stream including register-mixture documents, and publishes the canonical
+tokenizer alongside the corpus. CC0 1.0.
+
+Dataset scale: ~40MB unlabeled train corpus; private eval stream ~2MB
+(context windows only, no targets shown). Well within budget.
+
+Split plan: register-mixture documents are entirely absent from the public
+corpus (compositional holdout); a secondary temporal split reserves the
+final chronological slice of each single-register sub-corpus as additional
+held-out material.
+
+Schema: public = corpus.txt, eval_tokenizer.json, context windows for the
+private stream (text preceding each scored position, no targets).
+Train-only = nothing (unsupervised); the "labels" are simply the true next
+tokens, known only to the grader. Hidden grader groups = single-register vs.
+register-mixture (the compositional term) and chronological-holdout slice.
+Submission = id, top1..top20 tokens + probabilities per scored position.
+
+Baseline plan: `_analyze.py` must report a unigram-frequency baseline, a
+zero-shot (non-continued-pretrained) base-model baseline, a
+generic-web-text-pretrained model with no domain exposure, and a naively
+overfit (no replay, high learning rate) continued-pretraining baseline to
+show the register-mixture term specifically catching overfitting.
+
+Nearest-neighbor novelty note: nearest neighbors are general LM pretraining
+evaluation (perplexity on WikiText-style benchmarks) and this repo's own
+accepted NLP.md "Representation Learning for Compositional Generalization"
+(compositional-holdout mechanism, but scored via linear probes on submitted
+embeddings, not cross-entropy on submitted next-token distributions). The
+delta from that in-house neighbor: this is a genuine generative
+LOSS-based pretraining metric (bits-per-character under a grader-fixed
+tokenizer), not an embedding-probe task — a meaningfully different grading
+paradigm. Low external collision risk; recommend flagging the submission
+format (top-20 probability CSV) for careful review during Phase 2 since it's
+an unusual shape for this platform.
+
+Suggested platform metadata: Difficulty Hard; GPU A10G (compact base model)
+or H100.
+
+--------------------------------------------------------------------------------
+D2. Surprisal-Based Anomaly Localization From A From-Scratch Domain Language Model
+--------------------------------------------------------------------------------
+Real-world context: Before technical documentation (equipment maintenance
+narratives, inspection notes) enters a searchable knowledge base, someone
+has to catch corrupted or garbled entries — a real data-quality gatekeeping
+step. This task asks the solver to build the QUALITY-CONTROL TOOL itself, in
+the classic computational-linguistics style of using a trained model's own
+likelihood estimates to flag what doesn't fit (the same paradigm behind
+acceptability-judgment benchmarks like BLiMP, but pointed at a domain corpus
+and domain-semantic anomalies rather than general syntax).
+
+What the solver sees: `corpus.txt` (a large unlabeled synthetic corpus of
+industrial-equipment maintenance narratives, self-consistent domain
+statistics — e.g. which components are typically reported in which states
+together) for pretraining, and, at test time, `document_id`,
+`sentences` (a short document's sentences, exactly one of which has been
+perturbed).
+
+What they predict: `anomalous_sentence_index` (which sentence is perturbed)
+and `perturbation_type` in {word_order_scramble, term_substitution,
+negation_flip}.
+
+Intended solution: train a small language model from random initialization
+(or continue-pretrain a small base model) on the unlabeled corpus, then use
+the trained model's own per-sentence surprisal/log-likelihood as the primary
+signal for anomaly localization and perturbation-type classification (a
+lightweight classifier head on top of the LM's surprisal profile).
+
+Evaluation metric: 0.40 x anomalous_sentence_index accuracy + 0.35 x
+perturbation_type macro-F1 (computed conditional on correct localization)
++ 0.25 x negation_flip-specific recall (isolated as its own term because
+negation-flipped sentences are EQUALLY grammatically fluent as the
+original — "the valve was closed" vs. "the valve was not closed" — so this
+term specifically measures whether the model learned genuine domain
+co-occurrence statistics rather than surface fluency). Theoretical min 0.0,
+max 1.0.
+
+Why hard for current agents: a generic pretrained LLM's fluency judgments
+cannot distinguish the negation-flip perturbation type at all (both versions
+are perfectly grammatical), and its general-domain surprisal is not sharp
+enough on this invented equipment ontology to reliably localize
+term-substitution anomalies either; only a model that has actually
+pretrained on the provided domain corpus develops a sharp enough
+domain-specific likelihood landscape to catch these.
+
+Why humans/domain experts can still improve it: maintenance engineers
+familiar with realistic component-state co-occurrence patterns can curate
+harder, more realistic term-substitution and negation-flip cases, and can
+tune the anomaly-localization head's sensitivity thresholds beyond a naive
+per-sentence surprisal cutoff.
+
+Shortcuts killed: sentence length/position heuristics (the perturbed
+sentence is randomly positioned, and perturbations preserve length), generic
+grammaticality checkers (explicitly measured and shown to fail on
+negation_flip by design), keyword-frequency-only anomaly detection, and
+constant/majority perturbation_type prediction.
+
+Data source & license: fully synthetic (Option A). A generator produces the
+pretraining corpus from a closed component/state ontology with realistic
+co-occurrence structure, then produces test documents with one controlled
+perturbation each, logged with exact type and location. CC0 1.0.
+
+Dataset scale: ~25MB unlabeled pretraining corpus; 6,000 test documents
+(4-8 sentences each) for the anomaly-localization task. Well within budget.
+
+Split plan: grouped by `equipment_subdomain` (4 equipment categories with
+distinct normal co-occurrence statistics) with 1 subdomain held out from the
+pretraining corpus entirely, testing whether the anomaly-detection skill
+(not just memorized per-subdomain statistics) transfers.
+
+Schema: public = corpus.txt (pretraining), document test sentences.
+Train-only = nothing for the corpus (unsupervised); a smaller labeled
+calibration set of (document, anomalous_index, perturbation_type) is
+provided for tuning the detection head. Hidden grader groups =
+equipment_subdomain (worst-group) and perturbation_type (isolated
+negation_flip term). Submission = document_id, anomalous_sentence_index,
+perturbation_type.
+
+Baseline plan: `_analyze.py` must report a generic pretrained LLM's
+zero-shot surprisal (no domain pretraining) as the primary baseline to
+beat, a rule-based grammaticality checker, a keyword-frequency anomaly
+detector, constant/majority baseline, and length-only baseline — all
+expected to fail specifically on the negation_flip subset.
+
+Nearest-neighbor novelty note: the core paradigm (using LM surprisal for
+acceptability/anomaly judgment) closely follows BLiMP and related
+minimal-pair linguistic acceptability benchmarks — this must be named
+explicitly. The delta: BLiMP evaluates fixed pretrained models on general
+English SYNTACTIC minimal pairs; this task requires the SOLVER to pretrain
+their own domain model from scratch, targets DOMAIN-SEMANTIC/co-occurrence
+anomalies (including a negation-flip type BLiMP-style syntactic pairs don't
+probe), and scores localization + classification rather than pairwise
+preference. Expect RECOMBINED band; name BLiMP explicitly when building.
+
+Suggested platform metadata: Difficulty Medium-Hard; GPU A10G.
+
+--------------------------------------------------------------------------------
+D3. Dual-Orthography Pretraining For Zero-Shot Cross-Script Label Transfer
+--------------------------------------------------------------------------------
+Real-world context: Several living languages are written in more than one
+script by different communities or across generational shifts (e.g. Serbian
+Cyrillic/Latin, Kurdish Latin/Arabic, Kazakh's ongoing Cyrillic-to-Latin
+transition), which fragments NLP tooling — resources and labeled data built
+for one script don't transfer to the other, a genuine, documented
+low-resource NLP problem. This task models that phenomenon with a wholly
+constructed language and two invented but linguistically-motivated
+orthographies, keeping licensing and cultural-sensitivity concerns
+completely out of scope.
+
+What the solver sees: `corpus_script_a.txt` (a large unlabeled corpus in
+Script A of a constructed language), a small `bridge_pairs.csv` (a few
+thousand Script-A/Script-B transliterated sentence pairs — enough to learn
+the orthographic mapping, not enough to be a full parallel corpus), and
+`train_labels.csv` (a topic/intent classification task, labeled examples
+given ONLY in Script A).
+
+What they predict: `label` for test rows given ONLY in Script B (zero
+labeled Script-B examples exist anywhere in training).
+
+Intended solution: pretrain or continue-pretrain a small model on
+corpus_script_a.txt plus the bridge pairs (e.g. a joint
+transliteration-consistency or shared-subword objective that aligns the two
+scripts' representations), then fine-tune the classification head on the
+Script-A-only labels, relying on the pretraining phase to have built a
+script-invariant representation that the classification head can exploit
+even on script-B inputs it never directly saw labels for.
+
+Evaluation metric: 0.45 x Script-B test accuracy (the primary, hardest
+term — zero-shot cross-script transfer) + 0.30 x Script-A test accuracy
+(sanity term — the model must also still work in-distribution) + 0.25 x a
+script-invariance consistency score (agreement rate between the model's
+predictions on held-out bridge_pairs' two script renderings of the SAME
+sentence — directly measuring whether the representation is genuinely
+script-invariant rather than accidentally accurate on B). Theoretical min
+0.0, max 1.0.
+
+Why hard for current agents: a generic pretrained LLM has no exposure to
+either invented script/language, so its zero-shot performance on Script B
+is near label-prior chance; even a model fine-tuned only on Script-A labels
+without a script-alignment pretraining phase will fail to transfer to
+Script B, since the two scripts share no surface tokens at all by
+construction — genuine cross-script representation alignment, learned from
+the bridge pairs, is required.
+
+Why humans/domain experts can still improve it: computational typologists
+and low-resource-NLP researchers experienced in orthography-transfer
+techniques (transliteration pretraining objectives, shared subword
+inventories) can improve the script-invariance consistency term
+substantially beyond a naive joint-training baseline.
+
+Shortcuts killed: script-B majority-class/constant prediction, surface
+token overlap (zero by construction between scripts), bridge_pairs
+memorization without generalizing to non-bridge Script-B test sentences,
+and label-prior-only baselines (measured explicitly as the chance floor).
+
+Data source & license: fully synthetic (Option A). A generator defines the
+constructed language's grammar/lexicon once, renders it in two invented
+orthographies with real orthography-transfer-relevant properties (partial
+but not total grapheme correspondence, to mimic real dual-script
+phenomena), and produces the bridge pairs and labeled Script-A examples.
+CC0 1.0.
+
+Dataset scale: ~15MB unlabeled Script-A corpus; 3,000 bridge pairs; 8,000
+labeled Script-A train rows; 2,500 Script-B-only test rows. Well within
+budget.
+
+Split plan: bridge_pairs and labeled examples are strictly non-overlapping
+in underlying sentence content from the Script-B test set (no sentence
+appears in both a bridge pair and the test set) to block memorization via
+the bridge set.
+
+Schema: public = corpus_script_a.txt, bridge_pairs.csv, train_labels.csv
+(Script A only). Hidden test = Script-B-only sentences, no script-A
+counterpart shown. Hidden grader groups = Script-A vs. Script-B accuracy
+(both explicit terms) and the consistency term. Submission = id, label
+(for Script-B test rows).
+
+Baseline plan: `_analyze.py` must report a Script-A-only-trained model
+evaluated zero-shot on Script B (expected near label-prior chance, showing
+the transfer gap), a label-prior baseline, a bridge-pairs-memorization
+baseline (nearest-neighbor lookup against bridge pairs, expected to fail on
+non-bridge test sentences), and a joint-training-without-alignment-objective
+baseline.
+
+Nearest-neighbor novelty note: nearest neighbors are cross-lingual transfer
+learning research (zero-shot cross-lingual classification via multilingual
+encoders, e.g. XTREME benchmark tasks) and transliteration/script-normalization
+NLP work for real dual-script languages (Serbian, Kazakh). The delta: XTREME
+transfers across different LANGUAGES using large multilingual pretrained
+models; this task transfers across two SCRIPTS of the SAME constructed
+language using only a small bridge set and solver-controlled pretraining,
+isolating the script-alignment problem specifically. Name XTREME explicitly
+when building; expect RECOMBINED-or-better band given the fully synthetic,
+narrowly-targeted setup.
+
+Suggested platform metadata: Difficulty Medium-Hard; GPU A10G.
+
+--------------------------------------------------------------------------------
+D4. Cross-Format Configuration-Schema Pretraining With Held-Out Dialect Transfer
+--------------------------------------------------------------------------------
+Real-world context: DevOps tooling (linters, autocomplete, migration
+assistants) needs to understand configuration semantics independent of
+surface syntax, since teams routinely maintain the same underlying
+application configuration across YAML, TOML, and INI-style files, and
+migrating or validating configs across formats is a real, recurring
+practical need.
+
+What the solver sees: `corpus.txt` (a large unlabeled synthetic corpus of
+configuration files spanning 3 structural dialects — nested YAML, flat INI,
+TOML with arrays-of-tables — all describing the SAME underlying semantic
+key-space of application settings) for pretraining, and, at test time,
+`file_id`, `masked_config` (a configuration file in a FOURTH, never-seen-
+during-pretraining structural dialect, with one key or one value redacted).
+
+What they predict: `masked_key_or_value` (the redacted content) and
+`value_type` (string/int/bool/list — since the redaction can hit either a
+key name or a value).
+
+Intended solution: pretrain a small LM from scratch (or continue-pretrain a
+small base model) on the 3-dialect corpus using a masked-span objective,
+learning the underlying semantic schema (which keys co-occur, typical value
+types/ranges) abstracted away from any one format's surface syntax, then
+apply that pretrained model zero-shot (no further labeled fine-tuning
+permitted at test time) to the held-out fourth dialect.
+
+Evaluation metric: 0.45 x masked-content exact/normalized-match accuracy on
+the held-out fourth dialect (the primary, hardest term — genuine
+format-zero-shot transfer) + 0.25 x value_type accuracy + 0.20 x
+in-distribution accuracy on the 3 training dialects (sanity term) + 0.10 x
+a schema-consistency bonus (predictions that are at least
+semantically-plausible given the surrounding key context, per a lenient
+rubric, even when not an exact string match). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: a generic pretrained LLM has broad exposure to
+real YAML/TOML/INI syntax but NOT to this challenge's specific invented
+semantic key-space (application settings are deliberately renamed/invented
+to avoid real-world lookup), and has certainly never seen the held-out
+FOURTH invented structural dialect at all; only a model that pretrained on
+this corpus's 3 visible dialects and learned the underlying schema
+abstraction can generalize its masked-key/value predictions to the unseen
+fourth syntax.
+
+Why humans/domain experts can still improve it: engineers experienced in
+schema inference and config-format design can hand-engineer better
+cross-format alignment objectives (e.g. explicit key-normalization
+pretraining losses) to improve the fourth-dialect transfer term beyond a
+naive single-objective masked-LM baseline.
+
+Shortcuts killed: format-specific syntax pattern matching (fails by
+construction on the unseen fourth dialect), key-name lookup against a
+public real-world config-key list (keys are invented/renamed), constant/
+most-common-value baseline, and value_type-only (ignoring key semantics)
+prediction.
+
+Data source & license: fully synthetic (Option A). A generator defines the
+shared semantic key-space and realistic value distributions once, renders
+it into 3 training-visible structural dialects plus a 4th held-out dialect
+(a custom indentation-sensitive format never shown during pretraining), and
+produces the masked test instances. CC0 1.0.
+
+Dataset scale: ~20MB unlabeled multi-dialect pretraining corpus; 5,000 test
+masked instances in the held-out 4th dialect. Well within budget.
+
+Split plan: the 4th structural dialect is entirely absent from the
+pretraining corpus (format-level holdout); within the 3 visible dialects, a
+secondary key-family holdout reserves some semantic key groups as
+in-distribution-format-but-unseen-key test cases.
+
+Schema: public = corpus.txt (3 dialects, unlabeled), masked_config (4th
+dialect, test only). Train-only = nothing for the corpus; a small labeled
+calibration set of masked-key/value examples in the 3 visible dialects is
+provided for validation. Hidden grader groups = dialect (4th-dialect
+term is dominant) and value_type. Submission = file_id,
+masked_key_or_value, value_type.
+
+Baseline plan: `_analyze.py` must report a format-specific regex/parser
+baseline (expected to fail entirely on the unseen 4th dialect, score ~0 on
+that term), a generic pretrained LLM's zero-shot performance (no domain
+pretraining), a most-common-value-by-position baseline, and an
+in-distribution-only (no cross-format generalization) pretraining ablation
+to isolate the transfer gap this task targets.
+
+Nearest-neighbor novelty note: nearest neighbors are code/config
+understanding research (CodeBERT-style pretraining on structured code, JSON/
+YAML schema-inference tools) and general cross-format data-transformation
+benchmarks. No widely-known public benchmark specifically targets zero-shot
+structural-dialect transfer for configuration semantics with a held-out
+FOURTH unseen format. Low collision risk expected.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G.
+
+================================================================================
+SECTION E — FROM-SCRATCH  (4 ideas)
+================================================================================
+Note: kept deliberately LANGUAGE/sequence-model-flavored per this wave's
+priority order (non-language physics/signal ideas should stay a small
+minority across the whole wave, and this repo's history already has a deep
+back-catalog of physics/3D from-scratch work from the previous wave — see
+memory). Each idea below targets a real, under-used LINGUISTIC phenomenon
+(not yet touched by any of the 4 existing music/Mermaid/Sanskrit/dialect-MLP
+"invented vocabulary + cloze" entries, nor by the 2 existing "invent a
+fictional rule system, hide the rulebook, classify the outcome" entries) so
+none of them are a fifth instance of either saturated recipe.
+
+--------------------------------------------------------------------------------
+E1. Tone-Sandhi Surface-Form Prediction For A Constructed Tonal Language
+--------------------------------------------------------------------------------
+Real-world context: Many tonal languages (Mandarin, Vietnamese, numerous
+Bantu languages) exhibit tone sandhi — a syllable's UNDERLYING tone changes
+to a different SURFACE tone depending on neighboring tones in connected
+speech. Field linguists documenting under-resourced tonal languages need
+automated sandhi-prediction tools to speed up transcription and analysis, a
+genuine computational-phonology / language-documentation workflow.
+
+What the solver sees: `corpus.txt` (a large unlabeled sequence corpus of a
+wholly constructed tonal language, rendered as syllable+underlying-tone
+token pairs, e.g. `ba^2 lo^1 mi^3 ...`), and, per dialect, a small
+`dialect_calibration.csv` (a few hundred labeled underlying-to-surface tone
+examples for that specific dialect's sandhi rule variant).
+
+What they predict: `surface_tone_sequence` — for a held-out sequence in a
+given dialect, the surface (post-sandhi) tone for every syllable.
+
+Intended solution: train a sequence model from random initialization
+(small Transformer or BiLSTM/GRU) on the large unlabeled corpus plus the
+per-dialect calibration sets, learning a general sandhi-application
+mechanism that conditions on the small calibration set's dialect-specific
+rule variant (structurally similar in spirit to few-shot burn-in
+adaptation, but here the underlying phenomenon is phonologically
+structured — assimilation, dissimilation, tone-lowering-before-boundary —
+rather than an arbitrary random function, so genuine linguistic pattern
+induction is possible and rewarded).
+
+Evaluation metric: 0.55 x per-syllable surface-tone accuracy + 0.25 x
+whole-sequence exact-match rate (rewards getting entire multi-syllable
+sandhi domains right, not just isolated syllables) + 0.20 x
+worst-dialect accuracy (minimum across 4 held-out dialect variants, some of
+which apply sandhi rules in the OPPOSITE direction for the same tone-pair
+context, blocking a single global lookup table). Theoretical min 0.0, max
+1.0.
+
+Why hard for current agents: the language and its phonological inventory
+are wholly invented, so no pretrained model has any prior on this specific
+sandhi system, and a model without training on the large unlabeled corpus
+cannot learn the general sandhi-application mechanism from a small
+calibration set alone (in-context adaptation from a few hundred examples,
+without the benefit of the larger corpus's distributional structure, is
+measurably weaker); sandhi domains that span 2-3 syllables beyond the
+immediate neighbor further defeat simple local pattern-matching.
+
+Why humans/domain experts can still improve it: computational phonologists
+familiar with real tone-sandhi typology (assimilation/dissimilation rule
+classes, sandhi-domain boundary detection) can hand-engineer better
+inductive biases (e.g. explicit sandhi-domain segmentation as an auxiliary
+signal) to improve generalization beyond a naive sequence model baseline.
+
+Shortcuts killed: underlying-tone-copy baseline (surface always differs
+from underlying in a sandhi-affected position by construction), local
+bigram-lookup tables (defeated by multi-syllable sandhi domains and by
+dialect-reversed rules), constant/majority-tone prediction, and
+dialect-name lookup (calibration must come from the labeled examples, not
+a name-to-rule mapping).
+
+Data source & license: fully synthetic (Option A). A generator defines the
+constructed language's phonology and a family of sandhi rule types, applies
+dialect-specific rule VARIANTS (including reversed-direction variants) to
+produce underlying/surface tone pairs at scale. CC0 1.0.
+
+Dataset scale: ~12MB unlabeled corpus; 4 dialects x 500 calibration examples;
+6,000 test sequences (8-20 syllables each) across all dialects. Well within
+budget.
+
+Split plan: grouped by `dialect` (4 variants) with each dialect's
+calibration set kept small and its bulk of TEST sequences held out; a 5th
+dialect variant is withheld entirely from the unlabeled pretraining corpus
+(appearing only via its small calibration set) to test true few-shot
+rule-variant induction.
+
+Schema: public = corpus.txt (unlabeled, dialects 1-4 only),
+dialect_calibration.csv (all 5 dialects, small labeled sets), test
+sequences (underlying tones only). Train-only = nothing beyond the
+calibration sets (which are public/small by design). Hidden grader groups =
+dialect (worst-group term, dialect 5 hardest) and sandhi-domain length
+bucket. Submission = sequence_id, surface_tone_sequence.
+
+Baseline plan: `_analyze.py` must report an underlying-tone-copy baseline,
+a local-bigram-lookup-table baseline (fit per dialect's calibration set
+only), a global-lookup-table-ignoring-dialect baseline (expected to fail on
+reversed-direction dialects), constant baseline, and a
+calibration-set-only (no large corpus pretraining) ablation to isolate the
+value of the unlabeled corpus.
+
+Nearest-neighbor novelty note: nearest neighbors are computational
+phonology research on tone sandhi modeling for real languages (Mandarin
+third-tone sandhi prediction studies, Bantu tonology NLP work) and this
+repo's own accepted From-Scratch.md "Neural Dialect Next-Token Prediction"
+(burn-in-based dialect adaptation, but over an ARBITRARY random-MLP
+function with zero linguistic structure, not a phonologically-motivated
+rule system). The delta from that in-house neighbor: tone sandhi has real,
+learnable phonological regularity (rule TYPES recur across dialects, just
+with different parameters/directions), making this a genuinely different
+(and arguably more realistic) generalization challenge than adapting to a
+fully arbitrary function. Low external collision risk.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G.
+
+--------------------------------------------------------------------------------
+E2. Linearized Assembly Dependency-Graph Generation From Constructed Kit-Instruction Text
+--------------------------------------------------------------------------------
+Real-world context: Kit-assembly documentation (furniture, electronics kits)
+and AR-assisted assembly-guidance tools both need a structured
+part-dependency graph (what attaches to what, in what order) extracted from
+instruction text; automating this from text alone, across kit manufacturers
+that use different conventions for the same phrasing, is a genuine
+manufacturing-documentation and QA problem.
+
+What the solver sees: `instruction_text` (a synthetic assembly instruction
+using a constrained but non-trivial invented vocabulary of ~200 part/action
+tokens — not natural English) and `kit_family` (an opaque code for the
+manufacturer convention).
+
+What they predict: `linearized_graph` — an autoregressively-generated
+sequence of edge tuples (`part_token PARENT_OF part_token`) in a canonical
+topological-plus-tie-break order defining the full assembly dependency DAG.
+
+Intended solution: train a sequence model from random initialization (small
+encoder-decoder or decoder-only Transformer) on (instruction_text,
+linearized_graph) pairs, since the same surface instruction phrase implies
+DIFFERENT graph edges depending on kit_family's attachment-direction
+convention (e.g. "attach X to Y" means X-becomes-child-of-Y in one family,
+the reverse in another), which must be learned per-family from labeled
+examples rather than a fixed universal parsing rule.
+
+Evaluation metric: 0.40 x exact linearized-sequence match (canonical order,
+strict) + 0.35 x typed edge-set Jaccard similarity (a relabeling-tolerant
+fallback score rewarding a structurally-correct graph even when the exact
+canonical linearization order is slightly off) + 0.25 x worst-kit-family
+score (minimum across 4 held-out family conventions, directly testing
+whether the model learned per-family convention induction rather than one
+global rule). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: the instruction vocabulary and grammar are
+wholly invented (no pretraining transfer), and the family-conditioned
+attachment-direction reversal means a model that infers a single "obvious"
+global parsing rule from a few in-context examples will get the reversed
+families systematically backward; only training on labeled examples from
+each family (or a large enough set of families to induce the convention
+axis itself) resolves this correctly.
+
+Why humans/domain experts can still improve it: manufacturing-documentation
+and AR-authoring specialists can extend the part/action vocabulary and
+identify additional convention axes (e.g. multi-parent attachment cases)
+beyond what the base generator covers, improving robustness past a naive
+baseline.
+
+Shortcuts killed: instruction length/token-count heuristics, treating the
+graph as an unordered set only (directly penalized relative to the
+sequence-match term, which rewards correct canonical ordering), a single
+global parsing-direction rule (defeated by the reversed-convention
+families), and kit_family name lookup (opaque code, convention must be
+learned from that family's labeled examples).
+
+Data source & license: fully synthetic (Option A). A generator builds the
+ground-truth dependency DAG first (with family-conditioned direction
+convention applied), computes its canonical linearization, then renders
+matching instruction text from the invented vocabulary. CC0 1.0.
+
+Dataset scale: 11,000 train / 2,700 test instructions, graphs with 5-14
+edges each. A few tens of MB.
+
+Split plan: grouped by `kit_family` (4 conventions, including reversed-direction
+variants) with 1 family held out entirely from training.
+
+Schema: public = instruction_id, instruction_text, kit_family. Train-only =
+linearized_graph (ground truth). Hidden grader groups = kit_family
+(worst-group) and graph-size bucket. Submission = instruction_id,
+linearized_graph (sequence of edge tuples).
+
+Baseline plan: `_analyze.py` must report a single-global-direction-rule
+baseline (expected to fail on reversed-convention families), token-adjacency-only
+heuristic, constant/empty-graph baseline, metadata-only baseline, and a
+few-shot-in-context-only (no training) proxy baseline.
+
+Nearest-neighbor novelty note: nearest neighbors are text-to-graph
+generation research (AMR parsing, WebNLG-style graph generation) and this
+repo's own accepted Sequence-To-Sequence.md "UAV Mesh Grammar
+Decompilation" entry, which uses a similar relabeling-tolerant typed-Jaccard
+scoring trick but over 3D MESH input, not text. The delta from that
+in-house neighbor: the input modality (natural-language-style instruction
+text vs. 3D point-cloud/mesh geometry) and the core skill (instruction
+comprehension + per-family convention induction vs. 3D shape processing)
+are fundamentally different; the scoring TRICK is legitimately reused
+technique, not a duplicated challenge concept. Low external collision risk.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G.
+
+--------------------------------------------------------------------------------
+E3. Non-Manual-Marker Scope Prediction Over A Constructed Sign-Gloss Notation
+--------------------------------------------------------------------------------
+Real-world context: Sign languages convey grammatical meaning partly through
+"non-manual markers" (eyebrow raise, head tilt, mouth movements) layered
+over a SPAN of signs — e.g. an eyebrow-raise scope marks a yes/no-question
+span, a specific head-tilt scope marks a conditional clause — a real,
+well-documented phenomenon in sign linguistics. Automated gloss-annotation
+tools that predict marker scope from the manual-sign sequence alone would
+meaningfully speed up sign-language corpus creation and avatar-based
+sign-generation systems, a genuine accessibility-technology workflow.
+
+What the solver sees: `gloss_sequence` (a sequence of manual-sign gloss
+tokens from a wholly constructed gloss notation and lexicon, avoiding any
+real sign language's community/licensing sensitivities) representing one
+sentence.
+
+What they predict: `marker_spans` — a list of (marker_type, start_index,
+end_index) tuples identifying every non-manual marker's scope over the
+gloss sequence, where spans may PARTIALLY OVERLAP or NEST in some test
+sentences.
+
+Intended solution: train a sequence model from random initialization (small
+Transformer with a span-prediction head, similar in spirit to
+constituency/scope parsing) on (gloss_sequence, marker_spans) pairs,
+learning that marker scope aligns with syntactic constituent boundaries
+that must be inferred from the gloss sequence's own structure rather than
+fixed positions.
+
+Evaluation metric: 0.45 x span-level F1 (marker_type + boundary match,
+partial-credit via IoU for near-miss boundaries) + 0.30 x
+nested/overlapping-span subset F1 (isolated as its own term since flat
+sequence-tagging approaches structurally struggle with overlap, directly
+rewarding genuine span-structure modeling) + 0.25 x worst-construction-family
+F1 (minimum across 4 held-out sentence "construction" shapes, testing
+generalization to novel constituent structures rather than memorized
+sentence templates). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: the gloss notation and marker inventory are
+wholly invented, so no pretrained model has prior exposure, and correctly
+inferring scope boundaries requires the model to have learned this
+notation's implicit constituent structure from labeled examples; the
+held-out construction-family split and the nested/overlapping-span subset
+both specifically defeat memorized flat-position heuristics.
+
+Why humans/domain experts can still improve it: sign linguists and gloss-annotation
+specialists familiar with non-manual-marker scope theory can extend the
+construction-family inventory and correct systematic boundary errors on
+nested-marker cases beyond a naive flat-tagging baseline.
+
+Shortcuts killed: fixed-position marker heuristics (e.g. "always spans the
+whole sentence" — directly defeated by variable scope), gloss-token-count/
+length heuristics, flat non-overlapping sequence tagging (directly
+penalized by the nested-span term), constant/majority marker_type
+prediction, and construction-family name lookup (opaque, must be inferred
+structurally).
+
+Data source & license: fully synthetic (Option A). A generator defines the
+constructed gloss lexicon and a family of syntactic constructions with
+ground-truth non-manual-marker scope rules (including designed nesting/
+overlap cases), then renders matching gloss sequences. CC0 1.0.
+
+Dataset scale: 9,500 train / 2,300 test sequences, 6-16 gloss tokens each.
+A few tens of MB.
+
+Split plan: grouped by `construction_family` (4 syntactic construction
+shapes) with 1 held out entirely from training.
+
+Schema: public = sequence_id, gloss_sequence, construction_family (train
+only, hidden at test — see note: construction_family is used for the
+worst-group grader term and is NOT shown to the solver at test time to
+prevent a family-lookup shortcut). Train-only = marker_spans (ground
+truth). Hidden grader groups = construction_family (worst-group) and the
+nested/overlapping-span subset. Submission = sequence_id, marker_spans
+(JSON list of [marker_type, start, end]).
+
+Baseline plan: `_analyze.py` must report a whole-sentence-scope baseline,
+flat non-overlapping BIO-tagging baseline (expected to fail on the nested
+subset), fixed-position heuristic, constant baseline, and a
+few-shot-in-context proxy baseline.
+
+Nearest-neighbor novelty note: nearest neighbors are sign-language NLP
+research (gloss annotation, non-manual-marker computational modeling
+studies) and general nested-span/constituency parsing research. No
+widely-known public Kaggle/HF benchmark targets non-manual-marker scope
+prediction specifically, and using a wholly constructed notation avoids the
+real cultural/community-data sensitivities around real sign-language
+corpora. Low collision risk; strong, genuinely fresh accessibility-technology
+framing.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G.
+
+--------------------------------------------------------------------------------
+E4. Numeral-Classifier Selection Under Semantic-Domain Holdout With Honest Abstention
+--------------------------------------------------------------------------------
+Real-world context: Many real languages (Mandarin, Japanese, Thai, Burmese,
+and others) require a numeral CLASSIFIER when counting nouns — a special
+word chosen by the noun's semantic class ("three flat-object-CL paper" vs.
+"three animal-CL dogs") — and learners of these languages, plus
+computer-assisted-language-learning (CALL) tools, rely on automated
+classifier-prediction/error-correction support, a genuine, published
+EdTech and computational-typology research area.
+
+What the solver sees: `sentence_context` (a short sentence in a wholly
+constructed classifier language, with the numeral+noun phrase marked) and
+`noun_semantic_features` (a small set of coarse, genuinely ambiguous
+semantic tags for the counted noun — not a direct classifier lookup).
+
+What they predict: `classifier` (the correct classifier token from a
+closed ~40-item inventory), OR the literal token `AMBIGUOUS` when the noun
+genuinely takes 2+ valid classifiers depending on register (a real property
+of classifier languages, modeled honestly here rather than forced into a
+single answer), plus a `confidence` score.
+
+Intended solution: train a sequence/classification model from random
+initialization (small Transformer or BiLSTM) on labeled (context, noun,
+classifier) triples, learning the semantic-similarity-based assignment
+PRINCIPLE (not a fixed noun-to-classifier dictionary) well enough to
+generalize to nouns from entirely unseen semantic domains at test time.
+
+Evaluation metric: 0.40 x classifier accuracy on the non-ambiguous subset +
+0.30 x worst-semantic-domain accuracy (minimum across 5 held-out semantic
+domains of nouns never seen during training, testing genuine analogical
+generalization of the assignment principle rather than memorization) + 0.20
+x AMBIGUOUS-case handling (F1 for correctly identifying genuinely ambiguous
+nouns as such, rather than confidently guessing one classifier) + 0.10 x
+calibration (confidence should be lower on the held-out-domain and
+ambiguous subsets than on in-distribution non-ambiguous cases — an ECE-style
+term). Theoretical min 0.0, max 1.0.
+
+Why hard for current agents: the language and its classifier inventory are
+wholly invented, so no pretrained model has prior exposure, and the
+held-out-semantic-domain test nouns require the model to have induced the
+underlying semantic-similarity assignment PRINCIPLE from training examples
+(analogical generalization) rather than memorizing a fixed noun list, which
+a prompted LLM without training on this specific system cannot do reliably;
+the honest-abstention requirement further penalizes models that default to
+confident guessing under genuine ambiguity.
+
+Why humans/domain experts can still improve it: computational typologists
+and CALL-tool designers familiar with real classifier-assignment research
+(prototype-theory-based semantic classification) can hand-engineer better
+semantic-similarity features to improve held-out-domain generalization
+beyond a naive nearest-neighbor baseline.
+
+Shortcuts killed: noun-to-classifier dictionary lookup (fails by
+construction on held-out semantic domains), majority-classifier constant
+prediction, always-confident-guess-never-abstain baseline (directly
+penalized by the AMBIGUOUS-handling and calibration terms), and
+semantic-domain name lookup (domains are opaque groupings, principle must
+be induced from examples).
+
+Data source & license: fully synthetic (Option A). A generator defines the
+constructed language's classifier inventory and a prototype-theory-based
+semantic-similarity assignment function (with genuine built-in ambiguity
+for a designed subset of nouns), producing labeled examples and held-out
+semantic-domain test nouns. CC0 1.0.
+
+Dataset scale: 10,500 train / 2,600 test instances across 5+1 semantic
+domains (1 fully held out). A few tens of MB.
+
+Split plan: grouped by `noun_semantic_domain` (6 domains) with 1 domain
+held out entirely from training to test analogical generalization of the
+assignment principle.
+
+Schema: public = instance_id, sentence_context, noun_semantic_features.
+Train-only = classifier (or AMBIGUOUS), ambiguity_ground_truth. Hidden
+grader groups = noun_semantic_domain (worst-group, held-out domain hardest)
+and the AMBIGUOUS subset. Submission = instance_id, classifier,
+confidence.
+
+Baseline plan: `_analyze.py` must report a noun-to-classifier dictionary
+baseline (expected to fail entirely on the held-out domain), majority-class
+baseline, always-confident-never-abstain baseline (to expose the
+calibration/AMBIGUOUS-handling gap), nearest-neighbor-by-surface-features
+baseline, and a few-shot-in-context proxy baseline.
+
+Nearest-neighbor novelty note: nearest neighbors are real published
+research on numeral-classifier prediction and error correction for Mandarin/
+Japanese CALL systems, and general computational-typology classifier
+studies. No widely-known public Kaggle/HF benchmark specifically targets
+classifier selection with a held-out-semantic-domain generalization test
+plus honest ambiguity abstention. Low collision risk.
+
+Suggested platform metadata: Difficulty Medium; GPU A10G.
+
+================================================================================
+QUICK-REFERENCE INDEX
+================================================================================
+ #  Section       Title                                                        Novelty risk
+ A1 NLP           Code-Mixed Support MT Quality Estimation                     Low-Moderate
+ A2 NLP           Incident Narrative Chronology + Causal-Link Reconstruction   Moderate (name TempEval/RED)
+ A3 NLP           Cross-Lingual Risk-Signal Embedding Alignment                Moderate (in-house neighbor)
+ A4 NLP           Argument-Scheme Graph + Counterfactual Warrant Sensitivity   Moderate (name Project Debater)
+ A5 NLP           Peer-Review Rebuttal Point Alignment                         Moderate-High (name DISAPERE) — cut candidate
+ B1 Fine-Tuning   Grade-2 Braille Back-Translation Error Localization          Low (niche vertical, verify appetite)
+ B2 Fine-Tuning   ATC Readback Error Detection + Span Localization             Moderate (name ATCO2/ATCOSIM)
+ B3 Fine-Tuning   Patent Claim Dependency + Indefiniteness Flagging            Moderate (name US Patent Phrase Kaggle comp)
+ B4 Fine-Tuning   VHF Radio Transcript to Maritime Message Records             Low
+ B5 Fine-Tuning   Museum Conservation Condition-Report Structuring             Low
+ C1 Seq2Seq       Proof Gap-Filling with Verifier-Checked Multi-Valid Grading  Low-Moderate (higher build effort)
+ C2 Seq2Seq       Cross-Sentence KG-Triple Extraction from Assembly Manuals    Moderate (name WebNLG/DocRED)
+ C3 Seq2Seq       Meeting Action-Items with Supersession + Hedge Culture       Moderate-High (name AMI/QMSum) — cut candidate
+ C4 Seq2Seq       Historical Ledger Abbreviation Expansion                     Low
+ C5 Seq2Seq       Recipe-to-Robot-Command with Implicit-Step Insertion         Moderate-High (name ALFRED/PlanBench)
+ D1 Pre-Training  Fixed-Tokenizer BPC + Compositional Register Transfer        Low (unusual submission format — flag for Phase 2 review)
+ D2 Pre-Training  Surprisal-Based Anomaly Localization from Scratch            Moderate (name BLiMP)
+ D3 Pre-Training  Dual-Orthography Zero-Shot Cross-Script Transfer             Moderate (name XTREME)
+ D4 Pre-Training  Cross-Format Config-Schema Pretraining                       Low
+ E1 From-Scratch  Tone-Sandhi Surface-Form Prediction                         Low
+ E2 From-Scratch  Assembly Dependency-Graph Generation from Kit Text          Low
+ E3 From-Scratch  Non-Manual-Marker Scope over Sign-Gloss Notation            Low
+ E4 From-Scratch  Numeral-Classifier Selection with Honest Abstention         Low
+
+================================================================================
+RECOMMENDED NEXT STEPS
+================================================================================
+1. Pick 1-3 ideas (mixing at least one "Low" risk with anything higher-risk
+   you're drawn to).
+2. Before building, run this repo's existing novelty pre-vetting workflow
+   (dispatch a research agent per candidate idea to find the nearest named
+   academic benchmark, then an adversarial skeptic pass) on whichever ideas
+   you shortlist — the "Nearest-neighbor novelty note" above is my best-effort
+   estimate, not a substitute for that pass.
+3. For any idea touching a real professional workflow (braille, ATC, VHF,
+   maritime, patents, museum conservation), a quick real-world sanity check
+   (does the described workflow match how practitioners actually talk about
+   it) is worth 15 minutes before committing to a full build.
+4. Watch the D1/D2 Pre-Training ideas' submission formats (top-k probability
+   distributions) during Phase 2 — they are structurally unlike anything else
+   in this repo's history and may need extra care in grade.py to keep
+   submission.csv a reasonable size and the scoring rule strictly proper.
+================================================================================

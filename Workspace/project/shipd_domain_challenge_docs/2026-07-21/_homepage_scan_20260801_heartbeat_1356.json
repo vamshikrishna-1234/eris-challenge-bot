@@ -1,0 +1,55 @@
+{
+  "scrapedAt": "2026-08-01T13:59:35+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\AppData\\Local\\Temp\\shipd_heartbeat_20260801_1356_details.json",
+  "payload": {
+    "homepage": {
+      "mdFilesScanned": 54,
+      "existingIds": 344,
+      "homepageCardsFound": 0,
+      "skippedAlready": 0,
+      "newCandidateCards": 0,
+      "homepageCards": [],
+      "newCandidates": [],
+      "failures": [],
+      "pageState": {
+        "bodySignals": [
+          "Welcome back, Emmadi",
+          "",
+          "Track your ongoing challenges and datasets in one place.",
+          "",
+          "Get started",
+          "",
+          "2/5 complete",
+          "",
+          "Show",
+          "Explore",
+          "My Work",
+          "25",
+          "Set interests",
+          "Help"
+        ],
+        "cards": [],
+        "title": "Project Eris — Home",
+        "url": "https://shipd.ai/quests/eris/"
+      }
+    },
+    "detailRun": {
+      "attempted": 0,
+      "details": [],
+      "failures": []
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 0,
+    "skippedAlreadyBeforeDetail": 0,
+    "detailPagesAttempted": 0,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [],
+    "appendedByBucketDomain": {},
+    "veryNovelAdded": [],
+    "limitations": [
+      "No /challenges/ or /problems/ card links were visible in the bounded homepage Explore/feed scan."
+    ]
+  }
+}

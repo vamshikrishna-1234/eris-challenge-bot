@@ -1,0 +1,23 @@
+﻿{
+    "title":  "Cavitation Collapse Forecasting From Pre-Collapse Shadowgraphy",
+    "slug":  "cavitation-collapse-forecasting-from-pre-collapse-shadowgraphy",
+    "status":  "accepted",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fbd5c-98cc-7743-a0fc-617f3f8b1c85",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\accepted\\Cavitation Collapse Forecasting From Pre-Collapse Shadowgraphy",
+    "dataset":  "Cavitation Bubble Data (Parabolic Flights, 2010), Zenodo 5733740 v1",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-01T18:14:26.9659631+05:30",
+    "updated_at":  "2026-08-03T01:30:40.2132938+05:30",
+    "blocker":  "",
+    "notes":  [
+                  "Official-source, CC BY 4.0 member audit, usable-pairing, grouped-split, and independent video/pressure/fused source-reconstruction gates passed on the selected 2,410,822,799-byte official archive.",
+                  "Final real split: 34 physical bubbles, 10 manoeuvres, 96 train and 40 test episodes, zero physical/manoeuvre overlap; simple multimodal 0.424444 versus strongest legal control 0.387666, repeat standard deviation 0.000939.",
+                  "Perfect=1.0, sample=0.357820, structural malformed submissions raise InvalidSubmissionError, semantic malformed rows score zero, fused source lookup worst rank-1/rank-5=0.0441/0.1397, and deterministic rebuild passed.",
+                  "2026-08-02 platform File Structure Validation failure remediated: the official URL import was replaced by a 2,410,617,554-byte clean raw-source ZIP (SHA256 625fa5bcf1133dee03d1f2d2781cc8e418c5733f238ea7e38cf97ab41da1685d) containing all 382 scientific files byte-identically, three provenance files, and zero __MACOSX/.DS_Store/AppleDouble members.",
+                  "Independent exact-ZIP and extracted-layout preparation both reproduced all 278 prepared files byte-for-byte; final audit passed and all 365 frozen payload checksums verified.",
+                  "2026-08-02 platform Problem Domain Classification assigned Forecasting, which is currently disabled; the participant-facing Overview, Intended Approach, metric name, enforcement text, and tags now accurately foreground temporal computer vision, pixel-mask reconstruction, image-plane geometry, and synchronized pressure-sequence fusion. Final audit and all 365 frozen payload checksums pass.",
+                  "2026-08-02 Platform Trivial Issues resolved: Task item 2 now explicitly enumerates collapse time, rebound time, rebound centroid dx and dy in pixels, and rebound area ratio, matching all five event JSON keys. Final audit and frozen checksum verification pass.",
+                  "2026-08-03 accepted by the platform and moved intact to sprint_4\\accepted. Location-sensitive audit/upload references and the frozen bundle lifecycle status were updated; final audit passes and all 365 payload checksums verify."
+              ]
+}

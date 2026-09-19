@@ -1,0 +1,29 @@
+{
+  "homepageCardsFound": 51,
+  "skippedAlreadyBeforeDetail": 27,
+  "detailPagesAttempted": 24,
+  "appendedTotal": 24,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Sequence To Sequence": 10,
+      "NLP": 3,
+      "Computer Vision": 6,
+      "Other": 2,
+      "Fine-Tuning": 2,
+      "Recommendation": 1
+    },
+    "CPU": {}
+  },
+  "veryNovelAdded": [
+    "Thermochemical Voxel-to-Token Sequence Translation",
+    "Satellite Change Detection with Sensor Fault Diagnosis",
+    "Bioacoustic Loss-Contingency Relay Planning",
+    "Vessel Maneuver Program Reconstruction",
+    "Shadow Motion Cause Separation",
+    "Visuo-Tactile Four-Phase Motion Program Recovery",
+    "Diffraction Detector Evidence Routing",
+    "Ciphered Wordform Analogy Completion"
+  ],
+  "limitations": []
+}

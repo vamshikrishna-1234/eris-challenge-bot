@@ -1,0 +1,153 @@
+{
+  "title": "Electrical-Tree Growth-Order Reconstruction",
+  "slug": "electrical-tree-growth-order-reconstruction",
+  "status": "blocked",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a0977f-2722-7c11-ad66-202fdeaf0aae",
+  "previous_owner_task": "019fbd5d-2800-79f1-852e-32e8f57fb7af",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Electrical-Tree Growth-Order Reconstruction",
+  "stage": "blocked_pre_write_current_scale_gate",
+  "problem_id": "jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+  "problem_url": "https://shipd.ai/quests/eris/problems/jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+  "dataset_id": "jd76fz4mz76q5nahp8wkx172718a3vnt",
+  "dataset_url": "https://shipd.ai/quests/eris/datasets/jd76fz4mz76q5nahp8wkx172718a3vnt",
+  "dataset": "Optical and PRPD Tree Growth Composite Videos, Figshare v1, DOI 10.48420/21922458.v1",
+  "license": "CC BY 4.0",
+  "created_at": "2026-08-01T18:15:04.1340530+05:30",
+  "updated_at": "2026-09-14T09:56:12.6403301+05:30",
+  "blocker": "Pre-write admission gate: only 20 train and 10 hidden physical specimens; the official v1 source has 30 total and no larger release. The current grouped image/video stability policy does not permit live resubmission. User confirmation was received, but the Pending Review challenge was not withdrawn or edited.",
+  "residual_risk": "The corpus has only 20/10 physical train/test specimens. Measured residual source retrieval remains: optical and PRPD SIFT source top-1 are each 2/33; exact-interval top-1 is 0/33 optical and 1/33 PRPD. External source lookup is prohibited. A tiny fused U-Net scores 0.127873 versus optical-only 0.132329. The local calibration revision adds train-only grouped CV and a weaker schema sample but still requires fresh live agent evidence.",
+  "readiness": {
+    "verdict": "Hold",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": true,
+    "post_filter_scale_passed": false,
+    "split_stability_passed": true,
+    "semantic_duplicate_audit_passed": true,
+    "lookup_attack_passed": true,
+    "capability_matched_baseline_passed": true,
+    "null_metric_audit_passed": true,
+    "import_route_verified": true,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [
+      "Grouped image/video stability: 20 train and 10 hidden physical specimens are below the current source-family minimum; same-source variants cannot satisfy this gate."
+    ]
+  },
+  "evidence": {
+    "official_raw_bytes": 796029718,
+    "official_raw_md5": "4b5b57dc452d664753980c32d354c89f",
+    "official_source_url": "https://ndownloader.figshare.com/files/43330767",
+    "license": "CC BY 4.0",
+    "post_filter_rows": 99,
+    "train_rows": 66,
+    "test_rows": 33,
+    "train_source_families": 20,
+    "test_source_families": 10,
+    "perfect_score": 1.0,
+    "weak_sample_score": 0.12176470316961356,
+    "revised_weak_sample_score": 0.12176470316961356,
+    "strongest_ordinary_baseline_score": 0.132329,
+    "metadata_only_score": 0.006595,
+    "exact_union_endpoint_no_order_oracle_score": 0.47392544482999577,
+    "fresh_revision_prepare_files": 399,
+    "fresh_revision_prepare_determinism": "PASS through the full unique-context rebuild; final no-constant revision validated as a deterministic targeted CSV rewrite",
+    "fresh_revision_integrity_audit": "PASS",
+    "calibration_revision_prepare_sha256": "8d4b24e6c08f4c4ee20010da8c6ca3dc0ec97b366d00a02c70f0c690e36e3643",
+    "calibration_revision_description_sha256": "ed3cb8d3c337275e5d24dc35c5282ebafb030464dacb1adab84aa0e350692e5f",
+    "public_train_cv_groups": 20,
+    "trajectory_audit": "All three live values are the same retained sample checkpoint; zero exact normalized script matches; no source/private-answer lookup; Run 2 made two prohibited but irrelevant web searches.",
+    "final_live_prepare_sha256": "3e3fd6ae1dfdae9524f7c550fc23c2a0d023200db071752ffd91b1dc840f0087",
+    "final_live_checks": "7/7 passed; zero warnings; no bypass",
+    "final_live_agent_state": "round 2 launched; 0/3 completed; 3 in progress; all three queued",
+    "source_lookup_probe": "SIFT ratio test against 240 specimen/block candidates; exact interval top-1 0/33 optical and 1/33 PRPD",
+    "reviewer_premortem": "Distinct hidden-interval multimodal chronology/topology target; both optical geometry and PRPD timing are necessary; no-op and metadata attacks stay near zero; 10 disjoint hidden specimens cover all strain modes; rejection remains mandatory if source retrieval becomes an answer channel or the native derived targets fail audit."
+  },
+  "live_observations": [
+    {
+      "observed_at": "2026-09-12T21:26:00+00:00",
+      "dataset_state": "Public; approved; one 759 MB raw source object; validation passed",
+      "problem_state": "Revision Requested; v1; A10G; pipeline v1; seven checks complete",
+      "passed_checks": [
+        "Rubric Quality",
+        "Problem Originality",
+        "Domain Routing",
+        "Evaluator Contract",
+        "Problem Research"
+      ],
+      "failed_checks": [
+        "Challenge Specification: dataset File overview, train.csv columns, and test.csv columns are empty placeholders",
+        "Prepared Data Integrity: Run data preparation again before checking this challenge"
+      ]
+    },
+    {
+      "observed_at": "2026-09-13T14:56:30+00:00",
+      "dataset_state": "Public; approved; exact bound dataset unchanged",
+      "problem_state": "Draft; Evaluating difficulty; v1; A10G; final Pipeline v1 prepared 2026-09-13 20:13:21 +05:30",
+      "passed_checks": [
+        "Problem Originality",
+        "Novelty Assessment",
+        "Rubric Quality",
+        "Prepared Data Integrity",
+        "Challenge Specification",
+        "Domain Routing",
+        "Evaluator Contract"
+      ],
+      "failed_checks": [],
+      "warnings": [],
+      "agent_round": "Round 2 launched; 0/3 completed; 3 in progress; runs 1, 2, and 3 queued"
+    },
+    {
+      "observed_at": "2026-09-14T04:26:12+00:00",
+      "dataset_state": "Public; approved; exact bound dataset unchanged",
+      "problem_state": "Pending Review; v1; 7/7 checks green; 2/3 rounds used; Run Agents disabled",
+      "passed_checks": [
+        "Problem Originality",
+        "Novelty Assessment",
+        "Rubric Quality",
+        "Prepared Data Integrity",
+        "Challenge Specification",
+        "Domain Routing",
+        "Evaluator Contract"
+      ],
+      "failed_checks": [],
+      "warnings": [],
+      "agent_round": "3/3 complete; all display 0.1214; trajectory exports prove the common retained checkpoint is the old sample at raw score 0.12135183635847277"
+    }
+  ],
+  "revision_history": [
+    {
+      "started_at": "2026-09-12T21:52:31.9372858+00:00",
+      "owner_task": "01a0977f-2722-7c11-ad66-202fdeaf0aae",
+      "reason": "Substantive repair of two failed pre-submission checks on the exact bound dataset/problem pair",
+      "completed_at": "2026-09-13T14:56:30+00:00",
+      "result": "Live description and prepare pipeline updated; three live Prepare runs completed; duplicate-payload and constant-column warnings resolved; all seven checks passed without bypass; authorized agent round launched and verified."
+    },
+    {
+      "started_at": "2026-09-14T04:05:00+00:00",
+      "owner_task": "01a0977f-2722-7c11-ad66-202fdeaf0aae",
+      "reason": "Audit three repeated live scores and repair calibration without grader noise or random penalties",
+      "completed_at": "2026-09-14T04:45:00+00:00",
+      "result": "Train-only physical cv_group and submission-first guidance verified locally with unchanged grader/test/answers and sample 0.121765. User confirmed same-version withdrawal, but the pre-write gate blocked live action because the official source has only 20/10 train/hidden physical specimens under the current stability policy. Live challenge remains Pending Review."
+    }
+  ],
+  "notes": [
+    "Official API and local object verify DOI v1, CC BY 4.0, 796029718 bytes, MD5 4b5b57dc452d664753980c32d354c89f, and 30 real synchronized composite MP4s.",
+    "Final real prepared split: 99 non-overlapping intervals, 66 train rows from 20 specimens and 33 test rows from 10 specimens; 281904236 public bytes; whole-specimen and interval-overlap isolation pass.",
+    "Target audit: transformed new pixels min/median/max 8/49/179 after a raw >=20-pixel acceptance gate; segments min/median/max 2/10/42; 12 saved mask/graph visual panels.",
+    "Perfect=1.0 exactly; weak public-anchor sample=0.121765; strongest ordinary measured baseline=0.132329; endpoint-only oracle=0.236910; exact-union+endpoint/no-order oracle=0.473925.",
+    "Strict grader raises InvalidSubmissionError for structural failures and zeros only malformed rows; dense/empty 64-root exploit scores below 0.004; default/named index and shuffled row tests pass.",
+    "Two independent full prepare runs produced 402 byte-identical files; retained official-archive and extracted layouts both pass; canonical and PASTE scripts are byte-identical.",
+    "Platform dataset-description feedback resolved: the dataset card now has an explicit Features table and an expanded raw archive/MP4 File Structure description.",
+    "Platform py7zr failure resolved: the exact MD5-pinned COPY-method archive is now extracted with the Python standard library; all 30 MP4 outputs are byte-identical to the reference extraction and import/media checks pass with py7zr unavailable.",
+    "Platform scikit-image max_size failure resolved with a stable connected-component filter; a full 9.5-minute exact-archive run regenerated all 402 prepared files byte-identically and grader smoke tests passed.",
+    "Preferred raw import is the official URL https://ndownloader.figshare.com/files/43330767. No custom raw ZIP was created."
+    ,"2026-09-13 revision verification: fresh official-archive prepare completed; deep integrity, determinism, challenge audit, perfect/weak/one-bad-row, and dense/empty red-team checks all passed before the live draft update."
+    ,"Live repair added already-public case_id to context JSONs to remove duplicate payloads, removed redundant constant time_bins from CSVs, then completed a final 269 MB Prepare build and passed 7/7 checks with zero warnings."
+    ,"Authorized agent round 2 was launched and visibly verified as 0/3 completed with all three runs queued; workflow stopped immediately without monitoring."
+    ,"2026-09-14 trajectory audit: all three 0.1214 displays are the same retained sample; developed Run 1 and Run 3 submissions scored 0.085349 and 0.091868, and Run 2 never validated a developed submission. No cross-run copying or private-answer access was found."
+    ,"2026-09-14 local calibration revision adds 20 train-only cv_group values, preserves the non-degenerate 0.121765 sample, and leaves test data, private answers, metric, and grader unchanged. Gaussian grader noise/random penalties were explicitly rejected."
+    ,"User confirmed same-version withdrawal/revision, but no live click occurred: the current grouped image/video stability gate fails at only 20 train and 10 hidden physical specimens, and the official Figshare v1 article has no larger release."
+  ]
+}

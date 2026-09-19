@@ -1,0 +1,33 @@
+{
+  "scrapedAt": "2026-07-31T19:59:13+05:30",
+  "source": "Shipd Eris home page heartbeat",
+  "mdFilesScanned": 54,
+  "existingIds": 326,
+  "homepageCardsFound": 0,
+  "skippedAlready": 0,
+  "newCandidateCards": 0,
+  "homepageCards": [],
+  "newCandidates": [],
+  "results": [],
+  "appended": [],
+  "novel": [],
+  "pageState": {
+    "url": "https://shipd.ai/quests/eris/",
+    "title": "",
+    "bodyMissing": true
+  },
+  "failures": [
+    {
+      "stage": "navigate_or_reload",
+      "error": "Timed out waiting for the Shipd Eris tab to navigate to https://shipd.ai/quests/eris/."
+    },
+    {
+      "stage": "extract_cards",
+      "error": "Browser policy blocked the page extraction step after navigation. No workaround was attempted."
+    }
+  ],
+  "limitations": [
+    "No `/challenges/` or `/problems/` card links were captured during this heartbeat.",
+    "The browser reported a navigation timeout and then blocked page extraction by URL policy, so the run kept partial state only."
+  ]
+}

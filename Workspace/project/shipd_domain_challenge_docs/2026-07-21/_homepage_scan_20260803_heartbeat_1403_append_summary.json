@@ -1,0 +1,17 @@
+{
+  "homepageCardsFound": 23,
+  "skippedAlreadyBeforeDetail": 22,
+  "detailPagesAttempted": 1,
+  "appendedTotal": 1,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Fine-Tuning": 1
+    },
+    "CPU": {}
+  },
+  "veryNovelAdded": [
+    "EEG-Guided Spontaneous Attention Path Reconstruction"
+  ],
+  "limitations": []
+}

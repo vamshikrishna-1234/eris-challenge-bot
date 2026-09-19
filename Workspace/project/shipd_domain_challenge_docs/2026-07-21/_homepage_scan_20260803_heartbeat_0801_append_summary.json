@@ -1,0 +1,17 @@
+{
+  "homepageCardsFound": 35,
+  "skippedAlreadyBeforeDetail": 34,
+  "detailPagesAttempted": 1,
+  "appendedTotal": 1,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Fine-Tuning": 1
+    },
+    "CPU": {}
+  },
+  "veryNovelAdded": [
+    "EchoTherm: Dual-Sensor Contact-Thermal Replay From Sound, Force, and Motion"
+  ],
+  "limitations": []
+}

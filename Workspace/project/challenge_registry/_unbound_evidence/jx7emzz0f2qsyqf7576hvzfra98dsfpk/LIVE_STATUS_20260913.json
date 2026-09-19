@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-09-13T16:38:36+05:30",
+  "inspection": "fresh_authenticated_shipd",
+  "requested_title": "Bimanual Contact-Change Field From RGB Motion Pairs",
+  "identity_resolution": {
+    "supplied_url": "https://shipd.ai/quests/eris/challenges/jx75vwgzj8gj7whcfckzxy5d8588zb2e",
+    "supplied_url_actual_title": "Stir Schedule Retrodiction From Dye Mixing Pattern",
+    "supplied_url_actual_state": "Revision Requested",
+    "resolved_problem_id": "jx7emzz0f2qsyqf7576hvzfra98dsfpk",
+    "resolved_problem_url": "https://shipd.ai/quests/eris/problems/jx7emzz0f2qsyqf7576hvzfra98dsfpk",
+    "resolved_challenge_url": "https://shipd.ai/quests/eris/challenges/jx7emzz0f2qsyqf7576hvzfra98dsfpk",
+    "resolved_dataset_id": "jd71rkm6bn43n5gnk0p8z5pmqd8dszwk",
+    "resolved_dataset_url": "https://shipd.ai/quests/eris/datasets/jd71rkm6bn43n5gnk0p8z5pmqd8dszwk"
+  },
+  "live_problem": {
+    "title": "Bimanual Contact-Change Field From RGB Motion Pairs",
+    "state": "Accepted",
+    "closed": true,
+    "closed_message": "No further submissions, edits, or withdrawals are possible.",
+    "problem_version": 3,
+    "pipeline_version": 2,
+    "pipeline_completed_at_visible": "2026-09-10T02:45:11+05:30",
+    "prepared_all_zip_visible_size": "56 MB",
+    "prepared_public_zip_visible_size": "56 MB",
+    "checks": {
+      "passed": 7,
+      "total": 7,
+      "findings": [
+        "Challenge Specification: Validation passed",
+        "Novelty Assessment: Validation passed",
+        "Problem Originality: Validation passed",
+        "Domain Routing: Validation passed",
+        "Prepared Data Integrity: Validation passed",
+        "Evaluator Contract: Validation passed",
+        "Rubric Quality: Validation passed",
+        "Benchmark Calibration: Validation passed"
+      ]
+    },
+    "agent_runs": [
+      {"run": 1, "state": "Completed", "score": 0.5601},
+      {"run": 2, "state": "Completed", "score": 0.6013},
+      {"run": 3, "state": "Failed", "score": null}
+    ],
+    "best_agent_score": 0.6013,
+    "leaderboard_entries": 19,
+    "submissions": 48,
+    "top_score": 0.664,
+    "review_history": [
+      {
+        "reviewer": "yenwee0804",
+        "state": "Revision Requested",
+        "date": "2026-09-09",
+        "feedback": "Please fix the prepared answer contract, the columns in submission.csv and answers.csv need to be the same. answers.csv currently contains task/group fields in addition to the six submission columns. No other issues; agent-score variation was acceptable."
+      },
+      {
+        "reviewer": "aikyatan",
+        "state": "Approved",
+        "date": "2026-09-11",
+        "feedback": "Approving"
+      }
+    ]
+  },
+  "live_dataset": {
+    "title": "FusionX RGB And Tactile Glove Pressure Source Subset",
+    "state": "Public",
+    "review_state": "Approved",
+    "reviewer": "aikyatan",
+    "review_date": "2026-09-11",
+    "source_file": "fusionx_official_raw_subset.zip",
+    "source_file_visible_size": "903 MB",
+    "prepared_file_count": 40,
+    "license": "CC BY 4.0",
+    "source_url": "https://huggingface.co/datasets/touchtronix/FusionX-Multimodal-Sample-Data-V2",
+    "validation": {
+      "duplicate_detection": "Validation passed",
+      "yellow_text": "No source URL is provided. Explain in the description how the data was created or collected.",
+      "yellow_diagnosis": "Stale/contradictory platform result: the dedicated Source URL field and description both visibly contain the canonical source URL. Re-run Checks is disabled because the dataset is Public."
+    }
+  },
+  "canonical_package": {
+    "path": "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Egocentric RGB To Tactile Pressure Grid Prediction",
+    "prepare_sha256_local_bytes": "0d733e3e7d2284c65956f523985dac53ae4fb30720900c1427237c8c4186ee88",
+    "prepare_sha256_live_crlf": "93f8ab9e9f601095ccd657b4dfff0c628b3143a5efc4391b00dd0e744518181d",
+    "prepare_sha256_normalized_lf": "d36eda1edfea8e7efb33aadf3739b0ebed350d31693c56cb92963b0c1094d625",
+    "grade_sha256_local_lf": "a21cb259b4b42be66848bd3a901a7f68fbd00f3d038a28628d0fa0ff8dd12aae",
+    "grade_sha256_live_crlf": "04e3c2831766cd03c830cd0adf71b567f43e2eb72add2df0bad459cccbecf0e9",
+    "live_scripts_match_local_after_lf_normalization": true,
+    "source_manifest_entries": 40,
+    "source_manifest_total_bytes": 946852624,
+    "source_manifest_mismatches": 0,
+    "prepared_train_rows": 942,
+    "prepared_test_rows": 907,
+    "prepared_public_file_count": 3701,
+    "perfect_score": 1.0,
+    "sample_score": 0.4574949051321606,
+    "structural_cases_rejected": 11,
+    "row_local_cases_zeroed": 12,
+    "smoke_rerun_at": "2026-09-13T16:38:36+05:30",
+    "smoke_rerun_passed": true
+  },
+  "actions": {
+    "website_writes_performed": false,
+    "agents_launched": false,
+    "batch_or_controller_mutated": false,
+    "reason": "The resolved target is already Accepted and closed. Shipd explicitly forbids further edits or withdrawals, and no genuine local correction remains for the reviewer request."
+  }
+}

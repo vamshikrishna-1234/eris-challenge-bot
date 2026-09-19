@@ -1,0 +1,8 @@
+{
+  "scrapedAt": "2026-08-11T21:30:04+05:30",
+  "source": "Shipd Eris home page",
+  "homepageCardsFound": 0,
+  "alreadyRecordedSkipped": 0,
+  "results": [],
+  "limitation": "The authenticated Shipd dashboard loaded, but its Explore view exposed no challenge cards or challenge links. No detail pages could be read."
+}

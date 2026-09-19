@@ -1,0 +1,20 @@
+{
+  "homepageCardsFound": 40,
+  "skippedAlreadyBeforeDetail": 38,
+  "detailPagesAttempted": 2,
+  "appendedTotal": 2,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Computer Vision": 2
+    },
+    "CPU": {}
+  },
+  "veryNovelAdded": [
+    "Machine-Sensed Cutting-Edge Reconstruction",
+    "Electrical-Tree Growth-Order Reconstruction"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

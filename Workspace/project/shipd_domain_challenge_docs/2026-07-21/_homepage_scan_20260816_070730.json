@@ -1,0 +1,48 @@
+{
+  "scrapedAt": "2026-08-16T12:40:12+05:30",
+  "source": "Shipd Eris homepage heartbeat",
+  "inputCache": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\.codex_tmp\\shipd_heartbeat_20260816_070730_details.json",
+  "payload": {
+    "scrapedAt": "2026-08-16T07:07:30.966Z",
+    "source": "Shipd Eris home page",
+    "homepage": {
+      "homepageCardsFound": 5,
+      "skippedAlready": 4,
+      "failures": []
+    },
+    "detailRun": {
+      "details": [
+        {
+          "description": "Overview\nEach row contains a short anonymized sensor log from a real yeast cell experiment. Think of it as a multivariate time series: for each observed cell, you receive one value sequence for brightness, one value sequence for cell size, and a validity mask that says which frames are usable.\nYour task is to predict the ordered event list hidden in that time series. For each cell, identify whether and when two event types happen: bud_onset, meaning a visible growth event starts, and trace_exit, meaning the tracked cell leaves or ends before the recording finishes.\nThis challenge belongs to the From Scratch domain. Participants may train models on the supplied public training rows, but may not use hosted inference, GPU-only workflows, private files, or external source lookup.\nDataset\nThe public data is derived from real cell-cycle microscopy experiments. The raw upload contains microscope image examples, cell-tracking resources, MATLAB analysis files, and per-cell trace files. The challenge input is a prepared trace packet, not the raw images.\nFor each example, open the row's manifest_path. The manifest has this structure:\n{\n\"id\": \"Y123EXAMPLE\",\n\"frame_count\": 120,\n\"cells\": [\n{\n\"cell_id\": \"C1A2B3C4D\",\n\"fluorescence\": [0.13, 0.20, -0.05],\n\"relative_area\": [0.98, 1.01, 1.04],\n\"valid\": [1, 1, 1]\n}\n]\n}\nframe_count is the number of time steps. Each item in cells is one tracked cell. fluorescence is the normalized brightness sequence, relative_area is the normalized size sequence, and valid is a same-length 0/1 mask. cell_id is an anonymized handle that must be reused exactly in predictions for that row.\ntrain.csv has id, manifest_path, prompt, and target_json. test.csv has the same input columns without target_json. sample_submission.csv has the required submission header and held-out ID order. Manifest paths are relative to the public output directory.\nFile Overview\nItem\tDescription\ntrain.csv\tTraining inputs and targets\ntest.csv\tHeld-out inputs\nsample_submission.csv\tSubmission template\npackets/*/manifest.json\tTrace packet\nCSV Columns\nColumn\tType\tDescription\nid\tstring\tRow identifier\nmanifest_path\tstring\tManifest path\nprompt\tstring\tTask instruction\ntarget_json\tJSON string\tTrain target only\nTarget JSON\nThe target is a JSON object with one key, events. Its value is an ordered list of event objects:\n{\n\"events\": [\n{\"cell_id\": \"C1A2B3C4D\", \"event\": \"bud_onset\", \"frame_bin\": 37},\n{\"cell_id\": \"C1A2B3C4D\", \"event\": \"trace_exit\", \"frame_bin\": 91}\n]\n}\ncell_id must be one of the cell_id values in that row's manifest. event must be bud_onset or trace_exit. frame_bin is an integer time step from 0 to frame_count - 1. Events should be sorted by time when possible.\nSubmission\nSubmit submission.csv with columns in this exact order: id,prediction_json. The ID sequence must exactly match test.csv; extra, missing, duplicated, or reordered IDs invalidate the submission.\nExample:\nid,prediction_json\nY123EXAMPLE,\"{\"\"events\"\":[{\"\"cell_id\"\":\"\"C1A2B3C4D\"\",\"\"event\"\":\"\"bud_onset\"\",\"\"frame_bin\"\":37}]}\"\nY456EXAMPLE,\"{\"\"events\"\":[]}\"\nColumn\tType\tConstraint\nid\tstring\tExact test ID order\nprediction_json\tJSON string\tEvent-list object\nEvaluation\nThe score is the mean row score over all held-out rows. Each row is scored by comparing the predicted JSON object with the hidden target JSON object.\nFor a JSON object, the grader extracts two token sets:\nToken set\tMeaning\nfacts\tAll key/value facts and list members\norder\tAdjacent list-member pairs\nFor each token set, precision is matches / predicted_tokens, recall is matches / target_tokens, and F1 = 2 * precision * recall / (precision + recall). If both sets are empty, that F1 is 1.0; if only one side is empty, it is 0.0.\nThe row score is:\n0.70 * F1(facts) + 0.30 * F1(order)\nThe final score is the mean of all row scores. The score range is [0, 1]. A perfect submission scores 1.0. A malformed JSON row, unknown cell_id, oversized JSON object, wrong columns, duplicate IDs, missing IDs, or wrong row order receives zero or is rejected by the grader.\nGeneralization Contract\nRows from the same microscope position are kept together in one split, so closely related traces do not appear in both train and test. Public IDs and packet filenames are anonymized. Hidden answers, source paths, original row order, and split-group labels are not included in public test files.\nPractical CPU Modeling Guidance\nOfficial resources: 10 CPU cores, 62 GB RAM, 1.5 hours wall-clock, no GPU. Suitable approaches include time-series feature extraction, change-point detection, compact temporal models, dynamic programming, and cross-cell consistency checks. Keep training and inference offline.\nWhat Not To Use\nhosted inference APIs, runtime downloads, or GPU-only workflows;\nexternal source lookup, reverse media search, recovered source filenames, IDs, URLs, or file-size side channels;\nprivate-file access, hard-coded hidden answers, grader exploitation, or manual labelling of test rows;\nmalformed or oversized CSV/JSON, duplicate IDs, impossible row-local handles, or reordered rows;\nreducing the task to a single classification label or continuous regression target instead of emitting the required event-list JSON.",
+          "difficulty": "Medium",
+          "domain": "From Scratch",
+          "gpu": "CPU",
+          "id": "jx726phae2dhhnv26kwxyzm9y98aste7",
+          "scoring": "↑ Higher is better",
+          "status": "Pending Review",
+          "title": "Cell Event Program Recovery from Fluorescence Traces",
+          "url": "https://shipd.ai/quests/eris/challenges/jx726phae2dhhnv26kwxyzm9y98aste7",
+          "compute": "CPU",
+          "tags": "",
+          "scoreContext": "Be the first to climb the leaderboard!"
+        }
+      ],
+      "failures": []
+    }
+  },
+  "appendSummary": {
+    "homepageCardsFound": 5,
+    "skippedAlreadyBeforeDetail": 4,
+    "detailPagesAttempted": 1,
+    "appendedTotal": 0,
+    "skippedAtAppendBecauseAlreadyRecorded": [
+      "jx726phae2dhhnv26kwxyzm9y98aste7"
+    ],
+    "appendedByBucketDomain": {
+      "CPU": {},
+      "Non-CPU": {}
+    },
+    "veryNovelAdded": [],
+    "limitations": []
+  }
+}

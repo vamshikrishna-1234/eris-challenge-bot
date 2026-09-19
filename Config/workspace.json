@@ -1,0 +1,16 @@
+{
+  "schema_version": 2,
+  "workspace_name": "Eris Challenge Bot",
+  "path_mode": "relative_to_bot_root",
+  "shared_project_root": "Workspace\\project",
+  "challenge_registry": "Workspace\\project\\challenge_registry",
+  "rules": "Workspace\\project\\rules",
+  "challenge_output_root": "Workspace\\output",
+  "working_root": "Working",
+  "controller": "eris_automation\\run.ps1",
+  "bundled_skill": ".codex\\skills\\eris-challenge-automation\\SKILL.md",
+  "factory_skill": ".codex\\skills\\eris-challenge-factory\\SKILL.md",
+  "submission_skill": ".codex\\skills\\eris-submission-pool\\SKILL.md",
+  "solver_rules_skill": ".codex\\skills\\eris-solver-rules\\SKILL.md",
+  "external_file_dependencies": []
+}

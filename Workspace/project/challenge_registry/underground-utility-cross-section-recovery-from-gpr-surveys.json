@@ -1,0 +1,27 @@
+{
+  "title": "Underground Utility Cross-Section Recovery From GPR Surveys",
+  "slug": "underground-utility-cross-section-recovery-from-gpr-surveys",
+  "status": "ready_for_review",
+  "owner_machine": "VAMSHI",
+  "owner_task": "019f8ef2-3ec6-7ca3-84ac-369a8074324c",
+  "output_folder": "D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Underground Utility Cross-Section Recovery From GPR Surveys",
+  "dataset": "University of Twente GPR utility surveys / 4TU dataset 96303227-5886-41c9-8607-70fdd2cfe7c1",
+  "license": "CC0",
+  "created_at": "2026-07-23T17:56:52.1878686+05:30",
+  "updated_at": "2026-07-24T01:20:00+05:30",
+  "blocker": "",
+  "notes": [
+    "Dedicated build task created and titled Underground Utility Cross-Section Recovery From GPR Surveys.",
+    "Official 4TU v1 source verified from https://data.4tu.nl/datasets/96303227-5886-41c9-8607-70fdd2cfe7c1; CC0 license and all 16 official MD5 checks passed.",
+    "Build uses 24 deterministically parseable activities with at least two radargrams and reconciled source-grounded utility markers/discipline ledgers.",
+    "Grouped split by complete projects: train 13 rows, test 11 rows; held-out projects 04 and 08.",
+    "Smoke checks passed after safe-dig revision: perfect=1.0, sample=0.149635, malformed structural submissions rejected and malformed row-local JSON/enums/ranges zeroed.",
+    "Shortcut baselines stayed below 0.60 after safe-dig revision: blank=0.149635, train-prior=0.306681, context-only=0.197378, simple radar hand-feature=0.214361, normal CPU radar-stat NN=0.307302.",
+    "Final challenge folder is ready for review with source/provenance notes, prepare.py, grade.py, forms, paste files, smoke and analysis scripts.",
+    "Revision audit hardened public-source lookup risk: coarsened site context, abstracted survey maps, hid true line count, perturbed radar tensors, and measured raw-radar source activity recovery at 0/24 with median rank 46.5.",
+    "Accepted-description comparison completed against Computer-Vision.md and accepted challenge descriptions; CHALLENGE_FORM_FILL.md revised with Task, Intended Approach, strict Submission, CPU, and enforcement sections.",
+    "Dataset upload ZIP created: D:\\create_challenge_synthetic_output_folder\\sprint_3\\codex_output_folders_sprint_3\\Underground Utility Cross-Section Recovery From GPR Surveys\\gpr_4tu_official_v1.zip",
+    "Fixed Problem Description Quality failure: Overview now names the exact 32x32 mask, utility-ledger, and dig-plan targets; Evaluation defines S_mask/S_count/S_ledger/S_consist/S_plan formulas; Dataset documents site_context_json, excavation_queries_json, dig_plan_json, manifest.json, and material values. Public manifest no longer exposes held-out project ids.",
+    "Addressed automated novelty warning against GPRNet-like geometry recovery by adding a required scored counterfactual safe-dig certificate head (dig_plan_json) for public excavation-window queries, weighted 25% of row score. Revised local novelty estimate: 6+/10."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "homepageCardsFound": 30,
+  "skippedAlreadyBeforeDetail": 18,
+  "detailPagesAttempted": 12,
+  "appendedTotal": 12,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "RAG": 1,
+      "Fine-Tuning": 1,
+      "Sequence To Sequence": 5,
+      "Other": 2,
+      "Computer Vision": 2,
+      "NLP": 1
+    },
+    "Non-CPU": {}
+  },
+  "veryNovelAdded": [
+    "Czech Poetry Cross-Witness Passage Retrieval and Attested Reading Selection",
+    "Paired Biography Generation from Entangled Records",
+    "Habitat-Range Acoustic Interaction Square Reconstruction",
+    "Non-Line-of-Sight Ultrasound Scan Planning and Echo Interpretation",
+    "DerogationRelay: Exception-to-Obligation Binding"
+  ],
+  "limitations": []
+}

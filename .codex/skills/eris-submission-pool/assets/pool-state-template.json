@@ -1,0 +1,83 @@
+{
+  "schema_version": 3,
+  "challenge_folder": null,
+  "registry_path": null,
+  "binding": {
+    "problem_tab_supplied": false,
+    "dataset_tab_supplied": false,
+    "matched_local_package": false,
+    "matched_registry_entry": false,
+    "bound_at": null
+  },
+  "problem": {
+    "id": null,
+    "url": null,
+    "version": null,
+    "title": null,
+    "description_sha256": null,
+    "visible_state": null
+  },
+  "dataset": {
+    "id": null,
+    "url": null,
+    "version": null,
+    "title": null,
+    "description_sha256": null,
+    "visible_state": null
+  },
+  "stage": "admission_not_checked",
+  "admission": {
+    "passed": false,
+    "owner_match": false,
+    "readiness_verdict": null,
+    "blockers": []
+  },
+  "website_writes_performed": false,
+  "dataset_phase": {
+    "title": null,
+    "description_sha256": null,
+    "source_files": [],
+    "source_file_count": 0,
+    "source_file_extensions": [],
+    "license": null,
+    "source_url": null,
+    "rebuild_state": null,
+    "rebuild_attempts": 0,
+    "validation_run_count": 0,
+    "red_findings": [],
+    "yellow_findings": [],
+    "fixes": [],
+    "last_zero_warning_validation_at": null,
+    "all_checks_green": false,
+    "marked_ready": false,
+    "marked_ready_at": null
+  },
+  "challenge_phase": {
+    "title": null,
+    "description_sha256": null,
+    "difficulty": null,
+    "compute": null,
+    "tags": [],
+    "grade_direction": null,
+    "minimum_score": null,
+    "maximum_score": null,
+    "grade_script_sha256": null,
+    "prepare_script_sha256": null,
+    "prepare_state": null,
+    "prepare_run_count": 0,
+    "check_run_count": 0,
+    "red_findings": [],
+    "yellow_findings": [],
+    "fixes": [],
+    "last_zero_warning_check_at": null,
+    "all_checks_green": false
+  },
+  "agent_run": {
+    "clicked": false,
+    "visible_state": null,
+    "started_at": null,
+    "terminal_state_verified": false
+  },
+  "stop_reason": null,
+  "updated_at": null
+}

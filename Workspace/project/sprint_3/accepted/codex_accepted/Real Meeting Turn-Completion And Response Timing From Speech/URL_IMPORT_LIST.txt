@@ -1,0 +1,13 @@
+Paste/import these official AMI URLs as raw dataset source files:
+
+https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_manual_1.6.2.zip
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2002a/audio/ES2002a.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2003a/audio/ES2003a.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2004a/audio/ES2004a.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/IS1000a/audio/IS1000a.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/TS3003a/audio/TS3003a.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/EN2001a/audio/EN2001a.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/IB4001/audio/IB4001.Mix-Headset.wav
+https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/IN1001/audio/IN1001.Mix-Headset.wav
+
+If the platform places imported WAVs at the raw root instead of under audio/, prepare.py still discovers them by filename. For local testing, this workspace keeps them under raw_data/audio/ and records the same paths in raw_data/meetings.csv.

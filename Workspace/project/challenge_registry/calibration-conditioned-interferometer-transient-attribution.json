@@ -1,0 +1,42 @@
+﻿{
+    "title":  "Calibration-Conditioned Interferometer Transient Attribution",
+    "slug":  "calibration-conditioned-interferometer-transient-attribution",
+    "status":  "platform_novelty_passed_validation_running",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fc605-92a7-72d1-aa75-b9cd5bbc6f71",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Calibration-Conditioned Interferometer Transient Attribution",
+    "dataset":  "GWOSC O3a 4 kHz H1/L1 public strain blocks (two official raw HDF5 files)",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-04T13:40:12.3386322+05:30",
+    "updated_at":  "2026-08-06T22:49:53+05:30",
+    "shipd_challenge_url":  "https://shipd.ai/quests/eris/problems/jx7ewasyvbarg8zt8tmwajg5n58brj7d",
+    "shipd_dataset_url":  "https://shipd.ai/quests/eris/datasets/jd762c40rjd14e965hb0hhjvbn8bsncd",
+    "dataset_validation":  "passed_all_checks",
+    "platform_prepare":  {
+                              "status":  "passed",
+                              "completed_at":  "2026-08-04T18:58:33+05:30",
+                              "pipeline":  "v1",
+                              "all_zip_display_size":  "145 MB",
+                              "public_zip_display_size":  "144 MB"
+                          },
+    "blocker":  "No current novelty blocker. A 2026-08-05 relational-description clarification made live Shipd Problem Research report 7/10 High and the Novelty Assessment pass. A Trivial Issues metric-chain warning was revised again on 2026-08-06 with the exact platform-suggested global_test_score = mean(group_score) wording, but the platform checks panel remained locked in Running... and still displayed stale out-of-date results, so agents/submission should wait for a clean refreshed check run.",
+    "notes":  [
+                  "HRTF formulation rejected for low novelty; replacement source is GWOSC.",
+                  "Final CPU difficulty ladder after metric revision: prior 0.106745, sample 0.169254, strongest single CPU model 0.393180, strongest measured three-method projected ensemble 0.398530, perfect oracle 1.0.",
+                  "Final local audit PASS_WITH_WARNINGS: estimated novelty 6.5/10; the calibration-aware CPU DSP model gains 0.006764 aggregate over query-only, while reference-match F1 gains 0.049776.",
+                  "Direct URL import is available for two official H1/L1 files; no dataset ZIP created.",
+                  "Dataset draft populated with two official raw HDF5 URLs, CC BY 4.0 metadata, and all four platform validation checks passed.",
+                  "Challenge draft populated with rich-formatted description, first five sample rows, current Medium/CPU configuration, and byte-equivalent canonical prepare.py and grade.py; challenge checks were intentionally not run.",
+                  "2026-08-04 correction: the source-file Rebuild was completed, both raw HDF5 files appeared under Prepared Dataset, an exact field-by-field HDF5 Features section was added, and the rerun passed Description Quality, File Structure, Title Quality, and Duplicate Detection.",
+                  "Platform Run Prepare completed successfully after UI code was rechecked against canonical files; outputs show private/, public/, all.zip (145 MB), and public.zip (144 MB). Challenge checks/evaluation were not started.",
+                  "2026-08-05 description revision: matched accepted-example structure, corrected five target columns versus six scored heads, and verified six rendered tables (file overview, train, test, NPZ, calibration ledger, submission) plus two code blocks in Preview.",
+                  "2026-08-05 CPU-only policy revision: selected CPUDefault on the live challenge, replaced all solver-visible GPU/A10G wording with the exact 10 CPU cores, 62 GB RAM, and 1.5-hour contract, documented CPU-feasible approaches and runtime guarding, preserved six tables and two code blocks, and did not run challenge checks/evaluation.",
+                  "2026-08-05 grader difficulty revision: complete six-head record accuracy now has 0.50 visible weight and the five independent macro-F1 terms retain 0.50 total partial credit. No power, cap, hostile tolerance, or hidden suppression was added. The exact hidden rerun put the strongest measured projected three-method ensemble at 0.398530; malformed, sample, oracle, data-integrity, and skill-sweep checks passed. Platform agent rounds remain external and have not been run.",
+                  "2026-08-05 live synchronization: the Shipd draft grading editor was verified newline-normalized byte-equivalent to canonical grade.py, the visible metric formula and 3-to-16-second CPU fit evidence were updated, CPUDefault remained selected, six tables and two code blocks remained rendered, and autosave was confirmed. No checks or agents were started.",
+                  "2026-08-05 intended-approach revision: added 'Strong solutions may fine-tune open-source models or train architectures from scratch.' as the first sentence under Intended Approach in all canonical/paste-ready description copies and the live Shipd draft. Verified autosave, six rendered tables, and two code blocks; checks and agents were not run.",
+                  "2026-08-05 platform review revision: clarified that detector-state macro-F1 is the arithmetic mean of separately computed detector A/B macro-F1 scores and that the 2,440 NPZ files cover all 1,920 train plus 520 test episodes. The refreshed Trivial Issues check passed and all 12 technical checks passed. Mandatory novelty remained 4/10; one accurate coupled-contract clarification scored 3/10 and was reverted. Challenge was temporarily blocked pending substantive redesign; agents were not run.",
+                  "2026-08-05 novelty clarification: added a narrow, factual Overview paragraph stating that the scored object is relational across both calibration references and the local-glitch calibration in the same episode. The live Shipd Problem Research panel then reported Novelty Score 7/10 High and the Novelty Assessment passed. The full pre-submission suite was still running at 3/12 when last observed, so agents were not started.",
+                  "2026-08-05 formatting repair: after automated plain/rich paste flattened table nodes, converted the six schema tables to fenced monospaced table blocks in all canonical/paste description copies and repasted live. Preview verified the relational sentence is present, table headers are not flattened, and the description is back in rendered preview mode.",
+                  "2026-08-06 metric-chain revision: replaced the earlier equivalent global_test_score wording with the platform-suggested literal definition `global_test_score = mean(group_score) over all public test episodes submitted for scoring` in all canonical description copies and the live Shipd draft. Preview/autosave verified the corrected line, the hidden-background line, and removal of the old wording. The checks panel remained locked at Running... and still displayed stale out-of-date results, so no agents were started."
+              ]
+}

@@ -1,0 +1,118 @@
+{
+  "title": "Streamgage Rating Correction Decisions",
+  "slug": "streamgage-rating-correction-decisions",
+  "status": "rejected",
+  "stage": "bounded_pilot_complete",
+  "reason_code": "native_target_is_either_public_answer_or_underdetermined",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a08d34-81de-7222-b8a5-9eb32efc8d96",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Streamgage Rating Correction Decisions",
+  "dataset": "USGS Stage-Discharge Rating Curves via official STAC ratings collection",
+  "license": "CC0-1.0 / USGS government work in the public domain",
+  "source_url": "https://api.waterdata.usgs.gov/stac/v0/collections/ratings",
+  "created_at": "2026-09-11T02:52:52.1338853+05:30",
+  "updated_at": "2026-09-11T03:13:21.5576120+05:30",
+  "blocker": "",
+  "status_note": "REJECTED after a bounded 47-site native-file pilot. EXSA is the only artifact containing the rating-shift program and corrected state: including it exposes or deterministically reconstructs the scored object, while withholding it leaves BASE plus the separate CORR gage-height correction product without the field measurements and hydrologic judgment that determine rating shift. Exact and affine-normalized numeric BASE fingerprints both recovered source sites at 100% top-1, enabling direct public CORR/EXSA lookup. No challenge package was built.",
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": false,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": false,
+    "post_filter_scale_passed": false,
+    "split_stability_passed": false,
+    "semantic_duplicate_audit_passed": true,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": false,
+    "import_route_verified": false,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [
+      "No non-leaking, source-grounded BASE/CORR-to-EXSA prediction relationship exists in the selected assets.",
+      "Numeric BASE curves are public-source fingerprints with 100% measured top-1 site recovery.",
+      "No-op retains 0.792666 on the pilot pointwise shift diagnostic."
+    ]
+  },
+  "evidence": {
+    "checked_at": "2026-09-11T03:13:21.5576120+05:30",
+    "challenge_framing": "From Scratch",
+    "official_source": {
+      "docs_url": "https://api.waterdata.usgs.gov/docs/stac",
+      "collection_url": "https://api.waterdata.usgs.gov/stac/v0/collections/ratings",
+      "search_url": "https://api.waterdata.usgs.gov/stac/v0/search?collection=ratings&limit=10000",
+      "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "collection_license": "CC0-1.0",
+      "stac_pages": 4,
+      "stac_items": 30909,
+      "complete_triplet_sites": 10303,
+      "declared_bytes": 574426245
+    },
+    "bounded_sample": {
+      "selection": "SHA-256 ordering with salt streamgage-rating-correction-pilot-v1",
+      "independent_sites": 47,
+      "files": 141,
+      "downloaded_bytes": 2638860,
+      "declared_bytes": 2638860,
+      "size_mismatch_count": 0,
+      "station_join_consistency": 1.0,
+      "rating_id_join_consistency": 1.0,
+      "usable_examples_after_all_mandatory_filters": 0,
+      "usable_independent_groups_after_all_mandatory_filters": 0
+    },
+    "target_balance": {
+      "sites_with_nonzero_corr": 6,
+      "nonzero_corr_prevalence": 0.1276595744680851,
+      "no_change_corr_prevalence": 0.8723404255319149,
+      "sites_with_nonzero_shift": 41,
+      "nonzero_shift_prevalence": 0.8723404255319149,
+      "corr_header_points_median": 0.0,
+      "corr_header_points_mean": 0.2765957446808511,
+      "corr_header_points_max": 3,
+      "shift_header_points_median": 3.0,
+      "shift_header_points_mean": 2.1914893617021276,
+      "shift_header_points_max": 4,
+      "corr_effective_intervals_median": 0.0,
+      "corr_effective_intervals_max": 1,
+      "shift_effective_intervals_median": 1.0,
+      "shift_effective_intervals_max": 2
+    },
+    "native_relationship": {
+      "corrindep_equals_indep_plus_corr_max_abs_error": 7.105427357601002e-15,
+      "finding": "CORR is a separate expanded-stage gage-height correction product; EXSA contains the rating SHIFT and corrected DEP state."
+    },
+    "retrieval_attacks": {
+      "exact_numeric_base_unique_fraction": 1.0,
+      "exact_numeric_base_top1_site_recovery": 1.0,
+      "exact_queries": 47,
+      "affine_normalized_base_shape_top1_site_recovery": 1.0,
+      "affine_normalized_queries": 45
+    },
+    "diagnostic_baselines": {
+      "metric": "mean exp(-abs(pointwise shift error)/0.05); pilot diagnostic only",
+      "copy_exsa_shift": 1.0,
+      "no_change_or_base_reuse": 0.7926655008577678,
+      "nearest_geographic_site_median": 0.6335849885238796,
+      "monotonic_base_exsa_inversion": 0.6026083515355714,
+      "carry_forward_first_shift": 0.4405404305263016
+    },
+    "runtime": {
+      "cached_parse_retrieval_and_baselines_seconds": 1.7428765000004205,
+      "cpu_cores_required": 1,
+      "final_prepare_or_solver_benchmark": "not run because the mandatory source gate rejected the formulation"
+    },
+    "novelty": {
+      "estimated_score": 7,
+      "closest_entries": [
+        "HydroRelay: Fault-Tolerant Gauge Portfolio Recommendation",
+        "Climate Evidence Calibration Ledger"
+      ],
+      "passed": true
+    },
+    "evidence_directory": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\streamgage-rating-correction-decisions"
+  },
+  "notes": [
+    "The full raw inventory is below 1 GB, but no clean source bundle was created because the formulation failed before build/import preflight.",
+    "The exact E: output challenge folder was not claimed or created. Pilot evidence remains under challenge_registry/pilot_evidence."
+  ]
+}

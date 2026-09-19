@@ -1,0 +1,43 @@
+{
+  "title": "Serial Crystallography Lattice Indexing",
+  "slug": "platform-revision-jx7b5n2dh8q032zxx9bg6n05a58a3p65",
+  "status": "building",
+  "stage": "agent_runs_started",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a097bc-b9d6-7071-aa89-fcdf0b1e4e1c",
+  "output_folder": "C:\\Users\\vamsh\\Downloads\\Eris Challenge Bot\\Working\\revisions\\jx7b5n2dh8q032zxx9bg6n05a58a3p65",
+  "problem_id": "jx7b5n2dh8q032zxx9bg6n05a58a3p65",
+  "problem_url": "https://shipd.ai/quests/eris/problems/jx7b5n2dh8q032zxx9bg6n05a58a3p65",
+  "dataset_id": "jd7585a938r8cc1t16627k91n98a23qd",
+  "dataset_url": "https://shipd.ai/quests/eris/datasets/jd7585a938r8cc1t16627k91n98a23qd",
+  "dataset": "CXIDB 150 Channelrhodopsin Serial Crystallography Stream Subset",
+  "license": "CC0 1.0 Universal Public Domain Dedication",
+  "created_at": "2026-09-13T04:21:10.5384380+05:30",
+  "updated_at": "2026-09-13T19:32:49.2337510+05:30",
+  "blocker": null,
+  "readiness": {
+    "verdict": "Proceed",
+    "source_verified": true,
+    "license_verified": true,
+    "real_data_verified": true,
+    "exact_platform_binding": true,
+    "prepare_reproduced": true,
+    "grader_audited": true,
+    "baseline_audited": true,
+    "leakage_audited": true,
+    "cpu_runtime_verified": true,
+    "paste_files_synchronized": true,
+    "forms_complete": true,
+    "unresolved_gates": []
+  },
+  "notes": [
+    "2026-09-13: User requested Status & Fix for the exact existing revision and supplied Aikyatan's 2026-07-30 review text.",
+    "2026-09-13: Initial browser-control attempt failed; the user then opened the exact authenticated problem and it was inspected successfully.",
+    "2026-09-13: Live reviewer state, dataset, scripts, prepared outputs, checks, and agent scores were recovered for the exact IDs.",
+    "2026-09-13: Revision v2 removes floor compression, replaces multiplicative collapse with an audited additive metric, completes schema documentation, and reproduces all 2,400 packet hashes from the official source.",
+    "2026-09-13: Ownership transferred on the same machine to task 01a097bc-b9d6-7071-aa89-fcdf0b1e4e1c by the user's explicit request to continue in the open in-app browser. No active-batch state was changed.",
+    "2026-09-13: The v2 description, additive grader, minimum score 0, and corrected Prepare pipeline were applied to the exact live problem.",
+    "2026-09-13: Fresh Prepare completed and all 7/7 Shipd checks passed. Run Agents became enabled.",
+    "2026-09-13: The user clicked Run Agents. Fresh live verification showed Draft — Evaluating difficulty with 0/3 completed and all three runs in progress; the submission workflow stopped immediately without monitoring."
+  ]
+}

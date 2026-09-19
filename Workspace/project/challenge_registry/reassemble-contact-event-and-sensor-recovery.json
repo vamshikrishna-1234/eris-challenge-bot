@@ -1,0 +1,167 @@
+{
+  "title": "REASSEMBLE Contact-Event and Sensor Recovery",
+  "slug": "reassemble-contact-event-and-sensor-recovery",
+  "status": "rejected",
+  "stage": "pilot_complete_rejected_before_build",
+  "verdict": "Reject",
+  "dataset": "REASSEMBLE, TU Wien version 1.0.0",
+  "domain": "From Scratch",
+  "compute_preference": "GPU preferred; CPU fallback",
+  "license": "CC BY 4.0",
+  "license_source": "https://researchdata.tuwien.ac.at/api/records/0ewrv-8cb44",
+  "official_archive_bytes": 58881334586,
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\REASSEMBLE Contact-Event and Sensor Recovery",
+  "owner_task": "01a097ef-01d3-79e2-81c9-8b10f8f72137",
+  "created_at": "2026-09-13",
+  "public_source_lookup_gate": "explicitly waived by user; not claimed passed",
+  "evidence": {
+    "official_container_member_count": 149,
+    "collection_day_count": 5,
+    "collection_days": [
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-13",
+      "2025-01-14"
+    ],
+    "master_archive_range_access": {
+      "verified": true,
+      "http_status": 206,
+      "total_bytes": 58881334586,
+      "content_md5": "812103a652ca9201e87a3bcecfee4ef3",
+      "note": "The master data.zip content endpoint honors exact byte ranges. Individual member endpoints return complete uncompressed HDF5 files and ignore Range."
+    },
+    "official_inventory": {
+      "recording_families": 149,
+      "compressed_bytes": 58881301368,
+      "uncompressed_bytes": 263983579379,
+      "official_train_recordings": 111,
+      "official_test_recordings": 37,
+      "official_unassigned_recordings": 1,
+      "splits_md5": "641882928ef3a8b2c3db41ac7c60b994",
+      "readme_md5": "2e1394a2fa65e4ebb6c1fd64136cb0a0"
+    },
+    "first_native_record": {
+      "member": "data/2025-01-11-14-43-37.h5",
+      "bytes": 102449944,
+      "duration_seconds": 23.24,
+      "high_level_intervals": 4,
+      "substantive_high_level_actions": 1,
+      "low_level_intervals": 2,
+      "substantive_action": "Pick square peg 3.",
+      "substantive_action_success": false,
+      "sensor_validity": "Measured and compensated 3-axis force/torque arrays are finite and timestamp-aligned in the inspected record.",
+      "important_scale_warning": "The smallest recording has only one substantive action; member count or byte count cannot be used as a proxy for usable action-row yield."
+    },
+    "pilot_subset": {
+      "recordings": 5,
+      "collection_days": 5,
+      "compressed_source_bytes": 219995529,
+      "uncompressed_source_bytes": 969232129,
+      "annotated_duration_seconds": 189.05894231796265,
+      "high_level_intervals": 27,
+      "substantive_high_level_actions": 17,
+      "low_level_intervals": 33,
+      "substantive_success_true": 14,
+      "substantive_success_false": 3,
+      "files_with_complete_measured_force_torque": 5,
+      "purpose": "One smallest complete recording per day, extracted from the official ZIP with size and CRC verification."
+    },
+    "success_imbalance": {
+      "official_successful_demonstrations": 4035,
+      "official_total_demonstrations": 4551,
+      "unconditional_success_prior": 0.886618325642716,
+      "pilot_success_prior": 0.8235294117647058
+    },
+    "compact_source_capacity": {
+      "selection_policy": "one smallest unchanged HDF5 per collection day, then globally smallest remaining members",
+      "under_1gb": {
+        "recording_families": 14,
+        "official_test_families": 5
+      },
+      "under_3gb": {
+        "recording_families": 26,
+        "official_test_families": 7
+      },
+      "under_5gb": {
+        "recording_families": 35,
+        "official_test_families": 9
+      },
+      "under_10gb": {
+        "recording_families": 52,
+        "official_test_families": 16
+      },
+      "finding": "A compact unchanged-member source package leaves only a handful of independent hidden recording families; crops do not add independent families."
+    },
+    "narration_attack": {
+      "method": "offline openai/whisper-tiny.en on the two fixed microphones",
+      "pilot_actions": 17,
+      "actions_with_exact_high_level_verb_in_at_least_one_fixed_mic_transcript": 13,
+      "exact_verb_fraction": 0.7647058823529411,
+      "finding": "Object identity and action order are audible in every pilot recording, so narrated audio substantially discloses the proposed action/event labels."
+    },
+    "audio_redundancy_attack": {
+      "method": "10 ms log-RMS envelope cross-correlation and least-squares waveform copy",
+      "fixed_mic_envelope_correlation_min": 0.804609571398265,
+      "fixed_mic_envelope_correlation_max": 0.912440337978057,
+      "fixed_mic_envelope_correlation_mean": 0.8568095487532219,
+      "fixed_mic_copy_sdr_db_min": 0.0003551144608092408,
+      "fixed_mic_copy_sdr_db_max": 0.0895646710167896,
+      "finding": "Exact waveform recovery is phase-underdetermined, while coarse envelope recovery is strongly shortcuttable by another fixed microphone."
+    },
+    "sensor_interpolation_attack": {
+      "method": "linear interpolation between visible endpoints of event-centered masked spans",
+      "event_boundaries": 16,
+      "measured_force_correlation_at_1s": 0.9886387278595069,
+      "measured_force_std_normalized_rmse_at_1s": 1.125096712632252,
+      "compensated_torque_correlation_at_1s": 0.9502764990226796,
+      "compensated_torque_std_normalized_rmse_at_1s": 1.2623613993698215,
+      "finding": "Correlation-only sequence scoring would over-reward interpolation even though standardized error remains poor."
+    },
+    "novelty": {
+      "score_out_of_10": 3.5,
+      "required_minimum": 6.0,
+      "passed": false,
+      "closest_source_task": "REASSEMBLE multimodal temporal action segmentation and success/anomaly detection",
+      "closest_external_method": "MAT3 masked tactile/force-torque/proprioceptive trajectory prediction",
+      "closest_local_clusters": [
+        "Audio-Guided Articulator Sequence Inpainting",
+        "Real Robot Handover Command Timeline Reconstruction",
+        "Laundry Resource-State Reconstruction From Sound and Vibration"
+      ],
+      "finding": "The proposal combines existing dense sequence inpainting and event-ledger solution families on a new domain rather than introducing a materially new learning object."
+    },
+    "rejection_reasons": [
+      "novelty score 3.5/10 is below the required 6/10 threshold",
+      "operator narration directly discloses action and object labels",
+      "exact audio waveform recovery is underdetermined but envelope recovery is cross-microphone shortcuttable",
+      "compact unchanged-source packages leave too few independent hidden recording families",
+      "success labels have an 88.66% unconditional prior"
+    ],
+    "bounded_salvage": {
+      "attempted": true,
+      "result": "Dropping audio/action labels leaves a standard masked force/torque reconstruction task close to existing work; dropping sensor recovery leaves the source's canonical segmentation task. Neither stays within the brief and reaches the novelty threshold."
+    }
+  },
+  "readiness": {
+    "verdict": "Reject",
+    "lookup_gate_waived": true,
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": false,
+    "post_filter_scale_passed": false,
+    "split_stability_passed": false,
+    "semantic_duplicate_audit_passed": false,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": false,
+    "import_route_verified": false,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [
+      "full post-filter count for a compact subset was not pursued after decisive rejection",
+      "final metric null-head tests were not implemented after decisive rejection",
+      "platform import of the full 58.9 GB archive was not attempted"
+    ]
+  }
+}

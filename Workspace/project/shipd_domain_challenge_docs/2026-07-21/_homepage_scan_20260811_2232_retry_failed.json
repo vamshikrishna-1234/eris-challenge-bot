@@ -1,0 +1,9 @@
+{
+  "scrapedAt": "2026-08-12T04:02:17+05:30",
+  "source": "Shipd Eris home page",
+  "retryOf": "2026-08-11T22:00:17.204Z",
+  "homepageCardsFound": 0,
+  "alreadyRecordedSkipped": 0,
+  "results": [],
+  "limitation": "The single 30-minute retry after the dashboard error could not load a document body from Shipd. No homepage cards or detail pages could be read."
+}

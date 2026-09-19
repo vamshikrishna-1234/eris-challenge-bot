@@ -1,0 +1,35 @@
+Preferred URL import procedure:
+
+Import these official Mini LibriSpeech SLR31 source archives directly and unmodified:
+
+https://openslr.trmal.net/resources/31/dev-clean-2.tar.gz
+https://openslr.trmal.net/resources/31/train-clean-5.tar.gz
+
+Optional checksum file:
+
+https://openslr.trmal.net/resources/31/md5sum.txt
+
+Expected official source files:
+
+dev-clean-2.tar.gz
+size: 126,046,265 bytes
+md5: 6d7ab67ac6a1d2c993d050e16d61080d
+
+train-clean-5.tar.gz
+size: 332,954,390 bytes
+md5: 5df7d4e78065366204ca6845bb08f490
+
+Total selected source size: 459,000,655 bytes, about 438 MiB.
+
+Source record:
+
+https://www.openslr.org/31/
+
+License: CC BY 4.0.
+
+After platform import and rebuild, these archives may be displayed as extracted top-level directories:
+
+dev-clean-2/
+train-clean-5/
+
+Do not upload derived public files, private answers, or a processed subset as the raw source. If URL import fails, manually upload only the same unmodified official tarballs above. prepare.py accepts the tarballs, a LibriSpeech/ extracted tree, or the platform-extracted top-level dev-clean-2/ and train-clean-5/ directories.

@@ -1,0 +1,202 @@
+{
+  "timestamp": "2026-07-23T11:04:28+05:30",
+  "homepageCount": 49,
+  "alreadyRecordedBeforeDetail": 32,
+  "newCandidates": 17,
+  "appended": 17,
+  "skippedAfterDetail": 0,
+  "failures": 0,
+  "by_bucket": {
+    "CPU": {
+      "Other.md": 5,
+      "Sequence-To-Sequence.md": 5,
+      "Computer-Vision.md": 3,
+      "NLP.md": 2,
+      "Prompt-Engineering.md": 1,
+      "From-Scratch.md": 1
+    },
+    "Non-CPU": {}
+  },
+  "cpu_total": 110,
+  "non_cpu_total": 8,
+  "very_novel_count": 7,
+  "very_novel_titles": [
+    "Historical Listing Continuation From Noisy Field Sketches",
+    "Binocular Gaze Log Repair",
+    "DossierLink: Cross-Page Entity Ledger Recovery",
+    "Recovering a Hidden Sequence from Coarse Coders with a Planted Impostor",
+    "Reference-Guided Ultrasound Frame Retrieval and Sweep Reconstruction",
+    "3-D Prostate MRI Topology Reconstruction",
+    "CSS Selector DOM Witness Synthesis"
+  ],
+  "appended_items": [
+    {
+      "id": "jx74z8bv5evq26k33cf4qrrkbn8avx4d",
+      "title": "Historical Listing Continuation From Noisy Field Sketches",
+      "url": "https://shipd.ai/quests/eris/challenges/jx74z8bv5evq26k33cf4qrrkbn8avx4d",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "noisy field-sketch evidence drives structured continuation rather than classification",
+      "design_trick": "Turn degraded operational notes/sketches into a continuation task with explicit uncertainty and consistency checks."
+    },
+    {
+      "id": "jx73p8reann8yee4c5p00jsc098asqje",
+      "title": "Icelandic Treelet Assembly",
+      "url": "https://shipd.ai/quests/eris/challenges/jx73p8reann8yee4c5p00jsc098asqje",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx713gf9s6r2q4qwe7emk4z4rd8as7rm",
+      "title": "Dramatic Referent Route Generation",
+      "url": "https://shipd.ai/quests/eris/challenges/jx713gf9s6r2q4qwe7emk4z4rd8as7rm",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx717ac7rymwxv1crsr383b78n8aq72s",
+      "title": "Binocular Gaze Log Repair",
+      "url": "https://shipd.ai/quests/eris/challenges/jx717ac7rymwxv1crsr383b78n8aq72s",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "nonstandard human-sensor trace repair with binocular consistency constraints",
+      "design_trick": "Score repaired time windows and consistency between paired sensor streams."
+    },
+    {
+      "id": "jx7f81hxd7v8zpsyx4jmqsz3hd8azm46",
+      "title": "DossierLink: Cross-Page Entity Ledger Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7f81hxd7v8zpsyx4jmqsz3hd8azm46",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "cross-page provenance ledger reconstruction is a reusable structured-output pattern",
+      "design_trick": "Require links between scattered page evidence, entity records, and a final ledger object."
+    },
+    {
+      "id": "jx735r0d45szwmyhswpx9sjb3d8axn28",
+      "title": "Recovering a Hidden Sequence from Coarse Coders with a Planted Impostor",
+      "url": "https://shipd.ai/quests/eris/challenges/jx735r0d45szwmyhswpx9sjb3d8axn28",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "planted impostor plus hidden-sequence recovery creates a clean corrupted-clue benchmark pattern",
+      "design_trick": "Mix reliable coarse encoders with one plausible bad source and score both sequence recovery and impostor handling."
+    },
+    {
+      "id": "jx77x4n66pnyevbqm60b4xa6w58axcv7",
+      "title": "Reference-Guided Ultrasound Frame Retrieval and Sweep Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx77x4n66pnyevbqm60b4xa6w58axcv7",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "medical sweep reconstruction combines retrieval, ordering, and evidence alignment",
+      "design_trick": "Use a reference frame to recover an ordered scan sweep rather than a single diagnosis label."
+    },
+    {
+      "id": "jx7bmfvdaperdq1151rkr0j7918aw92e",
+      "title": "Affective Knock Audio Retrieval",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7bmfvdaperdq1151rkr0j7918aw92e",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other"
+    },
+    {
+      "id": "jx774wcd4khd0w6cp7x6jqwzfh8avwgn",
+      "title": "Regulatory Cross-Reference Target Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx774wcd4khd0w6cp7x6jqwzfh8avwgn",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md",
+      "displayed_domain": "NLP"
+    },
+    {
+      "id": "jx79ch0gb4bhntbrb3c0qd509s8av51p",
+      "title": "3-D Prostate MRI Topology Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx79ch0gb4bhntbrb3c0qd509s8av51p",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "3-D anatomical topology is a stronger output object than ordinary segmentation",
+      "design_trick": "Score topology/adjacency consistency over reconstructed anatomical regions."
+    },
+    {
+      "id": "jx73sgv7kn8yxfwjj333b88chx8arex8",
+      "title": "Medical Device Recall Event Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx73sgv7kn8yxfwjj333b88chx8arex8",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx7c1h34w5pz94zvpmfa52xzqs8ar5pn",
+      "title": "Anonymous Visual Event Assembly",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7c1h34w5pz94zvpmfa52xzqs8ar5pn",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision"
+    },
+    {
+      "id": "jx70h7yg5kfqsvw0xj6fj8p7ax8aqzqq",
+      "title": "Repeated Air-Stroke Sequence Surgery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx70h7yg5kfqsvw0xj6fj8p7ax8aqzqq",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other"
+    },
+    {
+      "id": "jx71ftsaphpkf4r298tkjq1q758apzbh",
+      "title": "Contrastive Grounding Prompt Assembly",
+      "url": "https://shipd.ai/quests/eris/challenges/jx71ftsaphpkf4r298tkjq1q758apzbh",
+      "bucket": "CPU",
+      "domain": "Prompt Engineering",
+      "file": "Prompt-Engineering.md",
+      "displayed_domain": "Prompt Engineering"
+    },
+    {
+      "id": "jx7bm6x642493ezaa46edqvh9s8ap6kc",
+      "title": "CSS Selector DOM Witness Synthesis",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7bm6x642493ezaa46edqvh9s8ap6kc",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "programmatic DOM witness synthesis is an unusual symbolic generation task",
+      "design_trick": "Ask for a minimal witness object that satisfies/exposes a selector behavior instead of predicting a label."
+    },
+    {
+      "id": "jx7fbsv43yttx8yq49bp9wr8b18apk4e",
+      "title": "Paragraph Intruder Detection",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7fbsv43yttx8yq49bp9wr8b18apk4e",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md",
+      "displayed_domain": "NLP"
+    },
+    {
+      "id": "jx7ak3hs39akq2bnbtd9nwf67h8an717",
+      "title": "SVG Path Sequence-to-Text Translation",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7ak3hs39akq2bnbtd9nwf67h8an717",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md",
+      "displayed_domain": "From Scratch"
+    }
+  ],
+  "skipped_after_detail": []
+}

@@ -1,0 +1,2 @@
+https://zenodo.org/api/records/3371780/files/annotation.zip/content
+https://zenodo.org/api/records/3371780/files/audio_mono-mic.zip/content

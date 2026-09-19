@@ -1,0 +1,45 @@
+{
+  "homepageCardsFound": 40,
+  "skippedAlreadyBeforeDetail": 4,
+  "detailPagesAttempted": 40,
+  "appendedTotal": 23,
+  "skippedAtAppendBecauseAlreadyRecorded": [
+    "jx74svk9w2e7h2c1nbda0491458eacny",
+    "jx7453r9ta7nj7eykmffrs4nhh8e9s7y",
+    "jx7be8j5qke0zg2s30sab9r1wx8drvcp",
+    "jx70a9nfmt5qvx2g69e3q6hxws8drrsb",
+    "jx75a7ywewp45sk18hn5bengrn8e3h41",
+    "jx795sr2nxhmv3zk64n33wsnt98e1xz5",
+    "jx79yjf6e31v3s7ee8673f97j98e80jx",
+    "jx7exqenfdqpg5yx0mmd4zjj8s8e850v",
+    "jx74er0zmyja4ce7kxknzfx0ys8e8zhw",
+    "jx77denz9h4papj016arqxypkd8e8b84",
+    "jx7d292pgq3wpbkqsvrtvgw0qh8ds0r9",
+    "jx7d1qyp8fzf218ndqdkah5g618c8tyn",
+    "jx726phae2dhhnv26kwxyzm9y98aste7",
+    "jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+    "jx729402j0gt2q3s9e79h0a5ps8e3r1y",
+    "jx7bdd5vy86jn6mp82fe5csqeh8e5cy7",
+    "jx7154adcj4qf79t73tmpxb0598e9eva"
+  ],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "From Scratch": 4,
+      "Object Detection": 2,
+      "Computer Vision": 3,
+      "Fine-Tuning": 3,
+      "Sequence To Sequence": 5,
+      "LLM Evaluation": 1,
+      "Other": 2,
+      "NLP": 1
+    },
+    "CPU": {
+      "Fine-Tuning": 1,
+      "From Scratch": 1
+    }
+  },
+  "veryNovelAdded": [],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

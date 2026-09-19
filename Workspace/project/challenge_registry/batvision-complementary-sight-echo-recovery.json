@@ -1,0 +1,167 @@
+{
+  "title": "BatVision Complementary Sight-Echo Recovery",
+  "slug": "batvision-complementary-sight-echo-recovery",
+  "status": "rejected",
+  "verdict": "Reject",
+  "stage": "pilot_complete_rejected",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a097eb-0c47-79a2-a6a5-fe2fa7ab3def",
+  "dataset": "The Audio-Visual BatVision Dataset for Research on Sight and Sound, BV1/BV2",
+  "domain": "From Scratch",
+  "compute_preference": "A10G 24 GB target; local CPU salvage only after local PyTorch initialization did not complete",
+  "license": "CC BY-SA 4.0",
+  "license_source": "https://github.com/AmandineBtto/Batvision-Dataset/blob/main/LICENSE.md",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\BatVision Complementary Sight-Echo Recovery",
+  "created_at": "2026-09-13",
+  "updated_at": "2026-09-13T05:55:45.3777539+05:30",
+  "public_source_lookup_gate": "waived explicitly by user; no passed lookup test claimed",
+  "raw_size_preference": "under 1 GB preferred; under 3 GB target if needed; 5 GB outer bound",
+  "blocker": "Three mandatory gates remain failed after bounded salvage: BatVision CC BY-SA 4.0 is non-sublicensable and ShareAlike while Shipd requires a sublicensable grant and no restrictions on its rights; BV2 provides only seven verified physical locations and its upstream temporal splits reuse all seven; semantic novelty is 4.5/10 versus the required 6/10. The bounded fused model also failed to beat the strongest single-modality shortcuts.",
+  "reason_code": "redistribution_split_novelty_gates_failed",
+  "status_note": "Rejected at Pilot gate before Build mode. A smaller BV2 subset cannot repair the license, independent-family, or novelty failures.",
+  "evidence": {
+    "official_project": "https://amandinebtto.github.io/Batvision-Dataset/",
+    "official_repository": "https://github.com/AmandineBtto/Batvision-Dataset",
+    "official_paper": "https://arxiv.org/abs/2303.07257",
+    "official_public_share": "https://cloud.minesparis.psl.eu/index.php/s/qurl3oySgTmT85M",
+    "verified_webdav_route": "https://cloud.minesparis.psl.eu/remote.php/dav/public-files/qurl3oySgTmT85M/",
+    "shipd_terms": "https://olympus.shipd.ai/terms",
+    "license_compatibility": {
+      "source_terms": "CC BY-SA 4.0 grants non-sublicensable rights, requires ShareAlike for adapted material, and forbids additional downstream restrictions.",
+      "platform_terms": "Shipd requires a perpetual, irrevocable, worldwide, royalty-free, sublicensable license to incorporated pre-existing material and prohibits incorporation that restricts Shipd's rights.",
+      "compatible": false,
+      "required_remedy": "Separate express rights-holder permission compatible with Shipd's assignment and sublicensing terms."
+    },
+    "mirror_metadata": {
+      "version": 1,
+      "license_evidence": "Full CC BY-SA 4.0 legal terms in termsOfUse",
+      "file_sizes_bytes": [36858622568, 37038443764, 37196220168, 36560507311, 20882628724],
+      "archive_prefix_probe": "The first 1-4 MB of every archive exposed BatvisionV1 tar members; compressed range access is not a selective import route.",
+      "compact_import_verified": false
+    },
+    "bv1_catalog_audit": {
+      "rows": {"train": 39564, "val": 7618, "test": 5038, "total": 52220},
+      "unique_audio_pairs": {"train": 5774, "val": 1130, "test": 1229, "total": 8133},
+      "capture_family_folders": {"train": 121, "val": 34, "test": 24},
+      "train_val_capture_family_overlap": 16,
+      "train_val_date_overlap": 3,
+      "test_uses_distinct_date": true,
+      "observed_native_audio_duration_seconds": 0.1,
+      "documentation_duration_seconds": 0.5,
+      "duration_discrepancy_recorded": true
+    },
+    "bv2_inventory": {
+      "locations": 7,
+      "catalogs": 21,
+      "rows": 3120,
+      "audio_wav": 3120,
+      "camera_jpeg": 3120,
+      "depth_npy": 3120,
+      "referenced_media_members": 9360,
+      "missing_referenced_members": 0,
+      "multiply_referenced_members": 0,
+      "bytes": {"depth": 5751183360, "audio": 499334448, "camera": 395576006, "catalogs": 707579, "total": 6646801393},
+      "per_row_bytes": {"min": 2068049, "median": 2123145, "max": 2242106},
+      "location_rows": {
+        "2ndFloorLuxembourg": 664,
+        "3rd_Floor_Luxembourg": 476,
+        "Attic": 64,
+        "Outdoor_Cobblestone_Path": 627,
+        "Salle_Chevalier": 193,
+        "Salle_des_Colonnes": 401,
+        "V119_Cake_Corridors": 695
+      },
+      "split_finding": "Every upstream train/validation/test partition occurs within every named location. Time-gap acquisition bursts are not authoritative route identities and were not counted as independent families."
+    },
+    "native_sample_audit": {
+      "selection": "chronological median row from every seven-location by three-upstream-split cell",
+      "rows": 21,
+      "members": 63,
+      "downloaded_bytes": 44686427,
+      "valid_triplets": 21,
+      "audio": "stereo PCM32 WAV, 44.1 kHz, 19999-20000 frames, approximately 0.4535 seconds",
+      "camera": "720x1280 RGB JPEG",
+      "depth": "720x1280 uint16 NPY; all 21 inspected arrays finite; millimetre units",
+      "rgb_depth_timestamps_exact_across_catalogs": true
+    },
+    "audio_shortcut_baselines": {
+      "corruption": "three fixed gaps totaling approximately 32-38 percent of the right channel; left channel intact",
+      "silence": {"masked_nrmse": 1.0, "envelope_nrmse": 0.921, "spectral_convergence": 0.928},
+      "linear_interpolation": {"masked_nrmse": 1.188, "envelope_nrmse": 0.628, "spectral_convergence": 0.85},
+      "copy_other_ear": {"masked_nrmse": 0.873, "correlation": 0.573, "envelope_nrmse": 0.479, "spectral_convergence": 0.397, "gcc_lag_error_samples_mean": 0.476},
+      "observed_delay_gain": {"masked_nrmse": 0.794, "correlation": 0.574, "envelope_nrmse": 0.641, "spectral_convergence": 0.599},
+      "observed_17_tap_fir": {"masked_nrmse": 0.696, "correlation": 0.665, "envelope_nrmse": 0.493, "spectral_convergence": 0.474}
+    },
+    "bounded_multimodal_salvage": {
+      "purpose": "falsification-only diagnostic; not capability matched",
+      "rows": 21,
+      "groups": 7,
+      "split": "seven-fold leave-one-named-location-out",
+      "model": "standardized dual-form ridge heads on 12x12 image/depth summaries and 192-point binaural signals",
+      "depth_mae_m": {"constant": 1.3266510416666666, "image_only": 2.140131813144843, "echo_only": 1.7092713476192183, "fused": 1.7945244193040997},
+      "wave_masked_nrmse": {"silence": 0.9999999999666191, "copy_other_ear": 0.6917090516207396, "audio_only_ridge": 0.9847261459660281, "fused_ridge": 1.0519148782846712},
+      "fusion_depth_delta_vs_best_single": -0.08525307168488139,
+      "fusion_wave_delta_vs_best_audio_baseline": -0.36020582666393164,
+      "positive_delta_means_fusion_helped": true,
+      "conclusion": "No fusion benefit was measured. The slice is too small to establish readiness, but it does not rescue the proposal."
+    },
+    "semantic_novelty": {
+      "score_out_of_10": 4.5,
+      "required_minimum": 6.0,
+      "passed": false,
+      "external_neighbors": ["BatVision canonical audio-to-depth U-Net", "MultiMAE multi-modal multi-task masked autoencoding", "CAV-MAE audio-visual masked autoencoding"],
+      "local_neighbors": ["Smartphone Acoustic-To-Vibration Motor State Reconstruction", "Personalized Spatial-Audio Filter Completion", "Cross-Cardiac Waveform and Event Recovery", "Laundry Resource-State Reconstruction From Sound and Vibration", "Visual Choir Soundfield Reconstruction"],
+      "conclusion": "The proposal combines BatVision's canonical depth target with a standard masked audio reconstruction head; domain change and two-head packaging do not clear the novelty gate."
+    },
+    "compute": {
+      "platform_target": "NVIDIA A10G 24 GB GPU and 64 GB RAM",
+      "user_full_solve_budget": "1.5 hours",
+      "local_gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+      "local_driver": "581.86",
+      "local_pytorch_cuda_verified": false,
+      "cpu_salvage_completed": true
+    },
+    "pilot_report": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\batvision-complementary-sight-echo-recovery\\PILOT_AUDIT_REPORT.md",
+    "source_verification": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\batvision-complementary-sight-echo-recovery\\SOURCE_VERIFICATION.md",
+    "novelty_audit": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\batvision-complementary-sight-echo-recovery\\NOVELTY_AND_DUPLICATE_AUDIT.md",
+    "reviewer_premortem": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\batvision-complementary-sight-echo-recovery\\REVIEWER_PREMORTEM.md",
+    "rejection_card": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\batvision-complementary-sight-echo-recovery\\PILOT_REJECTION_CARD.md",
+    "unmeasured_gates": [
+      "No author-style U-Net or strong fused neural baseline was run after redistribution, independence, and novelty gates failed.",
+      "No complete grader/null audit was built because Build mode was not authorized by a Proceed verdict.",
+      "No source ZIP or prepared data package was created because redistribution is incompatible and the full raw source exceeds 5 GB.",
+      "No browser upload, Shipd import, Mark as Ready, challenge configuration, or submission was performed."
+    ]
+  },
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": false,
+    "source_package_verified": false,
+    "post_filter_scale_passed": false,
+    "split_stability_passed": false,
+    "semantic_duplicate_audit_passed": false,
+    "lookup_gate_waived": true,
+    "lookup_attack_passed": false,
+    "capability_matched_baseline_passed": false,
+    "null_metric_audit_passed": false,
+    "import_route_verified": true,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [
+      "Permanent under current source/platform terms: CC BY-SA 4.0 non-sublicensable ShareAlike rights conflict with Shipd's sublicensable pre-existing-material grant and no-restrictions clause.",
+      "Permanent for BV2 as published: only seven verified physical locations, with every upstream split represented inside each location.",
+      "Measured novelty is 4.5/10, below the required 6/10.",
+      "No capability-matched fused baseline pass; bounded fusion was worse than the strongest single-modality shortcuts.",
+      "Full BV2 exact raw footprint is 6.6468 GB, above the 5 GB outer bound."
+    ]
+  },
+  "notes": [
+    "The task was renamed exactly to BatVision Complementary Sight-Echo Recovery before pilot work.",
+    "The public-source lookup gate was waived by the user and is not used as a rejection reason.",
+    "Bounded salvage repaired access uncertainty by discovering and verifying the official public-files WebDAV route.",
+    "All 3,120 BV2 native rows and all 9,360 referenced media paths were inventoried; 21 exact triplets were downloaded and inspected.",
+    "Rejected before Build mode; no full challenge scripts, forms, prepared data, clean source ZIP, or output folder were created.",
+    "No Shipd submission or browser-side mutation was performed."
+  ]
+}

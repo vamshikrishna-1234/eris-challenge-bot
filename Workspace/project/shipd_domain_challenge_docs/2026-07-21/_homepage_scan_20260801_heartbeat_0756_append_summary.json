@@ -1,0 +1,32 @@
+{
+  "homepageCardsFound": 29,
+  "skippedAlreadyBeforeDetail": 9,
+  "detailPagesAttempted": 20,
+  "appendedTotal": 20,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Computer Vision": 8,
+      "Fine-Tuning": 2,
+      "Other": 2,
+      "Object Detection": 4,
+      "From Scratch": 1,
+      "Sequence To Sequence": 2
+    },
+    "CPU": {
+      "Object Detection": 1
+    }
+  },
+  "veryNovelAdded": [
+    "Elevation and Repair Mask Reconstruction from Surface Tiles",
+    "Microfield Counterfactual Repair Audit",
+    "Diatomic Orbital Image Multi-Task Inversion",
+    "Visual Notation Audit Witness Recovery",
+    "Kinyarwanda Spoken Word Mixture Untangling",
+    "Multimodal Robot Episode-Weave Recovery",
+    "Source-Attributed Dual-Channel Detection"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

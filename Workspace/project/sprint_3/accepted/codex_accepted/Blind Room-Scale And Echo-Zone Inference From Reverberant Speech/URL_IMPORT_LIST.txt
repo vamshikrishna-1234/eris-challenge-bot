@@ -1,0 +1,12 @@
+Import or upload these official ACE Corpus files from Zenodo, unmodified:
+
+https://zenodo.org/record/6257551/files/ACE_Corpus_RIRN_Single.tbz2?download=1
+https://zenodo.org/record/6257551/files/ACE_Corpus_Speech.tbz2?download=1
+https://zenodo.org/record/6257551/files/ACE_Corpus_Data.tbz2?download=1
+
+Optional audit/documentation files:
+
+https://zenodo.org/record/6257551/files/ACE_Corpus_instructions_v01.pdf?download=1
+https://zenodo.org/record/6257551/files/ACE_Corpus_Microphone_arrangements_v02.pdf?download=1
+
+Do not create or upload a custom raw_upload.zip for this challenge. The official archives above are the raw dataset source files. `prepare.py` will extract them locally or on the platform, then create public/train.csv, public/test.csv, public/sample_submission.csv, public train/test audio, and private/answers.csv.

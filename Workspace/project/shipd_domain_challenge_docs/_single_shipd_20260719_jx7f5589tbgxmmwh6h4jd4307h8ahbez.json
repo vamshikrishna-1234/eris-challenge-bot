@@ -1,0 +1,11 @@
+{
+  "id": "jx7f5589tbgxmmwh6h4jd4307h8ahbez",
+  "url": "https://shipd.ai/quests/eris/challenges/jx7f5589tbgxmmwh6h4jd4307h8ahbez",
+  "title": "Horizon Line Detection",
+  "domain": "Computer Vision",
+  "difficulty": "Medium",
+  "gpu": "",
+  "status": "Accepted",
+  "scoring": "\u2191 Higher is better",
+  "tags": "image, feature-engineering"
+}

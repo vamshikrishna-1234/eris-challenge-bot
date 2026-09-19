@@ -1,0 +1,156 @@
+{
+  "timestamp": "2026-07-23T23:05:45+05:30",
+  "homepageCount": 57,
+  "alreadyRecordedBeforeDetail": 45,
+  "newCandidates": 12,
+  "appended": 12,
+  "skippedAfterDetail": 0,
+  "failures": 0,
+  "by_bucket": {
+    "CPU": {
+      "Sequence-To-Sequence.md": 4,
+      "Computer-Vision.md": 3,
+      "Other.md": 3,
+      "Recommendation.md": 1,
+      "RAG.md": 1
+    },
+    "Non-CPU": {}
+  },
+  "cpu_total": 133,
+  "non_cpu_total": 8,
+  "very_novel_count": 7,
+  "very_novel_titles": [
+    "Palm-Leaf Reading Paths",
+    "Seismic Evidence Forensics",
+    "Highway Platoon Signature Reconstruction",
+    "Central European Pretraining Curriculum",
+    "Anonymous Visual Operator Relay",
+    "Contract Workflow Reconstruction",
+    "Cymbal Excitation-and-Damping Program Recovery"
+  ],
+  "appended_items": [
+    {
+      "id": "jx7bk2yyh1easy024x7gnmngzn8az3y0",
+      "title": "Abstract Gap Restoration via Passage Selection and Sentence Ordering",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7bk2yyh1easy024x7gnmngzn8az3y0",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx731zz3z0m8qsxrz8hnzf84yh8b0wg2",
+      "title": "Palm-Leaf Reading Paths",
+      "url": "https://shipd.ai/quests/eris/challenges/jx731zz3z0m8qsxrz8hnzf84yh8b0wg2",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "ordered handwritten-line path recovery from damaged palm-leaf manuscripts is a strong document-CV output shape",
+      "design_trick": "Score reading-path geometry and order together instead of treating the manuscript as OCR or segmentation only."
+    },
+    {
+      "id": "jx73c3jhnd26hm4snc3tbbk9298aze9t",
+      "title": "Legal Paragraph Ordering and Discourse State Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx73c3jhnd26hm4snc3tbbk9298aze9t",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx7e1rwqzm46q7bzt9xfwhpawd8b020z",
+      "title": "Seismic Evidence Forensics",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7e1rwqzm46q7bzt9xfwhpawd8b020z",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "combines waveform evidence, dispersion imagery, and validity-curve forensics in a nonstandard geophysical task",
+      "design_trick": "Fuse multiple seismic evidence views and score whether a proposed physical curve is supported."
+    },
+    {
+      "id": "jx7e3g1bg1j7krxfy0b0rb49gn8b1v0z",
+      "title": "Highway Platoon Signature Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7e3g1bg1j7krxfy0b0rb49gn8b1v0z",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "privacy-reduced vehicle signature panels require ordered sequence reconstruction rather than detection",
+      "design_trick": "Use de-identified sensor-card panels to reconstruct an ordered operational sequence."
+    },
+    {
+      "id": "jx7dgy5eh0v5jw6k5awq5cc6b18b08ep",
+      "title": "Hackage Missing Dependency Ranking",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7dgy5eh0v5jw6k5awq5cc6b18b08ep",
+      "bucket": "CPU",
+      "domain": "Recommendation",
+      "file": "Recommendation.md",
+      "displayed_domain": "Recommendation"
+    },
+    {
+      "id": "jx77ac3nhrc3z7qxesv278f3fx8az457",
+      "title": "Menu Course Order Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx77ac3nhrc3z7qxesv278f3fx8az457",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence"
+    },
+    {
+      "id": "jx74c9sj6fkvmehkgmk4qhkmn98ax7cq",
+      "title": "Central European Pretraining Curriculum",
+      "url": "https://shipd.ai/quests/eris/challenges/jx74c9sj6fkvmehkgmk4qhkmn98ax7cq",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other",
+      "novel_reason": "curriculum design as a scored ordered pretraining plan is an unusual CPU language-model benchmark pattern",
+      "design_trick": "Ask solvers to choose and order training examples under curriculum constraints, not just classify text."
+    },
+    {
+      "id": "jx7cvb58nbayx3drad0w2n7fbd8axaap",
+      "title": "Anonymous Visual Operator Relay",
+      "url": "https://shipd.ai/quests/eris/challenges/jx7cvb58nbayx3drad0w2n7fbd8axaap",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md",
+      "displayed_domain": "Computer Vision",
+      "novel_reason": "few-shot visual operator inference with a decoy support pair creates a reusable in-context CV pattern",
+      "design_trick": "Provide support transformations inside each case and require identifying the shared operator before applying it."
+    },
+    {
+      "id": "jx711qyfnasrp580tywjysecy18arz16",
+      "title": "Musical Instrument Replacement Compatibility Scoring",
+      "url": "https://shipd.ai/quests/eris/challenges/jx711qyfnasrp580tywjysecy18arz16",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md",
+      "displayed_domain": "Other"
+    },
+    {
+      "id": "jx73hv1ssdgb0dma6hej13krbs8asvma",
+      "title": "Contract Workflow Reconstruction",
+      "url": "https://shipd.ai/quests/eris/challenges/jx73hv1ssdgb0dma6hej13krbs8asvma",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md",
+      "displayed_domain": "RAG",
+      "novel_reason": "legal workflow graph recovery from scattered contract clauses is a strong RAG structured-output pattern",
+      "design_trick": "Turn retrieval evidence into an ordered conditional workflow graph with dependencies."
+    },
+    {
+      "id": "jx76j5nk68rxqr0d09947p2rcx8a2rej",
+      "title": "Cymbal Excitation-and-Damping Program Recovery",
+      "url": "https://shipd.ai/quests/eris/challenges/jx76j5nk68rxqr0d09947p2rcx8a2rej",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md",
+      "displayed_domain": "Sequence To Sequence",
+      "novel_reason": "real multimodal percussion recordings are decoded into an executable performance recipe",
+      "design_trick": "Recover hit and damping programs from audio/video/motion evidence instead of predicting an instrument label."
+    }
+  ],
+  "skipped_after_detail": []
+}

@@ -1,0 +1,27 @@
+{
+  "homepageCardsFound": 33,
+  "skippedAlreadyBeforeDetail": 14,
+  "detailPagesAttempted": 19,
+  "appendedTotal": 19,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Sequence To Sequence": 4,
+      "From Scratch": 6,
+      "Fine-Tuning": 4,
+      "NLP": 3,
+      "Other": 1,
+      "LLM Evaluation": 1
+    },
+    "CPU": {}
+  },
+  "veryNovelAdded": [
+    "Multilingual Document Reading-Order Graph Repair",
+    "Audio Trace Mosaic Chain-of-Custody Reconstruction",
+    "Score-Grounded Trombone Embouchure Control Reconstruction",
+    "Reciprocal-Space Lineage Reconstruction",
+    "Phylogenetic Corridor Assembly from Shuffled Evidence Cards",
+    "Multimodal Actuator Translation"
+  ],
+  "limitations": []
+}

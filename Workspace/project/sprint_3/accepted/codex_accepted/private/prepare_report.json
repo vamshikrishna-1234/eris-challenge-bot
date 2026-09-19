@@ -1,0 +1,8 @@
+{
+  "train_unique_audio":2865,
+  "test_unique_audio":937,
+  "train_audio_bytes":226384702,
+  "test_audio_bytes":74723048,
+  "raw_root":"C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\sprint_3\\codex\\Wave_2_NLP_Fine_Tuning_etc\\User Emotion Shift And Escalation Prediction From Paired Speech Clips\\raw_data",
+  "smoke_fixture":false
+}

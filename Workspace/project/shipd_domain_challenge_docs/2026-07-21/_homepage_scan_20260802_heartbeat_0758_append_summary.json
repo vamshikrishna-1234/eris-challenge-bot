@@ -1,0 +1,24 @@
+{
+  "homepageCardsFound": 52,
+  "skippedAlreadyBeforeDetail": 43,
+  "detailPagesAttempted": 9,
+  "appendedTotal": 9,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Computer Vision": 4,
+      "Sequence To Sequence": 3,
+      "From Scratch": 1,
+      "Fine-Tuning": 1
+    },
+    "CPU": {}
+  },
+  "veryNovelAdded": [
+    "Storm Region Ignition Forecasting from Satellite Imagery",
+    "SAR-Optical Cross-Modal Retrieval and Orientation Recovery",
+    "Two-Angle Polarization Completion And Coupled Stress-Optic Mapping",
+    "Cavitation Collapse Forecasting From Pre-Collapse Shadowgraphy",
+    "Responsive Image Crop Caption Repair Sequencing"
+  ],
+  "limitations": []
+}

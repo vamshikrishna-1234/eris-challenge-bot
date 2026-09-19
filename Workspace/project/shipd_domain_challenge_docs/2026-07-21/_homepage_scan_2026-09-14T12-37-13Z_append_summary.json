@@ -1,0 +1,48 @@
+{
+  "homepageCardsFound": 40,
+  "skippedAlreadyBeforeDetail": 4,
+  "detailPagesAttempted": 40,
+  "appendedTotal": 18,
+  "skippedAtAppendBecauseAlreadyRecorded": [
+    "jx7fvd77v9nxdtmakfwz2bnr6s8e9ra9",
+    "jx7bfcvem0fn13rbwa8vtpqpas8e4vjd",
+    "jx74ax1atkzyph4cag18sz8na18dxj22",
+    "jx7d292pgq3wpbkqsvrtvgw0qh8ds0r9",
+    "jx7d1qyp8fzf218ndqdkah5g618c8tyn",
+    "jx726phae2dhhnv26kwxyzm9y98aste7",
+    "jx7cyadcxcngewrznzjq7fy9fd8a4d2z",
+    "jx7bygnhwrx3gcc5afw7ngkdh58a24t3",
+    "jx729402j0gt2q3s9e79h0a5ps8e3r1y",
+    "jx7bdd5vy86jn6mp82fe5csqeh8e5cy7",
+    "jx7154adcj4qf79t73tmpxb0598e9eva",
+    "jx76k3p6cb4a16a01rh07qmqfn8ds5gb",
+    "jx7envhenqg4zdde05pyqyjead8e4m6t",
+    "jx7648kkpgys7r92sjfyefexyx8e7ydh",
+    "jx74y8p3ny2h8cq812b3pfx3hh8c1mg2",
+    "jx70bqta0fpt41s4p640g1ptah8e6y3h",
+    "jx70a9nfmt5qvx2g69e3q6hxws8drrsb",
+    "jx74svk9w2e7h2c1nbda0491458eacny",
+    "jx7be8j5qke0zg2s30sab9r1wx8drvcp",
+    "jx7453r9ta7nj7eykmffrs4nhh8e9s7y",
+    "jx74cp6134cxc99rj20h5pdbn58e8bea",
+    "jx7exqenfdqpg5yx0mmd4zjj8s8e850v"
+  ],
+  "appendedByBucketDomain": {
+    "Non-CPU": {
+      "Sequence To Sequence": 4,
+      "Fine-Tuning": 3,
+      "Other": 2,
+      "Computer Vision": 4,
+      "From Scratch": 1,
+      "NLP": 1
+    },
+    "CPU": {
+      "NLP": 1,
+      "Recommendation": 2
+    }
+  },
+  "veryNovelAdded": [],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 1."
+  ]
+}

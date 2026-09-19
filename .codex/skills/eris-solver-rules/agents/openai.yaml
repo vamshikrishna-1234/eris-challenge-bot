@@ -1,0 +1,4 @@
+interface:
+  display_name: "Eris Solver Rules"
+  short_description: "Project Eris solver rule compliance"
+  default_prompt: "Use $eris-solver-rules to check this Project Eris solution plan for rule compliance."

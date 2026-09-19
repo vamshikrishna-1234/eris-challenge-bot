@@ -1,0 +1,4 @@
+interface:
+  display_name: "Eris Submission Pool"
+  short_description: "Run Shipd drafts through genuine zero-warning gates"
+  default_prompt: "Use $eris-submission-pool to finish a build-ready Shipd Eris dataset and challenge through zero-warning checks, then stop before Run Agents unless I explicitly request launch."

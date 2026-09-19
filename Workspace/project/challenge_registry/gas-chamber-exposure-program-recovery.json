@@ -1,0 +1,152 @@
+{
+  "title": "Gas-Chamber Exposure Program Recovery",
+  "slug": "gas-chamber-exposure-program-recovery",
+  "status": "ready_for_review",
+  "stage": "blocked_platform_challenge_specification_check_error",
+  "phase": "live_challenge_prepared_six_of_seven_checks_green_run_agents_disabled",
+  "verdict": "Proceed",
+  "owner_machine": "VAMSHI",
+  "owner_task": "01a096c2-e239-7852-a2e9-3bf84595cd52",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Gas-Chamber Exposure Program Recovery",
+  "dataset": "UCI Gas Sensor Array Temperature Modulation (dataset 487; 13 measurement days, 2016 release files)",
+  "license": "CC BY 4.0",
+  "license_source": "https://archive.ics.uci.edu/dataset/487/gas%2Bsensor%2Barray%2Btemperature%2Bmodulation",
+  "official_download_url": "https://archive.ics.uci.edu/static/public/487/gas%2Bsensor%2Barray%2Btemperature%2Bmodulation.zip",
+  "domain": "From Scratch",
+  "fine_tuning": false,
+  "gpu_tier": "NVIDIA A10G",
+  "compute": "GPU sequence classification over 256x6 float32 tensors; frozen multiscale PyTorch 1D CNN scored 0.375403 with approximately 0.05 GiB peak allocated CUDA memory on an RTX 3050 Laptop GPU",
+  "public_source_lookup_gate": "final frozen sequence representation passed at 2.50% exact-origin retrieval and 0.206162 recovered-program metric; exact-origin limit is 3.25%; learned GPU score is 0.375403; no waiver used",
+  "blocker": "",
+  "raw_bytes": 604629593,
+  "usable_exposure_episodes": 1300,
+  "independent_groups": 13,
+  "created_at": "2026-09-12T23:23:42.9784265+05:30",
+  "updated_at": "2026-09-14T01:15:04+05:30",
+  "evidence": {
+    "source": {
+      "outer_archive_name": "gas-sensor-array-temperature-modulation.zip",
+      "outer_archive_bytes": 183298753,
+      "outer_archive_sha256": "CB5CE4A6AF1A51B933D1979952D7845F0E9BAAC54E15A81A1E3599E8B85905D4",
+      "inner_archive_bytes": 183292538,
+      "inner_archive_sha256": "4A6B4E3609AEFF297DCBED084E7C85F1C88A8C5219417AFEBE99281C369DCD11",
+      "raw_file_count": 13,
+      "readme_count": 1,
+      "expanded_bytes": 604629593,
+      "official_url_returns_zip": true,
+      "archive_extraction_passed": true
+    },
+    "native_mapping": {
+      "measurement_days": 13,
+      "exposures_per_day": 100,
+      "usable_exposure_episodes": 1300,
+      "target_source": "recorded mass-flow-controller CO concentration and SHT75 humidity reference channels",
+      "co_program_bins": 5,
+      "humidity_program_bins": 4,
+      "sequence_construction": "contiguous fixed-length exposure packets within one source day; day never crosses a split"
+    },
+    "pilot_split": {
+      "train_days": 9,
+      "test_days": 4,
+      "train_exposures": 900,
+      "test_exposures": 400,
+      "day_overlap": 0
+    },
+    "baselines": {
+      "deterministic_majority_metric": 0.0630473372781065,
+      "label_free_sample_metric": 0.11876631225437254,
+      "source_recovered_program_metric": 0.20616220728984377,
+      "summary_extra_trees_metric_min": 0.2966083414301246,
+      "summary_extra_trees_metric_max": 0.3039651849356401,
+      "gpu_cnn_metric": 0.37540344864537734,
+      "perfect": 1.0
+    },
+    "lookup_attack": {
+      "public_representation": "256x6 per-episode sensor-set level and delta sequence after realistic case-local timing/calibration drift, normalization, mild noise, and quantization",
+      "raw_source_nearest_neighbor_metric": 0.20616220728984377,
+      "exact_origin_retrieval_rate": 0.025,
+      "result": "pass on final frozen representation; learned GPU reference scores 0.375403"
+    },
+    "novelty": {
+      "self_score": 7,
+      "maximum": 10,
+      "live_feed_checked_at": "2026-09-12T23:20:00+05:30",
+      "local_registry_matches": 0,
+      "closest_accepted_examples": [
+        "Duration-Constrained Command Program Decoding",
+        "Anonymous Sensor Cohort Reconstruction"
+      ],
+      "distinction": "recovers an ordered physical gas-exposure concentration/humidity program from temperature-modulated chemical sensor dynamics under held-out-day drift; it is not generic command decoding, device cohorting, scalar regression, or gas identity classification"
+    },
+    "artifacts": {
+      "pilot_card": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Gas-Chamber Exposure Program Recovery\\PILOT_READINESS_CARD.md",
+      "source_archive": "E:\\create_challenge_synthetic_output_folder\\_source_cache\\gas-sensor-array-temperature-modulation.zip",
+      "build_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Gas-Chamber Exposure Program Recovery",
+      "flat_source_package": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Gas-Chamber Exposure Program Recovery\\raw_upload.zip",
+      "final_audit": "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Gas-Chamber Exposure Program Recovery\\FINAL_AUDIT.md"
+    },
+    "final_build": {
+      "batch_slot": "batch-20260912-172527-task-001",
+      "representation": "36 quantized heater-conditioned temporal sensor-set quantiles after case-local sensor permutation, bounded gain/offset calibration jitter, and case normalization",
+      "train_days": 9,
+      "test_days": 4,
+      "train_exposures": 900,
+      "test_exposures": 400,
+      "day_overlap": 0,
+      "train_unique_payloads": 900,
+      "test_unique_payloads": 400,
+      "cross_split_exact_duplicates": 0,
+      "missing_or_nonfinite_prepared_values": 0,
+      "perfect_metric": 1.0,
+      "sample_metric": 0.11876631225437254,
+      "majority_metric": 0.0630473372781065,
+      "id_hash_only_metric": 0.11857697678341407,
+      "extra_trees_metric_min": 0.2966083414301246,
+      "extra_trees_metric_max": 0.3039651849356401,
+      "gpu_cnn_metric": 0.37540344864537734,
+      "raw_source_nearest_neighbor_metric": 0.20616220728984377,
+      "exact_origin_retrieval_rate": 0.025,
+      "lookup_gate_regressed": false,
+      "flat_source_package_bytes": 187818425,
+      "flat_source_package_sha256": "9b86b0b1a5fea4a241d3027cb6a9ee6f36e67fb9fec9e80e9dfdbef3fe1274e1",
+      "prepared_tree_sha256": null,
+      "deterministic_rebuilds": 2,
+      "deterministic_rebuilds_identical": true,
+      "deterministic_file_count_each": 1306,
+      "deterministic_file_hash_differences": 0,
+      "train_csv_sha256": "13d52ecdc6c6ae115c87a6afc96f13ca6d77db3f8f43f24e27e8e2a42d5be44f",
+      "test_csv_sha256": "61f6cc8703e2f5e4928bbcbc507e3f546603d513cfc4a10888c0b5d514934f73",
+      "answers_csv_sha256": "3fceaa4ace5a84c330483d1197cf263dd21eae94a66e193fc379282555672faf",
+      "grader_adversarial_tests_passed": true,
+      "final_package_audit_passed": true,
+      "live_draft_pair_bound": true,
+      "external_mutations_performed": true
+    }
+  },
+  "readiness": {
+    "verdict": "Proceed",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": true,
+    "post_filter_scale_passed": true,
+    "split_stability_passed": true,
+    "semantic_duplicate_audit_passed": true,
+    "lookup_attack_passed": true,
+    "lookup_gate_waived": false,
+    "capability_matched_baseline_passed": true,
+    "null_metric_audit_passed": true,
+    "import_route_verified": true,
+    "reviewer_premortem_completed": true,
+    "unresolved_gates": [],
+    "live_release_gates": [
+      "live platform novelty score must be at least 6",
+      "live platform domain and description checks must pass"
+    ]
+  },
+  "notes": [
+    "The challenge target is the native controller/reference exposure program, discretized into a fixed public vocabulary; labels are not invented from filenames or heuristics.",
+    "The final build must use whole-day splits, strip timestamps and filenames, and preserve the measured lookup-hardening mechanism.",
+    "No source waiver, grader weakening, metric cap, or difficulty manipulation is authorized."
+  ]
+}

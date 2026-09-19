@@ -1,0 +1,14 @@
+{
+  "title": "Example Challenge",
+  "slug": "example-challenge",
+  "status": "claimed",
+  "owner_machine": "COMPUTER-NAME",
+  "owner_task": "thread-id",
+  "output_folder": "D:\\challenge-output\\Example Challenge",
+  "dataset": "Official dataset name and version",
+  "license": "Verified license",
+  "created_at": "2026-07-21T00:00:00+05:30",
+  "updated_at": "2026-07-21T00:00:00+05:30",
+  "blocker": "",
+  "notes": []
+}

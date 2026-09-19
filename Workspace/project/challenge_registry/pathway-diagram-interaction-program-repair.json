@@ -1,0 +1,30 @@
+{
+  "title": "Pathway Diagram Interaction Program Repair",
+  "slug": "pathway-diagram-interaction-program-repair",
+  "status": "second_grader_revision_live_partial_pass_waiting_run3",
+  "owner_machine": "VAMSHI",
+  "owner_task": "019fdad1-84c0-7533-8d76-7b7fd1013dd6",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Pathway Diagram Interaction Program Repair",
+  "dataset": "WikiPathways Homo sapiens GPML monthly release",
+  "license": "CC0-1.0",
+  "created_at": "2026-08-07T13:26:00.5744864+05:30",
+  "updated_at": "2026-08-09T18:30:00+05:30",
+  "source_url": "https://data.wikipathways.org/current/gpml/wikipathways-20260710-gpml-Homo_sapiens.zip",
+  "source_sha256": "E3E9A493217F72460E46468A003F6CFF6BAF83D746000657B37F0FEF08480E65",
+  "source_size_bytes": 10812319,
+  "notes": [
+    "2026-08-07: User approved pivot away from blocked CGHD/AI2D-style sources to a new dataset if requirements are met.",
+    "2026-08-07: Built CPU-only From Scratch replacement from official WikiPathways GPML release. Source size/license/native labels pass. Prepared 1092 train and 408 test examples.",
+    "2026-08-07: Local smoke passed: perfect=1.0, sample=0.4078235782996532, malformed structural submissions raise InvalidSubmissionError, row-local malformed JSON zeroes affected row.",
+    "2026-08-07: Baseline ladder below 0.65: train-prior random valid repair=0.42526861846775826, conversion prior=0.5030334758034328.",
+    "2026-08-07: Uploaded official source ZIP to Shipd dataset jd7cbssat4ww0avcecy8bgfdvn8bvs3k; dataset validation rerun passed all 4 checks and dataset marked Ready.",
+    "2026-08-07: Problem jx7b79n9wg8w650fzf22t7xh6n8bvg51 updated to CPU-only From Scratch v2. Platform prepare succeeded, 12/12 problem checks passed after one originality-snapshot rerun and one REVERSE_EDGE wording fix.",
+    "2026-08-07: Platform agent round completed; visible scored runs were 0.5745 and 0.5215, best=0.5745 below 0.65. Agent Difficulty validation passed and problem moved to Pending Review.",
+    "2026-08-09: Reviewer feedback confirmed applicable: no-op/sample score was ~0.408 and graph-overlap credit was too high for a repair-program challenge.",
+    "2026-08-09: Local revision passed. Corruptions now target 6-10 attempted edits, rows below 5 realized repairs are rejected, row metric is 0.35 graph / 0.53 edit / 0.12 count. Revised local scores: no-op=0.18744930360822848, delete-first no-image=0.32440003379914895, random valid=0.2830370160275108, conversion prior=0.3541367305957566, perfect=1.0.",
+    "2026-08-09: Live Shipd revision applied. Grader and prepare editors hash-matched canonical local files, prepare rerun completed with 25 MB public/all ZIPs, and fresh platform checks passed 12/12. Fresh live agent round launched.",
+    "2026-08-09: Revised v2 live agents scored 0.8590, 0.8670, and 0.8227, so Agent Difficulty failed. Trajectories showed legitimate CPU renderer learning rather than an exploit.",
+    "2026-08-09: Second local grader revision passed. Metric now uses 0.30 exact minimal program, 0.20 exact executed graph, and 0.50 smooth Jaccard partial credit. Local scores: no-op=0.10429032200049569, sample=0.1602756912009772, delete-first=0.13224035012450683, random-valid=0.12736457895582884, conversion-prior=0.1553772047484867, perfect=1.0. Expanded malformed/structural/reproducibility audit passed.",
+    "2026-08-09: Canonical second revision deployed as problem v4. Live grader/prepare hashes matched local, prepare completed with 25 MB public/all artifacts, and checks passed 12/12. Final CPU agent Run 1=0.5269 and Run 2=0.4666, both below 0.65; Run 3 remains in progress."
+  ]
+}

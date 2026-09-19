@@ -1,0 +1,25 @@
+{
+  "title": "Spectromorphological Sound Description",
+  "slug": "spectromorphological-sound-description",
+  "status": "blocked",
+  "owner_machine": "VAMSHI",
+  "owner_task": "019fc605-92a7-72d1-aa75-b9cd5bbc6f71",
+  "output_folder": "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Spectromorphological Sound Description",
+  "dataset": "dbschaeffer/SCHAEFFER (official Hugging Face repository, commit 4eea230e3017e4c08cf36623a8244588053ec6c6)",
+  "license": "CC BY 4.0",
+  "created_at": "2026-08-03T10:36:06.5040437+05:30",
+  "updated_at": "2026-08-03T19:13:20.9022660+05:30",
+  "blocker": "Two mandatory gates fail. Corrected full GPU calibration improves untouched contributor-held-out test by only +0.002822 (0.127150 versus 0.124328), below the +0.005 floor, and reduces validation by -0.006930. Exact public-source lookup recovers 32/32 sampled sounds; official metadata plus the public salt reproduces all 716 episode IDs and all 39 contributor-group IDs. The one-clip fallback duplicates the source's intended classification/sound-description family.",
+  "notes": [
+    "Owner VAMSHI; exact Codex task 019fc605-92a7-72d1-aa75-b9cd5bbc6f71. Active challenge materials are consolidated under the Sprint 4 output folder; obsolete partial downloads and caches are retained recoverably in the Sprint 4 quarantine folder.",
+    "Source and license verified: public ungated official 1,000-record release at pinned commit 4eea230e3017e4c08cf36623a8244588053ec6c6, CC BY 4.0, three Parquet shards totaling 1,225,542,755 bytes. Preferred direct URL import works, so no fallback ZIP was built.",
+    "Prepared 39 contributor groups, 716 episodes (495 train, 92 validation, 129 test), four dedicated calibration clips per contributor, 872 unique 16 kHz mono FLAC files, 104,773,250 prepared bytes, zero cross-split groups, zero support/query overlap, and zero prepared SHA-256 duplicates.",
+    "Grader revision passes structural and row-local adversarial tests. Wrong/reordered columns, ID-set defects, and invalid confidence raise InvalidSubmissionError. Malformed row-local labels, chain, text, or uncertainty make the complete affected row score zero; every-row malformed scores exactly 0.0; oracle scores exactly 1.0; shipped sample scores 0.134546.",
+    "Measured GPU run on NVIDIA RTX 3050 6 GB: 295.658 seconds wall, 189,173,760 peak allocated VRAM bytes, 5.047 seconds for 129 calibration-on inferences, frozen embedding score 0.186780. A post-patch local-files-only smoke run verified offline model loading.",
+    "Anti-lookup audit is blocking under current rules: 32/32 exact source audio recoveries, 872/872 clip IDs and 716/716 episode IDs reproducible, and 870/872 prepared files unique by byte size. Mild CREMA-D-style transforms are insufficient; no stronger label-preserving chain was validated for exact spectromorphology.",
+    "Platform draft population completed on the two user-supplied Shipd URLs without navigation away. Dataset draft jd7frkvxqzjh8sexc3e8hw5scd8bmz88 has title/description/license/source, four pinned official source files totaling about 1.1 GB, a rebuilt archive, and all four dataset validation checks passing. Challenge draft jx7dysd9m8084wejnymnwn0cgs8bnqwc has Hard/A10G configuration, title, full problem, tags, score bounds, canonical grade.py and prepare.py, four linked raw inputs, and successful prepared outputs all.zip/public.zip at about 97 MB. Neither draft was marked ready, submitted, versioned, or challenge-checked.",
+    "Revision completed: the canonical and platform problem descriptions now end with the literal header and first five generated sample_submission.csv rows. Canonical paste/form copies were regenerated and the final package audit again passed with zero internal failures. The live platform draft currently shows Medium difficulty while the canonical form recommends Hard; this was left unchanged because it may be a concurrent user choice.",
+    "User-directed description revision completed: removed the leading duplicate challenge-title heading and quoted platform-announcement boilerplate from canonical and live platform descriptions. Substantive GPU Fine-Tuning/A10G requirements and the five-row sample preview remain. Canonical copies were synchronized and final package audit passed with zero failures.",
+    "Final disposition remains BLOCKED / REJECTED / DO NOT PUBLISH. The complete negative-result build is preserved for audit; no fabricated captions, labels, timestamps, or calibration records were introduced."
+  ]
+}

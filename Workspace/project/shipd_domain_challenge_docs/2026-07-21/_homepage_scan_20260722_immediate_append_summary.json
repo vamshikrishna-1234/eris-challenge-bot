@@ -1,0 +1,504 @@
+{
+  "timestamp": "2026-07-22T03:12:29+05:30",
+  "appended": 68,
+  "skipped_as_existing_in_dated_folder": 0,
+  "failures": 0,
+  "by_bucket": {
+    "CPU": {
+      "RAG.md": 3,
+      "Other.md": 13,
+      "Sequence-To-Sequence.md": 23,
+      "NLP.md": 8,
+      "LLM-Evaluation.md": 2,
+      "Object-Detection.md": 2,
+      "From-Scratch.md": 4,
+      "Computer-Vision.md": 5
+    },
+    "Non-CPU": {
+      "Fine-Tuning.md": 2,
+      "Sequence-To-Sequence.md": 1,
+      "Computer-Vision.md": 4,
+      "Other.md": 1
+    }
+  },
+  "cpu_total": 60,
+  "non_cpu_total": 8,
+  "appended_items": [
+    {
+      "id": "jx7cfwq5pyxxet9cp7bw6y4t098akefc",
+      "title": "Regulatory Incident-to-Investigation Link Recovery",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md"
+    },
+    {
+      "id": "jx73y1a3hgq3rye02cjzm43ae589v982",
+      "title": "Neuro-Symbolic Arabic Discourse Topology Deduction",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx7f3gv2r6c14e85654fyqvy398ar3x6",
+      "title": "Broken Cuneiform Witness Alignment",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx78vrn7nnbwpwb6ykp29t419n8amn9v",
+      "title": "Nuclear Reaction Channel Prediction From Experimental Descriptions",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md"
+    },
+    {
+      "id": "jx7586z535b5tmj5t9r7jn1r9s8a899w",
+      "title": "Afterimage: Commonsense-Constrained Multi-Gap Dialogue Inversion",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md"
+    },
+    {
+      "id": "jx7a2gg0a7eckbzk6kr6smv9858a6r5c",
+      "title": "Code Summary Faithfulness Without Identifier Names",
+      "bucket": "CPU",
+      "domain": "LLM Evaluation",
+      "file": "LLM-Evaluation.md"
+    },
+    {
+      "id": "jx7ak06bpx8dbfgkyncs2hwh6x8awwjp",
+      "title": "ReplyAudit: Contaminated Answer Assembly",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx76m6p9zb0x4fhge3n2tdd7r58atkqs",
+      "title": "Robot Workcell Inventory Evidence",
+      "bucket": "CPU",
+      "domain": "Object Detection",
+      "file": "Object-Detection.md"
+    },
+    {
+      "id": "jx7dcaj23aabryg39gfbgav0kh8armvc",
+      "title": "Field Call Propagation Correspondence",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx7fpz9vhgvrwz3bq6djjdxfns8aqq4d",
+      "title": "Vulnerability Applicability Logic Reconstruction",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx73qrmdqyqcq85gp39r9t6q0x8aqqrn",
+      "title": "Chess Puzzle Difficulty Pair Ranking",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md"
+    },
+    {
+      "id": "jx73pcgrdc72ezyrwt05xq57498akgw7",
+      "title": "Recovering Interleaved Source Streams from a Merged Token Sequence",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx7fwntbc6dzp93jb9nrsmndhd8agsfz",
+      "title": "Retrieval-Augmented Narrative Question Answering",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md"
+    },
+    {
+      "id": "jx77e6maygyn93h873596h2djn8aswk9",
+      "title": "Multilingual Two-Stage Morphological Route Reconstruction",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx7exy8fc9p610w1bvgmfp82qh8ar9kc",
+      "title": "Masked Glycan Branch Unit Reconstruction",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx753t0vdcke3xms6cfwkbkwr18apepn",
+      "title": "Macromolecular Assembly Graph Gap Recovery",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx7eb5d49eqw997mdwbmzga6yd8ap8se",
+      "title": "Variety Seam Detection",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx7085nma9k70wqmb3nwn321dh8aq0hg",
+      "title": "Acoustic-Optical Telemetry Collision Recovery",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx76y3yrpvwhhja9tjct3kak3h8appab",
+      "title": "Anonymous Bat Conversation Graph Recovery From Reference Calls",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx7cfgq5fj85jxr18c4g7vxt518apjvd",
+      "title": "PointerTape: Hierarchical Symbol-Binding Program Recovery",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx73713f7t95jrqk8edmscccv58aqh4j",
+      "title": "Typographic Reconstruction",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx77j8ywksnbkejtvrq6y3cax18ap9r8",
+      "title": "Partial-Context Axial Nanoparticle Localization",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx78d4j2xeccngqmjkc8aqfv5s8ancvj",
+      "title": "Metal Complex Trans-Donor Pair Matching",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx7db7t7stpehdcrn24dfmkc8s8ann0z",
+      "title": "Lyric Underlay Alignment Recovery",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx708fa310265k45j14hzhrb6x8aj8qj",
+      "title": "Dialogue Memory Compression",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md"
+    },
+    {
+      "id": "jx7aqq3bjr0v4z6c70d0beqn898akad7",
+      "title": "RobotLink Watch: Multi-Panel Latency Incident Detection",
+      "bucket": "CPU",
+      "domain": "Object Detection",
+      "file": "Object-Detection.md"
+    },
+    {
+      "id": "jx79w7myffhaa5x6jnda9p84j18ahxqq",
+      "title": "Chess Position Evaluation - Learning Value Functions from Raw Board States",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md"
+    },
+    {
+      "id": "jx7bqd2cx71ayjhj2svx0f15p18ahq1h",
+      "title": "Folk Harmonic Analysis: Chord-Function Recovery",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx7fycf7xm6k89svyjtvrpc6bx8ag9zc",
+      "title": "Masked Patent Claim Lineage Recovery",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md"
+    },
+    {
+      "id": "jx706j6es28wh0z9smver9ccjh8ahdxa",
+      "title": "BPT Ionisation Class from Broadband Imaging",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx7dacjwr0724pcn30hdvw4bed8aa87x",
+      "title": "Conditional Peptide Enrichment-Path Capsule",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx7edwq644x18qmsc1qhtd7and8a9cq4",
+      "title": "Joint Discourse Intruder Filtering and Sequence Repair",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx736npd0pw44ddb90h46wnd5d8a613t",
+      "title": "Vietnamese Mancala Outcome Forecasting",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md"
+    },
+    {
+      "id": "jx70rx0xnpa7g3kjdpqnkwmrc98a43h6",
+      "title": "StrataSplice: Continuous Core Assembly From Overlapping Sensor Logs",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx79fyy8330vae93x6fnkv36j18a5qhy",
+      "title": "Ocean Core Sediment Correlation and Sensor Bridge Reconstruction",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md"
+    },
+    {
+      "id": "jx78tvwr4whqesp9axxb4bxkcd8a48wj",
+      "title": "Recovering the Causal Graph of an Accident from its Narrative",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx7dpsf6kb19t93y5psn1aemj58a5nhs",
+      "title": "Distributed LoRa Packet Event And Consensus Recovery",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx7b5n2dh8q032zxx9bg6n05a58a3p65",
+      "title": "Serial Crystallography Lattice Indexing",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx79v7wtvk0fqahm9v0s08fes18a15pj",
+      "title": "Hive Audio Queen-State And Activity Profile Triage",
+      "bucket": "Non-CPU",
+      "domain": "Fine-Tuning",
+      "file": "Fine-Tuning.md"
+    },
+    {
+      "id": "jx7a6cemhescw2ym9911xkq10d8a1gsv",
+      "title": "Historical Hand-Shadow Pose Plan Recovery",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx785q0f7tffwdydrgbxhk9bh98a0neh",
+      "title": "Vegetation Transition Assessment From Camera Panels",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx753rjrw48dxr649697kwxp7x8a03zn",
+      "title": "Chemical Plant Failure-Cause Graph Recovery",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx71t7qrky2j33yj30dydzrc1x89nprk",
+      "title": "Minimum Evidence Certificates for LLM Judge Failure",
+      "bucket": "CPU",
+      "domain": "LLM Evaluation",
+      "file": "LLM-Evaluation.md"
+    },
+    {
+      "id": "jx778qk10jhzj8f1m4nrk5ge6h89km00",
+      "title": "Multibeam Sonar Strip Depth And Seafloor Hazard Triage",
+      "bucket": "Non-CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx75wkns9d7xdms2w7rm0bhab189ep3d",
+      "title": "Foam Coarsening Next Event And Pressure Recovery",
+      "bucket": "Non-CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx7ejgpry5tqqwkey8tkrxfeed896hap",
+      "title": "Dispatch State Vectors From Roadside Incident Clips",
+      "bucket": "Non-CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx766n9z3aj6mf04dp9er0xb2h895mwc",
+      "title": "Grating Misalignment Recovery From A Moire Pattern",
+      "bucket": "Non-CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx71vwn2xmbkv559n9yfqv9vhn895k0q",
+      "title": "Sparse Raman Microplastic Mapping And Next-Scan Planning",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx77297a1jy6kc09f4b1neagnn8933qq",
+      "title": "Wind Turbine Blade Thermography Maintenance Triage",
+      "bucket": "Non-CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx7dh0a4m2t2k6jt44jwkzakz1892asb",
+      "title": "Infant Gut Microbe HMO Metabolite Release Prediction",
+      "bucket": "Non-CPU",
+      "domain": "Fine-Tuning",
+      "file": "Fine-Tuning.md"
+    },
+    {
+      "id": "jx737tkabf6qv4c9jmzgxmhxms8938vs",
+      "title": "Audio-Visual Melt-Pool Process-State And Defect-Risk Ledger",
+      "bucket": "Non-CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx77vqpvckhb363h6fdcjh9ecd8a7em9",
+      "title": "Reasoning Trace Restatement And Vocabulary Forecasting",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx71rbg079b4r5pstjp5a80rqx89vcy5",
+      "title": "Cardiac Sensor Patch Sequence Recovery",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx705093vz6xets19yem1t8v658ahwzz",
+      "title": "Docstring Gap Restoration",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx71d56gw7gzs9cf2psgb9etc58any1q",
+      "title": "Narrative Causal Graph Recovery",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md"
+    },
+    {
+      "id": "jx74n5dszgq2sja247k5mwdand8ap070",
+      "title": "Butterfly Warning Pattern and Species Disentanglement",
+      "bucket": "CPU",
+      "domain": "From Scratch",
+      "file": "From-Scratch.md"
+    },
+    {
+      "id": "jx7f797hwd5ax87q407s6q9n2h8agfsj",
+      "title": "Multilingual Message Annotation Reconstruction",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx735ryhfnp2sa2gpbvskqgjfx8ah0cy",
+      "title": "Name Collision: Open-World Referent Attribution",
+      "bucket": "CPU",
+      "domain": "RAG",
+      "file": "RAG.md"
+    },
+    {
+      "id": "jx7bab2345dk4kbyh1w0178fe58ah5th",
+      "title": "Redacted Text Authorship Clustering",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md"
+    },
+    {
+      "id": "jx7f1e6zx48rwgy6v5kpyq2ysd8a691g",
+      "title": "Territory: Field-Zone Estimation from Soccer Action Sequences",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx7d92v03jfpw5x1epa701skex8ah9wa",
+      "title": "Sketch Stroke Draw Order Prediction",
+      "bucket": "CPU",
+      "domain": "Computer Vision",
+      "file": "Computer-Vision.md"
+    },
+    {
+      "id": "jx745w416ryxf4rm5e9qw1wbv18aray7",
+      "title": "Nordic Rune Text Normalization",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx7bp58hfjhkh2r9gb3eez5bw98a9qd2",
+      "title": "Recovering Injury Codes from Redacted Incident Reports",
+      "bucket": "CPU",
+      "domain": "NLP",
+      "file": "NLP.md"
+    },
+    {
+      "id": "jx76g21abn04msf7apfk2z6kjd8a1af0",
+      "title": "KhuwaRoute: Orthographic Repair Trace from Translation Variants",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx785ghk45y43vvjay04kc94as8anr7k",
+      "title": "Consensus Arc Span Recovery",
+      "bucket": "CPU",
+      "domain": "Other",
+      "file": "Other.md"
+    },
+    {
+      "id": "jx7dqhn8t1r10rg9jsgt7f2z058ak648",
+      "title": "Phase-Conditioned Procedure Span Infilling",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx76kqxwynk19jq977132ymeyh8arbyx",
+      "title": "Cyber Match Clause Assembly",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    },
+    {
+      "id": "jx78hrmx82vpt6aq2d3shebjnn8a6zbm",
+      "title": "Masked Rare Physics Concept Route Reconstruction",
+      "bucket": "CPU",
+      "domain": "Sequence To Sequence",
+      "file": "Sequence-To-Sequence.md"
+    }
+  ]
+}

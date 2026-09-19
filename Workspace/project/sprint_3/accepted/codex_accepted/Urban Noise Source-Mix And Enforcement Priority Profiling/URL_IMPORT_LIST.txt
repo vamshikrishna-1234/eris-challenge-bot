@@ -1,0 +1,4 @@
+https://zenodo.org/api/records/3966543/files/annotations.csv/content
+https://zenodo.org/api/records/3966543/files/dcase-ust-taxonomy.yaml/content
+https://zenodo.org/api/records/3966543/files/README.md/content
+https://zenodo.org/api/records/3966543/files/audio-0.tar.gz/content

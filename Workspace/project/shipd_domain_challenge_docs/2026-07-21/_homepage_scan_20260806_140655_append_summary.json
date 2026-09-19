@@ -1,0 +1,31 @@
+{
+  "homepageCardsFound": 23,
+  "skippedAlreadyBeforeDetail": 3,
+  "detailPagesAttempted": 16,
+  "appendedTotal": 16,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "Other": 3,
+      "RAG": 1,
+      "Prompt Engineering": 1,
+      "From Scratch": 3,
+      "Computer Vision": 1,
+      "Fine-Tuning": 2,
+      "Sequence To Sequence": 1
+    },
+    "Non-CPU": {
+      "Fine-Tuning": 1,
+      "From Scratch": 2,
+      "Other": 1
+    }
+  },
+  "veryNovelAdded": [
+    "Acoustic Operation Commutativity Test",
+    "AxiomSplice: Retrieved Proof-Graph Repair",
+    "Counterfactual Argument Binding for Obfuscated Tool Calls"
+  ],
+  "limitations": [
+    "Detail or homepage failures captured in cache: 4."
+  ]
+}

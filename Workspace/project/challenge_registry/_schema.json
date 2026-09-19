@@ -1,0 +1,14 @@
+{
+  "title": "Exact challenge title",
+  "slug": "lowercase-ascii-title-slug",
+  "status": "idea | claimed | researching | building | blocked | ready_for_review | submitted | accepted | rejected | abandoned",
+  "owner_machine": "Computer name",
+  "owner_task": "Codex thread/task ID",
+  "output_folder": "Absolute challenge folder",
+  "dataset": "Official dataset and version",
+  "license": "Verified redistribution license",
+  "created_at": "ISO-8601 timestamp",
+  "updated_at": "ISO-8601 timestamp",
+  "blocker": "Empty or concise blocking condition",
+  "notes": []
+}

@@ -1,0 +1,76 @@
+{
+  "title": "Room Geometry Seasonal Sun-Access Program",
+  "slug": "room-geometry-seasonal-sun-access-program",
+  "status": "rejected",
+  "stage": "pilot_complete_rejected",
+  "phase": "terminal",
+  "verdict": "Reject",
+  "owner_machine": "VAMSHI",
+  "owner_task": "batch-20260912-172527-task-002",
+  "output_folder": "",
+  "dataset": "Swiss Dwellings v3.0.0",
+  "license": "CC BY 4.0",
+  "license_source": "https://zenodo.org/records/7788422",
+  "domain": "From Scratch",
+  "fine_tuning": false,
+  "gpu_tier": "CPU",
+  "compute": "CPU pilot only; no build authorized",
+  "public_source_lookup_gate": "failed; no waiver requested or used",
+  "blocker": "A useful 25-feature representation let a raw-source nearest-neighbor attack predict the hidden seasonal state program at 0.9021. Coarse collision hardening reduced the legitimate grouped baseline to 0.2410 while source-group majority lookup still scored 0.3878.",
+  "raw_bytes": 931868205,
+  "independent_groups": 654,
+  "created_at": "2026-09-12T23:23:42.9784265+05:30",
+  "updated_at": "2026-09-12T23:23:42.9784265+05:30",
+  "evidence": {
+    "source": {
+      "archive_name": "swiss-dwellings-v3.0.0.zip",
+      "archive_bytes": 931868205,
+      "archive_sha256": "382E528FAE3220B7747F4E6BC7D79261FEE1B5D4D7902F18C548C0E6F22EF80A",
+      "official_scale": "approximately 3,100 buildings, more than 45,000 apartments, and approximately 370,000 rooms",
+      "pilot_rows": 179897,
+      "pilot_sites": 654
+    },
+    "baselines": {
+      "majority_macro_f1": 0.11359985693214113,
+      "grouped_extra_trees_macro_f1": 0.6274476541236146,
+      "useful_representation_raw_source_lookup_macro_f1": 0.9020773293999603,
+      "useful_representation_exact_origin_retrieval": 0.0,
+      "coarse_representation_grouped_extra_trees_macro_f1": 0.24102231574641353,
+      "coarse_representation_source_group_majority_macro_f1": 0.3878455480387541,
+      "coarse_representation_expected_exact_source_row_retrieval": 0.014768767398658655,
+      "perfect": 1.0
+    },
+    "novelty": {
+      "self_score_before_lookup_failure": 6,
+      "closest_live_challenge": "Floorplan Access Graph Repair And Counterfactual Route Ledger",
+      "closest_accepted_example": "Multi-Apartment Room and Door Graph Recovery",
+      "result": "not dispositive because the source-lookup gate failed first"
+    },
+    "artifacts": {
+      "rejection_card": "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\room-geometry-seasonal-sun-access-program\\PILOT_REJECTION_CARD.md",
+      "source_archive": "E:\\create_challenge_synthetic_output_folder\\_source_cache\\swiss-dwellings-v3.0.0.zip"
+    }
+  },
+  "readiness": {
+    "verdict": "Reject",
+    "native_targets_verified": true,
+    "official_access_verified": true,
+    "redistribution_verified": true,
+    "source_package_verified": true,
+    "post_filter_scale_passed": true,
+    "split_stability_passed": true,
+    "semantic_duplicate_audit_passed": false,
+    "lookup_attack_passed": false,
+    "lookup_gate_waived": false,
+    "capability_matched_baseline_passed": false,
+    "unresolved_gates": [
+      "useful representation is source-label recoverable",
+      "lookup-resistant representation is below the capability floor",
+      "same-source semantic adjacency to an accepted floorplan benchmark remains material"
+    ]
+  },
+  "notes": [
+    "This immutable batch slot is terminal and does not trigger a replacement task.",
+    "No build folder or Codex build task was created for the rejected candidate."
+  ]
+}

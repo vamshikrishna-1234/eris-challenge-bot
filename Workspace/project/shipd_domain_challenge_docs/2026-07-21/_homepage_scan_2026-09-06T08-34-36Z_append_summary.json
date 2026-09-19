@@ -1,0 +1,23 @@
+{
+  "homepageCardsFound": 27,
+  "skippedAlreadyBeforeDetail": 21,
+  "detailPagesAttempted": 6,
+  "appendedTotal": 6,
+  "skippedAtAppendBecauseAlreadyRecorded": [],
+  "appendedByBucketDomain": {
+    "CPU": {
+      "Computer Vision": 1,
+      "Sequence To Sequence": 1,
+      "Other": 2
+    },
+    "Non-CPU": {
+      "Recommendation": 1,
+      "Fine-Tuning": 1
+    }
+  },
+  "veryNovelAdded": [
+    "DataSeek: Research Catalog Interaction Trail Reconstruction",
+    "PixelGrid: Compositional Visual Outlier Reasoning"
+  ],
+  "limitations": []
+}

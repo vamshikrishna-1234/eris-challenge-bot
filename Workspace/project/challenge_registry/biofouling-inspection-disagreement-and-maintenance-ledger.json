@@ -1,0 +1,177 @@
+﻿{
+    "title":  "Biofouling Inspection Disagreement And Maintenance Ledger",
+    "slug":  "biofouling-inspection-disagreement-and-maintenance-ledger",
+    "status":  "rejected",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "01a07167-d7ee-78b3-9201-0efd965d1922",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_5\\Biofouling Inspection Disagreement And Maintenance Ledger",
+    "dataset":  "Automating the assessment of biofouling in images and video footage",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-09-05T17:18:56.2658327+05:30",
+    "updated_at":  "2026-09-05T17:36:18.3045845+05:30",
+    "stage":  "pilot_complete_rejected",
+    "blocker":  "The official release has no native within-image zone labels or maintenance-order truth, and the expert and AMT annotation image sets have zero overlap.",
+    "reason_code":  "missing_native_zone_and_maintenance_truth",
+    "status_note":  "Rejected at Pilot gate before Build mode. Do not reduce this record to the source's canonical global image-classification task.",
+    "evidence":  {
+                     "official_record":  "https://figshare.com/articles/dataset/Automating_the_assessment_of_biofouling_in_images/26537158",
+                     "official_api_record":  "https://api.figshare.com/v2/articles/26537158",
+                     "version":  5,
+                     "published_date":  "2025-06-27T02:34:04Z",
+                     "license":  "CC BY 4.0",
+                     "license_url":  "https://creativecommons.org/licenses/by/4.0/",
+                     "source_files_to_import":  [
+                                                    {
+                                                        "file":  "biofouling_dataset.zip",
+                                                        "url":  "https://ndownloader.figshare.com/files/48344437",
+                                                        "bytes":  797052668,
+                                                        "md5":  "47eab93fbf635081cd967386077dc4eb"
+                                                    },
+                                                    {
+                                                        "file":  "amturk_comparison.csv",
+                                                        "url":  "https://ndownloader.figshare.com/files/55705136",
+                                                        "bytes":  372175,
+                                                        "md5":  "84bd4f176afc4952872cdbbe94f086ff"
+                                                    },
+                                                    {
+                                                        "file":  "expert_comparison.csv",
+                                                        "url":  "https://ndownloader.figshare.com/files/55705139",
+                                                        "bytes":  11821,
+                                                        "md5":  "4c02fccac7c4e0da79881f72118b59b9"
+                                                    },
+                                                    {
+                                                        "file":  "lof_orig.csv",
+                                                        "url":  "https://ndownloader.figshare.com/files/55705160",
+                                                        "bytes":  425761,
+                                                        "md5":  "2f2c01b2a5ed28eed86f6eb7c3af8534"
+                                                    }
+                                                ],
+                     "files_excluded_from_source_package":  [
+                                                                "dinov2_vitB14.zip contains model weights and is not raw source data for the challenge.",
+                                                                "vessel1.zip and vessel2.zip are each over 1 GB and are not needed for the first compact pilot."
+                                                            ],
+                     "source_package_bytes":  797862425,
+                     "native_artifact_claim":  "Figshare description says the release includes images and annotations for biofouling SLoF, paint quality, niche area metadata, expert-vs-expert annotations, AMT comparison data, and original LOF annotations.",
+                     "local_duplicate_fast_scan":  "No hits for Biofouling Inspection, biofouling, SLoF, paint quality, niche area, hull fouling, vessel hull fouling, or underwater fouling in extracted Shipd archives, local challenge documents, and challenge_registry.",
+                     "official_doi":  "10.6084/m9.figshare.26537158.v5",
+                     "official_creator":  "Evelyn Mannix",
+                     "supporting_paper":  "https://doi.org/10.1038/s41598-021-81011-2",
+                     "download_verified_at":  "2026-09-05T17:36:18.3045845+05:30",
+                     "download_cache":  "E:\\create_challenge_synthetic_output_folder\\sprint_5\\_pilot_sources\\biofouling-26537158-v5",
+                     "all_selected_files_md5_verified":  true,
+                     "archive_entries":  10265,
+                     "archive_uncompressed_bytes":  795799738,
+                     "image_count":  10263,
+                     "metadata_rows":  10263,
+                     "image_dimensions":  "All 10,263 JPEGs decode at 512x512; zero metadata/image mismatches and zero decode failures.",
+                     "archive_internal_license_or_readme":  "None. The archive contains only metadata.csv and images/; license and attribution come from the official Figshare metadata.",
+                     "metadata_columns":  [
+                                              "image.name",
+                                              "dataset.name",
+                                              "vessel.id",
+                                              "niche.area",
+                                              "SLoF",
+                                              "paint.quality",
+                                              "split"
+                                          ],
+                     "native_label_counts":  {
+                                                 "slof_0":  7822,
+                                                 "slof_1":  1696,
+                                                 "slof_2":  745,
+                                                 "paint_1":  3872,
+                                                 "paint_2":  3952,
+                                                 "paint_3":  2439,
+                                                 "niche_categories":  12
+                                             },
+                     "independent_vessel_families":  308,
+                     "candidate_group_safe_split":  {
+                                                         "family_key":  "dataset.name + vessel.id",
+                                                         "train_rows":  8330,
+                                                         "test_rows":  1933,
+                                                         "train_families":  246,
+                                                         "test_families":  62
+                                                     },
+                     "source_split_family_overlap":  {
+                                                        "crossing_families":  20,
+                                                        "affected_rows":  1163,
+                                                        "conclusion":  "The source-provided row split is not group-safe and cannot be reused."
+                                                    },
+                     "rater_join_evidence":  {
+                                                  "amt_rows":  11592,
+                                                  "amt_images":  1288,
+                                                  "amt_vessel_families":  64,
+                                                  "expert_rows":  356,
+                                                  "expert_images":  120,
+                                                  "expert_vessel_families":  31,
+                                                  "expert_amt_image_intersection":  0,
+                                                  "both_disagreement_targets_usable_rows":  0,
+                                                  "candidate_amt_train_test_rows":  "865 / 423",
+                                                  "candidate_expert_train_test_rows":  "101 / 19"
+                                              },
+                     "missing_native_targets":  [
+                                                    "Within-image zone geometry",
+                                                    "Zone-level biofouling state",
+                                                    "Zone-level paint state",
+                                                    "Zone evidence reason",
+                                                    "Zone inspection priority",
+                                                    "Uncertain-zone list",
+                                                    "Maintenance action labels",
+                                                    "Maintenance sequence order"
+                                                ],
+                     "leakage_evidence":  {
+                                               "filename_risk":  "image.name contains a six-digit source order plus source token and must be stripped.",
+                                               "identifier_risk":  "dataset.name and vessel.id identify source families and must be private split metadata.",
+                                               "lof_orig_shortcut_accuracy":  0.7889505992399883,
+                                               "exact_duplicate_groups":  28,
+                                               "exact_duplicate_files":  56,
+                                               "dhash_nearest_le_4":  131,
+                                               "dhash_nearest_le_8":  237,
+                                               "dhash_nearest_le_16":  953,
+                                               "exact_source_lookup_if_byte_copied":  1.0,
+                                               "lookup_policy":  "Recorded as required; not used as the decisive rejection reason per user direction."
+                                           },
+                     "native_task_cpu_baseline":  {
+                                                        "method":  "211 color/texture/thumbnail features plus 300-tree ExtraTrees, 10 CPU jobs",
+                                                        "runtime_seconds":  54.08758854866028,
+                                                        "slof_macro_f1":  0.31606350539564343,
+                                                        "paint_macro_f1":  0.5215083381780474,
+                                                        "niche_yes_macro_f1":  0.7616931105598876,
+                                                        "conclusion":  "The source supports native global image learning, but this is not a baseline for the absent zone/maintenance ledger truth."
+                                                    },
+                     "semantic_duplicate_audit":  "No exact-domain local challenge was found. Generic evidence-ledger tasks differ in source, target, and solver. The closest scientific benchmark is the source paper's global SLoF image assessment; falling back to global labels would be a canonical-task reskin.",
+                     "pilot_report":  "C:\\Users\\vamsh\\Downloads\\create_challenge_synthetic\\challenge_registry\\pilot_evidence\\biofouling-inspection-disagreement-and-maintenance-ledger\\PILOT_AUDIT_REPORT.md",
+                     "unmeasured_gates":  [
+                                              "No intended-task capability baseline exists because the intended native targets are absent.",
+                                              "No intended-task null metric audit exists because defining a grader after target provenance failed would manufacture an invalid task.",
+                                              "No transformed-media retrieval gate was designed because missing native truth already forces rejection."
+                                          ]
+                 },
+    "readiness":  {
+                      "verdict":  "Reject",
+                      "native_targets_verified":  false,
+                      "official_access_verified":  true,
+                      "redistribution_verified":  true,
+                      "source_package_verified":  true,
+                      "post_filter_scale_passed":  false,
+                      "split_stability_passed":  false,
+                      "semantic_duplicate_audit_passed":  true,
+                      "lookup_attack_passed":  false,
+                      "capability_matched_baseline_passed":  false,
+                      "null_metric_audit_passed":  false,
+                      "import_route_verified":  true,
+                      "reviewer_premortem_completed":  true,
+                      "unresolved_gates":  [
+                                               "Permanent formulation failure: no native within-image zone or maintenance-order truth.",
+                                               "Permanent formulation failure: expert and crowd comparison sets have zero image overlap.",
+                                               "Scale failure for expert-conflict hidden scoring: 19 candidate test rows across 7 vessel families.",
+                                               "A compliant intended-task grader and null audit cannot be defined without inventing targets."
+                                           ]
+                  },
+    "notes":  [
+                  "Created as a bounded pilot/build-gate task because initial evidence supported Pilot, not full Proceed.",
+                  "Pilot downloaded and verified all four official files, inspected the full archive and native CSV schemas, measured joins, scale, family safety, duplicates, leakage, and a native global-label CPU baseline.",
+                  "Rejected before Build mode because the requested zone ledger and maintenance sequence lack native or independently authoritative truth.",
+                  "No full challenge scripts, forms, prepared data, or processed raw package were created.",
+                  "Preferred four-URL import and untouched-official-file fallback are documented in the pilot evidence folder."
+              ]
+}

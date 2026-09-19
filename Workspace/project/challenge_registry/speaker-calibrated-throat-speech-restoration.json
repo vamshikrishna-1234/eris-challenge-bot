@@ -1,0 +1,18 @@
+﻿{
+    "title":  "Speaker-Calibrated Throat Speech Restoration",
+    "slug":  "speaker-calibrated-throat-speech-restoration",
+    "status":  "ready_for_review",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fc412-ed1d-72c2-bb97-c960ae0beaf5",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\Speaker-Calibrated Throat Speech Restoration",
+    "dataset":  "TAPS: Throat and Acoustic Paired Speech Dataset (Korean), Zenodo 18324208 v1",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-03T01:31:17.7564448+05:30",
+    "updated_at":  "2026-08-03T07:08:34.2855128+05:30",
+    "blocker":  "",
+    "notes":  [
+                  "Build and final audit completed in the exact Sprint 4 output folder.",
+                  "All implementable gates pass; exact public-source replay recovers 144/144 hidden targets and remains a disclosed creator-accepted anti-lookup fail.",
+                  "Preferred acquisition is six official Zenodo URLs; the 2,717,495,525-byte untouched-source fallback bundle is verified."
+              ]
+}

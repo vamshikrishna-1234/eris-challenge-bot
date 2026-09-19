@@ -1,0 +1,21 @@
+﻿{
+    "title":  "QuakeWeave Multi-Station Phase Association",
+    "slug":  "quakeweave-multi-station-phase-association",
+    "status":  "blocked",
+    "owner_machine":  "VAMSHI",
+    "owner_task":  "019fd7bf-8818-7022-9766-0b115b092945",
+    "output_folder":  "E:\\create_challenge_synthetic_output_folder\\sprint_4\\QuakeWeave Multi-Station Phase Association",
+    "dataset":  "STanford EArthquake Dataset (STEAD), pinned official release/subset subject to source-size gate",
+    "license":  "CC BY 4.0",
+    "created_at":  "2026-08-06T21:13:30.8388314+05:30",
+    "updated_at":  "2026-08-06T22:52:39.2721628+05:30",
+    "blocker":  "Mandatory source-size gate failed: official STEAD exposes only waveform chunks of about 13.7-15.7 GB each or a merged dataset around 85 GB, with no untouched official sub-1-GB waveform-plus-metadata member that supports multi-station phase association. Current formulation also remains standard seismic phase association with novelty below the required threshold.",
+    "notes":  [
+                  "Pinned official repository snapshot refs/heads/master at e6f247cf174e4aaefe01a6fcc72a0e88296d42b4; GitHub API reported CC-BY-4.0 license and no releases/tags.",
+                  "Official README lists chunk1 about 14.6 GB, chunks2-5 about 13.7 GB, chunk6 about 15.7 GB, and whole merged dataset about 85 GB. Current rebrand.ly HEAD probes returned HTTP 403, so exact member bytes and SHA-256 checksums could not be recorded for any legal sub-1-GB source.",
+                  "Build stopped before implementation. Evidence preserved in the challenge output folder: SOURCE_VERIFICATION.md, DATA_ACQUISITION.md, NOVELTY_AND_DUPLICATE_AUDIT.md, and BLOCKED_BUILD_AUDIT.md.",
+                  "Moved from the sprint_3 D: output path to E:\\create_challenge_synthetic_output_folder\\sprint_4\\QuakeWeave Multi-Station Phase Association and audited against current checkpoints, previous reviews, checklist_aikyatan, accepted-description patterns, and exploit/lookup/grader concerns.",
+                  "User reaffirmed this is CPU-only. Grader-score review found no grader.py/grade.py, prepared data, baseline logs, or agent-trial logs to modify or rerun; no grader changes were made and the challenge remains blocked.",
+                  "Reviewed accepted From Scratch and structured-output challenge descriptions from the requested C:, D:, and E: roots. Added DESCRIPTION_PATTERN_REVIEW.md with the safe CPU-only participant-description structure for any future valid redesign; no platform-facing QuakeWeave description was created because the challenge remains blocked."
+              ]
+}

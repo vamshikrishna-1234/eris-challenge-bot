@@ -1,0 +1,168 @@
+---
+description: Mandatory conventions for creating ML challenges in this workspace. Encodes all lessons from prev_reviews.txt and platform check failures.
+alwaysApply: true
+---
+
+# Challenge Creation — Hard Rules
+
+You are building ML challenges for an AI-agent platform. Every challenge lives in a subfolder with these mandatory files: `generate.py`, `grade.py`, `prepare.py`, `CHALLENGE_FORM_FILL.md`, `DATASET_FORM_FILL.md`, `PASTE_THIS_GRADE.txt`, `PASTE_THIS_PREPARE.txt`, `zip_raw_for_upload.py`, and `_sanity_smoke.py`.
+
+## DATASET_FORM_FILL.md — REQUIRED sections and content
+
+The platform validates this document. **Every section must be non-empty.** Follow this exact structure (use the Coupled Oscillator / Marble-Run challenges in this repo as gold references):
+
+```markdown
+# Dataset creation form — fill-in
+
+## Dataset name
+
+\```
+<Proper Title Case Name Describing Data + Labels>
+\```
+
+## Overview
+
+<2-4 sentences: what the corpus IS, how it was made, what labels it carries, size.>
+
+## File structure
+
+\```
+<file listing, e.g. for synthetic generated uploads:>
+generate.py               deterministic corpus generator
+raw_upload/               extracted raw corpus directory
+raw_upload/scenes.csv     one row per scene
+raw_upload/videos/*.mp4   one clip per row of scenes.csv
+\```
+
+* Bullet descriptions of each item.
+
+## scenes.csv columns (or equivalent filename)
+
+<EVERY column listed as: `col_name` (type): one-line description.>
+
+## License
+
+CC0 1.0 / CC-BY-4.0 / etc.
+
+## Source
+
+Fully synthetic / URL / etc.
+
+## Notes
+
+* Bullet points: size, determinism, variant info, upload budget.
+```
+
+**Critical rules:**
+- The `## Dataset name` section must contain a **proper, descriptive title** in a code block — NOT a slug, NOT empty.
+- The columns section must list **ALL** columns with types and descriptions.
+- Do NOT mention `grade.py`, `prepare.py`, scoring, train/test splits, or challenge mechanics in this file. It is a **pure data dictionary**.
+- For synthetic generated datasets, the dataset form SHOULD describe the platform source-file layout: uploaded `generate.py` plus `raw_upload.zip`, which rebuilds as top-level `generate.py` and extracted `raw_upload/`. This is dataset provenance/file-structure metadata, not challenge mechanics.
+
+## CHALLENGE_FORM_FILL.md — REQUIRED structure
+
+Must contain these sections with content:
+1. Difficulty (Easy/Medium/Hard)
+2. Challenge Title (title case)
+3. Problem Description (with Overview, What Not To Do, Evaluation, Dataset sub-sections)
+4. Tags
+5. Grading Configuration (direction, min, max)
+6. Grading Script
+7. Prepare Script
+8. GPU Tier
+9. What Not To Use
+
+The Problem Description MUST include markdown **tables** for:
+- File overview (Item | Description)
+- train.csv columns (Column | Type | Description)
+- test.csv columns (Column | Type | Description)
+- Submission format (Column | Type | Constraint)
+
+Do NOT include a "What makes this challenging" section.
+
+## prepare.py — MANDATORY patterns (from reviewer lessons)
+
+1. **Split-leak-safe ID map**: NEVER assign train ids 0..M-1 then test M..M+T-1. Prefer a salted SHA-256 ordering of `scene_hash` when a reviewer requests cryptographic/salted ids; otherwise use ONE globally-shuffled permutation of 0..(N-1) so ids cannot leak the split boundary. Examples:
+   ```python
+   hashed = [(sha256(f"{ID_SALT}:{h}".encode()).hexdigest(), h) for h in all_hashes]
+   assert len({d for d, _ in hashed}) == len(hashed)
+   id_map = {h: i for i, (_, h) in enumerate(sorted(hashed))}
+   ```
+   ```python
+   all_hashes = train["scene_hash"].tolist() + test["scene_hash"].tolist()
+   perm = np.random.default_rng(GLOBAL_ID_SEED).permutation(len(all_hashes))
+   id_map = {h: int(perm[i]) for i, h in enumerate(all_hashes)}
+   ```
+2. **MIN_GROUP_TEST guard**: validate every worst-group bucket in the test set has ≥ MIN_GROUP_TEST rows. Raise SystemExit if violated.
+2b. **Enough independent rows and source families**: for grouped real-data image/map/audio/document challenges, do not ship tiny prepared splits. A test set made from only a handful of source maps/files/subjects/episodes is too high-variance for hidden worst-group scoring or strict high-score caps. If the source can support it, image/map challenges should target roughly 1,000+ train rows and several hundred test rows, not merely a few hundred train rows and around 100 test rows. Target many independent held-out source families; enforce this in `prepare.py` with explicit minimum train rows, test rows, train source families, and test source families.
+3. **Sort all output CSVs by id** (removes ordering signal).
+4. **Path sanitation for copies**: `Path(r["video"]).name` — never trust raw path cells.
+5. **Video/image path convention**: if the platform resolves relative to the split subdir (`public/train/`, `public/test/`), write paths as `videos/<id>.mp4`. If it resolves from `public/` root, prefix with `train/videos/...` or `test/videos/...`. Be consistent with the challenge description.
+6. **Source-reversibility guard**: for public or named upstream datasets, prepared public rows must not be reversible back to raw rows, source filenames, timestamps, annotation ids, original subjects/speakers, or hidden labels. Strip source ids and exact timestamps, use opaque salted ids, redact or aggregate verbatim source text, de-identify exact media slices/crops when lookup is possible, and add an `_analyze.py` source-lookup stress test such as transcript search, filename/timestamp scans, metadata-only retrieval, or media fingerprint checks.
+
+## grade.py — MANDATORY patterns
+
+1. Raise an explicit invalid-submission exception for structural file failures: missing/reordered required columns, duplicate ids, id-set mismatch, non-finite/out-of-range confidence, or other values that prevent safe row alignment.
+2. Malformed row-local JSON/prediction content → degrade that affected row/head to 0, do NOT crash and do NOT collapse the whole submission.
+3. Enforce `MAX_JSON_LEN` on user-submitted strings before parsing.
+4. If using BSS/climatology reference: derive it from TRAINING data only, embed as a constant.
+5. Perfect submission (labels) must score exactly 1.0. Verify in `_sanity_smoke.py`.
+6. Sample baseline must score ≥ 0.12 and < 0.5.
+
+## generate.py — MANDATORY patterns
+
+1. Must be deterministic given (seed, index). Use `hashlib` + `np.random.SeedSequence`.
+2. Default `--n-base` must produce enough data (target ≥ 1000 scenes for video, ≥ 500 for image challenges).
+3. Write `scenes.csv` with ALL label and metadata columns.
+4. Use `--skip-render` flag to regenerate scenes.csv without re-rendering.
+
+## Upload zip rules
+
+- For synthetic generated datasets, upload exactly the generator source file and the raw archive: `generate.py` plus `raw_upload.zip`.
+- `raw_upload.zip` must be flat internally: archive members should be raw corpus files such as `scenes.csv`, `videos/`, `images/`, and `LICENSE.txt`, NOT `raw_data/...`, the challenge folder, `public/`, `private/`, caches, or source code.
+- The platform rebuild view may show `generate.py` and an extracted `raw_upload/` directory. `DATASET_FORM_FILL.md` and `prepare.py` must match this layout.
+- `prepare.py` should accept both local organizer layout (`raw/scenes.csv`, `raw/images/`) and platform layout (`raw/raw_upload/scenes.csv`, `raw/raw_upload/images/`).
+- Use `zip_raw_for_upload.py` with explicit archive names so the zip contents are flat.
+
+## Agent difficulty target
+
+- Agent scores must be ≤ 0.6 (configurable per challenge).
+- Build an `_analyze.py` optimal-solver oracle to MEASURE the difficulty ceiling before submitting.
+- If agents score too high: increase irreducible ambiguity (more unknowns, deeper structure), reweight onto ambiguity-capped heads, do NOT fake difficulty with grading tricks.
+
+## Checkpoints (verify before every submission)
+
+1. **Data Leakage** — ids don't leak split, no scaffold/scenario overlap across splits.
+2. **Baseline score not too high** — sample_submission scores 0.12–0.3 typically.
+3. **Class distribution is fine** — balanced worst-group buckets, all ≥ MIN_GROUP_TEST.
+4. **No missing data** — zero NaN in train.csv, test.csv, answers.csv.
+5. **What Not To Use section present** — in CHALLENGE_FORM_FILL.md.
+
+## Common mistakes to NEVER repeat
+
+- Empty sections in DATASET_FORM_FILL.md (the platform rejects these).
+- Missing dataset name / using a slug instead of a proper title.
+- Referencing scoring/grading/prepare mechanics in the dataset form.
+- Describing top-level `scenes.csv` when the uploaded platform source files are actually `generate.py` plus extracted `raw_upload/`; the dataset file structure must match the validator-visible layout.
+- Uploading the whole challenge folder or an extracted raw directory instead of the two expected source files `generate.py` and `raw_upload.zip`.
+- Sequential id assignment that leaks train vs test membership.
+- Keeping `GLOBAL_ID_SEED` after a reviewer explicitly asks for salted hash ids.
+- Defining an OOD/worst-group axis as a salted random parity split (`failure_mix_a` / `failure_mix_b`) instead of a real physical or semantic metadata family.
+- Letting public examples be investigated back to named upstream sources. If the dataset/source card identifies a public corpus, do not publish verbatim hidden text windows, exact raw audio/video/image slices, original filenames, timestamps, meeting/speaker/subject ids, annotation ids, row-order cues, or support examples that match scored test targets.
+- Sparse subgroup repair that steals from the next-smallest valid bucket; absorb underfilled orphan buckets into the majority class instead.
+- Shipping a source-family structured challenge with tiny splits, e.g. ~63 train / 27 test rows or a hidden test made from only ~9 source maps times a few variants. Also do not mistake a marginal repair such as ~316 train / 136 test for a stable image/map competition when the raw source can support more. These are unstable for ML competitions and especially bad with hidden worst-group scoring, abstention, or strict high-score caps.
+- Writing video/image paths without the correct prefix for the platform layout.
+- Using `iio.imread(src, index=None)` (loads all frames → OOM). Stream with imageio.v2 + ffmpeg.
+- `MAX_JSON_LEN` set too low for the challenge's max output size.
+- `_f1()` not handling the double-empty case (`pred=∅, gold=∅` → 1.0).
+- Not wrapping angular/phase values modulo before comparison.
+- Not using `np.round()` before modulo operations on floats.
+- Forgetting to add `numpy` import when using `np.random.default_rng`.
+
+## Reference files (read these as gold templates)
+
+- `sprint_3/3d_challenges/claude_charitha/Coupled Oscillator Hidden Coupling Graph Inference/DATASET_FORM_FILL.md`
+- `sprint_3/3d_challenges/claude_charitha/Stateful Marble-Run Switches/DATASET_FORM_FILL.md`
+- `sprint_3/3d_challenges/claude_charitha/Stateful Marble-Run Switches/CHALLENGE_FORM_FILL.md`
+- `rules/prev_reviews.txt` — read the LESSONS after each review entry.
+- `rules/LATEST.md` — current platform rules.

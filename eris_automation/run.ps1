@@ -1,7 +1,8 @@
 $ErrorActionPreference = 'Stop'
-$scriptPath = Join-Path $PSScriptRoot 'Tools\flow.py'
+$scriptPath = Join-Path (Join-Path $PSScriptRoot 'Tools') 'flow.py'
 $workspaceRoot = Split-Path $PSScriptRoot -Parent
-$configPath = Join-Path $workspaceRoot 'Config\workspace.json'
+$configPath = Join-Path (Join-Path $workspaceRoot 'Config') 'workspace.json'
+$separator = [System.IO.Path]::DirectorySeparatorChar
 
 if (-not (Test-Path -LiteralPath $scriptPath)) {
     throw "Missing controller: $scriptPath"
@@ -18,12 +19,16 @@ function Resolve-PortablePath {
         [string]$ConfiguredPath
     )
 
-    if ([System.IO.Path]::IsPathRooted($ConfiguredPath)) {
+    # Config values are written Windows-style; normalize so the same bundle
+    # runs on Linux/macOS PowerShell. The drive-letter test catches
+    # Windows-absolute values on non-Windows hosts.
+    $normalized = $ConfiguredPath.Replace('\', $separator).Replace('/', $separator)
+    if ([System.IO.Path]::IsPathRooted($normalized) -or $ConfiguredPath -match '^[A-Za-z]:') {
         throw "Portable workspace paths must be relative to the bot root: $ConfiguredPath"
     }
 
-    $resolved = [System.IO.Path]::GetFullPath((Join-Path $workspaceRoot $ConfiguredPath))
-    $rootPrefix = $workspaceRoot.TrimEnd('\') + '\'
+    $resolved = [System.IO.Path]::GetFullPath((Join-Path $workspaceRoot $normalized))
+    $rootPrefix = $workspaceRoot.TrimEnd($separator) + $separator
     if (-not $resolved.StartsWith($rootPrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
         throw "Configured path escapes the bot root: $ConfiguredPath"
     }

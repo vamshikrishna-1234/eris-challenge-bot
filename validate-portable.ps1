@@ -1,22 +1,27 @@
 $ErrorActionPreference = 'Stop'
 
 $root = [System.IO.Path]::GetFullPath($PSScriptRoot)
-$configPath = Join-Path $root 'Config\workspace.json'
+$separator = [System.IO.Path]::DirectorySeparatorChar
+$configPath = Join-Path (Join-Path $root 'Config') 'workspace.json'
 $failures = [System.Collections.Generic.List[string]]::new()
 $checks = [ordered]@{}
 
 function Resolve-InternalPath {
     param([Parameter(Mandatory = $true)][string]$Value)
 
+    # Config values are written Windows-style; normalize so the same bundle
+    # validates on Linux/macOS PowerShell.
+    $normalized = $Value.Replace('\', $separator).Replace('/', $separator)
     # Windows PowerShell 5.1 runs on .NET Framework, which does not expose
     # Path.IsPathFullyQualified. IsPathRooted is sufficient here because every
     # rooted value is forbidden by this portable, bot-root-relative config.
-    if ([System.IO.Path]::IsPathRooted($Value)) {
+    # The drive-letter test catches Windows-absolute values on non-Windows hosts.
+    if ([System.IO.Path]::IsPathRooted($normalized) -or $Value -match '^[A-Za-z]:') {
         $failures.Add("Absolute configuration path: $Value")
         return $null
     }
-    $resolved = [System.IO.Path]::GetFullPath((Join-Path $root $Value))
-    $prefix = $root.TrimEnd('\') + '\'
+    $resolved = [System.IO.Path]::GetFullPath((Join-Path $root $normalized))
+    $prefix = $root.TrimEnd($separator) + $separator
     if (-not $resolved.StartsWith($prefix, [System.StringComparison]::OrdinalIgnoreCase)) {
         $failures.Add("Configuration path escapes bot root: $Value")
         return $null
@@ -150,7 +155,7 @@ foreach ($relative in $coreFiles) {
 $checks['no_legacy_core_paths'] = -not ($failures | Where-Object { $_ -like 'Legacy external path*' })
 
 try {
-    $status = & (Join-Path $root 'eris_automation\run.ps1') status --json | ConvertFrom-Json
+    $status = & (Join-Path (Join-Path $root 'eris_automation') 'run.ps1') status --json | ConvertFrom-Json
     $checks['controller_status'] = ($null -ne $status)
 }
 catch {
@@ -164,7 +169,7 @@ if (-not $checks['external_file_dependencies_empty']) {
 }
 
 try {
-    $probeScript = Join-Path $root '.codex\skills\eris-challenge-factory\scripts\workspace_probe.ps1'
+    $probeScript = [System.IO.Path]::Combine($root, '.codex', 'skills', 'eris-challenge-factory', 'scripts', 'workspace_probe.ps1')
     $probe = & $probeScript -ProjectRoot $resolved['shared_project_root'] -OutputRoot $resolved['challenge_output_root'] | ConvertFrom-Json
     $checks['factory_workspace_probe'] = [bool]$probe.ready
     if (-not $probe.ready) { $failures.Add('Factory workspace probe is not ready') }
@@ -175,7 +180,8 @@ catch {
 }
 
 try {
-    $skillValidator = Join-Path $root 'eris_automation\Tools\quick_validate_skill.py'
+    $skillValidator = [System.IO.Path]::Combine($root, 'eris_automation', 'Tools', 'quick_validate_skill.py')
+    $pythonCommand = if (Get-Command py -ErrorAction SilentlyContinue) { 'py' } else { 'python' }
     $skillFolders = @(
         '.codex\skills\eris-challenge-automation',
         '.codex\skills\eris-challenge-factory',
@@ -188,7 +194,7 @@ try {
     )
     $allSkillsValid = $true
     foreach ($relative in $skillFolders) {
-        & py $skillValidator (Join-Path $root $relative) | Out-Null
+        & $pythonCommand $skillValidator (Join-Path $root $relative.Replace('\', $separator)) | Out-Null
         if ($LASTEXITCODE -ne 0) { $allSkillsValid = $false }
     }
     $checks['bundled_skill_validation'] = $allSkillsValid

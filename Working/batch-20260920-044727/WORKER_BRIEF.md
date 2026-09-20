@@ -65,3 +65,44 @@ Shipd phase only after supervisor confirmation.
 Return: slot ID; every candidate with verdict and measured reason; package path; registry key;
 whether the pair is bound; gates passed with numbers; current controller state; exact next action
 or blocker.
+
+## Batch-wide design rules learned from measured rejections (binding for every slot)
+
+As of 2026-09-20T11:10Z this batch has measured and rejected 7 candidates across 3 slots.
+Every one failed the same underlying test in a different disguise. Apply these before
+spending budget on a build.
+
+**Rule 1 — the universal-signal rule (the one that killed all 7).**
+The predictable structure your task asks a solver to learn must be *universal*: physical,
+signal-level, combinatorial, or generative, and taught just as well by the released training
+split as by the full public source. It must NOT be the identity or per-group structure of an
+identifiable public item. When the only signal that beats the standard domain method is a
+property of identifiable public source groups, the learning signal and the leakage channel are
+the same quantity, and hardening trades them one-for-one until the task is destroyed.
+Disguises already seen and rejected: a photograph's public caption (slot 2 candidate 1); a
+camera station's roster (slot 2 candidate 2); a census area's association structure (slot 2
+candidate 3); a wind farm's published status log (slot 3 candidate 1); a public per-image EXIF
+sidecar (slot 1 candidate 2).
+
+**Rule 2 — measure the lookup attack at the shipped bundle size, not per row.**
+Per-row lookup resistance does not survive bundling. A measured 0.0025 per-row recovery became
+1.000 group recovery at bundle size 60. Report the bundle size alongside every lookup number,
+and run a two-stage attack: de-anonymise the group first, then re-attack the rows.
+
+**Rule 3 — report ceiling minus capability, not skill above zero.**
+Measure the chance floor for the *restricted* choice, and also the achievable ceiling: the best
+predictor that never sees the scored sample. Judge headroom as ceiling minus capability-matched
+baseline. Skill-above-zero flattered one candidate by 0.29, and a constant prior flattered
+another into looking acceptable when it was near chance.
+
+**Rule 4 — order of work during scouting, before any package exists.**
+semantic-duplicate audit -> instance-level retrieval attack at shipped bundle size ->
+chance-floor-relative capability-matched baseline AND achievable ceiling -> null-metric audit ->
+premortem -> registry `readiness` -> `validate_handoff_readiness.py` -> only then build.
+Two slots burned most of their budget discovering a reversibility failure after the package was
+complete. Do not repeat that.
+
+**Consequence for candidate selection.** Prefer sources where the scored target is derived
+privately across many rows by `prepare.py` (a structural quantity computed over the corpus), or
+where knowing the origin record still does not reveal the answer. Accepted workspace challenges
+on public corpora survive for exactly this reason.

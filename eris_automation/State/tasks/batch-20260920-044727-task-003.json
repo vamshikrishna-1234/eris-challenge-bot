@@ -17,6 +17,16 @@
       "codex_task_id": null,
       "state_at_replacement": "retry_wait",
       "recorded_at": "2026-09-20T10:13:42+00:00"
+    },
+    {
+      "candidate": "crss-crash-event-ledger-reconstruction (NHTSA CRSS 2016-2023 sequence-of-events)",
+      "verdict": "rejected",
+      "reason": "Public-source reversibility measured during scouting before any build. Exact-match attacker over the full public pool of 417,335 CRSS crashes: the planned rich public representation identifies the origin crash uniquely for 100% of cases; a mid representation 98.6%; a lean one 85.1%; and even the design floor (unit counts plus the unordered event-type multiset, with every piece of physical evidence removed) still gives 8.8% unique origin identification and 33.7% exact hidden-ledger recovery by retrieval alone. Workspace pass bar is ~2.5-3%. Source access, public-domain redistribution, native analyst-coded targets and scale (143,313 crashes with >=2 events) all passed; reversibility is intrinsic because the per-vehicle damaged-area set alone is a near-unique fingerprint and the evidence vector the task needs carries far more than log2(417335)-5 bits.",
+      "evidence": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-003/LOOKUP_GATE_EVIDENCE_CRSS.md",
+      "registry_key": null,
+      "codex_task_id": null,
+      "state_at_replacement": "pilot",
+      "recorded_at": "2026-09-20T10:52:41+00:00"
     }
   ],
   "transient_failures": [
@@ -94,8 +104,20 @@
       "to": "scouting",
       "at": "2026-09-20T10:13:42+00:00",
       "note": "Candidate hold; replacement search required: Public-source reversibility gate failed after five hardening iterations: adaptive full-corpus retrieval (92 turbine-year raw series, FFT NCC + stretch grid + chunked alignment + DTW rerank) recovers the exact origin window at rank-1 for 3/24 = 12.5 percent of public cases on the final fully-ordinal representation (v1 5/10, v2 3/11, v4 4/7, v5 4/30). Workspace precedent for a passing gate is about 2.5-3 percent. Origin recovery hands the solver the hidden status-log ledger verbatim because both farms and their controller logs are public and ship inside the dataset. All other gates passed (license CC BY 4.0 verified, native labels, 1372 train / 574 test cases from 86 turbine-years, 36 held-out calendar blocks, novelty 6/10)."
+    },
+    {
+      "from": "scouting",
+      "to": "pilot",
+      "at": "2026-09-20T10:45:36+00:00",
+      "note": null
+    },
+    {
+      "from": "pilot",
+      "to": "scouting",
+      "at": "2026-09-20T10:52:41+00:00",
+      "note": "Candidate rejected; replacement search required: Public-source reversibility measured during scouting before any build. Exact-match attacker over the full public pool of 417,335 CRSS crashes: the planned rich public representation identifies the origin crash uniquely for 100% of cases; a mid representation 98.6%; a lean one 85.1%; and even the design floor (unit counts plus the unordered event-type multiset, with every piece of physical evidence removed) still gives 8.8% unique origin identification and 33.7% exact hidden-ledger recovery by retrieval alone. Workspace pass bar is ~2.5-3%. Source access, public-domain redistribution, native analyst-coded targets and scale (143,313 crashes with >=2 events) all passed; reversibility is intrinsic because the per-vehicle damaged-area set alone is a near-unique fingerprint and the evidence vector the task needs carries far more than log2(417335)-5 bits."
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T10:15:26+00:00"
+  "updated_at": "2026-09-20T10:52:41+00:00"
 }

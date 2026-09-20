@@ -17,6 +17,26 @@
       "codex_task_id": null,
       "state_at_replacement": "retry_wait",
       "recorded_at": "2026-09-20T10:28:09+00:00"
+    },
+    {
+      "candidate": "gmn-meteor-station-view-cone-and-sensitivity (Global Meteor Network traj_summary, CC BY 4.0)",
+      "verdict": "rejected",
+      "reason": "Fails the mandatory public-answer reversibility gate, measured at the shipped instance level. Source (CC BY 4.0 verbatim), official access, native 86-column labels, post-filter scale (112,139 meteors in 2024-08; 256,730 rows over 3 months) and independent groups (1,021 stations; 695 with >=200 rows) all PASS. Attack 1 (per-row invariant matching against the 256,730-row catalogue): the planned hardening recovers the correct row uniquely for 0.2725 of 400 queries, >5x the ~0.05 precedent bar. Attack 2 (capability-matched bundle-level station voting): at v2 hardening whose per-row unique match is only 0.0025, a 60-meteor bundle recovers the true station top-1 for 40/40 bundles (1.000); v3 hardening still 0.100 at K=60; only v4 (heights quantised to 20 km, velocity 10 km/s, magnitude 4 mag, Qc 60 deg) reaches 0.000, and that destroys the geometric and photometric evidence the target depends on. Attack 3 (two-stage): after station de-anonymisation, per-row unique recovery rises from 0.0025 to 0.3233 with median candidate set 2, so retreating to a per-row target does not rescue the corpus. Matching a row hands over the native Participating stations roster, i.e. the supervision itself.",
+      "evidence": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-002/CANDIDATE2_REJECTION_EVIDENCE.md",
+      "registry_key": null,
+      "codex_task_id": null,
+      "state_at_replacement": "scouting",
+      "recorded_at": "2026-09-20T10:50:50+00:00"
+    },
+    {
+      "candidate": "small-area-joint-composition-recovery (ACS 2023 1-Year PUMS, CC0)",
+      "verdict": "rejected",
+      "reason": "Leakage gate and difficulty gate are mutually exclusive across the whole swept design space; measured on 1,256,063 adult PUMS records over 1,114 independent PUMAs with 1,482 train / 624 test private mixture units. Chance floor = best constant table = 0 skill by construction. At the natural setting (unit 600, 2-4 source areas) the capability-matched attack (IPF raking with a global seed, the standard population-synthesis method) scores 0.5354, best honest ridge 0.5634, mixture-oracle ceiling 0.7107, so the competition band is 0.175 - but the source-retrieval attack (non-negative mixture fit of the 1,114 real public areas to the released margins, then reading the joint off public microdata) scores 0.661, beating every honest method by +0.098, and +0.162 at unit size 1500. Hardening (6-20 source areas per unit, disclosure-control rounding of released counts) closes the attack gain to +0.003 but closes the band to 0.117 in lockstep. Rescue attempts fail both ways: larger units with the full 150-cell target restore a 0.170 band but hand the attack +0.054, while a coarser 60-cell target lifts the capability-matched baseline to 0.776-0.812, i.e. IPF alone nearly solves it (the saturation mode that rejected slot 1's baserunning candidate at 0.16 residual headroom). Source, CC0 licence, native ACS fields, post-filter scale, 779/335 disjoint area split and novelty (0 of 818 archived challenges and 0 of 84 registry entries in the aggregate-inversion family) all PASS; the failure is in the learning problem.",
+      "evidence": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-002/CANDIDATE3_REJECTION_EVIDENCE.md",
+      "registry_key": null,
+      "codex_task_id": null,
+      "state_at_replacement": "scouting",
+      "recorded_at": "2026-09-20T11:07:42+00:00"
     }
   ],
   "transient_failures": [
@@ -94,8 +114,20 @@
       "to": "scouting",
       "at": "2026-09-20T10:28:09+00:00",
       "note": "Candidate rejected; replacement search required: Measured pilot reject: capability-matched cross-modal baseline 0.3847 vs 0.3251 random-among-drawn floor on 466 buildings/607 test photos (zero-shot DINOv2 patch 0.4321 beats the designed pipeline); photo-only sun/shadow shortcut 0.3493 so drawings add only +0.026; post-hardening wHash lookup rank-1 0.188 where the retrieved public LoC caption IS the label. Source/licence/scale/native-label gates passed."
+    },
+    {
+      "from": "scouting",
+      "to": "scouting",
+      "at": "2026-09-20T10:50:50+00:00",
+      "note": "Candidate rejected; replacement search required: Fails the mandatory public-answer reversibility gate, measured at the shipped instance level. Source (CC BY 4.0 verbatim), official access, native 86-column labels, post-filter scale (112,139 meteors in 2024-08; 256,730 rows over 3 months) and independent groups (1,021 stations; 695 with >=200 rows) all PASS. Attack 1 (per-row invariant matching against the 256,730-row catalogue): the planned hardening recovers the correct row uniquely for 0.2725 of 400 queries, >5x the ~0.05 precedent bar. Attack 2 (capability-matched bundle-level station voting): at v2 hardening whose per-row unique match is only 0.0025, a 60-meteor bundle recovers the true station top-1 for 40/40 bundles (1.000); v3 hardening still 0.100 at K=60; only v4 (heights quantised to 20 km, velocity 10 km/s, magnitude 4 mag, Qc 60 deg) reaches 0.000, and that destroys the geometric and photometric evidence the target depends on. Attack 3 (two-stage): after station de-anonymisation, per-row unique recovery rises from 0.0025 to 0.3233 with median candidate set 2, so retreating to a per-row target does not rescue the corpus. Matching a row hands over the native Participating stations roster, i.e. the supervision itself."
+    },
+    {
+      "from": "scouting",
+      "to": "scouting",
+      "at": "2026-09-20T11:07:42+00:00",
+      "note": "Candidate rejected; replacement search required: Leakage gate and difficulty gate are mutually exclusive across the whole swept design space; measured on 1,256,063 adult PUMS records over 1,114 independent PUMAs with 1,482 train / 624 test private mixture units. Chance floor = best constant table = 0 skill by construction. At the natural setting (unit 600, 2-4 source areas) the capability-matched attack (IPF raking with a global seed, the standard population-synthesis method) scores 0.5354, best honest ridge 0.5634, mixture-oracle ceiling 0.7107, so the competition band is 0.175 - but the source-retrieval attack (non-negative mixture fit of the 1,114 real public areas to the released margins, then reading the joint off public microdata) scores 0.661, beating every honest method by +0.098, and +0.162 at unit size 1500. Hardening (6-20 source areas per unit, disclosure-control rounding of released counts) closes the attack gain to +0.003 but closes the band to 0.117 in lockstep. Rescue attempts fail both ways: larger units with the full 150-cell target restore a 0.170 band but hand the attack +0.054, while a coarser 60-cell target lifts the capability-matched baseline to 0.776-0.812, i.e. IPF alone nearly solves it (the saturation mode that rejected slot 1's baserunning candidate at 0.16 residual headroom). Source, CC0 licence, native ACS fields, post-filter scale, 779/335 disjoint area split and novelty (0 of 818 archived challenges and 0 of 84 registry entries in the aggregate-inversion family) all PASS; the failure is in the learning problem."
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T10:30:30+00:00"
+  "updated_at": "2026-09-20T11:07:42+00:00"
 }

@@ -1,9 +1,9 @@
 {
  "title": "Wind Turbine Stop-Event Ledger Recovery From SCADA Windows",
  "slug": "wind-turbine-stop-ledger-recovery",
- "status": "building",
- "stage": "local_build_in_progress",
- "verdict": "Pilot",
+ "status": "hold",
+ "stage": "pilot_hold_public_source_reversibility",
+ "verdict": "Hold",
  "owner_machine": "claude-code-remote:session_01BsPsoRMM2gFuMfAfExxCpB",
  "owner_task": "claude:batch-20260920-044727:batch-20260920-044727-task-003",
  "controller_slot": "batch-20260920-044727-task-003",
@@ -17,11 +17,15 @@
   "https://zenodo.org/records/8253010"
  ],
  "created_at": "2026-09-20T05:46:50+00:00",
- "updated_at": "2026-09-20T05:46:50+00:00",
- "blocker": "",
+ "updated_at": "2026-09-20T10:14:09+00:00",
+ "blocker": "Public-source reversibility: adaptive full-corpus retrieval recovers 12.5% of public cases at rank-1; both farms and their controller status logs are public, so a recovered origin yields the hidden ledger verbatim.",
  "notes": [
   "Slot 3 of batch-20260920-044727; immutable Shipd pair problem jx7d7hc2kwrxdxn9r0eg4pjq4h8eebx9 / dataset jd7bgzt14yjrdhr55hvybg8kjn8ef7y5 (not yet bound; browser unauthenticated this run).",
-  "Candidate 1 of the slot; EEG idea discarded before pilot (dataset mismatch)."
+  "Candidate 1 of the slot; EEG idea discarded before pilot (dataset mismatch).",
+  "Five public-representation iterations were measured against an adaptive retrieval attacker; all failed the lookup gate (v1 5/10, v2 3/11, v4 4/7, v5 4/30, v6 3/24 rank-1).",
+  "Every other gate passed: CC BY 4.0 verified on both Zenodo records, 14 archives MD5-verified (3.46 GB), native controller-log targets, 1372 train / 574 test cases from 86 turbine-years, 36 held-out calendar blocks with a 1-day guard, class minimums enforced in prepare.py, novelty 6/10 with no platform or registry duplicate.",
+  "Package files (prepare.py, grade.py, forms, source verification, acquisition, novelty audit, premortem) are retained for reuse but MUST NOT be submitted: the readiness verdict is Hold, not Proceed.",
+  "Slot batch-20260920-044727-task-003 returned to scouting for a distinct replacement candidate; the Shipd pair was never bound and no website write occurred."
  ],
  "proposed_input": "One turbine x ~24 h window of 40 transformed 10-minute channels (36 own physical sensors + 4 farm-context channels) as NPZ, plus start_hour.",
  "proposed_output": "JSON ledger of stop events (start/end step, one of 8 classes grouped from native service-contract categories) plus confidence.",
@@ -32,7 +36,7 @@
   "manifest": "RAW_MANIFEST.json"
  },
  "readiness": {
-  "verdict": "Pilot",
+  "verdict": "Hold",
   "native_targets_verified": true,
   "official_access_verified": true,
   "redistribution_verified": true,
@@ -46,8 +50,9 @@
   "import_route_verified": true,
   "reviewer_premortem_completed": true,
   "unresolved_gates": [
-   "retrieval attack on production transform pending (pilot_kelmarsh/attack2.py)",
-   "full-split capability baseline + null audit pending (_analyze.py)"
+   "lookup_attack: rank-1 origin recovery 3/24 (12.5%) on the final ordinal representation v6; workspace precedent for a pass is ~2.5-3%. Evidence: Working/batch-20260920-044727/batch-20260920-044727-task-003/LOOKUP_GATE_EVIDENCE.md",
+   "capability_matched_baseline and null_metric_audit: measured on the pilot split only (GBM 0.5497, rule+majority 0.2806, empty 0.0921, perfect 1.0); the full-split _analyze.py run was not completed on v6 because the lookup gate already fails.",
+   "A build task must not be created from this entry."
   ]
  },
  "evidence": {
@@ -91,6 +96,38 @@
    "oracle_timing_majority_class": 0.4049,
    "perfect": 1.0
   },
-  "representative_native_rows": "SOURCE_VERIFICATION.md#native-label-provenance"
- }
+  "representative_native_rows": "SOURCE_VERIFICATION.md#native-label-provenance",
+  "lookup_gate_evidence": "Working/batch-20260920-044727/batch-20260920-044727-task-003/LOOKUP_GATE_EVIDENCE.md",
+  "attack_scripts": "Working/batch-20260920-044727/batch-20260920-044727-task-003/pilot_kelmarsh/{attack2,attack3,attack4,attack5,xform_experiment}.py",
+  "attack_logs": [
+   "attack2_production_v1_partial.log",
+   "attack2_v2.log",
+   "attack3_v4_partial.log",
+   "attack4_seed2026_n12.log",
+   "attack4_seed7_n18.log",
+   "attack5_seed2026_n12.log",
+   "attack5_seed7_n12.log",
+   "xform.log",
+   "xform2.log"
+  ],
+  "lookup_rank1_by_version": {
+   "v1_raw_jitter": "5/10",
+   "v2_heavy_jitter": "3/11",
+   "v4_coded_with_site_weather": "4/7",
+   "v5_fleet_relative": "4/30",
+   "v6_all_ordinal": "3/24"
+  },
+  "lookup_attack_method": "Adaptive re-coding of the complete official raw corpus (92 turbine-year series, 4,323,440 steps) + FFT sliding-window NCC per channel (whole + chunked with +-8 shift) + 0.70-1.40 stretch grid + banded DTW rerank of the top 20; hit = rank-1 correct turbine-year within +-12 steps.",
+  "dry_run_v6": {
+   "train_rows": 1372,
+   "test_rows": 574,
+   "test_blocks": 36,
+   "train_blocks": 72,
+   "prepare_runtime_seconds": 262,
+   "public_channels": 16,
+   "sample_confidence": 0.1213
+  },
+  "smoke_test": "passed on v5/v6 prepare+grade (perfect exactly 1.0, sample 0.063, malformed row-local 0.985, 7 structural mutations raise InvalidSubmissionError, byte-identical deterministic reprepare)"
+ },
+ "phase": "pilot_complete_not_built"
 }

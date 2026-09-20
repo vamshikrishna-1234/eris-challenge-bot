@@ -2,7 +2,7 @@
   "schema_version": 2,
   "task_id": "batch-20260920-044727-task-001",
   "batch_id": "batch-20260920-044727",
-  "state": "retry_wait",
+  "state": "pilot",
   "revision_count": 0,
   "goal_achieved_at": null,
   "goal_stage": "challenge_checks_passed",
@@ -124,8 +124,14 @@
       "to": "retry_wait",
       "at": "2026-09-20T11:49:50+00:00",
       "note": "Temporary browser_auth failure; resume from checkpoint"
+    },
+    {
+      "from": "retry_wait",
+      "to": "pilot",
+      "at": "2026-09-20T12:39:25+00:00",
+      "note": null
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T11:49:50+00:00"
+  "updated_at": "2026-09-20T12:39:25+00:00"
 }

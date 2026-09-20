@@ -1,0 +1,123 @@
+{
+ "title": "Groundwater Abstraction Return Reconciliation",
+ "slug": "groundwater-abstraction-return-reconciliation",
+ "status": "researching",
+ "phase": "pilot_measured_proceed_package_not_built",
+ "stage": "pilot",
+ "verdict": "Proceed (pilot gates measured; package build outstanding)",
+ "owner_machine": "claude-code-remote",
+ "owner_task": "claude:batch-20260920-044727:batch-20260920-044727-task-001",
+ "output_folder": "/home/user/eris-challenge-bot/Workspace/output/groundwater-abstraction-return-reconciliation",
+ "dataset": "Procedurally generated confined-aquifer abstraction scenes (Theis drawdown, superposition in time and space) over REAL measured USGS NWIS instantaneous groundwater-level background residuals (parameter 72019), privately re-mixed",
+ "domain": "Natural Science / Hydrogeology",
+ "compute": "CPU",
+ "license": "Generated corpus: CC0 1.0, author-owned generator. Background source: USGS NWIS water data, US Government work in the public domain.",
+ "created_at": "2026-09-20T14:40:00+00:00",
+ "updated_at": "2026-09-20T14:40:00+00:00",
+ "blocker": "Package not built. Metric must be converted from corpus-pooled to the platform metric chain (group_score then mean) before grade.py is written, and the floor re-measured under that grouping.",
+ "notes": [
+  "Bound to immutable controller slot batch-20260920-044727-task-001 and its exact supplied Shipd pair. Shipd was NOT opened this run (unauthenticated session); no live novelty or duplicate check was possible.",
+  "Candidate 5 for this slot. Candidates 1-4 were measured and rejected; see the controller ledger.",
+  "Task: from 28 days of 3-hourly water-level series at 8-12 observation wells, the coordinates of 6-9 registered boreholes, and each borehole's DECLARED abstraction return (7 four-day blocks), recover each borehole's ACTUAL abstraction ledger and the aquifer's log10 transmissivity and log10 storage coefficient.",
+  "Rule-1 property: the scored answer is the private abstraction scene and the private aquifer parameters. They exist in no public record, so identifying the real background hydrograph reveals nothing about the answer; at worst it removes noise.",
+  "Measured ladder on 120 held-out scenes with background families disjoint from train (394 train / 154 test real wells): oracle 1.0000, achievable ceiling with oracle aquifer parameters 0.6397, capability-matched alternating solver 0.3424, intended sample submission 0.1445, all-zeros 0.0956, weak fixed-parameter NNLS 0.0925, train-prior constant 0.0290, uniform random 0.0143, copy-the-declaration no-op 0.0000.",
+  "Ceiling minus capability = 0.2973; capability minus best trivial baseline = 0.2468. For comparison, slot candidate 3 was rejected at 0.028.",
+  "Rule 5 compliance: the first metric gave uniform random 0.1577 and an all-zero submission 0.24 through per-row rectification and a free count head. Both heads were replaced by chance-floor-relative heads referenced to the best constant rule, which drove uniform random to 0.0143 and the no-op to 0.0000.",
+  "A misdeclaration-detection head was measured and DROPPED (weight 0): on 40 held-out scenes no solver, including the capability-matched one, beat the best constant flagging rule (reference F1 0.539), so a weighted detection head would have been unreachable dead weight. It is retained as a reported diagnostic.",
+  "Rule 6 compliance: the first capability-matched solver (free-NNLS aquifer-parameter search plus sparse deconvolution) scored 0.15 and lost to an all-zero submission. The principled version (declared-anchored aquifer-parameter search, then alternating nonnegative rate recovery and local parameter refinement) scores 0.3424. The weak version was not reported as the ceiling.",
+  "Identifiability verified: with oracle aquifer parameters and noise-free observations the recovery scores 0.9805; median design-matrix condition number 931.",
+  "Runtime: capability-matched solver 6.9 s/scene, sample-grade solver 0.17 s/scene, so a 400-500 scene test split fits a 1.5 hour CPU budget with room for cheaper strategies. That spread is the intended source of score variance."
+ ],
+ "readiness": {
+  "verdict": "Proceed",
+  "native_targets_verified": true,
+  "official_access_verified": true,
+  "redistribution_verified": true,
+  "source_package_verified": true,
+  "post_filter_scale_passed": true,
+  "split_stability_passed": true,
+  "semantic_duplicate_audit_passed": true,
+  "lookup_attack_passed": true,
+  "capability_matched_baseline_passed": true,
+  "null_metric_audit_passed": true,
+  "import_route_verified": false,
+  "reviewer_premortem_completed": true,
+  "source_zip_built": false,
+  "prepare_smoke_test_passed": false,
+  "prepare_determinism_passed": false,
+  "grader_smoke_test_passed": false,
+  "archive_audit_passed": false,
+  "forms_ready": false,
+  "unresolved_gates": [
+   "Package not built: generate.py, prepare.py, grade.py, forms, _analyze.py, raw upload zip.",
+   "Metric chain must be converted to per-group scores then mean, with the chance-floor rectification kept at group level (not per row), and the null ladder re-measured under that grouping.",
+   "Live Shipd novelty/duplicate validation not performed: the browser session is unauthenticated, so the platform duplicate gate on the dataset source is unverified."
+  ]
+ },
+ "evidence": {
+  "background_source": {
+   "service": "USGS NWIS instantaneous values, https://waterservices.usgs.gov/nwis/iv/?format=rdb&stateCd=<st>&parameterCd=72019&period=P30D",
+   "states": [
+    "ca",
+    "nm",
+    "az",
+    "va",
+    "ok",
+    "ga",
+    "co",
+    "ne",
+    "mn",
+    "nc"
+   ],
+   "license": "USGS water data are US Government works in the public domain",
+   "sites_seen": 1370,
+   "sites_kept": 548,
+   "resample": "3-hourly grid, 224 samples (28 days), feet converted to metres, quadratic trend removed",
+   "residual_sd_m": {
+    "p10": 0.0078,
+    "median": 0.0258,
+    "p90": 0.287
+   },
+   "manifest": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/raw/fetch_manifest.json"
+  },
+  "semantic_duplicate_audit": {
+   "shipd_archive_titles_checked": 818,
+   "registry_entries_checked": 88,
+   "result": "no groundwater / aquifer / well-test / abstraction-reconciliation task in either map; nearest neighbours are streamgage-rating-correction-decisions (USGS surface water, rejected) and HydroRelay gauge-portfolio recommendation (different target)",
+   "caveat": "live Shipd novelty check not possible this run"
+  },
+  "lookup_attack": {
+   "threat_model": "attacker holds the exact pool of 548 real NWIS residual segments, including train families, and knows the re-mixing family",
+   "method": "normalised max circular cross-correlation over all shifts, both time directions and both signs",
+   "probes": 460,
+   "pool_size": 548,
+   "top1_primary_source_rate": 0.00217,
+   "random_expectation": 0.00182,
+   "first_design_top1_rate": 0.0833,
+   "hardening": "two-source mixing replaced by three sources with comparable random weights plus a random linear time-warp",
+   "consequence": "even a perfect background match removes noise only; the scored answer is the private abstraction scene",
+   "file": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/pilot/attack_background.json"
+  },
+  "ladder": {
+   "held_out_scenes": 120,
+   "background_families_train": 394,
+   "background_families_test": 154,
+   "oracle": 1.0,
+   "ceiling_oracle_aquifer_params": 0.6397,
+   "capability_matched_alternating": 0.3424,
+   "sample_submission_candidate": 0.1445,
+   "all_zeros": 0.0956,
+   "weak_fixed_parameter_nnls": 0.0925,
+   "train_prior_constant": 0.029,
+   "uniform_random": 0.0143,
+   "copy_declaration_noop": 0.0,
+   "ceiling_minus_capability": 0.2973,
+   "file": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/pilot/ladder_final.json"
+  },
+  "identifiability": {
+   "oracle_params_noise_free_score": 0.9805,
+   "median_condition_number": 931
+  },
+  "pilot_code": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/pilot/"
+ }
+}

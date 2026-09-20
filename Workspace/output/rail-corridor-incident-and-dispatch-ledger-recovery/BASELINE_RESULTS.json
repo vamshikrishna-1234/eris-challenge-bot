@@ -1,0 +1,13 @@
+{
+ "F0 chance floor (empty / all-NONE)": 0.15748437499999923,
+ "F1 label prior (shipped sample)": 0.16684703125000014,
+ "A1 metadata-only (plan + structure only)": 0.16684703125000014,
+ "B1 domain rule / DSP baseline": 0.3125810872348281,
+ "C1 capability-matched GBM": 0.40035110434394533,
+ "oracle": 1.0,
+ "headroom_ceiling_minus_capability": 0.5934346099417691,
+ "headroom_capability_minus_floor": 0.2428667293439461,
+ "D1 clean-channel probe (same solver, no noise or dropout)": 0.42050212735223336,
+ "achievable_ceiling_observability_bound": 0.9937857142857144,
+ "clean_channel_gain_over_capability": 0.020151023008288027
+}

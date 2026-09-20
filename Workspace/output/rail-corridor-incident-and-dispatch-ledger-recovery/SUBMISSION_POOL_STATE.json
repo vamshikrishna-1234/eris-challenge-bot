@@ -1,0 +1,110 @@
+{
+  "schema_version": 3,
+  "challenge_folder": "/home/user/eris-challenge-bot/Workspace/output/rail-corridor-incident-and-dispatch-ledger-recovery",
+  "registry_path": "/home/user/eris-challenge-bot/Workspace/project/challenge_registry/rail-corridor-incident-and-dispatch-ledger-recovery.json",
+  "binding": {
+    "problem_tab_supplied": true,
+    "dataset_tab_supplied": true,
+    "matched_local_package": true,
+    "matched_registry_entry": true,
+    "bound_at": null
+  },
+  "problem": {
+    "id": "jx7d7hc2kwrxdxn9r0eg4pjq4h8eebx9",
+    "url": "https://shipd.ai/quests/eris/problems/jx7d7hc2kwrxdxn9r0eg4pjq4h8eebx9",
+    "version": null,
+    "title": "Rail Corridor Incident And Dispatch Ledger Recovery",
+    "description_sha256": "a9e01c402b03ac80ff141690fd28c951cc7fd865e5644387c04aa1f6f29b0c97",
+    "visible_state": "not observed - no authenticated session in this container"
+  },
+  "dataset": {
+    "id": "jd7bgzt14yjrdhr55hvybg8kjn8ef7y5",
+    "url": "https://shipd.ai/quests/eris/datasets/jd7bgzt14yjrdhr55hvybg8kjn8ef7y5",
+    "version": null,
+    "title": "Finnish Railway Planned Timetable And Network Corpus",
+    "description_sha256": "6a8622b60f5b51a10284383f5dc1c648282251d18513fbf7bd083991a778c793",
+    "visible_state": "not observed - no authenticated session in this container"
+  },
+  "stage": "local_package_ready_awaiting_authenticated_session",
+  "admission": {
+    "passed": true,
+    "owner_match": true,
+    "readiness_verdict": "Proceed",
+    "blockers": [
+      "Shipd is not authenticated in this container; the supervisor must confirm a session before any website read or write."
+    ]
+  },
+  "website_writes_performed": false,
+  "dataset_phase": {
+    "title": "Finnish Railway Planned Timetable And Network Corpus",
+    "description_sha256": "6a8622b60f5b51a10284383f5dc1c648282251d18513fbf7bd083991a778c793",
+    "source_files": [
+      {
+        "name": "raw_upload.zip",
+        "bytes": 8308151,
+        "sha256": "f8b858dfc13a2f91b31c6aef20f6aad9ef9856abcefe01e7a5ee4ee5c01ee18c",
+        "members": 14,
+        "flat": true
+      }
+    ],
+    "source_file_count": 1,
+    "source_file_extensions": [
+      ".zip"
+    ],
+    "license": "CC BY 4.0",
+    "source_url": "https://rata.digitraffic.fi/api/v1/",
+    "rebuild_state": "not attempted - no authenticated session",
+    "rebuild_attempts": 0,
+    "validation_run_count": 0,
+    "red_findings": [],
+    "yellow_findings": [],
+    "fixes": [],
+    "last_zero_warning_validation_at": null,
+    "all_checks_green": false,
+    "marked_ready": false,
+    "marked_ready_at": null
+  },
+  "challenge_phase": {
+    "title": "Rail Corridor Incident And Dispatch Ledger Recovery",
+    "description_sha256": "a9e01c402b03ac80ff141690fd28c951cc7fd865e5644387c04aa1f6f29b0c97",
+    "difficulty": "Hard",
+    "compute": "CPU",
+    "tags": [
+      "time series",
+      "structured prediction",
+      "operations research",
+      "transportation",
+      "tabular"
+    ],
+    "grade_direction": "maximize",
+    "minimum_score": null,
+    "maximum_score": null,
+    "grade_script_sha256": null,
+    "prepare_script_sha256": null,
+    "prepare_state": null,
+    "prepare_run_count": 0,
+    "check_run_count": 0,
+    "red_findings": [],
+    "yellow_findings": [],
+    "fixes": [],
+    "last_zero_warning_check_at": null,
+    "all_checks_green": false,
+    "theoretical_min": 0.0,
+    "theoretical_max": 1.0,
+    "prepare_sha256": "480c3f10d8ab3ef79a10e00a1740f12273a3b82d76f4afda5ee238da739732fa",
+    "grade_sha256": "e8c25b1c5901d77b41df9ad7d6b42d9c3b2642a034d179f9e759b8387760fd6c"
+  },
+  "agent_run": {
+    "clicked": false,
+    "visible_state": null,
+    "started_at": null,
+    "terminal_state_verified": false
+  },
+  "stop_reason": "blocked_no_authenticated_shipd_session",
+  "updated_at": "2026-09-20T12:41:18.048074+00:00",
+  "problem_id": "jx7d7hc2kwrxdxn9r0eg4pjq4h8eebx9",
+  "dataset_id": "jd7bgzt14yjrdhr55hvybg8kjn8ef7y5",
+  "problem_url": "https://shipd.ai/quests/eris/problems/jx7d7hc2kwrxdxn9r0eg4pjq4h8eebx9",
+  "dataset_url": "https://shipd.ai/quests/eris/datasets/jd7bgzt14yjrdhr55hvybg8kjn8ef7y5",
+  "supervisor_note": "Exact IDs filled in by the supervisor at 2026-09-20T13:30Z; both fields were null although the report stated they were populated. Same defect as slot 2. website_writes_performed remains false: Shipd has never been opened for this slot."
+}

@@ -1,0 +1,93 @@
+{
+ "scale": {
+  "train_cases": 2400,
+  "train_rows": 322506,
+  "test_cases": 800,
+  "test_rows": 55781,
+  "trains_per_case": 14.57375,
+  "rows_per_case": 134.3775
+ },
+ "labels": {
+  "incidents_per_case": 1.9,
+  "interventions_per_case": 4.60875,
+  "incident_types": {
+   "CREW_LATE": 292,
+   "SPEED_RESTRICTION": 497,
+   "UNIT_FAULT": 340,
+   "SEGMENT_BLOCKAGE": 118,
+   "STATION_DWELL_FAULT": 273
+  },
+  "intervention_types": {
+   "HOLD": 2582,
+   "SHORT_TURN": 972,
+   "CANCEL": 133
+  },
+  "primary_classes": {
+   "SHORT_TURNED": 1005,
+   "NONE": 4020,
+   "SPEED_RESTRICTION": 817,
+   "CANCELLED": 133,
+   "UNIT_FAULT": 98,
+   "STATION_DWELL_FAULT": 354,
+   "CREW_LATE": 65,
+   "SEGMENT_BLOCKAGE": 74
+  }
+ },
+ "leakage_scan": {
+  "train.csv": [],
+  "test.csv": [],
+  "sample_submission.csv": []
+ },
+ "public_columns": {
+  "train": [
+   "case_id",
+   "train_slot",
+   "stop_seq",
+   "station_index",
+   "n_stations",
+   "n_trains",
+   "service_class",
+   "direction",
+   "planned_arr",
+   "planned_dep",
+   "observed_arr",
+   "observed_dep"
+  ],
+  "test": [
+   "case_id",
+   "train_slot",
+   "stop_seq",
+   "station_index",
+   "n_stations",
+   "n_trains",
+   "service_class",
+   "direction",
+   "planned_arr",
+   "planned_dep",
+   "observed_arr",
+   "observed_dep"
+  ]
+ },
+ "answers_never_in_public": true,
+ "real_records_with_recorded_delay": 681072,
+ "published_delay_stats": {
+  "median": 4.400000000000006,
+  "p90": 26.200000000000003,
+  "max": 232.66999999999996
+ },
+ "real_delay_stats": {
+  "median": 0.0,
+  "p90": 4.0,
+  "max": 389.0
+ },
+ "reversibility_note": "Published realized times are produced by the operations model and are not the API's actualTime values; the scored incident and dispatch ledger has no counterpart in any public record, so recovering the (real) planned timetable - which is published to solvers anyway - yields nothing.",
+ "null_audit": {
+  "oracle": 1.0,
+  "empty": 0.15748437499999923,
+  "all-NONE": 0.15748437499999923,
+  "incident head only": 0.6237343749999973,
+  "intervention head only": 0.385921875,
+  "primary head only": 0.3053125,
+  "sample_submission": 0.16684703125000014
+ }
+}

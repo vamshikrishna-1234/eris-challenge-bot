@@ -1,0 +1,20 @@
+{
+ "shipped_bundle": {
+  "unit": "one case = one corridor-window bundle of whole trains",
+  "median_rows": 56.0,
+  "median_trains": 7.0,
+  "n_bundles": 800
+ },
+ "stage1_bundle_deanonymisation_rank1": 1.0,
+ "stage1_basis": "granted to the attacker by construction; the published planned times are real, so bundle-level de-anonymisation is assumed to succeed and stage 2 receives the true corridor, date, window and service numbers for free",
+ "real_rows_with_recorded_delay": 681072,
+ "real_trains_with_official_cause": 4369,
+ "published_vs_real_delay": {
+  "n": 38626,
+  "pearson_r": -0.0075877696930784725,
+  "published_median": 4.35,
+  "real_median": 1.0
+ },
+ "stage2_real_corpus_attack_score": 0.16806410708453023,
+ "sample_floor": 0.16684703125000014
+}

@@ -135,3 +135,12 @@ at the end loses every completed arm when a later arm times out. Write each arm'
 completes, and never cite an artifact without confirming the file exists. One slot-2 evidence
 file cited a JSON that a timeout had prevented from ever being written; the numbers were genuine
 but only the stdout survived, and the citation had to be corrected after the fact.
+
+**Rule 8 — populate the pool checkpoint's exact IDs, and verify what you claim about your own
+files.** Both slots that reached Proceed reported `SUBMISSION_POOL_STATE.json` as carrying both
+exact Shipd IDs; in both cases the fields were null and the supervisor filled them from the
+controller ledger. `references/workflow.md` requires the checkpoint to preserve the exact problem
+and dataset IDs and URLs so a later run resumes from verified state rather than browser memory.
+Before reporting an artifact as complete, read the file back and confirm the specific fields you
+are claiming. The same discipline that caught a cited JSON which never existed applies to fields
+inside a file that does.

@@ -1,0 +1,10 @@
+{
+ "empty submission": 0.15748437499999923,
+ "max-size random spam": 0.08544046266688655,
+ "shotgun: every type at every early loc": 0.155280935782967,
+ "all-CANCEL / all-CANCELLED": 0.06092937992931079,
+ "HOLD at every train-stop pair": 0.1611767113560161,
+ "copy the commonest train ledger": 0.15748437499999923,
+ "copy a random train ledger": 0.1403296839870816,
+ "oracle first incident duplicated 12x": 0.22857057449061302
+}

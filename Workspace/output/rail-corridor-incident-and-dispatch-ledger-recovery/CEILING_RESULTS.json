@@ -1,0 +1,8 @@
+{
+ "observability_ceiling": 0.9937857142857144,
+ "incidents_kept": 1498,
+ "incidents_unobservable": 22,
+ "interventions_kept": 3687,
+ "interventions_unobservable": 0,
+ "note": "truth with entries that left no trace in the published rows removed; an upper bound on any predictor that never sees the scored answer"
+}

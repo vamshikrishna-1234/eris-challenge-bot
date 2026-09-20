@@ -2,7 +2,7 @@
   "schema_version": 2,
   "task_id": "batch-20260920-044727-task-003",
   "batch_id": "batch-20260920-044727",
-  "state": "retry_wait",
+  "state": "pilot",
   "revision_count": 0,
   "goal_achieved_at": null,
   "goal_stage": "challenge_checks_passed",
@@ -59,8 +59,14 @@
       "to": "retry_wait",
       "at": "2026-09-20T07:39:13+00:00",
       "note": "Temporary rate_limit failure; resume from checkpoint"
+    },
+    {
+      "from": "retry_wait",
+      "to": "pilot",
+      "at": "2026-09-20T07:39:52+00:00",
+      "note": "Resumed after rate_limit transient. Candidate 1 (wind-turbine stop-ledger) in final pilot gate: public representation v4 (fleet-relative coded channels + time warp) built at dryrun/v4 (1372 train / 574 test, 36 held-out blocks); adaptive retrieval attack3 and _analyze v4 running. Package docs/scripts drafted under Workspace/output/wind-turbine-stop-ledger-recovery."
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T07:39:13+00:00"
+  "updated_at": "2026-09-20T07:39:52+00:00"
 }

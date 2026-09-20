@@ -1,0 +1,51 @@
+{
+ "title": "Facade Photograph To Elevation Drawing Correspondence",
+ "slug": "facade-photo-elevation-drawing-correspondence",
+ "status": "researching",
+ "owner_machine": "claude-code-remote:session_01BsPsoRMM2gFuMfAfExxCpB",
+ "owner_task": "claude:batch-20260920-044727:batch-20260920-044727-task-002",
+ "output_folder": "Workspace/output/facade-photo-elevation-drawing-correspondence",
+ "dataset": "Library of Congress HABS/HAER/HALS collection: official 1024-px JPEG derivatives of field photographs and measured elevation drawing sheets with official captions (loc.gov item API, 2026-09-20)",
+ "license": "Public domain (U.S. Government work); LoC P&P statement captured 2026-09-20; third-party-copy photos excluded by caption filter",
+ "created_at": "2026-09-20T05:36:31+00:00",
+ "updated_at": "2026-09-20T05:36:31+00:00",
+ "blocker": "",
+ "stage": "pilot_running",
+ "batch_id": "batch-20260920-044727",
+ "task_id": "batch-20260920-044727-task-002",
+ "shipd_pair": {
+  "problem_id": "jx76g5p2hkwy4bt7etrft14cb18eeh26",
+  "dataset_id": "jd7bk5e37hvhjg6q7vrm1z4jnx8efe0a",
+  "bound_in_controller": false
+ },
+ "notes": [
+  "2026-09-20T05:36:31+00:00 slot worker claimed candidate after source/rights/API verification; pilot harvest of LoC index and item captions running; readiness verdict pending measured gates."
+ ],
+ "readiness": {
+  "verdict": "Pilot",
+  "native_targets_verified": true,
+  "official_access_verified": true,
+  "redistribution_verified": true,
+  "source_package_verified": false,
+  "post_filter_scale_passed": false,
+  "split_stability_passed": false,
+  "semantic_duplicate_audit_passed": false,
+  "lookup_attack_passed": false,
+  "capability_matched_baseline_passed": false,
+  "null_metric_audit_passed": false,
+  "import_route_verified": false,
+  "reviewer_premortem_completed": false,
+  "unresolved_gates": [
+   "post_filter_scale",
+   "split_stability",
+   "semantic_duplicate_audit",
+   "lookup_attack",
+   "capability_matched_baseline",
+   "null_metric_audit",
+   "import_route",
+   "reviewer_premortem",
+   "source_package"
+  ]
+ },
+ "evidence": {}
+}

@@ -2,12 +2,23 @@
   "schema_version": 2,
   "task_id": "batch-20260920-044727-task-001",
   "batch_id": "batch-20260920-044727",
-  "state": "retry_wait",
+  "state": "scouting",
   "revision_count": 0,
   "goal_achieved_at": null,
   "goal_stage": "challenge_checks_passed",
-  "resume_state": "scouting",
-  "candidate_attempts": [],
+  "resume_state": null,
+  "candidate_attempts": [
+    {
+      "candidate": "baseball-baserunner-advancement-ledger (Retrosheet 2022-2023)",
+      "verdict": "rejected",
+      "reason": "Capability-matched HistGradientBoosting reaches pooled Brier skill 0.713 vs marginal reference (>0.70 agent ceiling); relative to the obvious situation prior (kind x outs x batted-ball type, skill 0.633) remaining headroom is only ~0.16 so scores would be saturated or compressed. Source access, Retrosheet notice license and coarse-tuple lookup non-uniqueness (5.98% unique) were fine; the core formulation fails the toy-baseline/headroom gate.",
+      "evidence": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/pilot/pilot_results.json",
+      "registry_key": null,
+      "codex_task_id": null,
+      "state_at_replacement": "scouting",
+      "recorded_at": "2026-09-20T05:22:23+00:00"
+    }
+  ],
   "transient_failures": [
     {
       "kind": "browser_auth",
@@ -41,8 +52,20 @@
       "to": "retry_wait",
       "at": "2026-09-20T04:52:35+00:00",
       "note": "Temporary browser_auth failure; resume from checkpoint"
+    },
+    {
+      "from": "retry_wait",
+      "to": "scouting",
+      "at": "2026-09-20T05:01:53+00:00",
+      "note": "Worker acknowledged browser_auth transient; continuing local-only scouting (no Shipd access this run)"
+    },
+    {
+      "from": "scouting",
+      "to": "scouting",
+      "at": "2026-09-20T05:22:23+00:00",
+      "note": "Candidate rejected; replacement search required: Capability-matched HistGradientBoosting reaches pooled Brier skill 0.713 vs marginal reference (>0.70 agent ceiling); relative to the obvious situation prior (kind x outs x batted-ball type, skill 0.633) remaining headroom is only ~0.16 so scores would be saturated or compressed. Source access, Retrosheet notice license and coarse-tuple lookup non-uniqueness (5.98% unique) were fine; the core formulation fails the toy-baseline/headroom gate."
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T04:52:35+00:00"
+  "updated_at": "2026-09-20T05:22:23+00:00"
 }

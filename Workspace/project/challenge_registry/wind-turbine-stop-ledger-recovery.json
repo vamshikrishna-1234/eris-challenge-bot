@@ -1,0 +1,96 @@
+{
+ "title": "Wind Turbine Stop-Event Ledger Recovery From SCADA Windows",
+ "slug": "wind-turbine-stop-ledger-recovery",
+ "status": "building",
+ "stage": "local_build_in_progress",
+ "verdict": "Pilot",
+ "owner_machine": "claude-code-remote:session_01BsPsoRMM2gFuMfAfExxCpB",
+ "owner_task": "claude:batch-20260920-044727:batch-20260920-044727-task-003",
+ "controller_slot": "batch-20260920-044727-task-003",
+ "output_folder": "/home/user/eris-challenge-bot/Workspace/output/wind-turbine-stop-ledger-recovery",
+ "dataset": "Kelmarsh wind farm data (Zenodo 5841834, v0.0.3) 2016-2021 and Penmanshiel wind farm data (Zenodo 8253010, v0.1.0) 2016-2019: official yearly SCADA + status-log archives",
+ "domain": "From Scratch",
+ "compute": "CPU",
+ "license": "CC BY 4.0 (Zenodo API license id cc-by-4.0 on both records; owner Cubico Sustainable Investments Ltd release statement)",
+ "source_urls": [
+  "https://zenodo.org/records/5841834",
+  "https://zenodo.org/records/8253010"
+ ],
+ "created_at": "2026-09-20T05:46:50+00:00",
+ "updated_at": "2026-09-20T05:46:50+00:00",
+ "blocker": "",
+ "notes": [
+  "Slot 3 of batch-20260920-044727; immutable Shipd pair problem jx7d7hc2kwrxdxn9r0eg4pjq4h8eebx9 / dataset jd7bgzt14yjrdhr55hvybg8kjn8ef7y5 (not yet bound; browser unauthenticated this run).",
+  "Candidate 1 of the slot; EEG idea discarded before pilot (dataset mismatch)."
+ ],
+ "proposed_input": "One turbine x ~24 h window of 40 transformed 10-minute channels (36 own physical sensors + 4 farm-context channels) as NPZ, plus start_hour.",
+ "proposed_output": "JSON ledger of stop events (start/end step, one of 8 classes grouped from native service-contract categories) plus confidence.",
+ "raw_package": {
+  "archives": 14,
+  "total_bytes": 3464775961,
+  "import_route": "Zenodo API /content URLs (URL_IMPORT_LIST.txt)",
+  "manifest": "RAW_MANIFEST.json"
+ },
+ "readiness": {
+  "verdict": "Pilot",
+  "native_targets_verified": true,
+  "official_access_verified": true,
+  "redistribution_verified": true,
+  "source_package_verified": true,
+  "post_filter_scale_passed": true,
+  "split_stability_passed": true,
+  "semantic_duplicate_audit_passed": true,
+  "lookup_attack_passed": false,
+  "capability_matched_baseline_passed": false,
+  "null_metric_audit_passed": false,
+  "import_route_verified": true,
+  "reviewer_premortem_completed": true,
+  "unresolved_gates": [
+   "retrieval attack on production transform pending (pilot_kelmarsh/attack2.py)",
+   "full-split capability baseline + null audit pending (_analyze.py)"
+  ]
+ },
+ "evidence": {
+  "source_verification": "SOURCE_VERIFICATION.md",
+  "data_acquisition": "DATA_ACQUISITION.md",
+  "novelty_audit": "NOVELTY_AND_DUPLICATE_AUDIT.md",
+  "reviewer_premortem": "REVIEWER_PREMORTEM.md",
+  "raw_manifest": "RAW_MANIFEST.json",
+  "analysis_results": "ANALYSIS_RESULTS.json",
+  "pilot_folder": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-003/pilot_kelmarsh",
+  "raw_bytes": 3464775961,
+  "archives_md5_verified": 14,
+  "turbine_years": 86,
+  "turbines": 20,
+  "sites": 2,
+  "dry_run": {
+   "train_rows": 1372,
+   "test_rows": 574,
+   "test_blocks": 36,
+   "train_blocks": 72,
+   "prepare_runtime_seconds": 260,
+   "test_class_events": {
+    "manual_service": 358,
+    "remote_stop": 54,
+    "grid_event": 43,
+    "routine_operating": 63,
+    "protection_trip": 24,
+    "component_fault": 79,
+    "environmental": 19,
+    "other": 1
+   }
+  },
+  "pilot_2016_2018_kelmarsh": {
+   "cases": 449,
+   "empty_ledger": 0.0921,
+   "whole_window_majority": 0.03,
+   "train_prior_template": 0.0354,
+   "rule_detector_majority": 0.2806,
+   "gbm_step_segment_pipeline": 0.5497,
+   "oracle_timing_gbm_class": 0.6213,
+   "oracle_timing_majority_class": 0.4049,
+   "perfect": 1.0
+  },
+  "representative_native_rows": "SOURCE_VERIFICATION.md#native-label-provenance"
+ }
+}

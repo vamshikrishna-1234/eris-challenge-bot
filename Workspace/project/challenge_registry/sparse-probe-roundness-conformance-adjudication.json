@@ -1,0 +1,209 @@
+{
+ "title": "Sparse-Probe Roundness Adjudication",
+ "slug": "sparse-probe-roundness-conformance-adjudication",
+ "status": "ready_for_review",
+ "owner_machine": "claude-code-remote:session_01BsPsoRMM2gFuMfAfExxCpB",
+ "owner_task": "claude:batch-20260920-044727:batch-20260920-044727-task-002",
+ "output_folder": "/home/user/eris-challenge-bot/Workspace/output/sparse-probe-roundness-conformance-adjudication",
+ "dataset": "Generated corpus (generate.py + flat raw_upload.zip). Generator calibrated against Zenodo record 7004548, 'Roundness Measurement Dataset' (Aalto University), Talyrond TR31c traces of 5 roundness reference workpieces, 3600 pts/rev, ISO 12181-2 Gaussian 15 UPR filter.",
+ "license": "Released corpus is original work of this project. Calibration source is CC BY 4.0 and is CITED, not redistributed (SHA-256 e284745a50d6d43a972c1bb8c83000f7b2c38b3c9932315696300eff4eb271bf).",
+ "created_at": "2026-09-20T12:35:00+00:00",
+ "updated_at": "2026-09-20T12:45:00+00:00",
+ "blocker": "",
+ "notes": [
+  "Candidate #4 of slot batch-20260920-044727-task-002. Candidates 1-3 rejected on measured evidence; those verdicts stand.",
+  "Scored heads: calibrated p10/p50/p90 of the true filtered roundness RONt (um); probability the characteristic conforms to the drawing tolerance; the latent machine/set-up signature class (6-way).",
+  "Answers the batch-wide universal-signal rule structurally: the released corpus is generated under a private seed and has no public counterpart, so source access confers nothing. The learnable structure is physical - the undulations-per-revolution spectrum of machined surfaces and the folding of harmonic k onto k mod n under n-point probing - and is taught entirely by the released training split.",
+  "Design v3 fixes measured in this session: (a) plain pinball let a copied-input submission reach 0.404, so the quantile head is now a proper interval score; (b) the drawing tolerance was a metadata shortcut to conformance (0.323), so it is now tied to the machine's process capability (0.026); (c) the ABC ceiling collapsed to ESS 2.3 of 12000 draws, so the harmonic coefficients are now circular Gaussian and the ceiling is an exact latent-oracle conditional.",
+  "NOT built yet. Gates complete, package not written. No Shipd page opened at any point in this session.",
+  "Package built and audited locally on the REAL prepared split. Shipd was never opened in this session; no website write of any kind."
+ ],
+ "readiness": {
+  "verdict": "Proceed",
+  "native_targets_verified": true,
+  "official_access_verified": true,
+  "redistribution_verified": true,
+  "source_package_verified": true,
+  "post_filter_scale_passed": true,
+  "split_stability_passed": true,
+  "semantic_duplicate_audit_passed": true,
+  "lookup_attack_passed": true,
+  "capability_matched_baseline_passed": true,
+  "null_metric_audit_passed": true,
+  "import_route_verified": true,
+  "reviewer_premortem_completed": true,
+  "unresolved_gates": []
+ },
+ "evidence": {
+  "measured_on": "2026-09-20T12:35:00+00:00",
+  "harness": "Working/batch-20260920-044727/batch-20260920-044727-task-002/scout4/pilot_v3.py",
+  "results_file": "Working/batch-20260920-044727/batch-20260920-044727-task-002/scout4/pilot_v3_results.json",
+  "calibration_source": {
+   "landing_page": "https://zenodo.org/records/7004548",
+   "file_url": "https://zenodo.org/records/7004548/files/roundness_measurement_dataset.zip?download=1",
+   "http_status": 200,
+   "bytes": 5368160,
+   "sha256": "e284745a50d6d43a972c1bb8c83000f7b2c38b3c9932315696300eff4eb271bf",
+   "licence": "CC BY 4.0",
+   "fitted": "amplitude ~ C*k^alpha, alpha = -1.935, C = 54.72 um; dominant UPR 1,2,3,5; discrete order spike k=12 on TK2; per-workpiece peak-to-valley 19.9/40.7/69.9/80.5/307.5 um"
+  },
+  "scale": {
+   "machines": 160,
+   "train_machines": 104,
+   "test_machines": 56,
+   "train_parts": 1312,
+   "test_parts": 688,
+   "train_features": 5928,
+   "test_features": 3072,
+   "conform_base_rate_test": 0.5156,
+   "mean_distinct_probe_counts_per_part": 2.23,
+   "split_key": "machine (disjoint train/test machine pools)"
+  },
+  "gate_B_lookup_attack": {
+   "bundle_definition": "one part = 3-6 probed features = 12-66 probe points",
+   "top1_source_machine_recovered": 0.0,
+   "top1_signature_class_match": 0.349,
+   "signature_chance": 0.217,
+   "nearest_neighbour_target_copy_score": 0.0519,
+   "nearest_neighbour_target_copy_q_skill": 0.0,
+   "nearest_neighbour_target_copy_conf_skill": 0.0,
+   "structural_note": "no public counterpart exists; the corpus is generated under a private seed"
+  },
+  "gate_C_baselines_chance_floor_relative": {
+   "metric": "0.45*quantile-head + 0.35*conformance-head + 0.20*signature-head; quantile head = interval score IS_0.2 + 2*|y-p50| in um, each head expressed as skill over its own chance floor",
+   "chance_floor": 0.0,
+   "metadata_only": 0.0366,
+   "copied_input_naive_peak_to_valley": 0.3318,
+   "capability_matched_domain_method": 0.4924,
+   "learned_route_gbm_with_part_pooling": 0.654,
+   "learned_route_pooling_ablated": 0.602,
+   "latent_oracle_ceiling_exact": 0.8616,
+   "ceiling_minus_capability_matched": 0.3673,
+   "ceiling_minus_learned_route": 0.2099,
+   "ceiling_minus_capability_q_skill": 0.2381,
+   "ceiling_minus_capability_conf_skill": 0.1718,
+   "ceiling_definition": "latent-oracle: told the true private machine latents, then exact Gaussian conditioning on the released probe residuals; never sees the scored value; strictly better informed than any solver"
+  },
+  "gate_D_null_metric_audit": {
+   "empty_zeros": 0.0,
+   "prior_constant": 0.0,
+   "huge_interval_hedge": 0.0059,
+   "copied_input_ptp": 0.3318,
+   "oracle_quantiles_only": 0.45,
+   "oracle_conformance_only": 0.35,
+   "oracle_signature_only": 0.2,
+   "perfect": 1.0
+  },
+  "stability": {
+   "seeds": 3,
+   "chance_floor": "0.000 +/- 0.000",
+   "copied_input": "0.295 +/- 0.041",
+   "capability_matched": "0.469 +/- 0.024",
+   "learned_route": "0.628 +/- 0.017",
+   "perfect": "1.000 +/- 0.000",
+   "skill_sweep_floor_to_oracle": [
+    0.0,
+    0.1334,
+    0.258,
+    0.3751,
+    0.4841,
+    0.59,
+    0.6873,
+    0.7755,
+    0.8579,
+    0.9316,
+    1.0
+   ]
+  },
+  "semantic_duplicate_audit": {
+   "archived_titles_scanned": 830,
+   "archived_blocks_scanned": 823,
+   "metrology_tolerance_gdt_cmm_title_hits": 0,
+   "roundness_flatness_cylindricity_conformance_body_hits": 4,
+   "registry_entries_scanned": 86,
+   "registry_metrology_entries": 0
+  },
+  "import_route": {
+   "type": "generated corpus",
+   "files": [
+    "generate.py",
+    "raw_upload.zip (flat)"
+   ],
+   "pilot_corpus_size": "a few MB at 160 machines / 2000 parts; far inside the <=2 GB guidance"
+  },
+  "known_open_items_for_the_build": [
+   "grade.py must normalise each head against a FIXED reference so a label-prior sample submission scores about 0.15 (platform Grade Sample Validation) while the declared theoretical minimum stays 0.0",
+   "re-measure every number on the real prepared split, not the pilot corpus",
+   "challenge description needs the cite-and-distinguish paragraph naming the coordinate-metrology literature and the archived probe-deflection challenge"
+  ],
+  "real_prepared_split": {
+   "generator_command": "python generate.py --out raw_data --machines 900 --parts 12000 --seed 20260920",
+   "raw_corpus": {
+    "features": 53954,
+    "probed_points": 385210,
+    "parts": 12000,
+    "machines": 900,
+    "bytes_extracted": 14300000
+   },
+   "raw_upload_zip": {
+    "bytes": 5214507,
+    "sha256": "a666e734ddbf2184a0b0cec8b87435a7905a9242e2569f609d26a2582d11721d",
+    "members_flat": [
+     "features.csv",
+     "points.csv",
+     "README.txt",
+     "LICENSE.txt"
+    ]
+   },
+   "split": {
+    "train_rows": 35311,
+    "test_rows": 18643,
+    "train_parts": 7854,
+    "test_parts": 4146,
+    "train_machines": 585,
+    "test_machines": 315,
+    "split_key": "machine, disjoint pools",
+    "conform_base_rate_test": 0.4561,
+    "min_test_rows_per_signature_class": 2604
+   },
+   "score_ladder_with_shipped_grader": {
+    "sample_submission": 0.1485,
+    "prior_constant": 0.1485,
+    "all_zero_quantiles": 0.0299,
+    "huge_interval_hedge": 0.0805,
+    "metadata_only": 0.205,
+    "copied_input_naive_peak_to_valley": 0.3996,
+    "one_nearest_neighbour_part_retrieval": 0.3382,
+    "capability_matched_domain_method": 0.5118,
+    "learned_route_gbm": 0.6976,
+    "learned_route_no_part_pooling": 0.6492,
+    "perfect": 1.0
+   },
+   "retrieval_stress_test": {
+    "bundle": "one part = 3-6 features = 12-66 probe points",
+    "top1_signature_match": 0.3102,
+    "signature_chance": 0.1842,
+    "one_nn_target_copy_score": 0.3382,
+    "reading": "the 1-NN retrieval is a weak learner over the RELEASED training split, not an external-source leak; it sits below the capability-matched method (0.5118). There is no public counterpart to retrieve: the corpus is generated under a private seed.",
+    "row_id_rank_correlation_with_truth": 0.0039,
+    "leak_columns_in_public": []
+   },
+   "grader_robustness": "20 of 20 checks pass: perfect exactly 1.0, sample 0.1485, and 0.0 for missing/extra/duplicate ids, missing columns, NaN, Inf, negative quantiles, out-of-range probability, illegal enum, non-numeric value and empty submission",
+   "compute_tier_evidence": "CPU. Full intended route (parse points, LSC fit, residual and part features, 3 quantile models + 2 classifiers) trains and predicts in under 3 minutes on 2 threads, peak memory under 1 GB.",
+   "package_files": [
+    "generate.py",
+    "zip_raw_for_upload.py",
+    "prepare.py",
+    "grade.py",
+    "_analyze.py",
+    "_sanity_smoke.py",
+    "CHALLENGE_FORM_FILL.md",
+    "DATASET_FORM_FILL.md",
+    "SOURCE_VERIFICATION.md",
+    "PASTE_THIS_PREPARE.txt",
+    "PASTE_THIS_GRADE.txt",
+    "SUBMISSION_POOL_STATE.json"
+   ]
+  }
+ }
+}

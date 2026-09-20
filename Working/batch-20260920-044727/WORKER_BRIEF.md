@@ -121,3 +121,17 @@ principled version (learned pairwise model plus global search plus domain constr
 This matters most before accepting a candidate: an understated ceiling makes headroom look
 larger than it is. Rejections already recorded on saturation grounds are conservative under
 this rule and do not need revisiting.
+
+**Rule 7 — one writer per slot, and write results incrementally.**
+Ownership is slot-based, not process-based. Only one worker may write a slot's folder, registry
+entry and controller task at a time; a predecessor is stood down in writing (see the slot's
+`OWNERSHIP.md`) before a successor is dispatched, and a stood-down worker routes any correction
+through the supervisor instead of editing shared files. If you ever must touch a file another
+worker may hold, guard the write: assert the expected target strings are present and assert the
+mtime is unchanged immediately before writing.
+
+Related measurement-integrity rule: a pilot script whose only durable output is one `json.dump`
+at the end loses every completed arm when a later arm times out. Write each arm's result as it
+completes, and never cite an artifact without confirming the file exists. One slot-2 evidence
+file cited a JSON that a timeout had prevented from ever being written; the numbers were genuine
+but only the stdout survived, and the citation had to be corrected after the fact.

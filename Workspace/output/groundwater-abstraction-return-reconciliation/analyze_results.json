@@ -1,0 +1,63 @@
+{
+  "oracle": {
+    "score": 1.0,
+    "n": 686
+  },
+  "empty_submission": {
+    "score": 0.0
+  },
+  "copy_declaration_noop": {
+    "score": 0.0001,
+    "n": 686,
+    "sec_per_scene": 0.0
+  },
+  "all_zeros": {
+    "score": 0.0,
+    "n": 686,
+    "sec_per_scene": 0.0
+  },
+  "train_prior_constant": {
+    "score": 0.0001,
+    "n": 686,
+    "sec_per_scene": 0.0
+  },
+  "uniform_random": {
+    "score": 0.0055,
+    "n": 686,
+    "sec_per_scene": 0.0
+  },
+  "sample_submission": {
+    "score": 0.1451,
+    "n": 686
+  },
+  "weak_nnls_fixed_params": {
+    "score": 0.0301,
+    "n": 686,
+    "sec_per_scene": 0.026
+  },
+  "ceiling_oracle_params": {
+    "score": 0.6024,
+    "n": 180,
+    "sec_per_scene": 0.02
+  },
+  "capability_matched_strong": {
+    "score": 0.3152,
+    "n": 180,
+    "sec_per_scene": 5.112
+  },
+  "id_mismatch": {
+    "score": 0.0
+  },
+  "malformed_json": {
+    "score": 0.1451
+  },
+  "nan_scalars": {
+    "score": 0.0
+  },
+  "negative_huge": {
+    "score": 0.1451
+  },
+  "duplicate_ids": {
+    "score": 0.1451
+  }
+}

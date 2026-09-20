@@ -1,0 +1,105 @@
+{
+  "schema_version": 3,
+  "challenge_folder": "/home/user/eris-challenge-bot/Workspace/output/groundwater-abstraction-return-reconciliation",
+  "registry_path": "/home/user/eris-challenge-bot/Workspace/project/challenge_registry/groundwater-abstraction-return-reconciliation.json",
+  "binding": {
+    "problem_tab_supplied": true,
+    "dataset_tab_supplied": true,
+    "matched_local_package": true,
+    "matched_registry_entry": true,
+    "bound_at": "2026-09-20T16:45:00+00:00"
+  },
+  "problem": {
+    "id": "jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
+    "url": "https://shipd.ai/quests/eris/problems/jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
+    "version": null,
+    "title": "Groundwater Abstraction Return Reconciliation",
+    "description_sha256": null,
+    "visible_state": "not_inspected_unauthenticated_session"
+  },
+  "dataset": {
+    "id": "jd71ktmw09xmcbpd8k2rwqc4v18efhft",
+    "url": "https://shipd.ai/quests/eris/datasets/jd71ktmw09xmcbpd8k2rwqc4v18efhft",
+    "version": null,
+    "title": "Groundwater Abstraction Monitoring Scenes with Declared Returns",
+    "description_sha256": null,
+    "visible_state": "not_inspected_unauthenticated_session"
+  },
+  "stage": "admission_passed_awaiting_authenticated_session",
+  "admission": {
+    "passed": true,
+    "owner_match": true,
+    "readiness_verdict": "Proceed",
+    "blockers": [
+      "Shipd browser session is unauthenticated; no live page was opened, read or written."
+    ]
+  },
+  "website_writes_performed": false,
+  "dataset_phase": {
+    "title": "Groundwater Abstraction Monitoring Scenes with Declared Returns",
+    "description_sha256": null,
+    "source_files": [
+      "generate.py",
+      "raw_upload.zip"
+    ],
+    "source_file_count": 2,
+    "source_file_extensions": [
+      ".py",
+      ".zip"
+    ],
+    "license": "CC0 1.0 Universal",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/ (parameter 72019) plus the author-owned generator",
+    "rebuild_state": "not_started",
+    "rebuild_attempts": 0,
+    "validation_run_count": 0,
+    "red_findings": [],
+    "yellow_findings": [],
+    "fixes": [],
+    "last_zero_warning_validation_at": null,
+    "all_checks_green": false,
+    "marked_ready": false,
+    "marked_ready_at": null
+  },
+  "challenge_phase": {
+    "title": "Groundwater Abstraction Return Reconciliation",
+    "description_sha256": null,
+    "difficulty": "Hard",
+    "compute": "CPU",
+    "tags": [
+      "hydrogeology",
+      "groundwater",
+      "inverse problem",
+      "time series",
+      "deconvolution",
+      "regulatory compliance",
+      "physical modelling",
+      "CPU"
+    ],
+    "grade_direction": "higher_is_better",
+    "minimum_score": 0.0,
+    "maximum_score": 1.0,
+    "grade_script_sha256": "6a7302c78b4f408c38911c1c10676be0020a99c7cbe289d93020f2815cd5a143",
+    "prepare_script_sha256": "0fed05531e305a3e425366d92d16749fb4000288ee18a3cbcc55a84e4abe0a84",
+    "prepare_state": "verified_locally_deterministic",
+    "prepare_run_count": 0,
+    "check_run_count": 0,
+    "red_findings": [],
+    "yellow_findings": [],
+    "fixes": [],
+    "last_zero_warning_check_at": null,
+    "all_checks_green": false
+  },
+  "agent_run": {
+    "clicked": false,
+    "visible_state": null,
+    "started_at": null,
+    "terminal_state_verified": false
+  },
+  "stop_reason": "Local package complete and audited. Stopped before any Shipd read or write because the browser session in this container is unauthenticated. Run Agents was not requested and was not clicked.",
+  "updated_at": "2026-09-20T16:45:00+00:00",
+  "problem_id": "jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
+  "dataset_id": "jd71ktmw09xmcbpd8k2rwqc4v18efhft",
+  "problem_url": "https://shipd.ai/quests/eris/problems/jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
+  "dataset_url": "https://shipd.ai/quests/eris/datasets/jd71ktmw09xmcbpd8k2rwqc4v18efhft",
+  "supervisor_note": "Exact IDs filled in by the supervisor at 2026-09-20T17:10Z; both were null, as in the other two slots (batch rule 8). raw_upload.zip copied into this package folder from cand5/ so the folder is self-contained for upload; sha256 c2040ecc9483... unchanged. website_writes_performed remains false."
+}

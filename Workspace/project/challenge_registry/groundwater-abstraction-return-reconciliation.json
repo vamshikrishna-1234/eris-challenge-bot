@@ -1,8 +1,8 @@
 {
  "title": "Groundwater Abstraction Return Reconciliation",
  "slug": "groundwater-abstraction-return-reconciliation",
- "status": "researching",
- "phase": "pilot_measured_proceed_package_not_built",
+ "status": "ready_for_review",
+ "phase": "local_package_complete_awaiting_shipd_session",
  "stage": "pilot",
  "verdict": "Proceed (pilot gates measured; package build outstanding)",
  "owner_machine": "claude-code-remote",
@@ -13,8 +13,8 @@
  "compute": "CPU",
  "license": "Generated corpus: CC0 1.0, author-owned generator. Background source: USGS NWIS water data, US Government work in the public domain.",
  "created_at": "2026-09-20T14:40:00+00:00",
- "updated_at": "2026-09-20T14:40:00+00:00",
- "blocker": "Package not built. Metric must be converted from corpus-pooled to the platform metric chain (group_score then mean) before grade.py is written, and the floor re-measured under that grouping.",
+ "updated_at": "2026-09-20T16:40:00+00:00",
+ "blocker": "Shipd is unauthenticated in this container, so no live dataset/challenge write, novelty check or platform duplicate check was possible. Everything local is complete and audited.",
  "notes": [
   "Bound to immutable controller slot batch-20260920-044727-task-001 and its exact supplied Shipd pair. Shipd was NOT opened this run (unauthenticated session); no live novelty or duplicate check was possible.",
   "Candidate 5 for this slot. Candidates 1-4 were measured and rejected; see the controller ledger.",
@@ -26,7 +26,18 @@
   "A misdeclaration-detection head was measured and DROPPED (weight 0): on 40 held-out scenes no solver, including the capability-matched one, beat the best constant flagging rule (reference F1 0.539), so a weighted detection head would have been unreachable dead weight. It is retained as a reported diagnostic.",
   "Rule 6 compliance: the first capability-matched solver (free-NNLS aquifer-parameter search plus sparse deconvolution) scored 0.15 and lost to an all-zero submission. The principled version (declared-anchored aquifer-parameter search, then alternating nonnegative rate recovery and local parameter refinement) scores 0.3424. The weak version was not reported as the ceiling.",
   "Identifiability verified: with oracle aquifer parameters and noise-free observations the recovery scores 0.9805; median design-matrix condition number 931.",
-  "Runtime: capability-matched solver 6.9 s/scene, sample-grade solver 0.17 s/scene, so a 400-500 scene test split fits a 1.5 hour CPU budget with room for cheaper strategies. That spread is the intended source of score variance."
+  "Runtime: capability-matched solver 6.9 s/scene, sample-grade solver 0.17 s/scene, so a 400-500 scene test split fits a 1.5 hour CPU budget with room for cheaper strategies. That spread is the intended source of score variance.",
+  "Package core built and audited end to end: generate.py (2,500 scenes, 54 MB), prepare.py (1,814 train / 686 test, 8 hidden score groups, 3 signal bands), grade.py (group-mean metric chain), _analyze.py.",
+  "FINAL audited ladder through the shipped grade.py on the prepared split: oracle 1.0000, achievable ceiling with true aquifer parameters 0.6024, capability-matched alternating solver 0.3152 (5.11 s/scene), shipped sample_submission 0.1451, weak fixed-parameter NNLS 0.0301, uniform random 0.0055, copy-declaration no-op 0.0001, train-prior constant 0.0001, all-zeros 0.0000, empty 0.0000. Ceiling minus capability 0.2872; capability minus best trivial 0.3097.",
+  "Grader red-team: id-mismatch 0.0000, NaN scalars 0.0000, duplicate ids 0.1451 (equals the clean sample, dedup correct), malformed JSON and huge-negative ledgers 0.1451 (expected: ledger head goes to 0 while the still-valid aquifer columns keep their credit).",
+  "Two metric defects were found by measurement and repaired: per-row rectification gave uniform random 0.1577 and all-zeros 0.24; corpus-level rectification still gave an empty submission 0.0937 because reporting zero abstraction repairs every over-declared borehole for free. The shipped ledger head is skill over the BEST trivial per-borehole strategy, which drove all degenerate submissions to 0.0000-0.0001.",
+  "Split integrity: background pools partitioned once (394 / 154 real NWIS wells) and a scene draws only from its own pool, so no real monitoring well contributes background to both train and test. Public-column leak scan passes on both splits.",
+  "Theoretical minimum 0.0 and maximum 1.0 match what grade.py can actually return; sample_submission scores 0.1451, inside the 0.12-0.17 band the workspace rules require.",
+  "Package completed: generate.py, prepare.py, grade.py, PASTE_THIS_PREPARE.txt, PASTE_THIS_GRADE.txt, zip_raw_for_upload.py, _analyze.py, _sanity_smoke.py, CHALLENGE_FORM_FILL.md, DATASET_FORM_FILL.md, SOURCE_VERIFICATION.md, DATA_ACQUISITION.md, SHORTCUT_AND_HEADROOM_AUDIT.md.",
+  "prepare.py determinism verified: a second independent run reproduced train.csv, test.csv, sample_submission.csv and answers.csv byte-identically (sha256 prefixes 448e4f86719e7fa9 / 8e807bccb2375577 / 8a7fc063b78dc783 / e7bdfab6fb57ccf7).",
+  "raw_upload.zip built flat: 2,503 members (scenes.csv, series/, BACKGROUND_PROVENANCE.json, LICENSE.txt), 17.4 MB, sha256 c2040ecc948377a101bc1e5fc743f7c228bf5a66fd7bdace99ceafe23bcac15c; flat-archive audit passes with no raw_data/, public/, private/ or source-code members.",
+  "_sanity_smoke.py: 14/14 checks pass, including train/test id disjointness, no answer columns in test.csv, 8 score groups, 3 signal bands, 1814/686 rows, oracle exactly 1.000000, empty exactly 0.0 and the shipped sample at 0.1451.",
+  "Compute decision CPU, from measured evidence: strongest reference solution 5.11 s/scene single-core pure NumPy/SciPy (686 scenes in about 58 minutes, inside a 1.5-hour budget), sample-grade route 0.03 s/scene, peak memory under 1 GB, no network to train and no measured GPU benefit."
  ],
  "readiness": {
   "verdict": "Proceed",
@@ -40,18 +51,16 @@
   "lookup_attack_passed": true,
   "capability_matched_baseline_passed": true,
   "null_metric_audit_passed": true,
-  "import_route_verified": false,
+  "import_route_verified": true,
   "reviewer_premortem_completed": true,
-  "source_zip_built": false,
-  "prepare_smoke_test_passed": false,
-  "prepare_determinism_passed": false,
-  "grader_smoke_test_passed": false,
-  "archive_audit_passed": false,
-  "forms_ready": false,
+  "source_zip_built": true,
+  "prepare_smoke_test_passed": true,
+  "prepare_determinism_passed": true,
+  "grader_smoke_test_passed": true,
+  "archive_audit_passed": true,
+  "forms_ready": true,
   "unresolved_gates": [
-   "Package not built: generate.py, prepare.py, grade.py, forms, _analyze.py, raw upload zip.",
-   "Metric chain must be converted to per-group scores then mean, with the chance-floor rectification kept at group level (not per row), and the null ladder re-measured under that grouping.",
-   "Live Shipd novelty/duplicate validation not performed: the browser session is unauthenticated, so the platform duplicate gate on the dataset source is unverified."
+   "Live Shipd novelty/duplicate validation not performed: the browser session is unauthenticated, so the platform duplicate gate on the dataset source and the Problem Research / Novelty Assessment reports are unverified."
   ]
  },
  "evidence": {
@@ -118,6 +127,37 @@
    "oracle_params_noise_free_score": 0.9805,
    "median_condition_number": 931
   },
-  "pilot_code": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/pilot/"
+  "pilot_code": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/pilot/",
+  "final_ladder": {
+   "test_scenes": 686,
+   "train_scenes": 1814,
+   "score_groups": 8,
+   "oracle": 1.0,
+   "ceiling_oracle_aquifer_params": 0.6024,
+   "capability_matched_strong": 0.3152,
+   "sample_submission": 0.1451,
+   "weak_nnls_fixed_params": 0.0301,
+   "uniform_random": 0.0055,
+   "copy_declaration_noop": 0.0001,
+   "train_prior_constant": 0.0001,
+   "all_zeros": 0.0,
+   "empty_submission": 0.0,
+   "ceiling_minus_capability": 0.2872,
+   "strong_seconds_per_scene": 5.11,
+   "sample_grade_seconds_per_scene": 0.03,
+   "file": "/home/user/eris-challenge-bot/Workspace/output/groundwater-abstraction-return-reconciliation/analyze_results.json"
+  },
+  "audit_document": "/home/user/eris-challenge-bot/Workspace/output/groundwater-abstraction-return-reconciliation/SHORTCUT_AND_HEADROOM_AUDIT.md",
+  "package_artifacts": {
+   "raw_upload_zip": {
+    "path": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/raw_upload.zip",
+    "members": 2503,
+    "megabytes": 17.4,
+    "sha256": "c2040ecc948377a101bc1e5fc743f7c228bf5a66fd7bdace99ceafe23bcac15c"
+   },
+   "prepared_split": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/{public,private}",
+   "raw_corpus": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand5/raw_data",
+   "smoke": "14/14 pass"
+  }
  }
 }

@@ -144,3 +144,17 @@ and dataset IDs and URLs so a later run resumes from verified state rather than 
 Before reporting an artifact as complete, read the file back and confirm the specific fields you
 are claiming. The same discipline that caught a cited JSON which never existed applies to fields
 inside a file that does.
+
+**Rule 9 — every slot in this batch shares one unresolved gate: live Shipd novelty/duplicate
+validation.** Slot 1 recorded it in `readiness.unresolved_gates`, so its validator correctly
+returns NOT BUILD READY. Slots 2 and 3 returned BUILD READY without listing it, although the same
+authenticated Problem Research and Novelty Assessment reports are equally unverified for them.
+Slot 1's treatment is the correct one. No package in this batch is platform-verified until an
+authenticated session runs that check; the local Proceed verdicts cover only the gates measurable
+offline, which is every other gate. Treat a local BUILD READY in this batch as "ready to upload
+and be checked", never as "novelty confirmed".
+
+**Packaging rule.** A package folder must be self-contained for upload: the generator, the flat
+`raw_upload.zip`, both canonical scripts, both paste files, both form-fill documents and the
+source/acquisition docs all live in it. Slot 1's archive was left in the scouting folder and was
+copied in by the supervisor; check this before reporting a package complete.

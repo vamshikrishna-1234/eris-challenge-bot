@@ -2,11 +2,11 @@
   "schema_version": 2,
   "task_id": "batch-20260920-044727-task-001",
   "batch_id": "batch-20260920-044727",
-  "state": "pilot",
+  "state": "retry_wait",
   "revision_count": 0,
   "goal_achieved_at": null,
   "goal_stage": "challenge_checks_passed",
-  "resume_state": "scouting",
+  "resume_state": "pilot",
   "candidate_attempts": [
     {
       "candidate": "baseball-baserunner-advancement-ledger (Retrosheet 2022-2023)",
@@ -61,20 +61,26 @@
       "message": "2026-09-20T11:49Z retry: problem URL still redirects to /quests/eris/join?mode=sign-in; no authenticated session in this container. Platform phase remains pending user-restored session.",
       "retry_after_seconds": null,
       "recorded_at": "2026-09-20T11:49:50+00:00"
+    },
+    {
+      "kind": "browser_auth",
+      "message": "2026-09-20T16:45Z candidate 5 package is locally complete and audited (Proceed). Shipd was never opened this run: the supervisor confirmed the headless Playwright profile has no authenticated Shipd session. The only unresolved gate is live platform novelty/duplicate validation on the dataset source. Resume from Workspace/output/groundwater-abstraction-return-reconciliation/SUBMISSION_POOL_STATE.json once a session exists.",
+      "retry_after_seconds": null,
+      "recorded_at": "2026-09-20T13:56:38+00:00"
     }
   ],
-  "registry_key": null,
+  "registry_key": "groundwater-abstraction-return-reconciliation",
   "codex_task_id": null,
   "worker_thread_id": "claude:batch-20260920-044727:batch-20260920-044727-task-001",
   "worker_host_id": "claude-code-remote:session_01BsPsoRMM2gFuMfAfExxCpB",
   "worker_title": "eris-slot-worker slot 001 (pair 001 of 3, goal challenge_checks_passed)",
   "worker_bound_at": "2026-09-20T04:49:27+00:00",
   "worker_history": [],
-  "dataset_id": null,
-  "problem_id": null,
-  "dataset_url": null,
-  "problem_url": null,
-  "platform_url": null,
+  "dataset_id": "jd71ktmw09xmcbpd8k2rwqc4v18efhft",
+  "problem_id": "jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
+  "dataset_url": "https://shipd.ai/quests/eris/datasets/jd71ktmw09xmcbpd8k2rwqc4v18efhft",
+  "problem_url": "https://shipd.ai/quests/eris/problems/jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
+  "platform_url": "https://shipd.ai/quests/eris/problems/jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
   "observations": [],
   "state_history": [
     {
@@ -130,8 +136,14 @@
       "to": "pilot",
       "at": "2026-09-20T12:39:25+00:00",
       "note": null
+    },
+    {
+      "from": "pilot",
+      "to": "retry_wait",
+      "at": "2026-09-20T13:56:38+00:00",
+      "note": "Temporary browser_auth failure; resume from checkpoint"
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T12:39:25+00:00"
+  "updated_at": "2026-09-20T13:56:38+00:00"
 }

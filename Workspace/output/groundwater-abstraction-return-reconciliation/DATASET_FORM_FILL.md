@@ -1,0 +1,99 @@
+# Dataset form — Groundwater Abstraction Return Reconciliation
+
+## Name
+Groundwater Abstraction Monitoring Scenes with Declared Returns
+
+## Overview
+
+A corpus of monitored groundwater areas, each observed over one 28-day
+abstraction return period. Every area holds a handful of registered boreholes
+with known plan coordinates and a declared abstraction return, plus a set of
+observation wells with known plan coordinates and a continuous water-level
+record. Each area also carries the abstraction ledger that was actually pumped
+from each borehole and the aquifer's transmissivity and storage coefficient.
+
+The corpus is **procedurally generated** by the included `generate.py` over a
+**real measured background**. The aquifer response is the Theis solution for a
+confined aquifer, superposed in time over piecewise-constant abstraction blocks
+and in space over the boreholes. The background fluctuation in every
+water-level series is derived from USGS National Water Information System
+instantaneous groundwater-level observations (parameter code 72019), which are
+works of the US Government in the public domain: those are the real barometric,
+tidal, recharge and ambient-pumping fluctuations a monitoring well records.
+Each series mixes three distinct real wells, each independently time-warped,
+circularly shifted and sign-adjusted, then rescaled.
+
+Nothing generated is presented as measured, and nothing measured has been
+altered beyond the conditioning described below.
+
+## Platform-visible source files
+
+After rebuild the dataset tree shows:
+
+| Path | Description |
+|---|---|
+| `generate.py` | the author-owned generator, including the USGS retrieval and conditioning |
+| `raw_upload/scenes.csv` | one row per monitored area and return period |
+| `raw_upload/series/<scene_id>.csv` | that area's water-level records |
+| `raw_upload/BACKGROUND_PROVENANCE.json` | the exact USGS endpoints, per-state byte counts, conditioning rules and pool sizes |
+| `raw_upload/LICENSE.txt` | licence and provenance statement |
+
+`raw_upload.zip` is flat: its members are `scenes.csv`, `series/`,
+`BACKGROUND_PROVENANCE.json` and `LICENSE.txt` directly.
+
+## `scenes.csv` columns
+
+| Column | Type | Description |
+|---|---|---|
+| `scene_id` | string | area and return period identifier |
+| `bg_pool` | string | which of the two disjoint real-background partitions this area's series were drawn from |
+| `n_boreholes` | int | registered boreholes in the area |
+| `n_obs` | int | observation wells in the area |
+| `log_t` | float | log10 transmissivity, m²/day |
+| `log_s` | float | log10 storage coefficient, dimensionless |
+| `rho` | float | ratio of the peak drawdown caused by misdeclared abstraction to the background standard deviation |
+| `background_sd_m` | float | standard deviation of the background fluctuation, metres |
+| `boreholes_json` | JSON string | `{bh_id, x, y, declared}` per borehole; coordinates in metres in the area's local frame, `declared` in m³/day over 7 four-day blocks |
+| `obs_json` | JSON string | `{obs_id, x, y}` per observation well |
+| `actual_json` | JSON string | actual abstraction ledger per borehole, same order and units as `declared` |
+| `kinds_json` | JSON string | per borehole, how the declaration relates to the actual ledger: `consistent`, `under`, `over` or `timing` |
+| `series_file` | string | path to the area's water-level file |
+
+## `series/<scene_id>.csv` columns
+
+| Column | Type | Description |
+|---|---|---|
+| `obs_id` | string | observation well within the area |
+| `t000` … `t223` | float | water level in metres relative to that well's own mean, every 3 hours for 28 days |
+
+## Scale
+
+2,500 monitored areas; 6–10 registered boreholes and 8–13 observation wells
+each; 224 samples per observation well. 54 MB uncompressed. The real background
+pool holds 548 conditioned USGS monitoring wells retained from 1,370 sites
+across ten states, partitioned once into two disjoint groups of 394 and 154 so
+that no real well appears in more than one partition.
+
+## Source
+
+USGS National Water Information System, instantaneous values service,
+`https://waterservices.usgs.gov/nwis/iv/`, parameter code 72019 (depth to water
+level, feet below land surface), 30-day windows retrieved 2026-09-20 for
+California, New Mexico, Arizona, Virginia, Oklahoma, Georgia, Colorado,
+Nebraska, Minnesota and North Carolina.
+
+## Conditioning applied to the real records
+
+Resampled to a uniform 3-hour grid of 224 samples over 28 days with nearest
+sampling inside two steps and linear interpolation of short gaps; feet
+converted to metres and sign-flipped to read as head; a quadratic trend
+removed; a well retained only when the residual standard deviation lies between
+0.004 m and 1.5 m and no single excursion exceeds 12 standard deviations plus
+0.05 m.
+
+## Licence
+
+**CC0 1.0 Universal.** The scenes, aquifer parameters, declaration errors and
+drawdown are generated by `generate.py`, which is author-owned. The background
+component derives from USGS water data, works of the US Government in the
+public domain. No third-party media or assets are included.

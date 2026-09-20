@@ -1,0 +1,48 @@
+{
+  "schema_version": 2,
+  "task_id": "batch-20260920-044727-task-003",
+  "batch_id": "batch-20260920-044727",
+  "state": "retry_wait",
+  "revision_count": 0,
+  "goal_achieved_at": null,
+  "goal_stage": "challenge_checks_passed",
+  "resume_state": "scouting",
+  "candidate_attempts": [],
+  "transient_failures": [
+    {
+      "kind": "browser_auth",
+      "message": "2026-09-20T04:52Z headless Playwright (CA policy installed, TLS ok) opened problem URL; Shipd redirected to /quests/eris/join?mode=sign-in. No authenticated session in this remote container profile. Local scouting/build continues; Shipd phase pending user-restored session.",
+      "retry_after_seconds": null,
+      "recorded_at": "2026-09-20T04:52:35+00:00"
+    }
+  ],
+  "registry_key": null,
+  "codex_task_id": null,
+  "worker_thread_id": "claude:batch-20260920-044727:batch-20260920-044727-task-003",
+  "worker_host_id": "claude-code-remote:session_01BsPsoRMM2gFuMfAfExxCpB",
+  "worker_title": "eris-slot-worker slot 003 (pair 003 of 3, goal challenge_checks_passed)",
+  "worker_bound_at": "2026-09-20T04:49:28+00:00",
+  "worker_history": [],
+  "dataset_id": null,
+  "problem_id": null,
+  "dataset_url": null,
+  "problem_url": null,
+  "platform_url": null,
+  "observations": [],
+  "state_history": [
+    {
+      "from": "queued",
+      "to": "scouting",
+      "at": "2026-09-20T04:49:28+00:00",
+      "note": "Batch start: slot owns supplied pair 003; pairs recorded in Working/batch-20260920-044727/pairs.json; combined Create+linked mode; browser/auth check pending"
+    },
+    {
+      "from": "scouting",
+      "to": "retry_wait",
+      "at": "2026-09-20T04:52:35+00:00",
+      "note": "Temporary browser_auth failure; resume from checkpoint"
+    }
+  ],
+  "created_at": "2026-09-20T04:47:27+00:00",
+  "updated_at": "2026-09-20T04:52:35+00:00"
+}

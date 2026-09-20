@@ -17,3 +17,6 @@ status.err
 *.py[cod]
 .pytest_cache/
 
+
+# Playwright MCP session output (browser snapshots/console logs)
+/.playwright-mcp/

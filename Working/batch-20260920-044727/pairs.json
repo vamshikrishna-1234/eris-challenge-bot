@@ -1,0 +1,33 @@
+{
+  "batch_id": "batch-20260920-044727",
+  "completion_stage": "challenge_checks_passed",
+  "run_agents_requested": false,
+  "pair_order_source": "user message, supplied order",
+  "recorded_at": "2026-09-20T04:47:27+00:00",
+  "pairs": [
+    {
+      "task_id": "batch-20260920-044727-task-001",
+      "label": "challenge 1 / dataset 1",
+      "problem_url": "https://shipd.ai/quests/eris/problems/jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
+      "problem_id": "jx7fc5d8gbp3hd9zt4pye0ywgd8efc5e",
+      "dataset_url": "https://shipd.ai/quests/eris/datasets/jd71ktmw09xmcbpd8k2rwqc4v18efhft",
+      "dataset_id": "jd71ktmw09xmcbpd8k2rwqc4v18efhft"
+    },
+    {
+      "task_id": "batch-20260920-044727-task-002",
+      "label": "challenge2 / dataset2",
+      "problem_url": "https://shipd.ai/quests/eris/problems/jx76g5p2hkwy4bt7etrft14cb18eeh26",
+      "problem_id": "jx76g5p2hkwy4bt7etrft14cb18eeh26",
+      "dataset_url": "https://shipd.ai/quests/eris/datasets/jd7bk5e37hvhjg6q7vrm1z4jnx8efe0a",
+      "dataset_id": "jd7bk5e37hvhjg6q7vrm1z4jnx8efe0a"
+    },
+    {
+      "task_id": "batch-20260920-044727-task-003",
+      "label": "challenge 3 / dataset 3",
+      "problem_url": "https://shipd.ai/quests/eris/problems/jx7d7hc2kwrxdxn9r0eg4pjq4h8eebx9",
+      "problem_id": "jx7d7hc2kwrxdxn9r0eg4pjq4h8eebx9",
+      "dataset_url": "https://shipd.ai/quests/eris/datasets/jd7bgzt14yjrdhr55hvybg8kjn8ef7y5",
+      "dataset_id": "jd7bgzt14yjrdhr55hvybg8kjn8ef7y5"
+    }
+  ]
+}

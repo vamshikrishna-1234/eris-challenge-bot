@@ -1,0 +1,139 @@
+{
+  "schema_version": 3,
+  "challenge_folder": "/home/user/eris-challenge-bot/Workspace/output/sparse-probe-roundness-conformance-adjudication",
+  "registry_path": "/home/user/eris-challenge-bot/Workspace/project/challenge_registry/sparse-probe-roundness-conformance-adjudication.json",
+  "binding": {
+    "problem_tab_supplied": true,
+    "dataset_tab_supplied": true,
+    "matched_local_package": true,
+    "matched_registry_entry": true,
+    "bound_at": "2026-09-20T12:40:00+00:00"
+  },
+  "problem": {
+    "id": "jx76g5p2hkwy4bt7etrft14cb18eeh26",
+    "url": "https://shipd.ai/quests/eris/problems/jx76g5p2hkwy4bt7etrft14cb18eeh26",
+    "version": null,
+    "title": "Sparse-Probe Roundness Adjudication",
+    "description_sha256": "60c0d9b992ea8b6b6ad483e7210affb5658101068e18c93e72cdf1475703de0a",
+    "visible_state": "not_observed"
+  },
+  "dataset": {
+    "id": "jd7bk5e37hvhjg6q7vrm1z4jnx8efe0a",
+    "url": "https://shipd.ai/quests/eris/datasets/jd7bk5e37hvhjg6q7vrm1z4jnx8efe0a",
+    "version": null,
+    "title": "Sparse-Probe Circular Feature Inspection Records",
+    "description_sha256": "3831c9045da819a551358f57c5bdd8b4ea41f953272ff1b7e7cbd6ded3dfb5b7",
+    "visible_state": "not_observed"
+  },
+  "stage": "admission_passed_awaiting_authenticated_browser",
+  "admission": {
+    "passed": true,
+    "owner_match": true,
+    "readiness_verdict": "Proceed",
+    "blockers": [
+      "Shipd is not authenticated in this container; no page was opened at any point."
+    ]
+  },
+  "website_writes_performed": false,
+  "dataset_phase": {
+    "title": "Sparse-Probe Circular Feature Inspection Records",
+    "description_sha256": "3831c9045da819a551358f57c5bdd8b4ea41f953272ff1b7e7cbd6ded3dfb5b7",
+    "source_files": [
+      "generate.py",
+      "raw_upload.zip"
+    ],
+    "source_file_count": 2,
+    "source_file_extensions": [
+      ".py",
+      ".zip"
+    ],
+    "license": "Original generated corpus, unrestricted use. Calibration reference CC BY 4.0, cited only.",
+    "source_url": "https://doi.org/10.5281/zenodo.7004548 (calibration reference, not redistributed)",
+    "rebuild_state": "not_started",
+    "rebuild_attempts": 0,
+    "validation_run_count": 0,
+    "red_findings": [],
+    "yellow_findings": [],
+    "fixes": [],
+    "last_zero_warning_validation_at": null,
+    "all_checks_green": false,
+    "marked_ready": false,
+    "marked_ready_at": null
+  },
+  "challenge_phase": {
+    "title": "Sparse-Probe Roundness Adjudication",
+    "description_sha256": "60c0d9b992ea8b6b6ad483e7210affb5658101068e18c93e72cdf1475703de0a",
+    "difficulty": "Hard",
+    "compute": "CPU",
+    "tags": [
+      "metrology",
+      "manufacturing",
+      "quality-control",
+      "inverse-problems",
+      "uncertainty-quantification",
+      "calibration",
+      "geometry",
+      "tabular"
+    ],
+    "grade_direction": "higher_is_better",
+    "minimum_score": 0.0,
+    "maximum_score": 1.0,
+    "grade_script_sha256": "4cfaf4e6485028481a69c1dc3046564cb77e52945b7047be819d03f0feed45dc",
+    "prepare_script_sha256": "ceae48471dffad78e8c88abe383eab0ea0efdfe330cb472d33b0f1db86ee4f67",
+    "prepare_state": "verified_locally",
+    "prepare_run_count": 0,
+    "check_run_count": 0,
+    "red_findings": [],
+    "yellow_findings": [],
+    "fixes": [],
+    "last_zero_warning_check_at": null,
+    "all_checks_green": false
+  },
+  "agent_run": {
+    "clicked": false,
+    "visible_state": null,
+    "started_at": null,
+    "terminal_state_verified": false
+  },
+  "stop_reason": "Local package complete and audited. Shipd was never opened: no authenticated session exists in this container. Awaiting supervisor confirmation of an authenticated browser before any website write.",
+  "updated_at": "2026-09-20T12:40:00+00:00",
+  "local_evidence": {
+    "raw_upload_zip_sha256": "a666e734ddbf2184a0b0cec8b87435a7905a9242e2569f609d26a2582d11721d",
+    "raw_upload_zip_bytes": 5214507,
+    "raw_upload_members_flat": [
+      "features.csv",
+      "points.csv",
+      "README.txt",
+      "LICENSE.txt"
+    ],
+    "prepared_split": {
+      "train_rows": 35311,
+      "test_rows": 18643,
+      "train_parts": 7854,
+      "test_parts": 4146,
+      "train_machines": 585,
+      "test_machines": 315
+    },
+    "score_ladder_on_real_split": {
+      "sample_submission": 0.1485,
+      "prior_constant": 0.1485,
+      "all_zero_quantiles": 0.0299,
+      "huge_interval_hedge": 0.0805,
+      "metadata_only": 0.205,
+      "copied_input_ptp": 0.3996,
+      "one_nn_part_retrieval": 0.3382,
+      "capability_matched_domain_method": 0.5118,
+      "learned_route_gbm": 0.6976,
+      "learned_route_no_part_pooling": 0.6492,
+      "perfect": 1.0
+    },
+    "grader_robustness": "20 of 20 checks pass (_sanity_smoke.py)",
+    "row_id_rank_correlation_with_truth": 0.0039,
+    "leak_columns_in_public": []
+  },
+  "problem_id": "jx76g5p2hkwy4bt7etrft14cb18eeh26",
+  "dataset_id": "jd7bk5e37hvhjg6q7vrm1z4jnx8efe0a",
+  "problem_url": "https://shipd.ai/quests/eris/problems/jx76g5p2hkwy4bt7etrft14cb18eeh26",
+  "dataset_url": "https://shipd.ai/quests/eris/datasets/jd7bk5e37hvhjg6q7vrm1z4jnx8efe0a",
+  "supervisor_note": "Exact IDs filled in by the supervisor at 2026-09-20T13:05Z. The worker's report stated they were present but both fields were null; the controller ledger already carried them. website_writes_performed remains false: Shipd has never been opened for this slot."
+}

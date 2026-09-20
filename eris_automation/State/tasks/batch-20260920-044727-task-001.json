@@ -17,6 +17,16 @@
       "codex_task_id": null,
       "state_at_replacement": "scouting",
       "recorded_at": "2026-09-20T05:22:23+00:00"
+    },
+    {
+      "candidate": "photo-exposure-decision-ledger (MIRFLICKR-1M CC BY subset)",
+      "verdict": "rejected",
+      "reason": "Two measured gate failures. (1) Lookup: the public artifact is a transformed copy of a public corpus image and MIRFLICKR publishes per-image EXIF text files containing ISO/Exposure/Aperture/Flash, i.e. every scored target; a crude 64-bit dHash on an 88pct crop + 512px resize + q85 re-encode still recovers the source id top-1 in 46/100 probes (median Hamming 15 to true source vs 32 to a random image), so a capable retrieval solver recovers answers outright and the only mitigation would destroy the noise/blur evidence the task depends on. (2) Capability gap: on 1849 photos / 860 photographers with photographer-grouped split, ResNet18+hand-feature GBM scored 0.303/0.178/0.309 credit for ISO/shutter/aperture vs train-median priors 0.294/0.149/0.287, and flash 0.9175 vs 0.9154 majority - essentially null skill at the redistributable 500px resolution, which would compress agent scores at the sample floor. Wikimedia Commons full-resolution alternative is unusable: HTTP 429 rate limiting for this egress IP even at one API call per 20s (146 photos harvested).",
+      "evidence": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/pilot/photo_lookup_attack.json",
+      "registry_key": null,
+      "codex_task_id": null,
+      "state_at_replacement": "scouting",
+      "recorded_at": "2026-09-20T10:26:40+00:00"
     }
   ],
   "transient_failures": [
@@ -64,8 +74,14 @@
       "to": "scouting",
       "at": "2026-09-20T05:22:23+00:00",
       "note": "Candidate rejected; replacement search required: Capability-matched HistGradientBoosting reaches pooled Brier skill 0.713 vs marginal reference (>0.70 agent ceiling); relative to the obvious situation prior (kind x outs x batted-ball type, skill 0.633) remaining headroom is only ~0.16 so scores would be saturated or compressed. Source access, Retrosheet notice license and coarse-tuple lookup non-uniqueness (5.98% unique) were fine; the core formulation fails the toy-baseline/headroom gate."
+    },
+    {
+      "from": "scouting",
+      "to": "scouting",
+      "at": "2026-09-20T10:26:40+00:00",
+      "note": "Candidate rejected; replacement search required: Two measured gate failures. (1) Lookup: the public artifact is a transformed copy of a public corpus image and MIRFLICKR publishes per-image EXIF text files containing ISO/Exposure/Aperture/Flash, i.e. every scored target; a crude 64-bit dHash on an 88pct crop + 512px resize + q85 re-encode still recovers the source id top-1 in 46/100 probes (median Hamming 15 to true source vs 32 to a random image), so a capable retrieval solver recovers answers outright and the only mitigation would destroy the noise/blur evidence the task depends on. (2) Capability gap: on 1849 photos / 860 photographers with photographer-grouped split, ResNet18+hand-feature GBM scored 0.303/0.178/0.309 credit for ISO/shutter/aperture vs train-median priors 0.294/0.149/0.287, and flash 0.9175 vs 0.9154 majority - essentially null skill at the redistributable 500px resolution, which would compress agent scores at the sample floor. Wikimedia Commons full-resolution alternative is unusable: HTTP 429 rate limiting for this egress IP even at one API call per 20s (146 photos harvested)."
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T05:22:23+00:00"
+  "updated_at": "2026-09-20T10:26:40+00:00"
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "task_id": "batch-20260920-044727-task-002",
   "batch_id": "batch-20260920-044727",
-  "state": "scouting",
+  "state": "pilot",
   "revision_count": 0,
   "goal_achieved_at": null,
   "goal_stage": "challenge_checks_passed",
@@ -126,8 +126,14 @@
       "to": "scouting",
       "at": "2026-09-20T11:07:42+00:00",
       "note": "Candidate rejected; replacement search required: Leakage gate and difficulty gate are mutually exclusive across the whole swept design space; measured on 1,256,063 adult PUMS records over 1,114 independent PUMAs with 1,482 train / 624 test private mixture units. Chance floor = best constant table = 0 skill by construction. At the natural setting (unit 600, 2-4 source areas) the capability-matched attack (IPF raking with a global seed, the standard population-synthesis method) scores 0.5354, best honest ridge 0.5634, mixture-oracle ceiling 0.7107, so the competition band is 0.175 - but the source-retrieval attack (non-negative mixture fit of the 1,114 real public areas to the released margins, then reading the joint off public microdata) scores 0.661, beating every honest method by +0.098, and +0.162 at unit size 1500. Hardening (6-20 source areas per unit, disclosure-control rounding of released counts) closes the attack gain to +0.003 but closes the band to 0.117 in lockstep. Rescue attempts fail both ways: larger units with the full 150-cell target restore a 0.170 band but hand the attack +0.054, while a coarser 60-cell target lifts the capability-matched baseline to 0.776-0.812, i.e. IPF alone nearly solves it (the saturation mode that rejected slot 1's baserunning candidate at 0.16 residual headroom). Source, CC0 licence, native ACS fields, post-filter scale, 779/335 disjoint area split and novelty (0 of 818 archived challenges and 0 of 84 registry entries in the aggregate-inversion family) all PASS; the failure is in the learning problem."
+    },
+    {
+      "from": "scouting",
+      "to": "pilot",
+      "at": "2026-09-20T11:17:47+00:00",
+      "note": null
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T11:07:42+00:00"
+  "updated_at": "2026-09-20T11:17:47+00:00"
 }

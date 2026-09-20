@@ -2,11 +2,11 @@
   "schema_version": 2,
   "task_id": "batch-20260920-044727-task-001",
   "batch_id": "batch-20260920-044727",
-  "state": "scouting",
+  "state": "retry_wait",
   "revision_count": 0,
   "goal_achieved_at": null,
   "goal_stage": "challenge_checks_passed",
-  "resume_state": null,
+  "resume_state": "scouting",
   "candidate_attempts": [
     {
       "candidate": "baseball-baserunner-advancement-ledger (Retrosheet 2022-2023)",
@@ -37,6 +37,16 @@
       "codex_task_id": null,
       "state_at_replacement": "scouting",
       "recorded_at": "2026-09-20T11:14:24+00:00"
+    },
+    {
+      "candidate": "multi-step-reaction-route-recovery (Lowe USPTO 1976-Sep2016 grants reaction corpus, CC0)",
+      "verdict": "rejected",
+      "reason": "Fails the instance-level retrieval gate (Rule 2) by construction, measured at shipped bundle size 4000. Source and licence were clean (figshare DOI 10.6084/m9.figshare.5104873, CC0 1.0, md5 b0d94806fe7479fad6db9b894cff858e verified, 1,808,937 reaction rows) and the semantic-duplicate audit passed (no reaction-route task among 818 Shipd archive titles; all 5 chemistry-adjacent registry entries rejected/blocked). But prepare.py can only compose a route from single steps that are themselves public records, so the composition is recoverable by public-corpus lookup over the published endpoints. Canonicalised graph: 691,464 molecules, 501,125 distinct major-reactant->major-product edges from 876,028 admitted reactions; out-degree mean 1.65 median 1, in-degree mean 1.05 median 1. On 4000 privately composed 3-step routes with a 40-item candidate pool (chance floor 0.000641 for the ordered intermediate pair), two-sided lookup recovered the full private route in 98.03 percent of rows (forward successors(start) uniquely identified X1 in 99.38 percent, backward predecessors(product) uniquely identified X2 in 98.65 percent; mean lookup-consistent candidate set size 1.006 forward and 1.016 backward). Path multiplicity confirms the cause: 96.75 percent of composed routes are the unique public 3-step path from start to product, so the private composition carries almost no information beyond the public graph. Hardening is infeasible: only 0.025 percent of routes have >=10 public successors of the start and >=10 public predecessors of the product, so a lookup-consistent distractor pool cannot be built at scale, and any graph region dense enough to hide the answer would also make the ground-truth route non-unique. The same argument covers every per-record formulation over this corpus (forward prediction, retrosynthesis, conditions, atom mapping): the corpus is the label source and is fully public.",
+      "evidence": "/home/user/eris-challenge-bot/Working/batch-20260920-044727/batch-20260920-044727-task-001/cand4/pilot/route_attack.json",
+      "registry_key": null,
+      "codex_task_id": null,
+      "state_at_replacement": "scouting",
+      "recorded_at": "2026-09-20T11:27:38+00:00"
     }
   ],
   "transient_failures": [
@@ -45,6 +55,12 @@
       "message": "2026-09-20T04:52Z headless Playwright (CA policy installed, TLS ok) opened problem URL; Shipd redirected to /quests/eris/join?mode=sign-in. No authenticated session in this remote container profile. Local scouting/build continues; Shipd phase pending user-restored session.",
       "retry_after_seconds": null,
       "recorded_at": "2026-09-20T04:52:35+00:00"
+    },
+    {
+      "kind": "browser_auth",
+      "message": "2026-09-20T11:49Z retry: problem URL still redirects to /quests/eris/join?mode=sign-in; no authenticated session in this container. Platform phase remains pending user-restored session.",
+      "retry_after_seconds": null,
+      "recorded_at": "2026-09-20T11:49:50+00:00"
     }
   ],
   "registry_key": null,
@@ -96,8 +112,20 @@
       "to": "scouting",
       "at": "2026-09-20T11:14:24+00:00",
       "note": "Candidate rejected; replacement search required: Fails the ceiling-minus-capability rule. Full package built and measured with the shipped grade.py on a real 16003/3997 family-disjoint split (89098/22240 plate appearances, 21 seasons, 20000 source games). Metric-null audit passes (uniform random 0.0000, all-zeros 0.0000, file order 0.0032, perfect 1.0000) and lookup is non-dominant (unique public signature rate 0.59pct over the 21-season pool; copy-one-twin attack 0.1445; strongest aggregate-twin upstream attack 0.2309 at shipped bundle size 3997, median 932 colliding candidates per row). But capability separation is only 0.028: sample 0.1841, outs-only rule 0.1830, marginal prior sort 0.2002, learned pairwise Borda 0.2280, constrained global decoder with run and LOB consistency 0.2252. Skill sweep is flat (10pct train 0.2208, 30pct 0.2275, 100pct 0.2280), so the binding limit is the information content of the public evidence, not solver capability; and the strongest upstream retrieval prior (0.2309) slightly exceeds the best honest model, so the full public archive teaches the signal better than the released split. Four public vocabularies were measured: richer descriptors narrowed the gap (L1 0.0348, L0 0.0174) and adding left-on-base widened it only to 0.0433. Three agent runs would land inside a 0.03 band, reproducing the low-variance Benchmark Calibration failure this workspace has already hit twice."
+    },
+    {
+      "from": "scouting",
+      "to": "scouting",
+      "at": "2026-09-20T11:27:38+00:00",
+      "note": "Candidate rejected; replacement search required: Fails the instance-level retrieval gate (Rule 2) by construction, measured at shipped bundle size 4000. Source and licence were clean (figshare DOI 10.6084/m9.figshare.5104873, CC0 1.0, md5 b0d94806fe7479fad6db9b894cff858e verified, 1,808,937 reaction rows) and the semantic-duplicate audit passed (no reaction-route task among 818 Shipd archive titles; all 5 chemistry-adjacent registry entries rejected/blocked). But prepare.py can only compose a route from single steps that are themselves public records, so the composition is recoverable by public-corpus lookup over the published endpoints. Canonicalised graph: 691,464 molecules, 501,125 distinct major-reactant->major-product edges from 876,028 admitted reactions; out-degree mean 1.65 median 1, in-degree mean 1.05 median 1. On 4000 privately composed 3-step routes with a 40-item candidate pool (chance floor 0.000641 for the ordered intermediate pair), two-sided lookup recovered the full private route in 98.03 percent of rows (forward successors(start) uniquely identified X1 in 99.38 percent, backward predecessors(product) uniquely identified X2 in 98.65 percent; mean lookup-consistent candidate set size 1.006 forward and 1.016 backward). Path multiplicity confirms the cause: 96.75 percent of composed routes are the unique public 3-step path from start to product, so the private composition carries almost no information beyond the public graph. Hardening is infeasible: only 0.025 percent of routes have >=10 public successors of the start and >=10 public predecessors of the product, so a lookup-consistent distractor pool cannot be built at scale, and any graph region dense enough to hide the answer would also make the ground-truth route non-unique. The same argument covers every per-record formulation over this corpus (forward prediction, retrosynthesis, conditions, atom mapping): the corpus is the label source and is fully public."
+    },
+    {
+      "from": "scouting",
+      "to": "retry_wait",
+      "at": "2026-09-20T11:49:50+00:00",
+      "note": "Temporary browser_auth failure; resume from checkpoint"
     }
   ],
   "created_at": "2026-09-20T04:47:27+00:00",
-  "updated_at": "2026-09-20T11:15:39+00:00"
+  "updated_at": "2026-09-20T11:49:50+00:00"
 }

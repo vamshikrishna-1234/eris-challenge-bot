@@ -106,3 +106,18 @@ complete. Do not repeat that.
 privately across many rows by `prepare.py` (a structural quantity computed over the corpus), or
 where knowing the origin record still does not reveal the answer. Accepted workspace challenges
 on public corpora survive for exactly this reason.
+
+**Rule 5 — validate any ordering/matching/assignment grader against a uniform-random
+submission before you believe a single baseline number.** A pooled metric in slot 1 gave a
+uniform-random submission 0.577 tau and 0.23 score, because per-row `max(0, .)` rectification
+combined with occurrence-rank alignment inflated the floor. Scoring the solver's explicit
+positions and skipping same-descriptor pairs corrected it to 0.0032. Every baseline measured
+against an uninspected floor is unusable, in either direction.
+
+**Rule 6 — a weak hand-built "capability-matched" baseline understates the true ceiling.**
+In slot 1 a hand-tuned likelihood decoder scored 0.113, below the trivial prior, while the
+principled version (learned pairwise model plus global search plus domain constraints) scored
+0.225. Build the capability-matched baseline the way a strong solver would, then report it.
+This matters most before accepting a candidate: an understated ceiling makes headroom look
+larger than it is. Rejections already recorded on saturation grounds are conservative under
+this rule and do not need revisiting.

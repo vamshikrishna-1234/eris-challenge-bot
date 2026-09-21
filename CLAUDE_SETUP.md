@@ -45,3 +45,26 @@ stops when every check is green and that button is visibly available.
   destructive-cloud confirmation can still require the user.
 - Resume later from this directory with `claude --continue` or start the launcher
   again and send `Status & Fix`; the ledger remains authoritative.
+
+## Using a separate browser account for uploads
+
+The project browser now uses its own profile directory, `Working/browser-profile-shipd`, set by
+`--user-data-dir` in `.mcp.json`. That profile is independent of your everyday Chrome or Edge
+profile and of any other Claude Code project, so the Shipd account you sign into here does not
+have to be the account signed in anywhere else.
+
+The first time the visible browser opens after this change it will be signed out. Sign in once,
+with the account that should own the uploaded datasets and challenges. The session persists in
+that folder for later runs.
+
+`Working/` is git-ignored, so the profile and its cookies stay on your machine and are never
+pushed. To switch accounts later, close the browser and delete
+`Working/browser-profile-shipd`, then sign in again on the next run.
+
+## Running without the terminal
+
+Claude Code also ships as a Windows desktop app. Open the bot folder as the working directory
+there and send the same messages; the launcher script is only a convenience wrapper that runs
+`validate-portable.ps1` and then starts Claude Code with `--permission-mode auto`. If you skip the
+launcher, run `.\validate-portable.ps1` once yourself, or ask Claude in that session to validate
+the bundle before starting a workflow.

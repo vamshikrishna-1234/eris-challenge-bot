@@ -63,3 +63,97 @@ source URLs and checksums are in each `DATA_ACQUISITION.md`.
 Nine candidates were measured and rejected or held across the three slots before these three
 passed. Each carries an evidence file with numbers. The design rules derived from those failures
 are at the end of `WORKER_BRIEF.md` and are what the three survivors were built against.
+
+---
+
+# How to run the upload from your own machine
+
+This cloud container cannot reach your `E:` drive and has no signed-in browser. Everything below
+runs on your machine, in your local clone of this bot.
+
+## 1. Get the work onto your machine
+
+In your existing local bot folder (the one holding `run-claude.ps1`):
+
+```powershell
+git fetch origin claude/wonderful-bohr-b7u814
+git checkout claude/wonderful-bohr-b7u814
+git pull origin claude/wonderful-bohr-b7u814
+```
+
+That brings the three package folders under `Workspace\output\` and, just as important, the
+controller ledger under `eris_automation\State\`, so the batch resumes with all three slots
+already bound to their exact Shipd pairs.
+
+## 2. Where to work, and a note on `to_be_uploaded`
+
+Work from the bot folder itself. `Workspace\output\` is the authoritative location, and the bot's
+own portability rule forbids depending on anything under the old `create_challenge_synthetic`
+roots on `C:`, `D:` or `E:`; `validate-portable.ps1` fails the bundle if a core file references
+them.
+
+If you want a staging copy at `E:\create_challenge_synthetic_output_folder\sprint_5\to_be_uploaded`
+purely for your own convenience while clicking through the site, copy it, do not move it:
+
+```powershell
+$dst = "E:\create_challenge_synthetic_output_folder\sprint_5\to_be_uploaded"
+New-Item -ItemType Directory -Force -Path $dst | Out-Null
+Copy-Item -Recurse -Force `
+  "Workspace\output\groundwater-abstraction-return-reconciliation", `
+  "Workspace\output\sparse-probe-roundness-conformance-adjudication", `
+  "Workspace\output\rail-corridor-incident-and-dispatch-ledger-recovery" `
+  -Destination $dst
+```
+
+Keep the copies read-only in practice: make every edit in the repo, so the ledger, the registry
+and the packages never disagree.
+
+## 3. Start the bot and give it this prompt
+
+```powershell
+.\validate-portable.ps1
+.\run-claude.ps1
+```
+
+Then send, as a single message:
+
+> Status & Fix. Batch batch-20260920-044727 is already active with three bound slots and three
+> verified local packages built in a previous cloud session; the ledger under
+> eris_automation\State is authoritative. Nothing has been written to Shipd yet.
+> For each slot in order, open its exact dataset and challenge URLs in separate tabs in the
+> visible Playwright browser and verify the IDs before any write, then run the submission-pool
+> workflow from the package in Workspace\output\: upload the listed source files, rebuild, set
+> the licence and canonical source URL, clear every red and yellow finding genuinely, Mark as
+> Ready, then paste the challenge form values and both PASTE_THIS_*.txt scripts, run Prepare,
+> and run the full check suite until everything is green.
+> Stop each slot with all checks green and Run Agents visibly available. Do not click Run Agents.
+> Update SUBMISSION_POOL_STATE.json and the controller after each phase.
+
+Add `through Run Agents` to that message only if you also want each challenge launched. Without
+those words the run stops with the button available and untouched, which is what the original
+request asked for.
+
+## 4. Do not start a new project
+
+Use your existing local bot folder. A fresh Claude project or a claude.ai web chat would not have
+the repository, the controller ledger, the bundled skills or the Playwright browser, and a second
+active batch is exactly what the controller is designed to prevent. A new session inside this same
+folder is fine and expected; the ledger carries the state, not the conversation.
+
+## 5. What to upload per package
+
+| Package | Dataset page files | Challenge page scripts |
+|---|---|---|
+| `groundwater-abstraction-return-reconciliation` | `generate.py`, `raw_upload.zip` | `PASTE_THIS_PREPARE.txt`, `PASTE_THIS_GRADE.txt` |
+| `sparse-probe-roundness-conformance-adjudication` | `generate.py`, `raw_upload.zip` | same two files |
+| `rail-corridor-incident-and-dispatch-ledger-recovery` | `raw_upload.zip` | same two files |
+
+Field values come from `DATASET_FORM_FILL.md` and `CHALLENGE_FORM_FILL.md` in each folder. All
+three are Hard, CPU, maximize, minimum 0.0, maximum 1.0.
+
+## 6. If a check fails
+
+That is expected work, not a defect in the handoff. `Status & Fix` authorises genuine repair:
+fix the underlying data, script, form value or documentation, rerun the affected local test, and
+rerun the platform suite. Never suppress a check or weaken a grader. The local evidence files in
+each package say what was measured and why, which is usually enough to diagnose a finding fast.
